@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pip ($PIP) — Always climbing. Always looking.</title>
+  <meta name="description" content="Pip is a little red panda who treats every branch, ledge, and timeline like a new summit. Curiosity first. Pure entertainment — not financial advice." />
+  <meta name="theme-color" content="#9b8cff" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pip ($PIP)" />
+  <meta property="og:description" content="Always climbing. Always looking. — Pip is a little red panda who treats every branch, ledge, and timeline like a new summit. Curiosity first. Pure entertainment — not financial advice." />
+  <meta property="og:image" content="character.webp" />
+  <meta property="og:site_name" content="Pip" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pip ($PIP)" />
+  <meta name="twitter:description" content="Always climbing. Always looking." />
+  <meta name="twitter:image" content="character.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #9b8cff;
+      --secondary: #9dffb0;
+      --accent: #d4b5ff;
+      --bg: #f5fff9;
+      --ink: #2d2a32;
+      --ink-soft: #5c5666;
+      --card: rgba(255, 255, 255, 0.84);
+      --shadow: 0 18px 50px rgba(80, 60, 100, 0.14);
+      --radius: 28px;
+      --font-display: "Fredoka", system-ui, sans-serif;
+      --font-body: "Nunito", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, color-mix(in srgb, var(--primary) 42%, white) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 90% 10%, color-mix(in srgb, var(--secondary) 48%, white) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, color-mix(in srgb, var(--accent) 32%, white) 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 3.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      background: color-mix(in srgb, var(--accent) 55%, white);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 0.85rem;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 7vw, 3.4rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .ticker {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+      color: color-mix(in srgb, var(--primary) 70%, var(--ink));
+      margin-bottom: 0.75rem;
+    }
+
+    .tagline {
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.85rem;
+    }
+
+    .one-liner {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-bottom: 1rem;
+      max-width: 36rem;
+    }
+
+    .blurb {
+      max-width: 34rem;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .mascot {
+      position: relative;
+      width: min(240px, 55vw);
+      height: min(240px, 55vw);
+      filter: drop-shadow(0 16px 28px rgba(90, 70, 120, 0.22));
+    }
+
+    .mascot img,
+    .mascot svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 32%;
+      display: block;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 999px;
+      padding: 0.85rem 1.5rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .btn:hover { transform: translateY(-2px) scale(1.02); }
+    .btn:active { transform: translateY(0) scale(0.99); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--accent) 60%, var(--primary)));
+      color: #fff;
+      box-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 40%, transparent);
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-soon {
+      background: color-mix(in srgb, var(--secondary) 40%, white);
+      color: var(--ink);
+      border: 2px dashed color-mix(in srgb, var(--primary) 45%, white);
+      cursor: default;
+    }
+    .btn-soon:hover { transform: none; }
+
+    .ca-box {
+      width: min(100%, 520px);
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.95);
+      padding: 0.75rem 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .ca-box label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      flex-shrink: 0;
+    }
+
+    .ca-box code {
+      flex: 1;
+      font-size: 0.82rem;
+      word-break: break-all;
+      text-align: left;
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .ca-box button {
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      background: color-mix(in srgb, var(--accent) 70%, white);
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .ca-box button.copied {
+      background: color-mix(in srgb, var(--primary) 55%, white);
+    }
+
+    section.card {
+      margin-top: 1.5rem;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+      padding: 1.5rem 1.35rem;
+    }
+
+    section.card h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: 0.85rem;
+      text-align: center;
+    }
+
+    .lore-kicker {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--primary) 55%, var(--ink-soft));
+      margin-bottom: 0.35rem;
+    }
+
+    .lore-body {
+      max-width: 36rem;
+      margin: 0 auto;
+      text-align: left;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+    .lore-body p { margin-bottom: 0.95rem; }
+    .lore-body p:last-child { margin-bottom: 0; }
+
+    .visual-note {
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      max-width: 28rem;
+      margin: 0.5rem auto 0;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      max-width: 36rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 0.5rem;
+    }
+    footer strong { color: var(--ink); }
+
+    /* ========== LAYOUT: centered ========== */
+    body.layout-centered .hero {
+      text-align: center;
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: calc(var(--radius) + 8px);
+      box-shadow: var(--shadow);
+      padding: 2.25rem 1.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    body.layout-centered .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40% -20% auto;
+      height: 70%;
+      background: radial-gradient(circle at 50% 80%, color-mix(in srgb, var(--primary) 28%, transparent), transparent 65%);
+      pointer-events: none;
+    }
+    body.layout-centered .mascot { margin: 0 auto 1.25rem; }
+    body.layout-centered .one-liner,
+    body.layout-centered .blurb { margin-left: auto; margin-right: auto; }
+    body.layout-centered .cta-row { justify-content: center; }
+    body.layout-centered .ca-box { margin: 0 auto; }
+
+    /* ========== LAYOUT: split (character left / copy right) ========== */
+    body.layout-split .wrap { width: min(1040px, calc(100% - 2rem)); }
+    body.layout-split .hero {
+      display: grid;
+      grid-template-columns: minmax(200px, 0.9fr) 1.2fr;
+      gap: 1.75rem;
+      align-items: center;
+      background: var(--card);
+      border: 2px solid rgba(255, 255, 255, 0.92);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    body.layout-split .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(160deg, color-mix(in srgb, var(--secondary) 55%, white), color-mix(in srgb, var(--accent) 40%, white));
+      border-radius: calc(var(--radius) - 4px);
+      padding: 1.25rem;
+      min-height: 280px;
+    }
+    body.layout-split .mascot { width: min(220px, 50vw); height: min(220px, 50vw); margin: 0; }
+    body.layout-split .hero-copy { text-align: left; }
+    body.layout-split .cta-row { justify-content: flex-start; }
+    body.layout-split .one-liner { margin-left: 0; }
+
+    /* ========== LAYOUT: wide_hero ========== */
+    body.layout-wide_hero {
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--primary) 28%, var(--bg)) 0%, var(--bg) 42%),
+        var(--bg);
+    }
+    body.layout-wide_hero .wrap { width: min(880px, calc(100% - 1.5rem)); padding-top: 1.25rem; }
+    body.layout-wide_hero .hero {
+      text-align: center;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    body.layout-wide_hero .hero-band {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 35%, white), color-mix(in srgb, var(--secondary) 45%, white));
+      border-radius: 36px;
+      padding: 2.5rem 1.5rem 2rem;
+      margin-bottom: 1.25rem;
+      border: 3px solid rgba(255, 255, 255, 0.7);
+      box-shadow: var(--shadow);
+    }
+    body.layout-wide_hero .mascot {
+      width: min(200px, 48vw);
+      height: min(200px, 48vw);
+      margin: 0 auto 0.75rem;
+    }
+    body.layout-wide_hero .hero-copy {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+      padding: 1.75rem 1.35rem 2rem;
+    }
+    body.layout-wide_hero .one-liner,
+    body.layout-wide_hero .blurb { margin-left: auto; margin-right: auto; }
+    body.layout-wide_hero .cta-row { justify-content: center; }
+    body.layout-wide_hero .ca-box { margin: 0 auto; }
+
+    /* ========== LAYOUT: offset_card ========== */
+    body.layout-offset_card .wrap { width: min(820px, calc(100% - 2rem)); }
+    body.layout-offset_card .hero {
+      position: relative;
+      background: color-mix(in srgb, var(--secondary) 35%, white);
+      border-radius: calc(var(--radius) + 12px);
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow);
+      padding: 3.5rem 1.5rem 2rem;
+      margin-top: 4.5rem;
+      text-align: center;
+    }
+    body.layout-offset_card .mascot {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -52%) rotate(-4deg);
+      width: min(200px, 46vw);
+      height: min(200px, 46vw);
+      z-index: 2;
+      background: var(--card);
+      border-radius: 36%;
+      padding: 0.5rem;
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 14px 32px rgba(80, 60, 100, 0.18);
+    }
+    body.layout-offset_card .hero-inner {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem 1.75rem;
+      border: 2px dashed color-mix(in srgb, var(--primary) 35%, white);
+      margin-top: 0.5rem;
+    }
+    body.layout-offset_card .one-liner,
+    body.layout-offset_card .blurb { margin-left: auto; margin-right: auto; }
+    body.layout-offset_card .cta-row { justify-content: center; }
+    body.layout-offset_card .ca-box { margin: 0 auto; }
+
+    @media (max-width: 720px) {
+      body.layout-split .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      body.layout-split .hero-copy { text-align: center; }
+      body.layout-split .cta-row { justify-content: center; }
+      body.layout-split .ca-box { margin: 0 auto; }
+      body.layout-split .one-liner { margin-left: auto; margin-right: auto; }
+      body.layout-split .hero-visual { min-height: auto; }
+    }
+
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 1.25rem); padding-top: 1.25rem; }
+      .ca-box { flex-direction: column; align-items: stretch; text-align: center; }
+      .ca-box code { text-align: center; }
+      body.layout-offset_card .hero { margin-top: 3.75rem; padding-top: 3rem; }
+    }
+  </style>
+</head>
+<body class="layout-wide_hero">
+  <div class="wrap">
+    <header class="hero">
+      
+      <div class="hero-band">
+        <div class="mascot" aria-hidden="false">
+          
+          <img src="character.webp" alt="Pip mascot" width="240" height="240" />
+          
+        </div>
+        <div class="badge">Meet Pip</div>
+        <h1>Pip</h1>
+        <p class="ticker">$PIP</p>
+      </div>
+      <div class="hero-copy">
+        <p class="tagline">Always climbing. Always looking.</p>
+        <p class="one-liner">“Curious to a fault. Will climb anything to see what&#39;s on top.”</p>
+        <p class="blurb">Pip is a little red panda who treats every branch, ledge, and timeline like a new summit. Curiosity first. Pure entertainment — not financial advice.</p>
+        <div class="cta-row">
+          
+          <span class="btn btn-soon" aria-disabled="true">Coming soon</span>
+          
+        </div>
+        
+      </div>
+
+      
+    </header>
+
+    <section class="card" id="lore" aria-label="Character lore">
+      <p class="lore-kicker">Lore</p>
+      <h2>Pip</h2>
+      <div class="lore-body">
+        
+        <p>Pip arrived the way the best friends do — softly, suddenly, and already impossible not to like. Looking at Pip, you see: Lovable red panda character named Pip, soft fur, bright curious eyes, climbing energy.</p>
+        
+        <p>Folks who meet Pip learn the vibe fast: Curious to a fault. Will climb anything to see what&#39;s on top There is no secret quest, no prophecy board, no stern manifesto — just a lovable little legend who makes the timeline feel kinder.</p>
+        
+        <p>Around campfires of group chats, people trade tiny stories about Pip: a bounce, a blush, a sparkle that shows up when someone needs a smile. That is the whole mythos — soft, silly, and shared.</p>
+        
+        <p>Pip ($PIP) wraps that character energy into a cute meme corner of the internet. Pure entertainment, hugs over hype — not financial advice.</p>
+        
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Look &amp; feel</h2>
+      <p class="visual-note">Lovable red panda character named Pip, soft fur, bright curious eyes, climbing energy</p>
+    </section>
+
+    <footer>
+      <p><strong>Pip</strong> ($PIP) is for entertainment only. This is <strong>not financial advice</strong>. Crypto is risky — never spend money you can’t afford to lose. DYOR.</p>
+    </footer>
+  </div>
+
+  
+</body>
+</html>
