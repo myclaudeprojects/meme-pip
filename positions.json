@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 16:30:59 EDT",
-  "state_updated_et": "2026-10-08 16:30:38 EDT",
+  "generated_et": "2026-10-08 16:32:00 EDT",
+  "state_updated_et": "2026-10-08 16:31:47 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,7 +36,7 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 1,
+  "open_organic_count": 2,
   "positions": [
     {
       "mint": "9oxWMhM4QN1hLGNutaTFcBjMjJce6QxrvVxAcGW6pump",
@@ -51,9 +51,28 @@
       "tp_multiple": 1.4,
       "tp_target_usd": 408.5900364085037,
       "tp_target_mc": null,
-      "last_bag_usd": 946.5461981659461,
-      "last_mult": 3.2432623396314044,
-      "last_check_et": "2026-10-08 16:30:16 EDT",
+      "last_bag_usd": 942.90213195549,
+      "last_mult": 3.230776247852265,
+      "last_check_et": "2026-10-08 16:31:46 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
+    },
+    {
+      "mint": "25UjGzzVKSKnHrtrnZ6xJUSYyv4GTJ1eSSgWmVs6pump",
+      "symbol": "Instagram",
+      "name": null,
+      "status": "open",
+      "entry_et": "10/8/2026, 16:31:39 ET",
+      "cost_usd": 250.00000000000003,
+      "tokens_ui": 3102604.40479,
+      "entry_price_usd": 8.057746569753912e-05,
+      "entry_mc": null,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 350.0,
+      "tp_target_mc": null,
+      "last_bag_usd": 289.37991283476333,
+      "last_mult": 1.157519651339053,
+      "last_check_et": "2026-10-08 16:31:47 EDT",
       "exit_reason": null,
       "pnl_usd": null
     }
@@ -298,10 +317,10 @@
       "mcap": 270744.2549619554
     },
     "last_buy": {
-      "as_of_et": "10/8/2026, 16:08:34 ET",
-      "symbol": "Pack",
-      "mint": "9oxWMhM4QN1hLGNutaTFcBjMjJce6QxrvVxAcGW6pump",
-      "cost_usd": 291.8500260060741
+      "as_of_et": "10/8/2026, 16:31:39 ET",
+      "symbol": "Instagram",
+      "mint": "25UjGzzVKSKnHrtrnZ6xJUSYyv4GTJ1eSSgWmVs6pump",
+      "cost_usd": 250.00000000000003
     }
   },
   "cash_snapshot": {
