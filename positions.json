@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 16:06:19 EDT",
-  "state_updated_et": "2026-10-08 16:06:00 EDT",
+  "generated_et": "2026-10-08 16:07:21 EDT",
+  "state_updated_et": "10/8/2026, 16:06:48 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,28 +36,8 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 1,
-  "positions": [
-    {
-      "mint": "FzPujTgKNJVim7YYa5HYHngGtf19QwV6ACJ1zDLWpump",
-      "symbol": "UP",
-      "name": null,
-      "status": "open",
-      "entry_et": "10/8/2026, 16:03:21 ET",
-      "cost_usd": 313.173578437074,
-      "tokens_ui": 520533.398084,
-      "entry_price_usd": 0.0006016397402929683,
-      "entry_mc": null,
-      "tp_multiple": 1.4,
-      "tp_target_usd": 438.4430098119036,
-      "tp_target_mc": null,
-      "last_bag_usd": 299.0984905390664,
-      "last_mult": 0.9550565920399453,
-      "last_check_et": "2026-10-08 16:06:00 EDT",
-      "exit_reason": null,
-      "pnl_usd": null
-    }
-  ],
+  "open_organic_count": 0,
+  "positions": [],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -267,6 +247,25 @@
       "last_check_et": "2026-10-08 16:02:14 EDT",
       "exit_reason": null,
       "pnl_usd": null
+    },
+    {
+      "mint": "FzPujTgKNJVim7YYa5HYHngGtf19QwV6ACJ1zDLWpump",
+      "symbol": "UP",
+      "name": null,
+      "status": "closed",
+      "entry_et": "10/8/2026, 16:03:21 ET",
+      "cost_usd": 313.173578437074,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.0006016397402929683,
+      "entry_mc": null,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 438.4430098119036,
+      "tp_target_mc": null,
+      "last_bag_usd": 293.37262316014244,
+      "last_mult": 0.9367732253284254,
+      "last_check_et": "2026-10-08 16:06:45 EDT",
+      "exit_reason": "first_slowdown:hc5_nonpositive=-0.115%",
+      "pnl_usd": null
     }
   ],
   "last_decision": {
@@ -294,12 +293,6 @@
     "note": "after manual LOADED buy (~4.26 SOL); organic loop has no cash"
   },
   "recent_notes": [
-    {
-      "et": "2026-10-07 11:59:06 EDT",
-      "event": "buy_filled",
-      "symbol": "TON618",
-      "detail": "11:56 routine: 0 open, top in-band TON618 ~$409-416k MC, holders +12%/1h +63%/6h, 927 holders, org 65.7"
-    },
     {
       "et": "10/7/2026, 13:31:12 ET",
       "event": "ton618_holders_soft_full_sell"
@@ -360,6 +353,12 @@
       "event": "early_exit_due",
       "symbol": "pear",
       "reason": "early_first_slowdown@0.436x:first_slowdown:hc5_nonpositive=-1.978%"
+    },
+    {
+      "et": "2026-10-08 16:06:45 EDT",
+      "event": "early_exit_due",
+      "symbol": "UP",
+      "reason": "early_first_slowdown@0.937x:first_slowdown:hc5_nonpositive=-0.115%"
     }
   ]
 }
