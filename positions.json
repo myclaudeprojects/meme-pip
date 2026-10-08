@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 13:26:03 EDT",
-  "state_updated_et": "2026-10-08 13:25:34 EDT",
+  "generated_et": "2026-10-08 14:02:58 EDT",
+  "state_updated_et": "2026-10-08 13:54:31 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -37,27 +37,7 @@
     "TWEETCRAFT"
   ],
   "open_organic_count": 1,
-  "positions": [
-    {
-      "mint": "2bN9YoTKiejNonS4Q1EjhypvRfndZLEiYJZUHLwYpump",
-      "symbol": "PANDA",
-      "name": "Pandacoin",
-      "status": "open",
-      "entry_et": "2026-10-08 12:58:57 EDT",
-      "cost_usd": 433.5813659407999,
-      "tokens_ui": 1586825.592424,
-      "entry_price_usd": 0.0002732381983318473,
-      "entry_mc": 253236.2633777806,
-      "tp_multiple": 1.4,
-      "tp_target_usd": 607.0139123171199,
-      "tp_target_mc": 354530.7687288928,
-      "last_bag_usd": 419.55668663690557,
-      "last_mult": 0.9676538698256483,
-      "last_check_et": "2026-10-08 13:25:34 EDT",
-      "exit_reason": "first_slowdown:hc5_stall=-0.059%,holders_flat_or_down=1687->1681,holders_off_peak=1687->1681",
-      "pnl_usd": null
-    }
-  ],
+  "positions": [],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -134,22 +114,79 @@
       "last_check_et": "2026-10-07 15:10:56 EDT",
       "exit_reason": null,
       "pnl_usd": null
+    },
+    {
+      "mint": "2bN9YoTKiejNonS4Q1EjhypvRfndZLEiYJZUHLwYpump",
+      "symbol": "PANDA",
+      "name": "Pandacoin",
+      "status": "closed",
+      "entry_et": "2026-10-08 12:58:57 EDT",
+      "cost_usd": 433.5813659407999,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.0002732381983318473,
+      "entry_mc": 253236.2633777806,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 607.0139123171199,
+      "tp_target_mc": 354530.7687288928,
+      "last_bag_usd": 596.646422751424,
+      "last_mult": 1.3760887104933577,
+      "last_check_et": "2026-10-08 13:48:13 EDT",
+      "exit_reason": "first_slowdown:hc5_stall=-0.059%,holders_flat_or_down=1687->1681,holders_off_peak=1687->1681",
+      "pnl_usd": null
+    },
+    {
+      "mint": "BLXhcFAtJpCM3HCbdzvr8F3JwGqdMGkAoLXuRmXLpump",
+      "symbol": "SENTS",
+      "name": null,
+      "status": "closed",
+      "entry_et": "2026-10-08 13:18:01 EDT",
+      "cost_usd": 27.908548815139994,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.00037716386079930333,
+      "entry_mc": null,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 39.07196834119599,
+      "tp_target_mc": null,
+      "last_bag_usd": 32.0475892526431,
+      "last_mult": 1.1483072611521004,
+      "last_check_et": "2026-10-08 13:49:52 EDT",
+      "exit_reason": "first_slowdown:hc5_stall=-0.659%,buys_lt_sells=57/122",
+      "pnl_usd": null
+    },
+    {
+      "mint": "7K52aYQW9rWGjwZmQ7o2d1P6E7bji6hSMsqaLy5EcxLh",
+      "symbol": "PQC",
+      "name": "pqc.market",
+      "status": "closed",
+      "entry_et": "10/8/2026, 13:52:13 ET",
+      "cost_usd": 460.32405733022216,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.0004491457098320764,
+      "entry_mc": 418938.2841520275,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 644.453680262311,
+      "tp_target_mc": 586513.5978128385,
+      "last_bag_usd": 448.18353123258544,
+      "last_mult": 0.9736261316255138,
+      "last_check_et": "2026-10-08 13:53:46 EDT",
+      "exit_reason": "first_slowdown:holders_flat_or_down=2693->2692",
+      "pnl_usd": null
     }
   ],
   "last_decision": {
-    "last_skip_reason": "2026-10-07 20:28 EDT skip: Sol cash 0.0765 SOL (below 0.08 gas reserve) after owner manual LOADED buy; 0 open organic; no sells. No scan buy possible.",
-    "last_scan_et": "2026-10-08 13:18:00 EDT",
-    "last_scan_n_in_band": 1,
+    "last_skip_reason": null,
+    "last_scan_et": "2026-10-08 13:52:09 EDT",
+    "last_scan_n_in_band": 3,
     "last_scan_best": {
-      "symbol": "SENTS",
-      "mint": "BLXhcFAtJpCM3HCbdzvr8F3JwGqdMGkAoLXuRmXLpump",
-      "mcap": 361865.45638955507
+      "symbol": "PQC",
+      "mint": "7K52aYQW9rWGjwZmQ7o2d1P6E7bji6hSMsqaLy5EcxLh",
+      "mcap": 418938.2841520275
     },
     "last_buy": {
-      "as_of_et": null,
-      "symbol": "PANDA",
-      "mint": "2bN9YoTKiejNonS4Q1EjhypvRfndZLEiYJZUHLwYpump",
-      "cost_usd": 433.5813659407999
+      "as_of_et": "10/8/2026, 13:52:13 ET",
+      "symbol": "PQC",
+      "mint": "7K52aYQW9rWGjwZmQ7o2d1P6E7bji6hSMsqaLy5EcxLh",
+      "cost_usd": 460.32405733022216
     }
   },
   "cash_snapshot": {
@@ -161,16 +198,6 @@
     "note": "after manual LOADED buy (~4.26 SOL); organic loop has no cash"
   },
   "recent_notes": [
-    {
-      "et": "2026-10-07 10:03:16 EDT",
-      "event": "owner_sell_bridge_resume",
-      "detail": "HASHERS full bag sold (57bTRX + dust 2sWLo); ART moonbag TP sold (3QniXG + 2e8Va8); SOL proceeds Relay\u2192Arc USDC +1132.87 (Arc now ~1143); Frank HOLD 5x; organic scanner RESUMED max2 Sol-cash-only 200-500k MC; cleared new_buys_paused / HASHERS hold"
-    },
-    {
-      "et": "2026-10-07 10:04:35 EDT",
-      "event": "owner_correction_bridge_hashers_proceeds_back_to_sol",
-      "detail": "HASHERS sell proceeds should have stayed on Sol; were bridged to Arc with ART. Bridged $510 Arc USDC \u2192 Sol via Relay. Frank HOLD 5x. Organic can buy again ($500, max2, 200-500k MC, Sol cash only)."
-    },
     {
       "et": "2026-10-07 10:07:43 EDT",
       "event": "owner_strategy_change_1_8x_full_sell",
@@ -223,6 +250,18 @@
       "event": "early_exit_due",
       "symbol": "PANDA",
       "reason": "early_first_slowdown@0.964x:first_slowdown:hc5_stall=-0.059%,holders_flat_or_down=1687->1681,holders_off_peak=1687->1681"
+    },
+    {
+      "et": "2026-10-08 13:49:52 EDT",
+      "event": "early_exit_due",
+      "symbol": "SENTS",
+      "reason": "early_first_slowdown@1.148x:first_slowdown:hc5_stall=-0.659%,buys_lt_sells=57/122"
+    },
+    {
+      "et": "2026-10-08 13:53:46 EDT",
+      "event": "early_exit_due",
+      "symbol": "PQC",
+      "reason": "early_first_slowdown@0.974x:first_slowdown:holders_flat_or_down=2693->2692"
     }
   ]
 }
