@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 14:54:26 EDT",
-  "state_updated_et": "2026-10-08 14:53:46 EDT",
+  "generated_et": "2026-10-08 14:55:27 EDT",
+  "state_updated_et": "2026-10-08 14:55:17 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -51,10 +51,10 @@
       "tp_multiple": 1.4,
       "tp_target_usd": 650.8769831067258,
       "tp_target_mc": 385975.0365458763,
-      "last_bag_usd": 363.15602818869604,
-      "last_mult": 0.7811283125075693,
-      "last_check_et": "2026-10-08 14:53:46 EDT",
-      "exit_reason": null,
+      "last_bag_usd": 202.60462894728002,
+      "last_mult": 0.43579122920019103,
+      "last_check_et": "2026-10-08 14:55:17 EDT",
+      "exit_reason": "first_slowdown:hc5_nonpositive=-1.978%",
       "pnl_usd": null
     }
   ],
@@ -238,11 +238,6 @@
   },
   "recent_notes": [
     {
-      "et": "2026-10-07 11:04:27 EDT",
-      "event": "routine_skip",
-      "detail": "routine 11:03 run: 0 open organic positions, no TP sells. Skipped buy: live owner scan OWNER_SCAN_1103.json verdict NOTHING_GREAT_IN_BAND (AI = 40-min bot/sniper heat ~4% organic vol; TON618 wash-heavy; slopcannon fading; KOMO thin); parent awaiting owner greenlight. Sol ~4.47 SOL (~$517) kept for next buy. No bridge (no excess)."
-    },
-    {
       "et": "2026-10-07 11:59:06 EDT",
       "event": "buy_filled",
       "symbol": "TON618",
@@ -302,6 +297,12 @@
       "event": "early_exit_due",
       "symbol": "tardigrade",
       "reason": "early_first_slowdown@1.078x:first_slowdown:new_wallet_pace_slowing=last5m:+25,prior5m:+169"
+    },
+    {
+      "et": "2026-10-08 14:55:17 EDT",
+      "event": "early_exit_due",
+      "symbol": "pear",
+      "reason": "early_first_slowdown@0.436x:first_slowdown:hc5_nonpositive=-1.978%"
     }
   ]
 }
