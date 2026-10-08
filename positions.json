@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 15:54:06 EDT",
-  "state_updated_et": "2026-10-08 15:53:58 EDT",
+  "generated_et": "2026-10-08 15:55:08 EDT",
+  "state_updated_et": "10/8/2026, 15:54:59 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,28 +36,8 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 1,
-  "positions": [
-    {
-      "mint": "64oAuE88tNP7KsSyaiJTKGP4sWmLMFGWLUs9eBTLYgCp",
-      "symbol": "TikTok",
-      "name": "Tiktok Coin",
-      "status": "open",
-      "entry_et": "10/8/2026, 15:34:03 ET",
-      "cost_usd": 209.03699850247963,
-      "tokens_ui": 339764.498881,
-      "entry_price_usd": 0.0006152408482667676,
-      "entry_mc": 479832.6546192555,
-      "tp_multiple": 1.4,
-      "tp_target_usd": 292.65179790347145,
-      "tp_target_mc": 671765.7164669577,
-      "last_bag_usd": 314.3840908145893,
-      "last_mult": 1.5039638583925612,
-      "last_check_et": "2026-10-08 15:53:58 EDT",
-      "exit_reason": null,
-      "pnl_usd": null
-    }
-  ],
+  "open_organic_count": 0,
+  "positions": [],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -228,6 +208,25 @@
       "last_mult": 0.43579122920019103,
       "last_check_et": "2026-10-08 14:55:17 EDT",
       "exit_reason": "first_slowdown:hc5_nonpositive=-1.978%",
+      "pnl_usd": null
+    },
+    {
+      "mint": "64oAuE88tNP7KsSyaiJTKGP4sWmLMFGWLUs9eBTLYgCp",
+      "symbol": "TikTok",
+      "name": "Tiktok Coin",
+      "status": "closed",
+      "entry_et": "10/8/2026, 15:34:03 ET",
+      "cost_usd": 209.03699850247963,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.0006152408482667676,
+      "entry_mc": 479832.6546192555,
+      "tp_multiple": 2.0,
+      "tp_target_usd": 418.07399700495927,
+      "tp_target_mc": 959665.309238511,
+      "last_bag_usd": 326.9553772731863,
+      "last_mult": 1.5641029081715785,
+      "last_check_et": "2026-10-08 15:54:44 EDT",
+      "exit_reason": null,
       "pnl_usd": null
     }
   ],
