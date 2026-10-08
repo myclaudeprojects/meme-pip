@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 15:30:34 EDT",
-  "state_updated_et": "2026-10-08 15:30:31 EDT",
+  "generated_et": "2026-10-08 15:34:36 EDT",
+  "state_updated_et": "2026-10-08 15:34:22 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,8 +36,28 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 0,
-  "positions": [],
+  "open_organic_count": 1,
+  "positions": [
+    {
+      "mint": "64oAuE88tNP7KsSyaiJTKGP4sWmLMFGWLUs9eBTLYgCp",
+      "symbol": "TikTok",
+      "name": "Tiktok Coin",
+      "status": "open",
+      "entry_et": "10/8/2026, 15:34:03 ET",
+      "cost_usd": 209.03699850247963,
+      "tokens_ui": 339764.498881,
+      "entry_price_usd": 0.0006152408482667676,
+      "entry_mc": 479832.6546192555,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 292.65179790347145,
+      "tp_target_mc": 671765.7164669577,
+      "last_bag_usd": 204.1644873775929,
+      "last_mult": 0.9766906760057171,
+      "last_check_et": "2026-10-08 15:34:22 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
+    }
+  ],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -221,10 +241,10 @@
       "mcap": 479832.6546192555
     },
     "last_buy": {
-      "as_of_et": "10/8/2026, 14:52:41 ET",
-      "symbol": "pear",
-      "mint": "6UCR8nmHZGauct3tKfismdYuLFemB6iMtuKEGycq7wCX",
-      "cost_usd": 464.91213079051846
+      "as_of_et": "10/8/2026, 15:34:03 ET",
+      "symbol": "TikTok",
+      "mint": "64oAuE88tNP7KsSyaiJTKGP4sWmLMFGWLUs9eBTLYgCp",
+      "cost_usd": 209.03699850247963
     }
   },
   "cash_snapshot": {
