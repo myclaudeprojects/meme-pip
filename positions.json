@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 14:16:16 EDT",
-  "state_updated_et": "2026-10-08 14:16:08 EDT",
+  "generated_et": "2026-10-08 14:17:17 EDT",
+  "state_updated_et": "10/8/2026, 14:16:56 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,28 +36,8 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 1,
-  "positions": [
-    {
-      "mint": "CGhvhYKn9zkVJqRFtkVJrs74pejj3vupqA5LTJLJff5K",
-      "symbol": "tardigrade",
-      "name": "tardigrade",
-      "status": "open",
-      "entry_et": "10/8/2026, 14:07:20 ET",
-      "cost_usd": 471.4260964133981,
-      "tokens_ui": 2014142.680486,
-      "entry_price_usd": 0.00023405794484214295,
-      "entry_mc": 226417.75985808767,
-      "tp_multiple": 1.4,
-      "tp_target_usd": 659.9965349787573,
-      "tp_target_mc": 316984.8638013227,
-      "last_bag_usd": 503.7370843895486,
-      "last_mult": 1.0685388191743561,
-      "last_check_et": "2026-10-08 14:16:08 EDT",
-      "exit_reason": null,
-      "pnl_usd": null
-    }
-  ],
+  "open_organic_count": 0,
+  "positions": [],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -191,6 +171,25 @@
       "last_check_et": "2026-10-08 13:53:46 EDT",
       "exit_reason": "first_slowdown:holders_flat_or_down=2693->2692",
       "pnl_usd": null
+    },
+    {
+      "mint": "CGhvhYKn9zkVJqRFtkVJrs74pejj3vupqA5LTJLJff5K",
+      "symbol": "tardigrade",
+      "name": "tardigrade",
+      "status": "closed",
+      "entry_et": "10/8/2026, 14:07:20 ET",
+      "cost_usd": 471.4260964133981,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.00023405794484214295,
+      "entry_mc": 226417.75985808767,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 659.9965349787573,
+      "tp_target_mc": 316984.8638013227,
+      "last_bag_usd": 508.1681982866178,
+      "last_mult": 1.077938201030348,
+      "last_check_et": "2026-10-08 14:16:53 EDT",
+      "exit_reason": "first_slowdown:new_wallet_pace_slowing=last5m:+25,prior5m:+169",
+      "pnl_usd": null
     }
   ],
   "last_decision": {
@@ -218,11 +217,6 @@
     "note": "after manual LOADED buy (~4.26 SOL); organic loop has no cash"
   },
   "recent_notes": [
-    {
-      "et": "2026-10-07 10:07:43 EDT",
-      "event": "owner_strategy_change_1_8x_full_sell",
-      "detail": "TP 2.3x moonbag \u2192 1.8x FULL SELL. After sells leave ~$500 Sol cash, Relay excess to Arc USDC 8488. Max2, buy $500, MC 200-500k, Sol cash only, no Jupiter. Frank SEPARATE hold 5x \u2014 do not sell."
-    },
     {
       "et": "2026-10-07 11:04:27 EDT",
       "event": "routine_skip",
@@ -282,6 +276,12 @@
       "event": "early_exit_due",
       "symbol": "PQC",
       "reason": "early_first_slowdown@0.974x:first_slowdown:holders_flat_or_down=2693->2692"
+    },
+    {
+      "et": "2026-10-08 14:16:53 EDT",
+      "event": "early_exit_due",
+      "symbol": "tardigrade",
+      "reason": "early_first_slowdown@1.078x:first_slowdown:new_wallet_pace_slowing=last5m:+25,prior5m:+169"
     }
   ]
 }
