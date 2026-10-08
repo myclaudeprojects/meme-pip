@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 14:38:22 EDT",
-  "state_updated_et": "2026-10-08 14:37:31 EDT",
+  "generated_et": "2026-10-08 14:53:24 EDT",
+  "state_updated_et": "2026-10-08 14:53:01 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,8 +36,28 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 0,
-  "positions": [],
+  "open_organic_count": 1,
+  "positions": [
+    {
+      "mint": "6UCR8nmHZGauct3tKfismdYuLFemB6iMtuKEGycq7wCX",
+      "symbol": "pear",
+      "name": "pear to this",
+      "status": "open",
+      "entry_et": "10/8/2026, 14:52:41 ET",
+      "cost_usd": 464.91213079051846,
+      "tokens_ui": 1702559.90712,
+      "entry_price_usd": 0.0002730665328405096,
+      "entry_mc": 275696.45467562595,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 650.8769831067258,
+      "tp_target_mc": 385975.0365458763,
+      "last_bag_usd": 472.2901182350881,
+      "last_mult": 1.0158696384885126,
+      "last_check_et": "2026-10-08 14:53:01 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
+    }
+  ],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -194,18 +214,18 @@
   ],
   "last_decision": {
     "last_skip_reason": null,
-    "last_scan_et": "2026-10-08 14:37:31 EDT",
-    "last_scan_n_in_band": 3,
+    "last_scan_et": "2026-10-08 14:52:37 EDT",
+    "last_scan_n_in_band": 2,
     "last_scan_best": {
-      "symbol": "GOMO",
-      "mint": "9XKzy4KahcZaGJPJtz1PtqGPB3CiseoBrx7TcQhEpump",
-      "mcap": 520987.9101020816
+      "symbol": "pear",
+      "mint": "6UCR8nmHZGauct3tKfismdYuLFemB6iMtuKEGycq7wCX",
+      "mcap": 275696.45467562595
     },
     "last_buy": {
-      "as_of_et": "10/8/2026, 14:07:20 ET",
-      "symbol": "tardigrade",
-      "mint": "CGhvhYKn9zkVJqRFtkVJrs74pejj3vupqA5LTJLJff5K",
-      "cost_usd": 471.4260964133981
+      "as_of_et": "10/8/2026, 14:52:41 ET",
+      "symbol": "pear",
+      "mint": "6UCR8nmHZGauct3tKfismdYuLFemB6iMtuKEGycq7wCX",
+      "cost_usd": 464.91213079051846
     }
   },
   "cash_snapshot": {
