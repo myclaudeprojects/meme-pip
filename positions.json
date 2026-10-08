@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 16:51:04 EDT",
-  "state_updated_et": "2026-10-08 16:50:39 EDT",
+  "generated_et": "2026-10-08 16:51:22 EDT",
+  "state_updated_et": "10/8/2026, 16:51:11 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,28 +36,8 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 1,
-  "positions": [
-    {
-      "mint": "9Hcksg9o6oXbJWN7FTAL2HFrvknqTzmmNybBYP4UA6cP",
-      "symbol": "X",
-      "name": null,
-      "status": "open",
-      "entry_et": "10/8/2026, 16:49:39 ET",
-      "cost_usd": 242.63466415299996,
-      "tokens_ui": 1052256.606874,
-      "entry_price_usd": 0.00023058507075931687,
-      "entry_mc": null,
-      "tp_multiple": 1.4,
-      "tp_target_usd": 339.6885298141999,
-      "tp_target_mc": null,
-      "last_bag_usd": 206.76842325074102,
-      "last_mult": 0.8521800624512477,
-      "last_check_et": "2026-10-08 16:50:39 EDT",
-      "exit_reason": null,
-      "pnl_usd": null
-    }
-  ],
+  "open_organic_count": 0,
+  "positions": [],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -322,6 +302,25 @@
       "last_bag_usd": 18.44498318647655,
       "last_mult": 0.07377993274590619,
       "last_check_et": "2026-10-08 16:48:23 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
+    },
+    {
+      "mint": "9Hcksg9o6oXbJWN7FTAL2HFrvknqTzmmNybBYP4UA6cP",
+      "symbol": "X",
+      "name": null,
+      "status": "closed",
+      "entry_et": "10/8/2026, 16:49:39 ET",
+      "cost_usd": 242.63466415299996,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.00023058507075931687,
+      "entry_mc": null,
+      "tp_multiple": 999.0,
+      "tp_target_usd": 242392.02948884695,
+      "tp_target_mc": null,
+      "last_bag_usd": 206.76842325074102,
+      "last_mult": 0.8521800624512477,
+      "last_check_et": "2026-10-08 16:50:39 EDT",
       "exit_reason": null,
       "pnl_usd": null
     }
