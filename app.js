@@ -8,7 +8,30 @@
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
   const cls = (v) => (v > 0 ? "pos" : v < 0 ? "neg" : "muted");
-  const dex = (mint) => "https://dexscreener.com/solana/" + encodeURIComponent(mint);
+  // Chart links point at the live pool (PumpSwap first, else deepest-liquidity pair), never the dead pump.fun curve.
+  const POOL = {};
+  const dex = (mint) => POOL[mint] ? "https://dexscreener.com/solana/" + POOL[mint] : "https://dexscreener.com/solana/" + encodeURIComponent(mint);
+  const fixLinks = async () => {
+    const links = [...document.querySelectorAll('a[href^="https://dexscreener.com/solana/"]')];
+    const mintOf = (a) => decodeURIComponent(a.href.split("/solana/")[1] || "").split(/[?#]/)[0];
+    const need = [...new Set(links.map(mintOf).filter((m) => m && m.length > 30 && !POOL[m] && !Object.values(POOL).includes(m)))];
+    for (let i = 0; i < need.length; i += 30) {
+      try {
+        const r = await fetch("https://api.dexscreener.com/latest/dex/tokens/" + need.slice(i, i + 30).join(","));
+        const j = await r.json();
+        const by = {};
+        for (const p of j.pairs || []) { const m = p.baseToken && p.baseToken.address; if (m) (by[m] = by[m] || []).push(p); }
+        for (const [m, ps] of Object.entries(by)) {
+          const live = ps.filter((p) => p.dexId !== "pumpfun");
+          const pick = live.find((p) => p.dexId === "pumpswap") || live.sort((a, b) => ((b.liquidity || {}).usd || 0) - ((a.liquidity || {}).usd || 0))[0];
+          if (pick) POOL[m] = pick.pairAddress;
+        }
+      } catch (e) {}
+    }
+    for (const a of links) { const m = mintOf(a); if (POOL[m]) a.href = "https://dexscreener.com/solana/" + POOL[m]; }
+  };
+  let fixT = null;
+  new MutationObserver(() => { clearTimeout(fixT); fixT = setTimeout(fixLinks, 300); }).observe(document.documentElement, { childList: true, subtree: true });
   const short = (a) => a.slice(0, 4) + "…" + a.slice(-4);
 
   const S = { snap: null, snapSrc: null, scan: null, wallet: null, walletErr: null, arc: null, arcErr: null,
