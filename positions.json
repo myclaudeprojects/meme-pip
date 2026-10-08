@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 14:05:00 EDT",
-  "state_updated_et": "2026-10-08 13:54:31 EDT",
+  "generated_et": "2026-10-08 14:08:02 EDT",
+  "state_updated_et": "2026-10-08 14:07:49 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,8 +36,28 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 0,
-  "positions": [],
+  "open_organic_count": 1,
+  "positions": [
+    {
+      "mint": "CGhvhYKn9zkVJqRFtkVJrs74pejj3vupqA5LTJLJff5K",
+      "symbol": "tardigrade",
+      "name": "tardigrade",
+      "status": "open",
+      "entry_et": "10/8/2026, 14:07:20 ET",
+      "cost_usd": 471.4260964133981,
+      "tokens_ui": 2014142.680486,
+      "entry_price_usd": 0.00023405794484214295,
+      "entry_mc": 226417.75985808767,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 659.9965349787573,
+      "tp_target_mc": 316984.8638013227,
+      "last_bag_usd": 456.8075599342248,
+      "last_mult": 0.9689908204268052,
+      "last_check_et": "2026-10-08 14:07:49 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
+    }
+  ],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -175,18 +195,18 @@
   ],
   "last_decision": {
     "last_skip_reason": null,
-    "last_scan_et": "2026-10-08 13:52:09 EDT",
-    "last_scan_n_in_band": 3,
+    "last_scan_et": "2026-10-08 14:07:17 EDT",
+    "last_scan_n_in_band": 5,
     "last_scan_best": {
-      "symbol": "PQC",
-      "mint": "7K52aYQW9rWGjwZmQ7o2d1P6E7bji6hSMsqaLy5EcxLh",
-      "mcap": 418938.2841520275
+      "symbol": "tardigrade",
+      "mint": "CGhvhYKn9zkVJqRFtkVJrs74pejj3vupqA5LTJLJff5K",
+      "mcap": 226417.75985808767
     },
     "last_buy": {
-      "as_of_et": "10/8/2026, 13:52:13 ET",
-      "symbol": "PQC",
-      "mint": "7K52aYQW9rWGjwZmQ7o2d1P6E7bji6hSMsqaLy5EcxLh",
-      "cost_usd": 460.32405733022216
+      "as_of_et": "10/8/2026, 14:07:20 ET",
+      "symbol": "tardigrade",
+      "mint": "CGhvhYKn9zkVJqRFtkVJrs74pejj3vupqA5LTJLJff5K",
+      "cost_usd": 471.4260964133981
     }
   },
   "cash_snapshot": {
