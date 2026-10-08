@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 16:26:52 EDT",
-  "state_updated_et": "2026-10-08 16:26:30 EDT",
+  "generated_et": "2026-10-08 16:27:54 EDT",
+  "state_updated_et": "2026-10-08 16:27:33 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -51,9 +51,9 @@
       "tp_multiple": 1.4,
       "tp_target_usd": 408.5900364085037,
       "tp_target_mc": null,
-      "last_bag_usd": 833.0335357102416,
-      "last_mult": 2.8543205807112186,
-      "last_check_et": "2026-10-08 16:26:30 EDT",
+      "last_bag_usd": 855.8089495255916,
+      "last_mult": 2.9323586543308386,
+      "last_check_et": "2026-10-08 16:27:15 EDT",
       "exit_reason": null,
       "pnl_usd": null
     }
@@ -290,9 +290,13 @@
   ],
   "last_decision": {
     "last_skip_reason": null,
-    "last_scan_et": "2026-10-08 16:15:34 EDT",
-    "last_scan_n_in_band": 0,
-    "last_scan_best": null,
+    "last_scan_et": "2026-10-08 16:27:33 EDT",
+    "last_scan_n_in_band": 1,
+    "last_scan_best": {
+      "symbol": "Pumpfolio",
+      "mint": "Hx2wGfknTwCqJoUG4RhHSciePaKmkC8yrZz6ZesHpump",
+      "mcap": 230563.65475929205
+    },
     "last_buy": {
       "as_of_et": "10/8/2026, 16:08:34 ET",
       "symbol": "Pack",
