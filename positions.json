@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 16:48:35 EDT",
-  "state_updated_et": "2026-10-08 16:48:23 EDT",
+  "generated_et": "2026-10-08 16:49:01 EDT",
+  "state_updated_et": "10/8/2026, 16:48:42 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,28 +36,8 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 1,
-  "positions": [
-    {
-      "mint": "25UjGzzVKSKnHrtrnZ6xJUSYyv4GTJ1eSSgWmVs6pump",
-      "symbol": "Instagram",
-      "name": null,
-      "status": "open",
-      "entry_et": "10/8/2026, 16:31:39 ET",
-      "cost_usd": 250.00000000000003,
-      "tokens_ui": 3102604.40479,
-      "entry_price_usd": 8.057746569753912e-05,
-      "entry_mc": null,
-      "tp_multiple": 1.4,
-      "tp_target_usd": 350.0,
-      "tp_target_mc": null,
-      "last_bag_usd": 18.44498318647655,
-      "last_mult": 0.07377993274590619,
-      "last_check_et": "2026-10-08 16:48:23 EDT",
-      "exit_reason": null,
-      "pnl_usd": null
-    }
-  ],
+  "open_organic_count": 0,
+  "positions": [],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -304,6 +284,25 @@
       "last_mult": 2.8902180945762437,
       "last_check_et": "2026-10-08 16:32:32 EDT",
       "exit_reason": "manual sell 16:22 ET",
+      "pnl_usd": null
+    },
+    {
+      "mint": "25UjGzzVKSKnHrtrnZ6xJUSYyv4GTJ1eSSgWmVs6pump",
+      "symbol": "Instagram",
+      "name": null,
+      "status": "closed",
+      "entry_et": "10/8/2026, 16:31:39 ET",
+      "cost_usd": 250.00000000000003,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 8.057746569753912e-05,
+      "entry_mc": null,
+      "tp_multiple": 10.0,
+      "tp_target_usd": 2500.0000000000005,
+      "tp_target_mc": null,
+      "last_bag_usd": 18.44498318647655,
+      "last_mult": 0.07377993274590619,
+      "last_check_et": "2026-10-08 16:48:23 EDT",
+      "exit_reason": null,
       "pnl_usd": null
     }
   ],
