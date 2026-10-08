@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-08 16:08:23 EDT",
-  "state_updated_et": "2026-10-08 16:07:30 EDT",
+  "generated_et": "2026-10-08 16:09:26 EDT",
+  "state_updated_et": "2026-10-08 16:09:08 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -36,8 +36,28 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 0,
-  "positions": [],
+  "open_organic_count": 1,
+  "positions": [
+    {
+      "mint": "9oxWMhM4QN1hLGNutaTFcBjMjJce6QxrvVxAcGW6pump",
+      "symbol": "Pack",
+      "name": null,
+      "status": "open",
+      "entry_et": "10/8/2026, 16:08:34 ET",
+      "cost_usd": 291.8500260060741,
+      "tokens_ui": 911016.552614,
+      "entry_price_usd": 0.0003203564470575889,
+      "entry_mc": null,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 408.5900364085037,
+      "tp_target_mc": null,
+      "last_bag_usd": 288.6100438681152,
+      "last_mult": 0.9888984689078238,
+      "last_check_et": "2026-10-08 16:09:08 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
+    }
+  ],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -278,10 +298,10 @@
       "mcap": 507577.19979413395
     },
     "last_buy": {
-      "as_of_et": "10/8/2026, 16:03:21 ET",
-      "symbol": "UP",
-      "mint": "FzPujTgKNJVim7YYa5HYHngGtf19QwV6ACJ1zDLWpump",
-      "cost_usd": 313.173578437074
+      "as_of_et": "10/8/2026, 16:08:34 ET",
+      "symbol": "Pack",
+      "mint": "9oxWMhM4QN1hLGNutaTFcBjMjJce6QxrvVxAcGW6pump",
+      "cost_usd": 291.8500260060741
     }
   },
   "cash_snapshot": {
