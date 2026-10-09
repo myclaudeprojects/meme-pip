@@ -61,7 +61,8 @@
     const s = S.snap; if (!s) return [];
     const open = (s.positions || []).map((p) => Object.assign({ _kind: "open" }, p));
     const dust = (s.history || []).filter((p) => p.status === "moonbag").map((p) => Object.assign({ _kind: "dust" }, p));
-    return open.concat(dust);
+    const manual = (s.manual_positions || []).map((p) => Object.assign({ _kind: "manual" }, p));
+    return open.concat(dust, manual);
   }
 
   // ---------- loaders ----------
@@ -123,7 +124,7 @@
       }
     }
     for (const p of snapPositions()) {
-      if (p._kind !== "open" || seen.has(p.mint)) continue;
+      if ((p._kind !== "open" && p._kind !== "manual") || seen.has(p.mint)) continue;
       const px = S.prices[p.mint];
       out.push({ mint: p.mint, amount: tokens ? 0 : p.tokens_ui, value: tokens ? 0 : (px != null && p.tokens_ui ? px * p.tokens_ui : null),
                  snap: p, live: false, missing: !!tokens });
@@ -184,7 +185,7 @@
 
   function renderPositions(P) {
     const pos = buildPositions();
-    const organic = pos.filter((p) => !(p.snap && p.snap._kind === "dust") && p.mint !== CFG.FRANK);
+    const organic = pos.filter((p) => !(p.snap && (p.snap._kind === "dust" || p.snap._kind === "manual")) && p.mint !== CFG.FRANK);
     $("c-pos").textContent = organic.length + " / " + P.maxPos;
     $("c-pos-s").textContent = (S.wallet && S.wallet.tokensOk) ? "inferred from on-chain holdings > $" + MIN_POS_USD + " (excl. SOL/USDC)" : "on-chain holdings unavailable; using snapshot";
     $("pos-note").textContent = S.snap ? "cost basis from positions.json (" + (S.snap.generated_et || "?") + ")" : "no positions.json, so value only";
@@ -204,9 +205,9 @@
         const w = Math.max(0, Math.min(1, mult / tp)) * 100;
         bar = `<div class="bar" title="${mult.toFixed(2)}× of ${tp}× target"><i class="${mult < 1 ? "down" : ""}" style="width:${w.toFixed(1)}%"></i>` +
               `<b class="one" style="left:${(100 / tp).toFixed(1)}%" title="1.0× (cost)"></b><b style="left:${(100 * P.early / tp).toFixed(1)}%" title="${P.early}× early-exit preference"></b></div>` +
-              `<div class="muted" style="font-size:11px">TP at ${C.fmtUsd(cost * tp)} (${tp}×)${p.snap.entry_mc ? " · entry MC $" + C.fmtK(p.snap.entry_mc) + " → TP MC ≈ $" + C.fmtK(p.snap.entry_mc * tp) : ""}</div>`;
+              `<div class="muted" style="font-size:11px">${p.snap._kind === "manual" ? "Exit" : "TP"} at ${C.fmtUsd(cost * tp)} (${Number(tp).toFixed(tp >= 10 ? 0 : 1)}×)${p.snap.entry_mc ? " · entry MC $" + C.fmtK(p.snap.entry_mc) + " → TP MC ≈ $" + C.fmtK(p.snap.entry_mc * tp) : ""}</div>`;
       }
-      const tag = p.mint === CFG.FRANK ? ' <span class="badge HELD">FRANK, separate</span>' : (p.snap && p.snap._kind === "dust") ? ' <span class="badge SKIP">legacy dust</span>' : "";
+      const tag = p.mint === CFG.FRANK ? ' <span class="badge HELD">FRANK, separate</span>' : (p.snap && p.snap._kind === "dust") ? ' <span class="badge SKIP">legacy dust</span>' : (p.snap && p.snap._kind === "manual") ? ' <span class="badge HELD">manual hold</span>' : "";
       const miss = p.missing ? '<div class="warn" style="font-size:11px">In snapshot as open but not in wallet now (likely sold since snapshot)</div>' : (!p.live ? '<div class="muted" style="font-size:11px">value from snapshot token amount × live price</div>' : "");
       html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a>${tag}${miss}</td>` +
         `<td>${p.amount != null ? Number(p.amount).toLocaleString("en-US", { maximumFractionDigits: 0 }) : "-"}</td><td>${C.fmtUsd(p.value)}</td><td>${cost ? C.fmtUsd(cost) : "-"}</td>` +
