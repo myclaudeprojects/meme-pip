@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-09 12:27:30 EDT",
-  "state_updated_et": "2026-10-09 12:26:39 EDT",
+  "generated_et": "2026-10-09 12:42:08 EDT",
+  "state_updated_et": "2026-10-09 12:41:43 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -341,9 +341,13 @@
   ],
   "last_decision": {
     "last_skip_reason": null,
-    "last_scan_et": "2026-10-09 12:26:39 EDT",
-    "last_scan_n_in_band": 0,
-    "last_scan_best": null,
+    "last_scan_et": "2026-10-09 12:41:43 EDT",
+    "last_scan_n_in_band": 1,
+    "last_scan_best": {
+      "symbol": "Circuit",
+      "mint": "EcZndAERfzNhLirHwfsy44dAyPSZazjDU83pa6RApump",
+      "mcap": 207017.68615272717
+    },
     "last_buy": {
       "as_of_et": "10/8/2026, 16:49:39 ET",
       "symbol": "X",
