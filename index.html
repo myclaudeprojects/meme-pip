@@ -56,6 +56,15 @@
   .chip.ok::before { content:"● "; color:var(--green); } .chip.bad::before { content:"● "; color:var(--red); }
   footer { color:var(--muted); font-size:12px; text-align:center; padding:10px; }
   .spark { vertical-align:middle; }
+  .spark-link { display:inline-block; cursor:pointer; border-radius:4px; padding:1px; }
+  .spark-link:hover { background:#1f6feb22; outline:1px solid #1f6feb66; }
+  #holder-panel { position:fixed; inset:0; background:#0008; display:none; align-items:center; justify-content:center; z-index:50; padding:12px; }
+  #holder-panel-body { background:#0d1117; border:1px solid #30363d; border-radius:10px; padding:16px; width:min(720px,100%); max-height:90vh; overflow:auto; }
+  .hp-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .hp-head button { background:none; border:1px solid #30363d; color:#c9d1d9; border-radius:6px; cursor:pointer; padding:2px 8px; }
+  .hstats { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:8px; }
+  .hstat { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:6px 8px; font-size:13px; }
+  .hstat .muted { font-size:11px; }
 </style>
 </head>
 <body>
@@ -126,5 +135,6 @@
 <script src="positions.js" onerror="void 0"></script>
 <script src="core.js"></script>
 <script src="app.js"></script>
+<div id="holder-panel"><div id="holder-panel-body"></div></div>
 </body>
 </html>

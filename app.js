@@ -138,6 +138,7 @@
     $("f-sol").innerHTML = `<a href="https://solscan.io/account/${CFG.SOL_WALLET}" target="_blank" rel="noopener">${short(CFG.SOL_WALLET)}</a>`;
     $("f-arc").textContent = short(CFG.ARC_WALLET);
     renderCards(P); const pos = renderPositions(P); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
+    renderHolderPanel();
   }
 
   function renderCards(P) {
@@ -212,13 +213,87 @@
         `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
         `<td class="l">${bar}</td><td>${info ? info.holders.toLocaleString() : "-"}</td>` +
         `<td class="${cls(info && info.hc5)}">${info ? C.fmtPct(info.hc5) : "-"}</td><td class="${cls(info && info.hc1)}">${info ? C.fmtPct(info.hc1) : "-"}</td>` +
-        `<td class="l">${spark(p.mint)}<div style="font-size:11px">${holderSignal(p.mint, info)}</div></td></tr>`;
+        `<td class="l"><a href="#" class="spark-link" data-mint="${esc(p.mint)}" title="Click for holder details">${spark(p.mint)}</a><div style="font-size:11px">${holderSignal(p.mint, info)}</div></td></tr>`;
     }
     html += "</tbody></table></div>";
     if (S.walletErr) html += `<div class="msg err">Live wallet read failed (${esc(S.walletErr)}). Rows above come from the snapshot.</div>`;
     $("positions").innerHTML = html; saveHist();
     return pos;
   }
+
+  // ---------- holder detail panel (click the trend line) ----------
+  let openMint = null;
+  const tfmt = (t) => new Date(t).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", second: "2-digit" });
+  function newHoldersBetween(a, fromT, toT) {
+    const pts = a.filter((x) => x.t >= fromT && x.t <= toT); if (pts.length < 2) return null;
+    return pts[pts.length - 1].h - pts[0].h;
+  }
+  function bigChart(a) {
+    if (a.length < 2) return '<div class="muted">Collecting history. A point is saved about every minute while this page is open.</div>';
+    const W = 640, H = 200, L = 52, R = 10, T = 10, B = 26;
+    const hs = a.map((x) => x.h), lo = Math.min(...hs), hi = Math.max(...hs), t0 = a[0].t, t1 = a[a.length - 1].t;
+    const X = (t) => L + (t1 === t0 ? 0 : (t - t0) / (t1 - t0)) * (W - L - R);
+    const Y = (h) => T + (hi === lo ? 0.5 : 1 - (h - lo) / (hi - lo)) * (H - T - B);
+    const col = hs[hs.length - 1] >= hs[0] ? "#3fb950" : "#f85149";
+    let g = "";
+    for (let i = 0; i <= 4; i++) { const v = lo + (hi - lo) * i / 4, y = Y(v);
+      g += `<line x1="${L}" x2="${W - R}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#30363d" stroke-dasharray="3 3"/><text x="${L - 6}" y="${(y + 4).toFixed(1)}" fill="#8b949e" font-size="11" text-anchor="end">${Math.round(v).toLocaleString()}</text>`; }
+    g += `<text x="${L}" y="${H - 6}" fill="#8b949e" font-size="11">${tfmt(t0)}</text><text x="${W - R}" y="${H - 6}" fill="#8b949e" font-size="11" text-anchor="end">${tfmt(t1)} ET</text>`;
+    const pts = a.map((x) => `${X(x.t).toFixed(1)},${Y(x.h).toFixed(1)}`).join(" ");
+    const dots = a.map((x, i) => { const d = i ? x.h - a[i - 1].h : 0;
+      return `<circle cx="${X(x.t).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r="3" fill="${col}"><title>${tfmt(x.t)} ET: ${x.h.toLocaleString()} holders (${d >= 0 ? "+" : ""}${d})</title></circle>`; }).join("");
+    return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;height:auto">${g}<polyline fill="none" stroke="${col}" stroke-width="2" points="${pts}"/>${dots}</svg>`;
+  }
+  function renderHolderPanel() {
+    if (!openMint) return;
+    const m = openMint, info = S.info[m], a = S.hist[m] || [];
+    const sym = (info && info.symbol) || short(m), now = Date.now();
+    const last5 = newHoldersBetween(a, now - 5 * 60000, now), prev5 = newHoldersBetween(a, now - 10 * 60000, now - 5 * 60000);
+    let pace = '<span class="muted">Needs about 10 minutes of history on this page.</span>';
+    if (last5 != null && prev5 != null) {
+      const slow = (prev5 >= 4 && last5 < prev5 * 0.5) || last5 <= 0;
+      pace = `<b>${last5 >= 0 ? "+" : ""}${last5}</b> new holders in the last 5 min vs <b>${prev5 >= 0 ? "+" : ""}${prev5}</b> in the 5 min before. ` +
+        (slow ? '<span class="warn">Pace is slowing.</span>' : '<span class="pos">Pace is holding up.</span>');
+    } else if (last5 != null) pace = `<b>${last5 >= 0 ? "+" : ""}${last5}</b> new holders in the last 5 min (not enough history yet for the prior 5 min).`;
+    const first = a[0], cur = a[a.length - 1];
+    const sess = first && cur ? `${(cur.h - first.h >= 0 ? "+" : "")}${(cur.h - first.h).toLocaleString()} since ${tfmt(first.t)} ET` : "-";
+    const stat = (k, v, c) => `<div class="hstat"><div class="muted">${k}</div><div class="${c || ""}">${v}</div></div>`;
+    let h = `<div class="hp-head"><h2 style="margin:0">${esc(sym)} holders</h2><button id="hp-close" title="Close">✕</button></div>`;
+    h += '<div class="hstats">' +
+      stat("Holders now", info ? info.holders.toLocaleString() : (cur ? cur.h.toLocaleString() : "-")) +
+      stat("Change on this page", sess) +
+      stat("Holders Δ5m", info ? C.fmtPct(info.hc5) : "-", cls(info && info.hc5)) +
+      stat("Holders Δ1h", info ? C.fmtPct(info.hc1) : "-", cls(info && info.hc1)) +
+      stat("Holders Δ6h", info ? C.fmtPct(info.hc6) : "-", cls(info && info.hc6)) +
+      stat("Holders Δ24h", info ? C.fmtPct(info.hc24) : "-", cls(info && info.hc24)) +
+      stat("Organic buyers 1h", info ? info.nob1.toLocaleString() : "-") +
+      stat("Organic buy share 1h", info && info.orgBuyPct != null ? info.orgBuyPct.toFixed(0) + "%" : "-") +
+      stat("Organic score", info ? info.org.toFixed(1) + (info.orgLabel ? " (" + esc(info.orgLabel) + ")" : "") : "-") +
+      stat("Top holders own", info && info.topHolders != null ? info.topHolders.toFixed(1) + "%" : "-") +
+      stat("Market cap", info ? "$" + C.fmtK(info.mcap) : "-") +
+      stat("Liquidity", info ? "$" + C.fmtK(info.liq) : "-") + "</div>";
+    h += `<div style="margin:10px 0;font-size:13px">${pace}</div>`;
+    h += bigChart(a.slice(-120));
+    const rows = a.slice(-15).reverse();
+    if (rows.length) {
+      h += '<table style="margin-top:10px"><thead><tr><th class="l">Time (ET)</th><th>Holders</th><th>Change</th><th>Jupiter Δ5m</th></tr></thead><tbody>';
+      rows.forEach((x, i) => { const p = a[a.length - 1 - i - 1]; const d = p ? x.h - p.h : null;
+        h += `<tr><td class="l">${tfmt(x.t)}</td><td>${x.h.toLocaleString()}</td><td class="${cls(d)}">${d == null ? "-" : (d >= 0 ? "+" : "") + d}</td><td class="${cls(x.hc5)}">${x.hc5 == null ? "-" : C.fmtPct(x.hc5)}</td></tr>`; });
+      h += "</tbody></table>";
+    }
+    h += `<div style="margin-top:10px;font-size:13px"><a href="https://solscan.io/token/${encodeURIComponent(m)}#holders" target="_blank" rel="noopener">Full holder list on Solscan</a> · <a href="${dex(m)}" target="_blank" rel="noopener">Chart</a></div>`;
+    h += '<div class="muted" style="margin-top:6px;font-size:11px">The history is saved in this browser while the page is open, so gaps mean the page was closed.</div>';
+    $("holder-panel-body").innerHTML = h;
+    $("hp-close").onclick = closeHolder;
+  }
+  function openHolder(mint) { openMint = mint; $("holder-panel").style.display = "flex"; renderHolderPanel(); }
+  function closeHolder() { openMint = null; $("holder-panel").style.display = "none"; }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest(".spark-link");
+    if (a) { e.preventDefault(); openHolder(a.dataset.mint); return; }
+    if (e.target.id === "holder-panel") closeHolder();
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && openMint) closeHolder(); });
 
   function renderDecision(P) {
     const s = S.snap;
