@@ -403,7 +403,8 @@
     if (!f.t) return '<td class="l fs muted">-</td>';
     if (f.baseline) {
       const since = S.snap && S.snap.scanner_first_seen && S.snap.scanner_first_seen.tracking_since;
-      return `<td class="l fs"><span class="muted" title="Already on the scanner when first-seen tracking started${since ? " (" + esc(since) + ")" : ""}">on scanner before ${hm(f.t)}</span></td>`;
+      const lbl = f.src === "page" ? `listed when page opened (${hm(f.t)})` : `on scanner before tracking began (${hm(f.t)})`;
+      return `<td class="l fs"><span class="muted" title="Already on the scanner when first-seen tracking started${since ? " (" + esc(since) + ")" : ""}">${lbl}</span></td>`;
     }
     const age = Date.now() - f.t;
     const badge = age < 15 * 60e3 ? '<span class="badge NEW">NEW</span> ' : age < 60 * 60e3 ? '<span class="badge new">new</span> ' : "";
