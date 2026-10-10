@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-10 09:50:45 EDT",
-  "state_updated_et": "2026-10-10 09:36:36 EDT",
+  "generated_et": "2026-10-10 09:51:48 EDT",
+  "state_updated_et": "2026-10-10 09:51:41 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -355,12 +355,12 @@
   ],
   "last_decision": {
     "last_skip_reason": null,
-    "last_scan_et": "2026-10-10 09:36:36 EDT",
-    "last_scan_n_in_band": 5,
+    "last_scan_et": "2026-10-10 09:51:41 EDT",
+    "last_scan_n_in_band": 7,
     "last_scan_best": {
-      "symbol": "Pepper",
-      "mint": "HXHZT27p7C9t62QyDgPoEHiRFsLoqUTYnJAmZ16tpump",
-      "mcap": 514298.08554197726
+      "symbol": "TM",
+      "mint": "6KDpQM4BVDdtAkjtyFDiBCkbii8q8BieEyXXm6kNpump",
+      "mcap": 884515.9954629345
     },
     "last_buy": {
       "as_of_et": "10/8/2026, 16:49:39 ET",
@@ -683,6 +683,10 @@
         [
           1791640205,
           3302
+        ],
+        [
+          1791640265,
+          3301
         ]
       ],
       "d": [
@@ -789,6 +793,10 @@
         [
           1791618605,
           3391
+        ],
+        [
+          1791618665,
+          3392
         ],
         [
           1791633188,
@@ -1039,6 +1047,10 @@
           3318
         ],
         [
+          1791636665,
+          3318
+        ],
+        [
           1791636715,
           3317
         ],
@@ -1237,6 +1249,10 @@
         [
           1791639905,
           3304
+        ],
+        [
+          1791639965,
+          3302
         ]
       ]
     },
@@ -1476,6 +1492,10 @@
         [
           1791640205,
           1017
+        ],
+        [
+          1791640265,
+          1017
         ]
       ],
       "d": [
@@ -1581,6 +1601,10 @@
         ],
         [
           1791618605,
+          1035
+        ],
+        [
+          1791618665,
           1035
         ],
         [
@@ -1781,6 +1805,10 @@
         ],
         [
           1791636605,
+          1024
+        ],
+        [
+          1791636665,
           1024
         ],
         [
@@ -2141,6 +2169,10 @@
         [
           1791640205,
           1247
+        ],
+        [
+          1791640265,
+          1247
         ]
       ],
       "d": [
@@ -2246,6 +2278,10 @@
         ],
         [
           1791618605,
+          1259
+        ],
+        [
+          1791618665,
           1259
         ],
         [
@@ -2485,6 +2521,10 @@
           1250
         ],
         [
+          1791636665,
+          1250
+        ],
+        [
           1791637317,
           1250
         ],
@@ -2650,6 +2690,10 @@
         [
           1791640205,
           2743
+        ],
+        [
+          1791640265,
+          2756
         ]
       ],
       "d": [
@@ -2692,6 +2736,10 @@
         [
           1791636605,
           702
+        ],
+        [
+          1791636665,
+          951
         ],
         [
           1791638280,
@@ -2804,71 +2852,75 @@
         [
           1791639905,
           2860
+        ],
+        [
+          1791639965,
+          2886
         ]
       ]
     }
   },
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
-    "last_scan_ts": 1791639396.8693879,
+    "last_scan_ts": 1791640301.517758,
     "tokens": {
       "7536qC4LEs3W2GtSKbhVGNJSiRfuXJhKVthxsgfkpump": {
         "first_seen": 1791637587,
-        "last_seen": 1791639396,
+        "last_seen": 1791640300,
         "symbol": "FACTORY",
         "baseline": true
       },
       "6KDpQM4BVDdtAkjtyFDiBCkbii8q8BieEyXXm6kNpump": {
         "first_seen": 1791637587,
-        "last_seen": 1791639248,
+        "last_seen": 1791640301,
         "symbol": "TM",
         "baseline": true
       },
       "ERkmk5rs8KKD9u2fxoDZUmwwuVc7rT3sSeowGTrQuBit": {
         "first_seen": 1791637586,
-        "last_seen": 1791639395,
+        "last_seen": 1791640300,
         "symbol": "QUBIT",
         "baseline": true
       },
       "EpFTb2XcGiMyGLykZ9VYmyPWz2AHEwAggqSbwJpypump": {
         "first_seen": 1791637587,
-        "last_seen": 1791639396,
+        "last_seen": 1791640301,
         "symbol": "IMAGINE",
         "baseline": true
       },
       "3HKKrXhDvGFWPdkALw3KofESZexsEx9opGtq37n9pump": {
         "first_seen": 1791637586,
-        "last_seen": 1791639395,
+        "last_seen": 1791640300,
         "symbol": "SIB",
         "baseline": true
       },
       "7K52aYQW9rWGjwZmQ7o2d1P6E7bji6hSMsqaLy5EcxLh": {
         "first_seen": 1791637586,
-        "last_seen": 1791639395,
+        "last_seen": 1791640300,
         "symbol": "PQC",
         "baseline": true
       },
       "HbPDWSqu8hpVMX6gMjwMDGe5rVgicWo3Qh3Jaojypump": {
         "first_seen": 1791637584,
-        "last_seen": 1791639394,
+        "last_seen": 1791640297,
         "symbol": "Frank",
         "baseline": true
       },
       "mGzw6zwvig3GitrCM6sGJXdRWeWz81X2vyzVH3Upump": {
         "first_seen": 1791637584,
-        "last_seen": 1791639396,
+        "last_seen": 1791640301,
         "symbol": "REELS",
         "baseline": true
       },
       "DoVAVzViX8Bjy3r15nwikSaSbzE6dV4ovd28aWpJpump": {
         "first_seen": 1791637584,
-        "last_seen": 1791639393,
+        "last_seen": 1791640297,
         "symbol": "HIGGS",
         "baseline": true
       },
       "4mbPZzDCWXvTCJbscMWeDD7TT1pra9mkZHGaBxc2jupx": {
         "first_seen": 1791637586,
-        "last_seen": 1791639395,
+        "last_seen": 1791640300,
         "symbol": "JPAD",
         "baseline": true
       },
@@ -2898,7 +2950,7 @@
       },
       "HwJyyniKKDRLXxjRSzyLtpvxzqecqrhrbcSbKRm7STNK": {
         "first_seen": 1791637586,
-        "last_seen": 1791639395,
+        "last_seen": 1791640300,
         "symbol": "SWOLF",
         "baseline": true
       },
@@ -2910,19 +2962,19 @@
       },
       "zj1jpp7QMveWHLs61vL9KMZf254KvW7j4AAmBF8ry2k": {
         "first_seen": 1791637587,
-        "last_seen": 1791639394,
+        "last_seen": 1791640298,
         "symbol": "BULLSHIT",
         "baseline": true
       },
       "HXHZT27p7C9t62QyDgPoEHiRFsLoqUTYnJAmZ16tpump": {
         "first_seen": 1791637585,
-        "last_seen": 1791639396,
+        "last_seen": 1791640300,
         "symbol": "Pepper",
         "baseline": true
       },
       "DzTyqMUbsWSvJeEzucEpyrjhcpV4FXYxDerX9UqRnvuj": {
         "first_seen": 1791638467,
-        "last_seen": 1791639395,
+        "last_seen": 1791640299,
         "symbol": "PAYGRAM"
       },
       "HMYd9tosnUXuNHmq7pXmoePRVBLBBjA3JBfydq6upump": {
@@ -2937,7 +2989,7 @@
       },
       "apiANKWvjcSFhavFEXvuE5wX8n312sVFtRpLQpX1api": {
         "first_seen": 1791639244,
-        "last_seen": 1791639392,
+        "last_seen": 1791640301,
         "symbol": "API"
       },
       "PLaYu3PKhGqtmvuwp7GuyTY1PG6JkwgE7R45Zqystar": {
@@ -2947,7 +2999,7 @@
       },
       "7Xgc5RacHtGzfhw2HukUBk5V986yBbvshr7rrCoopump": {
         "first_seen": 1791639248,
-        "last_seen": 1791639396,
+        "last_seen": 1791640301,
         "symbol": "DRMR"
       },
       "6zzzG49KX5nksnqfogs31dwoMYSHaJXkropKbv1QZVga": {
@@ -2967,12 +3019,12 @@
       },
       "9XKzy4KahcZaGJPJtz1PtqGPB3CiseoBrx7TcQhEpump": {
         "first_seen": 1791639395,
-        "last_seen": 1791639395,
+        "last_seen": 1791640300,
         "symbol": "GOMO"
       },
       "CscZaq5twomhUkvCY8Jdd1tge32L4Yj9FbkFFEZQpump": {
         "first_seen": 1791639394,
-        "last_seen": 1791639394,
+        "last_seen": 1791640301,
         "symbol": "PLAGUE"
       },
       "RACEyWiM2ztEZcJx2AHXU2eWjhxU57x3vXn92b39dLD": {
@@ -2982,8 +3034,23 @@
       },
       "uniHfuPhEQSrtpzXpJZDCSq53yaejKKpNhFUiKoHKHV": {
         "first_seen": 1791639394,
-        "last_seen": 1791639394,
+        "last_seen": 1791640298,
         "symbol": "UNI"
+      },
+      "EkFRff9a2jKztJHML1LG9FRmEkPJDR6XAYp3uCPdpump": {
+        "first_seen": 1791640301,
+        "last_seen": 1791640301,
+        "symbol": "SLOPCORE"
+      },
+      "3VPoXaRcXxju8qgkVRN87UuXZxbdBD7zyaXPDqqmpump": {
+        "first_seen": 1791640298,
+        "last_seen": 1791640298,
+        "symbol": "SI"
+      },
+      "EEpng77ZPn9FbgbT4xsRjwuxNCcMBYq3HTwEscyTpump": {
+        "first_seen": 1791640300,
+        "last_seen": 1791640300,
+        "symbol": "HeeHaw"
       }
     }
   },
