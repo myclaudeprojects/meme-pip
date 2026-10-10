@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-10 00:31:03 EDT",
-  "state_updated_et": "2026-10-10 00:30:06 EDT",
+  "generated_et": "2026-10-10 00:37:51 EDT",
+  "state_updated_et": "2026-10-10 00:37:27 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -341,9 +341,13 @@
   ],
   "last_decision": {
     "last_skip_reason": null,
-    "last_scan_et": "2026-10-10 00:30:06 EDT",
-    "last_scan_n_in_band": 0,
-    "last_scan_best": null,
+    "last_scan_et": "2026-10-10 00:37:27 EDT",
+    "last_scan_n_in_band": 2,
+    "last_scan_best": {
+      "symbol": "SLOPCORE",
+      "mint": "EkFRff9a2jKztJHML1LG9FRmEkPJDR6XAYp3uCPdpump",
+      "mcap": 634027.190304432
+    },
     "last_buy": {
       "as_of_et": "10/8/2026, 16:49:39 ET",
       "symbol": "X",
