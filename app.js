@@ -45,7 +45,29 @@
     const a = S.hist[mint] || (S.hist[mint] = []);
     const last = a[a.length - 1];
     if (!last || Date.now() - last.t > 25000) a.push({ t: Date.now(), h: holders, hc5 });
-    while (a.length > 120) a.shift();
+    if (a.length > 1500) thinLocal(a);
+  }
+  // Keep the whole lifetime in this browser too: full detail for 6h, then 1 point / 5 min (6-48h), 1 / 30 min older.
+  function thinLocal(a) {
+    const now = Date.now(), seen = new Set(), out = [];
+    for (const x of a) { const age = now - x.t;
+      if (age <= 6 * 3600e3) { out.push(x); continue; }
+      const b = age <= 48 * 3600e3 ? 300e3 : 1800e3, k = b + ":" + Math.floor(x.t / b);
+      if (!seen.has(k)) { seen.add(k); out.push(x); } }
+    a.splice(0, a.length, ...out);
+  }
+  // Lifetime series for a mint: measured = box recorder (positions.json holder_history.m) + this browser's samples;
+  // derived = back-calculated from Jupiter holderChange % windows; start = token launch time.
+  function holderSeries(mint) {
+    const hh = (S.snap && S.snap.holder_history && S.snap.holder_history[mint]) || {};
+    const by = new Map();
+    for (const [t, h] of hh.m || []) by.set(Math.round(t / 20) * 20000, { t: t * 1000, h, src: "box" });
+    for (const x of S.hist[mint] || []) by.set(Math.round(x.t / 20000) * 20000, { t: x.t, h: x.h, hc5: x.hc5, src: "page" });
+    const m = [...by.values()].sort((a, b) => a.t - b.t);
+    const d = (hh.d || []).map(([t, h]) => ({ t: t * 1000, h, src: "derived" })).sort((a, b) => a.t - b.t);
+    const all = m.concat(d).sort((a, b) => a.t - b.t);
+    const created = hh.created_ts ? hh.created_ts * 1000 : null;
+    return { m, d, all, created, start: created || (all[0] && all[0].t) || null };
   }
   function setSrc(name, ok, detail) { S.sources[name] = { ok, detail, t: Date.now() }; }
 
@@ -166,11 +188,14 @@
   }
 
   function spark(mint) {
-    const a = (S.hist[mint] || []).slice(-40); if (a.length < 2) return '<span class="muted">collecting…</span>';
+    const sr = holderSeries(mint), a = sr.all; if (a.length < 2) return '<span class="muted">collecting…</span>';
+    const t0 = Math.min(sr.start || a[0].t, a[0].t), t1 = Math.max(Date.now(), a[a.length - 1].t);
     const hs = a.map((x) => x.h), lo = Math.min(...hs), hi = Math.max(...hs), w = 110, h = 26;
-    const pts = a.map((x, i) => `${(i / (a.length - 1) * w).toFixed(1)},${(h - 2 - (hi === lo ? 0.5 : (x.h - lo) / (hi - lo)) * (h - 4)).toFixed(1)}`).join(" ");
+    const X = (t) => ((t - t0) / Math.max(1, t1 - t0) * w).toFixed(1), Y = (v) => (h - 2 - (hi === lo ? 0.5 : (v - lo) / (hi - lo)) * (h - 4)).toFixed(1);
+    const pts = a.map((x) => X(x.t) + "," + Y(x.h)).join(" ");
     const col = hs[hs.length - 1] >= hs[0] ? "#3fb950" : "#f85149";
-    return `<svg class="spark" width="${w}" height="${h}"><polyline fill="none" stroke="${col}" stroke-width="1.6" points="${pts}"/></svg>`;
+    const gap = a[0].t > t0 ? `<line x1="0" x2="${X(a[0].t)}" y1="${h - 1}" y2="${h - 1}" stroke="#8b949e" stroke-dasharray="2 2"/>` : "";
+    return `<svg class="spark" width="${w}" height="${h}"><title>Holders over token lifetime: ${fmtSpan(t1 - t0)} (since ${dtfmt(t0)} ET)</title>${gap}<polyline fill="none" stroke="${col}" stroke-width="1.6" points="${pts}"/></svg>`;
   }
 
   function holderSignal(mint, info) {
@@ -223,31 +248,52 @@
   }
 
   // ---------- holder detail panel (click the trend line) ----------
-  let openMint = null;
+  let openMint = null, hpRange = "all";
   const tfmt = (t) => new Date(t).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", second: "2-digit" });
+  const dtfmt = (t) => new Date(t).toLocaleString("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  const hmfmt = (t) => new Date(t).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
+  function fmtSpan(ms) { const m = ms / 60000; return m < 90 ? Math.round(m) + " min" : m < 48 * 60 ? (m / 60).toFixed(1) + " h" : (m / 1440).toFixed(1) + " days"; }
+  const RANGES = { "1h": 3600e3, "6h": 6 * 3600e3, "24h": 24 * 3600e3, all: null };
   function newHoldersBetween(a, fromT, toT) {
     const pts = a.filter((x) => x.t >= fromT && x.t <= toT); if (pts.length < 2) return null;
     return pts[pts.length - 1].h - pts[0].h;
   }
-  function bigChart(a) {
-    if (a.length < 2) return '<div class="muted">Collecting history. A point is saved about every minute while this page is open.</div>';
-    const W = 640, H = 200, L = 52, R = 10, T = 10, B = 26;
-    const hs = a.map((x) => x.h), lo = Math.min(...hs), hi = Math.max(...hs), t0 = a[0].t, t1 = a[a.length - 1].t;
-    const X = (t) => L + (t1 === t0 ? 0 : (t - t0) / (t1 - t0)) * (W - L - R);
+  function bigChart(sr, range) {
+    const now = Date.now(), span = RANGES[range];
+    const lifeStart = Math.min(sr.start || now, sr.all.length ? sr.all[0].t : now);
+    const t0 = span ? Math.max(now - span, range === "all" ? 0 : lifeStart) : lifeStart, t1 = now;
+    const inR = (x) => x.t >= t0 && x.t <= t1;
+    // include the last point before the window so the line enters from the left edge
+    const prevOf = (arr) => { let p = null; for (const x of arr) if (x.t < t0) p = x; return p; };
+    const all = sr.all.filter(inR), m = sr.m.filter(inR), d = sr.d.filter(inR);
+    const pa = prevOf(sr.all); if (pa) all.unshift(pa);
+    if (all.length < 1) return '<div class="muted">No holder samples in this range yet.</div>';
+    const W = 640, H = 210, L = 52, R = 12, T = 10, B = 30;
+    const hs = all.map((x) => x.h), lo = Math.min(...hs), hi = Math.max(...hs);
+    const X = (t) => L + (Math.max(t0, Math.min(t1, t)) - t0) / Math.max(1, t1 - t0) * (W - L - R);
     const Y = (h) => T + (hi === lo ? 0.5 : 1 - (h - lo) / (hi - lo)) * (H - T - B);
     const col = hs[hs.length - 1] >= hs[0] ? "#3fb950" : "#f85149";
     let g = "";
     for (let i = 0; i <= 4; i++) { const v = lo + (hi - lo) * i / 4, y = Y(v);
       g += `<line x1="${L}" x2="${W - R}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#30363d" stroke-dasharray="3 3"/><text x="${L - 6}" y="${(y + 4).toFixed(1)}" fill="#8b949e" font-size="11" text-anchor="end">${Math.round(v).toLocaleString()}</text>`; }
-    g += `<text x="${L}" y="${H - 6}" fill="#8b949e" font-size="11">${tfmt(t0)}</text><text x="${W - R}" y="${H - 6}" fill="#8b949e" font-size="11" text-anchor="end">${tfmt(t1)} ET</text>`;
-    const pts = a.map((x) => `${X(x.t).toFixed(1)},${Y(x.h).toFixed(1)}`).join(" ");
-    const dots = a.map((x, i) => { const d = i ? x.h - a[i - 1].h : 0;
-      return `<circle cx="${X(x.t).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r="3" fill="${col}"><title>${tfmt(x.t)} ET: ${x.h.toLocaleString()} holders (${d >= 0 ? "+" : ""}${d})</title></circle>`; }).join("");
-    return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;height:auto">${g}<polyline fill="none" stroke="${col}" stroke-width="2" points="${pts}"/>${dots}</svg>`;
+    const long = t1 - t0 > 20 * 3600e3;
+    for (let i = 0; i <= 4; i++) { const t = t0 + (t1 - t0) * i / 4, x = X(t);
+      g += `<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${T}" y2="${H - B}" stroke="#21262d"/>` +
+        `<text x="${x.toFixed(1)}" y="${H - 12}" fill="#8b949e" font-size="11" text-anchor="${i === 0 ? "start" : i === 4 ? "end" : "middle"}">${long ? dtfmt(t) : hmfmt(t)}</text>`; }
+    g += `<text x="${W - R}" y="${H - 1}" fill="#8b949e" font-size="10" text-anchor="end">ET</text>`;
+    const firstT = all[0].t;
+    if (firstT > t0 + (t1 - t0) * 0.01) g += `<rect x="${L}" y="${T}" width="${(X(firstT) - L).toFixed(1)}" height="${H - T - B}" fill="#8b949e14"/><text x="${((L + X(firstT)) / 2).toFixed(1)}" y="${(T + 16)}" fill="#8b949e" font-size="10" text-anchor="middle">no holder data</text>`;
+    if (sr.created && sr.created >= t0) g += `<line x1="${X(sr.created).toFixed(1)}" x2="${X(sr.created).toFixed(1)}" y1="${T}" y2="${H - B}" stroke="#d29922" stroke-dasharray="4 3"/><text x="${(X(sr.created) + 3).toFixed(1)}" y="${H - B - 4}" fill="#d29922" font-size="10">launch</text>`;
+    const line = (arr, extra) => arr.length > 1 ? `<polyline fill="none" stroke="${col}" ${extra} points="${arr.map((x) => X(x.t).toFixed(1) + "," + Y(x.h).toFixed(1)).join(" ")}"/>` : "";
+    const tip = (x, d) => `<title>${dtfmt(x.t)} ET: ${x.h.toLocaleString()} holders${d != null ? " (" + (d >= 0 ? "+" : "") + d + ")" : ""}${x.src === "derived" ? " (derived from Jupiter % change)" : ""}</title>`;
+    const showDots = m.length <= 150;
+    const dots = (showDots ? m.map((x, i) => `<circle cx="${X(x.t).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r="2.5" fill="${col}">${tip(x, i ? x.h - m[i - 1].h : null)}</circle>`).join("") : "") +
+      d.map((x) => `<circle cx="${X(x.t).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r="3.5" fill="#0d1117" stroke="${col}" stroke-width="1.5">${tip(x)}</circle>`).join("");
+    return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;height:auto">${g}${line(all, 'stroke-width="1.4" stroke-dasharray="4 3" opacity="0.7"')}${line(m, 'stroke-width="2"')}${dots}</svg>`;
   }
   function renderHolderPanel() {
     if (!openMint) return;
-    const m = openMint, info = S.info[m], a = S.hist[m] || [];
+    const m = openMint, info = S.info[m], sr = holderSeries(m), a = sr.m;
     const sym = (info && info.symbol) || short(m), now = Date.now();
     const last5 = newHoldersBetween(a, now - 5 * 60000, now), prev5 = newHoldersBetween(a, now - 10 * 60000, now - 5 * 60000);
     let pace = '<span class="muted">Needs about 10 minutes of history on this page.</span>';
@@ -256,13 +302,14 @@
       pace = `<b>${last5 >= 0 ? "+" : ""}${last5}</b> new holders in the last 5 min vs <b>${prev5 >= 0 ? "+" : ""}${prev5}</b> in the 5 min before. ` +
         (slow ? '<span class="warn">Pace is slowing.</span>' : '<span class="pos">Pace is holding up.</span>');
     } else if (last5 != null) pace = `<b>${last5 >= 0 ? "+" : ""}${last5}</b> new holders in the last 5 min (not enough history yet for the prior 5 min).`;
-    const first = a[0], cur = a[a.length - 1];
-    const sess = first && cur ? `${(cur.h - first.h >= 0 ? "+" : "")}${(cur.h - first.h).toLocaleString()} since ${tfmt(first.t)} ET` : "-";
+    const first = sr.all[0], cur = a[a.length - 1] || sr.all[sr.all.length - 1];
+    const sess = first && cur ? `${(cur.h - first.h >= 0 ? "+" : "")}${(cur.h - first.h).toLocaleString()} since ${dtfmt(first.t)} ET` : "-";
     const stat = (k, v, c) => `<div class="hstat"><div class="muted">${k}</div><div class="${c || ""}">${v}</div></div>`;
     let h = `<div class="hp-head"><h2 style="margin:0">${esc(sym)} holders</h2><button id="hp-close" title="Close">✕</button></div>`;
     h += '<div class="hstats">' +
       stat("Holders now", info ? info.holders.toLocaleString() : (cur ? cur.h.toLocaleString() : "-")) +
-      stat("Change on this page", sess) +
+      stat("Change over recorded history", sess) +
+      stat("Token age", sr.created ? fmtSpan(now - sr.created) + " (launched " + dtfmt(sr.created) + " ET)" : "-") +
       stat("Holders Δ5m", info ? C.fmtPct(info.hc5) : "-", cls(info && info.hc5)) +
       stat("Holders Δ1h", info ? C.fmtPct(info.hc1) : "-", cls(info && info.hc1)) +
       stat("Holders Δ6h", info ? C.fmtPct(info.hc6) : "-", cls(info && info.hc6)) +
@@ -274,7 +321,11 @@
       stat("Market cap", info ? "$" + C.fmtK(info.mcap) : "-") +
       stat("Liquidity", info ? "$" + C.fmtK(info.liq) : "-") + "</div>";
     h += `<div style="margin:10px 0;font-size:13px">${pace}</div>`;
-    h += bigChart(a.slice(-120));
+    h += '<div class="hp-ranges" style="margin:6px 0">' + Object.keys(RANGES).map((k) =>
+      `<button data-range="${k}" class="${k === hpRange ? "on" : ""}">${k === "all" ? "All" : k}</button>`).join("") + "</div>";
+    h += bigChart(sr, hpRange);
+    const firstM = a[0];
+    h += `<div class="muted" style="font-size:11px">Solid line/dots = measured holder counts${firstM ? " (since " + dtfmt(firstM.t) + " ET)" : ""}. Hollow dots + dashed line = derived from Jupiter's 5m/1h/6h/24h holder % change. Shaded = no data (no free source has a holder-count history before that).</div>`;
     const rows = a.slice(-15).reverse();
     if (rows.length) {
       h += '<table style="margin-top:10px"><thead><tr><th class="l">Time (ET)</th><th>Holders</th><th>Change</th><th>Jupiter Δ5m</th></tr></thead><tbody>';
@@ -283,9 +334,10 @@
       h += "</tbody></table>";
     }
     h += `<div style="margin-top:10px;font-size:13px"><a href="https://solscan.io/token/${encodeURIComponent(m)}#holders" target="_blank" rel="noopener">Full holder list on Solscan</a> · <a href="${dex(m)}" target="_blank" rel="noopener">Chart</a></div>`;
-    h += '<div class="muted" style="margin-top:6px;font-size:11px">The history is saved in this browser while the page is open, so gaps mean the page was closed.</div>';
+    h += '<div class="muted" style="margin-top:6px;font-size:11px">History is recorded on the bot box about once a minute for the whole life of each position (older points thinned) and merged with samples this browser takes while the page is open.</div>';
     $("holder-panel-body").innerHTML = h;
     $("hp-close").onclick = closeHolder;
+    for (const b of document.querySelectorAll(".hp-ranges button")) b.onclick = () => { hpRange = b.dataset.range; renderHolderPanel(); };
   }
   function openHolder(mint) { openMint = mint; $("holder-panel").style.display = "flex"; renderHolderPanel(); }
   function closeHolder() { openMint = null; $("holder-panel").style.display = "none"; }

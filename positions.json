@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-10 08:52:04 EDT",
+  "generated_et": "2026-10-10 08:53:54 EDT",
   "state_updated_et": "2026-10-10 08:51:23 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -331,6 +331,7 @@
       "symbol": "BORDR",
       "status": "manual",
       "cost_usd": 2113.0,
+      "cost_src": "cost_usd_approx",
       "cost_sol": 19.283,
       "tokens_ui": 2314669.770401,
       "entry_mc": 912873.0,
@@ -343,6 +344,7 @@
       "symbol": "XNS",
       "status": "manual",
       "cost_usd": 222.49,
+      "cost_src": "cost_usd",
       "cost_sol": 2.029617596,
       "tokens_ui": 1016877.980816,
       "entry_mc": 218794.0,
@@ -443,5 +445,120 @@
       "symbol": "UP",
       "reason": "early_first_slowdown@0.937x:first_slowdown:hc5_nonpositive=-0.115%"
     }
-  ]
+  ],
+  "holder_history": {
+    "ETVzMhc6m8WiRdi2MRvmj7k6vCVfYUNceJ29FbHjpump": {
+      "symbol": "XNS",
+      "created_ts": 1791622550.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1791636788,
+          1014
+        ]
+      ],
+      "d": [
+        [
+          1791622550,
+          15
+        ],
+        [
+          1791633188,
+          898
+        ],
+        [
+          1791636488,
+          1009
+        ]
+      ]
+    },
+    "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
+      "symbol": "BORDR",
+      "created_ts": 1791422260.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1791636788,
+          3318
+        ]
+      ],
+      "d": [
+        [
+          1791550388,
+          3185
+        ],
+        [
+          1791615188,
+          3395
+        ],
+        [
+          1791633188,
+          3362
+        ],
+        [
+          1791636488,
+          3322
+        ]
+      ]
+    },
+    "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML": {
+      "symbol": "HASHERS",
+      "created_ts": 1791356510.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1791636788,
+          1024
+        ]
+      ],
+      "d": [
+        [
+          1791550388,
+          1091
+        ],
+        [
+          1791615188,
+          1037
+        ],
+        [
+          1791633188,
+          1023
+        ],
+        [
+          1791636488,
+          1023
+        ]
+      ]
+    },
+    "DEQKHY5YVPFiwcVhoUUE5gnkWj66LVPoPgLHAswqpump": {
+      "symbol": "ART",
+      "created_ts": 1791376335.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1791636788,
+          1250
+        ]
+      ],
+      "d": [
+        [
+          1791550388,
+          1305
+        ],
+        [
+          1791615188,
+          1258
+        ],
+        [
+          1791633188,
+          1251
+        ],
+        [
+          1791636488,
+          1251
+        ]
+      ]
+    }
+  },
+  "holder_history_note": "m = measured Jupiter holderCount samples (box recorder, ~1/min, older points downsampled); d = derived from Jupiter holderChange % windows; created_ts = token launch (Jupiter firstPool.createdAt)"
 }
