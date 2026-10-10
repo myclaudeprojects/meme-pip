@@ -66,6 +66,17 @@
   .hstat { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:6px 8px; font-size:13px; }
   .hstat .muted { font-size:11px; }
   .hp-ranges button { background:#161b22; border:1px solid #30363d; color:#c9d1d9; border-radius:6px; cursor:pointer; padding:2px 10px; margin-right:4px; font-size:12px; }
+  #scan tr.new15 td { background:#3fb95026; }
+  #scan tr.new15 td:first-child { box-shadow: inset 4px 0 0 #3fb950; }
+  #scan tr.new60 td { background:#1f6feb14; }
+  #scan tr.new60 td:first-child { box-shadow: inset 3px 0 0 #1f6feb88; }
+  .badge.NEW { background:#3fb950; color:#04260f; box-shadow:0 0 8px #3fb950aa; }
+  .badge.new { background:transparent; color:#58a6ff; border:1px solid #1f6feb; font-weight:600; }
+  .fs { white-space:nowrap; font-size:12px; } .fs .muted { font-size:11px; }
+  @keyframes newflash { 0% { background:#3fb95099; } 100% { background:#3fb95026; } }
+  #scan tr.flash td { animation: newflash 2.5s ease-out 2; }
+  #scan-sort button { background:#161b22; border:1px solid #30363d; color:#c9d1d9; border-radius:6px; cursor:pointer; padding:2px 10px; margin-left:4px; font-size:12px; }
+  #scan-sort button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
   .hp-ranges button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
 </style>
 </head>
@@ -106,15 +117,16 @@
 
   <section>
     <h2>Live scan: $200k–$1M band <small id="scan-note"></small></h2>
+    <div id="scan-sort" style="margin:4px 0 8px;font-size:12px"></div>
     <div id="top-pass"></div>
     <div class="wrap"><table id="scan">
       <thead><tr>
-        <th class="l">Verdict</th><th class="l">Symbol</th><th>MC</th><th>Liquidity</th><th>Holders</th>
+        <th class="l">First seen (ET)</th><th class="l">Verdict</th><th class="l">Symbol</th><th>MC</th><th>Liquidity</th><th>Holders</th>
         <th>Hold Δ 5m</th><th>Hold Δ 1h</th><th>Hold Δ 6h</th><th>Hold Δ 24h</th>
         <th>Org buyers 1h</th><th>Org buy %</th><th>Price 1h</th><th>Top holders</th><th>Pool age</th><th>Org score</th>
         <th class="l">Reason</th>
       </tr></thead>
-      <tbody><tr><td class="l muted" colspan="16">Loading…</td></tr></tbody>
+      <tbody><tr><td class="l muted" colspan="17">Loading…</td></tr></tbody>
     </table></div>
   </section>
 

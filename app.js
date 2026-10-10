@@ -373,13 +373,64 @@
              heldMints: (pos || []).filter((p) => p.live).map((p) => p.mint) };
   }
 
+  // ---------- scanner "first seen" (display only) ----------
+  // Server: positions.json scanner_first_seen (bot scan lists, written by dashboard_snapshot.py).
+  // Page: tokens this browser sees appear between bot scans (localStorage). Gone > 6h and back = new again.
+  const FS_RENEW = 6 * 3600e3;
+  let scanSort = localStorage.getItem("scanSort") || "newest", fsLocal = (() => { try { return JSON.parse(localStorage.getItem("scanFirstSeen") || "{}"); } catch (e) { return {}; } })();
+  let lastScanAt = null, prevScanIds = null, scanRounds = 0;
+  function updateLocalFs(ids) {
+    const now = Date.now(), base = scanRounds === 0 && !Object.keys(fsLocal).length;
+    for (const id of ids) { const e = fsLocal[id];
+      if (!e || now - e.last > FS_RENEW) fsLocal[id] = { t: now, last: now, baseline: base || scanRounds === 0 };
+      else e.last = now; }
+    for (const [id, e] of Object.entries(fsLocal)) if (now - e.last > 7 * 86400e3) delete fsLocal[id];
+    try { localStorage.setItem("scanFirstSeen", JSON.stringify(fsLocal)); } catch (e) {}
+  }
+  function firstSeen(id) {
+    const sv = S.snap && S.snap.scanner_first_seen && S.snap.scanner_first_seen.tokens && S.snap.scanner_first_seen.tokens[id];
+    const lc = fsLocal[id];
+    const svT = sv ? sv.first_seen * 1000 : null;
+    // server renewed after a >6h gap or page-spotted earlier than the bot's scan -> use the newer evidence sensibly
+    if (sv && lc && !lc.baseline && lc.t < svT && svT - lc.t < FS_RENEW) return { t: lc.t, baseline: false, src: "page" };
+    if (sv) return { t: svT, baseline: !!sv.baseline, src: "bot scan" };
+    if (lc) return { t: lc.t, baseline: !!lc.baseline, src: "page" };
+    return { t: null, baseline: true, src: null };
+  }
+  function agoTxt(ms) { const m = Math.floor(ms / 60000); return m < 1 ? "just now" : m < 60 ? m + "m ago" : m < 1440 ? Math.floor(m / 60) + "h " + (m % 60) + "m ago" : Math.floor(m / 1440) + "d ago"; }
+  const hm = (t) => new Date(t).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
+  function fsCell(f) {
+    if (!f.t) return '<td class="l fs muted">-</td>';
+    if (f.baseline) {
+      const since = S.snap && S.snap.scanner_first_seen && S.snap.scanner_first_seen.tracking_since;
+      return `<td class="l fs"><span class="muted" title="Already on the scanner when first-seen tracking started${since ? " (" + esc(since) + ")" : ""}">on scanner before ${hm(f.t)}</span></td>`;
+    }
+    const age = Date.now() - f.t;
+    const badge = age < 15 * 60e3 ? '<span class="badge NEW">NEW</span> ' : age < 60 * 60e3 ? '<span class="badge new">new</span> ' : "";
+    return `<td class="l fs" title="First seen ${esc(new Date(f.t).toLocaleString("en-US", { timeZone: "America/New_York" }))} ET (via ${f.src})">${badge}first seen ${agoTxt(age)}<div class="muted">${hm(f.t)} ET</div></td>`;
+  }
+  function renderSortBar() {
+    const el = $("scan-sort"); if (!el) return;
+    el.innerHTML = '<span class="muted">Sort:</span>' + [["newest", "Newest first"], ["verdict", "Verdict, then score (old sort)"]].map(([k, l]) => `<button data-sort="${k}" class="${scanSort === k ? "on" : ""}">${l}</button>`).join("") +
+      ' <span class="muted" style="margin-left:8px"><span class="badge NEW">NEW</span> first seen &lt; 15 min · <span class="badge new">new</span> &lt; 60 min</span>';
+    for (const b of el.querySelectorAll("button")) b.onclick = () => { scanSort = b.dataset.sort; localStorage.setItem("scanSort", scanSort); render(); };
+  }
+
   function renderScan(P, pos) {
     const tb = document.querySelector("#scan tbody");
-    if (!S.scan) { tb.innerHTML = `<tr><td class="l" colspan="16"><div class="msg err">Scan unavailable: ${esc(S.scanErr || "loading…")}. Jupiter token API blocked or unreachable from this browser.</div></td></tr>`; return; }
+    renderSortBar();
+    if (!S.scan) { tb.innerHTML = `<tr><td class="l" colspan="17"><div class="msg err">Scan unavailable: ${esc(S.scanErr || "loading…")}. Jupiter token API blocked or unreachable from this browser.</div></td></tr>`; return; }
     const ctx = evalCtx(pos);
-    const rows = S.scan.cands.filter((c) => c.mcap >= P.mcapMin && c.mcap <= P.mcapMax).map((c) => ({ c, e: C.evaluate(c, ctx) }));
+    const inBand = S.scan.cands.filter((c) => c.mcap >= P.mcapMin && c.mcap <= P.mcapMax);
+    const newRound = S.scan.at !== lastScanAt;
+    if (newRound) { updateLocalFs(inBand.map((c) => c.id)); }
+    const rows = inBand.map((c) => ({ c, e: C.evaluate(c, ctx), f: firstSeen(c.id) }));
     const rank = { PASS: 0, HELD: 1, SKIP: 2 };
-    rows.sort((a, b) => rank[a.e.verdict] - rank[b.e.verdict] || b.c.score - a.c.score);
+    const oldSort = (a, b) => rank[a.e.verdict] - rank[b.e.verdict] || b.c.score - a.c.score;
+    const fsKey = (r) => r.f.t == null ? -Infinity : r.f.baseline ? r.f.t - 1e13 : r.f.t; // baseline (pre-tracking) rows sink below tracked ones
+    rows.sort(scanSort === "newest" ? ((a, b) => fsKey(b) - fsKey(a) || oldSort(a, b)) : oldSort);
+    const flashIds = new Set(newRound && prevScanIds ? inBand.map((c) => c.id).filter((id) => !prevScanIds.has(id)) : []);
+    if (newRound) { prevScanIds = new Set(inBand.map((c) => c.id)); lastScanAt = S.scan.at; scanRounds++; }
     const nPass = rows.filter((r) => r.e.verdict === "PASS").length;
     $("scan-note").textContent = `${rows.length} candidates in band · ${nPass} PASS · universe ${S.scan.cands.length} tokens · scanned ${C.nowEt(new Date(S.scan.at))}`;
     const organicOpen = (pos || []).filter((p) => p.live && !(p.snap && p.snap._kind === "dust") && p.mint !== CFG.FRANK).length;
@@ -387,10 +438,12 @@
     $("top-pass").innerHTML = best
       ? `<div class="msg ok">Top PASS right now: <b>${esc(best.c.symbol)}</b> ($${C.fmtK(best.c.mcap)} MC). ${organicOpen >= P.maxPos ? "Max positions reached, so the bot would not add." : "Information only. The bot makes its own decision on its next scan."}</div>`
       : `<div class="msg">Nothing passes all rules right now, so the bot would skip.</div>`;
-    if (!rows.length) { tb.innerHTML = '<tr><td class="l muted" colspan="16">No tokens in the band in the current Jupiter lists.</td></tr>'; return; }
-    tb.innerHTML = rows.map(({ c, e }) => {
+    if (!rows.length) { tb.innerHTML = '<tr><td class="l muted" colspan="17">No tokens in the band in the current Jupiter lists.</td></tr>'; return; }
+    tb.innerHTML = rows.map(({ c, e, f }) => {
       const top = c.topHolders == null ? "-" : c.topHolders.toFixed(0) + "%";
-      return `<tr><td class="l"><span class="badge ${e.verdict}">${e.verdict}</span></td>` +
+      const age = f.t && !f.baseline ? Date.now() - f.t : Infinity;
+      const rc = [age < 15 * 60e3 ? "new15" : age < 60 * 60e3 ? "new60" : "", flashIds.has(c.id) ? "flash" : ""].join(" ").trim();
+      return `<tr class="${rc}" data-id="${esc(c.id)}">${fsCell(f)}<td class="l"><span class="badge ${e.verdict}">${e.verdict}</span></td>` +
         `<td class="l"><a href="${dex(c.id)}" target="_blank" rel="noopener" title="${esc(c.name)} · ${esc(c.id)}">${esc(c.symbol)}</a></td>` +
         `<td>$${C.fmtK(c.mcap)}</td><td>$${C.fmtK(c.liq)}</td><td>${c.holders.toLocaleString()}</td>` +
         `<td class="${cls(c.hc5)}">${C.fmtPct(c.hc5)}</td><td class="${cls(c.hc1)}">${C.fmtPct(c.hc1)}</td>` +
