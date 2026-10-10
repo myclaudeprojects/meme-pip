@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-10 10:50:27 EDT",
-  "state_updated_et": "2026-10-10 10:36:54 EDT",
+  "generated_et": "2026-10-10 10:52:29 EDT",
+  "state_updated_et": "2026-10-10 10:51:58 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -342,12 +342,12 @@
   ],
   "last_decision": {
     "last_skip_reason": null,
-    "last_scan_et": "2026-10-10 10:36:54 EDT",
-    "last_scan_n_in_band": 5,
+    "last_scan_et": "2026-10-10 10:51:58 EDT",
+    "last_scan_n_in_band": 2,
     "last_scan_best": {
-      "symbol": "Altai",
-      "mint": "FDJqEqqS68jummd8XGtBqzJTu2Pgc3pGQjozrpUzpump",
-      "mcap": 771478.6045819905
+      "symbol": "Tschuna",
+      "mint": "BXZTSaRAgDtPefLWCaVR4ersTst79FpbPoiztvGgpump",
+      "mcap": 540911.7111417011
     },
     "last_buy": {
       "as_of_et": "10/8/2026, 16:49:39 ET",
@@ -910,6 +910,14 @@
         [
           1791643816,
           3267
+        ],
+        [
+          1791643876,
+          3266
+        ],
+        [
+          1791643936,
+          3264
         ]
       ],
       "d": [
@@ -1826,7 +1834,15 @@
           3301
         ],
         [
+          1791640276,
+          3300
+        ],
+        [
           1791640326,
+          3299
+        ],
+        [
+          1791640336,
           3299
         ],
         [
@@ -2028,6 +2044,14 @@
         [
           1791643516,
           3273
+        ],
+        [
+          1791643576,
+          3271
+        ],
+        [
+          1791643636,
+          3270
         ]
       ]
     },
@@ -2506,6 +2530,14 @@
         ],
         [
           1791643816,
+          1007
+        ],
+        [
+          1791643876,
+          1007
+        ],
+        [
+          1791643936,
           1007
         ]
       ],
@@ -3287,7 +3319,15 @@
           1016
         ],
         [
+          1791640276,
+          1016
+        ],
+        [
           1791640326,
+          1016
+        ],
+        [
+          1791640336,
           1016
         ],
         [
@@ -3852,6 +3892,14 @@
         [
           1791643816,
           1246
+        ],
+        [
+          1791643876,
+          1245
+        ],
+        [
+          1791643936,
+          1245
         ]
       ],
       "d": [
@@ -4580,19 +4628,35 @@
           1248
         ],
         [
+          1791640276,
+          1246
+        ],
+        [
+          1791640336,
+          1246
+        ],
+        [
           1791640507,
           1247
         ],
         [
           1791640567,
           1247
+        ],
+        [
+          1791643576,
+          1246
+        ],
+        [
+          1791643636,
+          1246
         ]
       ]
     }
   },
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
-    "last_scan_ts": 1791643014.1425576,
+    "last_scan_ts": 1791643918.303285,
     "tokens": {
       "7536qC4LEs3W2GtSKbhVGNJSiRfuXJhKVthxsgfkpump": {
         "first_seen": 1791637587,
@@ -4602,13 +4666,13 @@
       },
       "6KDpQM4BVDdtAkjtyFDiBCkbii8q8BieEyXXm6kNpump": {
         "first_seen": 1791637587,
-        "last_seen": 1791642884,
+        "last_seen": 1791643917,
         "symbol": "TM",
         "baseline": true
       },
       "ERkmk5rs8KKD9u2fxoDZUmwwuVc7rT3sSeowGTrQuBit": {
         "first_seen": 1791637586,
-        "last_seen": 1791643012,
+        "last_seen": 1791643917,
         "symbol": "QUBIT",
         "baseline": true
       },
@@ -4620,19 +4684,19 @@
       },
       "3HKKrXhDvGFWPdkALw3KofESZexsEx9opGtq37n9pump": {
         "first_seen": 1791637586,
-        "last_seen": 1791643012,
+        "last_seen": 1791643917,
         "symbol": "SIB",
         "baseline": true
       },
       "7K52aYQW9rWGjwZmQ7o2d1P6E7bji6hSMsqaLy5EcxLh": {
         "first_seen": 1791637586,
-        "last_seen": 1791643012,
+        "last_seen": 1791643917,
         "symbol": "PQC",
         "baseline": true
       },
       "HbPDWSqu8hpVMX6gMjwMDGe5rVgicWo3Qh3Jaojypump": {
         "first_seen": 1791637584,
-        "last_seen": 1791643011,
+        "last_seen": 1791643915,
         "symbol": "Frank",
         "baseline": true
       },
@@ -4644,13 +4708,13 @@
       },
       "DoVAVzViX8Bjy3r15nwikSaSbzE6dV4ovd28aWpJpump": {
         "first_seen": 1791637584,
-        "last_seen": 1791643014,
+        "last_seen": 1791643915,
         "symbol": "HIGGS",
         "baseline": true
       },
       "4mbPZzDCWXvTCJbscMWeDD7TT1pra9mkZHGaBxc2jupx": {
         "first_seen": 1791637586,
-        "last_seen": 1791643012,
+        "last_seen": 1791643917,
         "symbol": "JPAD",
         "baseline": true
       },
@@ -4680,7 +4744,7 @@
       },
       "HwJyyniKKDRLXxjRSzyLtpvxzqecqrhrbcSbKRm7STNK": {
         "first_seen": 1791637586,
-        "last_seen": 1791643012,
+        "last_seen": 1791643917,
         "symbol": "SWOLF",
         "baseline": true
       },
@@ -4714,7 +4778,7 @@
       },
       "EcZndAERfzNhLirHwfsy44dAyPSZazjDU83pa6RApump": {
         "first_seen": 1791638466,
-        "last_seen": 1791642883,
+        "last_seen": 1791643917,
         "symbol": "Circuit"
       },
       "apiANKWvjcSFhavFEXvuE5wX8n312sVFtRpLQpX1api": {
@@ -4759,7 +4823,7 @@
       },
       "RACEyWiM2ztEZcJx2AHXU2eWjhxU57x3vXn92b39dLD": {
         "first_seen": 1791639394,
-        "last_seen": 1791643011,
+        "last_seen": 1791643916,
         "symbol": "RACE"
       },
       "uniHfuPhEQSrtpzXpJZDCSq53yaejKKpNhFUiKoHKHV": {
@@ -4769,7 +4833,7 @@
       },
       "EkFRff9a2jKztJHML1LG9FRmEkPJDR6XAYp3uCPdpump": {
         "first_seen": 1791640301,
-        "last_seen": 1791643010,
+        "last_seen": 1791643915,
         "symbol": "SLOPCORE"
       },
       "3VPoXaRcXxju8qgkVRN87UuXZxbdBD7zyaXPDqqmpump": {
@@ -4779,12 +4843,12 @@
       },
       "EEpng77ZPn9FbgbT4xsRjwuxNCcMBYq3HTwEscyTpump": {
         "first_seen": 1791640300,
-        "last_seen": 1791643012,
+        "last_seen": 1791643917,
         "symbol": "HeeHaw"
       },
       "72QvBVwpxqmheEPfaCwWSWqEFsUy3rhWt6JhQBMNTwD1": {
         "first_seen": 1791641047,
-        "last_seen": 1791643011,
+        "last_seen": 1791643916,
         "symbol": "ENA"
       },
       "Gyk9Z93Ri2JUjqES9HTpc7pxCJTLD7vhBhEjBhyApump": {
@@ -4794,7 +4858,7 @@
       },
       "FDJqEqqS68jummd8XGtBqzJTu2Pgc3pGQjozrpUzpump": {
         "first_seen": 1791641048,
-        "last_seen": 1791643014,
+        "last_seen": 1791643917,
         "symbol": "Altai"
       },
       "cbLTC4T5NpzSUtQ7ekgEMZGaUPVJY1ko6BUikqa4gGf": {
@@ -4809,18 +4873,33 @@
       },
       "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx": {
         "first_seen": 1791641923,
-        "last_seen": 1791643012,
+        "last_seen": 1791643917,
         "symbol": "HIMS"
       },
       "HzYCHqAN2uoHGRnL9v2ChCfFQX3bvJuJd5zu2Hd5MZQy": {
         "first_seen": 1791642107,
-        "last_seen": 1791643011,
+        "last_seen": 1791643916,
         "symbol": "TWEETCRAFT"
       },
       "95ccfn4UAUu3mQSvi7NJSJkHEnoLdW58qcRwwzmepump": {
         "first_seen": 1791642107,
-        "last_seen": 1791643014,
+        "last_seen": 1791643917,
         "symbol": "Tschuna"
+      },
+      "BXZTSaRAgDtPefLWCaVR4ersTst79FpbPoiztvGgpump": {
+        "first_seen": 1791643918,
+        "last_seen": 1791643918,
+        "symbol": "Tschuna"
+      },
+      "7vMkPxLwaH26qSZ2CgHhzvrgz9wUWMvT256vbUWfarm": {
+        "first_seen": 1791643918,
+        "last_seen": 1791643918,
+        "symbol": "QCAT"
+      },
+      "LinkhB3afbBKb2EQQu7s7umdZceV3wcvAUJhQAfQ23L": {
+        "first_seen": 1791643914,
+        "last_seen": 1791643914,
+        "symbol": "LINK"
       }
     }
   },
