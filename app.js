@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   const C = window.OrganicCore, CFG = C.CONFIG;
-  const SCAN_MS = 30000, WALLET_MS = 60000, SNAP_MS = 300000;
+  const SCAN_MS = 30000, WALLET_MS = 60000, SNAP_MS = 45000;
   // Optional ?minpos=N to change the $5 position threshold (display only).
   const MIN_POS_USD = (() => { const v = Number(new URLSearchParams(location.search).get("minpos")); return Number.isFinite(v) && v > 0 ? v : CFG.POSITION_MIN_USD; })();
   const $ = (id) => document.getElementById(id);
