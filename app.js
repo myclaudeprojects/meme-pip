@@ -33,6 +33,28 @@
   let fixT = null;
   new MutationObserver(() => { clearTimeout(fixT); fixT = setTimeout(fixLinks, 300); }).observe(document.documentElement, { childList: true, subtree: true });
   const short = (a) => a.slice(0, 4) + "…" + a.slice(-4);
+  // Owner 2026-10-11 7:28pm ET: scanner shows only coins whose main (deepest live) pool trades against SOL.
+  const QUOTE = {}; let quoteBusy = false;
+  async function ensureQuotes(ids) {
+    const need = ids.filter((m) => m && !(m in QUOTE));
+    if (!need.length || quoteBusy) return false; quoteBusy = true; let got = false;
+    try {
+      for (let i = 0; i < need.length; i += 30) {
+        try {
+          const r = await fetch("https://api.dexscreener.com/latest/dex/tokens/" + need.slice(i, i + 30).join(","));
+          const j = await r.json(); const by = {};
+          for (const p of j.pairs || []) { if (p.chainId && p.chainId !== "solana") continue; const m = p.baseToken && p.baseToken.address; if (m) (by[m] = by[m] || []).push(p); }
+          for (const m of need.slice(i, i + 30)) {
+            const live = (by[m] || []).filter((p) => p.dexId !== "pumpfun");
+            const pick = live.sort((a, b) => ((b.liquidity || {}).usd || 0) - ((a.liquidity || {}).usd || 0))[0];
+            QUOTE[m] = pick ? String((pick.quoteToken || {}).symbol || "").toUpperCase() : null; got = true;
+          }
+        } catch (e) {}
+      }
+    } finally { quoteBusy = false; }
+    return got;
+  }
+  const notSol = (m) => QUOTE[m] != null && QUOTE[m] !== "SOL" && QUOTE[m] !== "WSOL";
 
   const S = { snap: null, snapSrc: null, scan: null, wallet: null, walletErr: null, arc: null, arcErr: null,
               prices: {}, info: {}, sources: {}, nextScan: 0, nextWallet: 0, nextSnap: 0, busy: false,
@@ -422,7 +444,9 @@
     renderSortBar();
     if (!S.scan) { tb.innerHTML = `<tr><td class="l" colspan="17"><div class="msg err">Scan unavailable: ${esc(S.scanErr || "loading…")}. Jupiter token API blocked or unreachable from this browser.</div></td></tr>`; return; }
     const ctx = evalCtx(pos);
-    const inBand = S.scan.cands.filter((c) => c.mcap >= P.mcapMin && c.mcap <= P.mcapMax);
+    const inBand0 = S.scan.cands.filter((c) => c.mcap >= P.mcapMin && c.mcap <= P.mcapMax);
+    ensureQuotes(inBand0.map((c) => c.id)).then((got) => { if (got) render(); });
+    const inBand = inBand0.filter((c) => !notSol(c.id));
     const newRound = S.scan.at !== lastScanAt;
     if (newRound) { updateLocalFs(inBand.map((c) => c.id)); }
     const rows = inBand.map((c) => ({ c, e: C.evaluate(c, ctx), f: firstSeen(c.id) }));
