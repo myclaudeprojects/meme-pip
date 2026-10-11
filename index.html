@@ -78,6 +78,29 @@
   #scan-sort button { background:#161b22; border:1px solid #30363d; color:#c9d1d9; border-radius:6px; cursor:pointer; padding:2px 10px; margin-left:4px; font-size:12px; }
   #scan-sort button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
   .hp-ranges button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
+  /* BSKT tab (2026-10-11) */
+  .tabs { display:flex; gap:4px; }
+  .tabs button { font-weight:600; font-size:13px; padding:5px 12px; }
+  .tabs button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
+  .bk-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center; margin-bottom:10px; font-size:13px; }
+  .bk-cards .v small { font-size:12px; font-weight:400; }
+  .bk-seg { margin-left:auto; } .bk-seg button { font-size:12px; padding:3px 10px; } .bk-seg button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
+  .bk-charts { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:14px; }
+  .bk-chart { background:var(--panel2); border:1px solid var(--line); border-radius:8px; padding:8px 10px; min-width:0; }
+  .bk-ct { font-size:13px; font-weight:600; margin-bottom:4px; }
+  .bk-svg { width:100%; height:auto; display:block; }
+  .bk-leg { display:flex; gap:12px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin-top:2px; }
+  .bk-leg i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:4px; vertical-align:-1px; }
+  .bk-empty { padding:30px 0; text-align:center; font-size:13px; }
+  .bk-lb { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; max-width:900px; } .bk-lbh { font-weight:600; font-size:13px; margin-bottom:4px; }
+  .bk-facts { font-size:12px; margin-top:10px; line-height:1.6; }
+  #view-bskt .two > * { min-width:0; } #view-bskt .card .s { word-break:normal; overflow-wrap:anywhere; }
+  .bk-ref { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:14px; align-items:start; } @media (max-width: 1000px) { .bk-ref { grid-template-columns:minmax(0,1fr); } }
+  .bk-lb table td { padding:4px 8px; }
+  .bk-sum td { font-weight:650; border-top:2px solid var(--line); }
+  .badge.bk-claim { background:#d2992222; color:var(--amber); border:1px solid #d2992266; }
+  .badge.bk-wd { background:#1f6feb22; color:var(--blue); border:1px solid #1f6feb66; }
+  @media (max-width: 600px) { #view-bskt { padding:12px 10px 30px; } .bk-cards { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; } .bk-cards .v { font-size:18px; } .bk-lb { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -85,6 +108,7 @@
   <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
     <h1>Solana Organic-Growth Loop</h1>
     <span class="viewonly">View only. The bot manages all trades</span>
+    <nav class="tabs"><button data-view="main" class="on">Positions &amp; scanner</button><button data-view="bskt">BSKT</button></nav>
   </div>
   <div class="meta">
     <span>Last updated: <b id="updated">-</b></span>
@@ -93,7 +117,7 @@
   </div>
 </header>
 
-<main>
+<main id="view-main">
   <div id="banner"></div>
 
   <div class="grid">
@@ -142,6 +166,9 @@
     </section>
   </div>
 </main>
+<main id="view-bskt" hidden>
+  <div id="bskt-root"><span class="muted">Loading…</span></div>
+</main>
 <footer>Read-only dashboard: public GET / JSON-RPC reads only. No keys, no signing, no orders.
   Sol <span id="f-sol"></span> · Arc <span id="f-arc"></span></footer>
 
@@ -149,6 +176,7 @@
 <script src="positions.js" onerror="void 0"></script>
 <script src="core.js"></script>
 <script src="app.js"></script>
+<script src="bskt.js"></script>
 <div id="holder-panel"><div id="holder-panel-body"></div></div>
 </body>
 </html>
