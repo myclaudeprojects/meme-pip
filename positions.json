@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-10 22:55:37 EDT",
+  "generated_et": "2026-10-10 22:56:38 EDT",
   "state_updated_et": "2026-10-10 22:52:34 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -325,7 +325,21 @@
       "pnl_usd": null
     }
   ],
-  "manual_positions": [],
+  "manual_positions": [
+    {
+      "mint": "258hQ12j9UeGdiEaJzYuMjrgPFbsveNuK72uVKAR3DQj",
+      "symbol": "FPS",
+      "status": "manual",
+      "cost_usd": 399.76,
+      "cost_src": "cost_usd",
+      "cost_sol": 3.6323798,
+      "tokens_ui": 747806.709986,
+      "entry_mc": 534600.0,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "2026-10-10 22:55:37 ET"
+    }
+  ],
   "last_decision": {
     "last_skip_reason": null,
     "last_scan_et": "2026-10-10 22:52:34 EDT",
@@ -419,7 +433,37 @@
       "detail": "HASHERS + ART leftover moonbags sold in full (dust) and marked closed so tp_check stops tracking."
     }
   ],
-  "holder_history": {},
+  "holder_history": {
+    "258hQ12j9UeGdiEaJzYuMjrgPFbsveNuK72uVKAR3DQj": {
+      "symbol": "FPS",
+      "created_ts": 1791513261.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1791687358,
+          320
+        ]
+      ],
+      "d": [
+        [
+          1791600958,
+          326
+        ],
+        [
+          1791665758,
+          316
+        ],
+        [
+          1791683758,
+          316
+        ],
+        [
+          1791687058,
+          319
+        ]
+      ]
+    }
+  },
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
     "last_scan_ts": 1791687154.520628,
