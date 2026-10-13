@@ -121,6 +121,7 @@
     const holdT0 = (d.series || []).find((s) => dayET(s.t * 1000) === today && s.holders != null);
     const hDelta = holdT0 && m.holders != null ? m.holders - holdT0.holders : null;
     h += '<div class="grid bk-cards">';
+    h += card("Online now", `<span id="bsktOnl">${window.__bsktOnl ? fN(window.__bsktOnl.online) : "–"}</span>`, `<span id="bsktOnlS">${window.__bsktOnlS || "live from the game API (last 90 s)"}</span>`);
     h += card("Players today", st ? fN(td.players || 0) : "–", st ? `new ${fN(td.newPlayers || 0)} · returning ${fN((td.players || 0) - (td.newPlayers || 0))}` : "stats endpoint unavailable");
     h += card("Players all-time", st ? fN(T.players) : "–", st ? `wallets connected ${fN(T.wallets)} · guests ${fN(T.guests)}` : "");
     h += card("Runs today", st ? fN((td.runsBskt || 0) + (td.runsJuke || 0)) : "–", st ? `BSKT Ball ${fN(td.runsBskt || 0)} · Juke Run ${fN(td.runsJuke || 0)}` + (td.bonusHits ? ` · ${td.bonusHits} bonus hits` : "") : "");
@@ -243,4 +244,19 @@
   }
 
   show(location.hash === "#bskt" ? "bskt" : "main");
+})();
+
+// live "Online now" (owner 2026-10-13): GET /online from the game API every 30 s, straight from the browser (CORS *)
+(function () {
+  const fmt = n => Number(n || 0).toLocaleString("en-US");
+  async function tick() {
+    try {
+      const j = await (await fetch("https://btc-basket-api.onrender.com/online", { cache: "no-store" })).json();
+      const b = j.byMode || {}; window.__bsktOnl = j;
+      window.__bsktOnlS = `BSKT Ball ${fmt(b.bsktball)} · Juke ${fmt(b.jukerun)} · Quick Draw ${fmt(b.duel)} · Battle ${fmt(b.battle)}`;
+    } catch (e) { window.__bsktOnlS = "game API unreachable"; }
+    const v = document.getElementById("bsktOnl"), s = document.getElementById("bsktOnlS");
+    if (v) v.textContent = window.__bsktOnl ? fmt(window.__bsktOnl.online) : "–"; if (s) s.textContent = window.__bsktOnlS;
+  }
+  tick(); setInterval(tick, 30000);
 })();
