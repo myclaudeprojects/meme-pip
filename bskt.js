@@ -136,6 +136,15 @@
     h += "</div>";
 
     // trends
+    // mode popularity (owner 2026-10-12 11:36 PM ET)
+    if (st && Array.isArray(st.modes)) {
+      const ML = { freeplay: "BSKT Ball · Free Play", adventure: "BSKT Ball · Adventure", battle_pvp: "BSKT Ball · Battle vs player", battle_bot: "BSKT Ball · Battle vs bot", jukerun: "Juke Run", duel_pvp: "Quick Draw vs player", duel_bot: "Quick Draw vs bot" };
+      const rows = Object.keys(ML).map((k) => Object.assign({ k }, st.modes.find((r) => r.k === k) || {})), mx = Math.max(1, ...rows.map((r) => r.plays7d || 0));
+      rows.sort((a, b) => (b.plays7d || 0) - (a.plays7d || 0) || (b.playsAll || 0) - (a.playsAll || 0));
+      h += '<section><h2>Modes <small>plays (players) · sorted by last 7 days · BSKT Ball/Juke = finished runs, players = accounts · Battle/Quick Draw = match starts, players = devices/IPs, tracked since Oct 12 ~11:40 PM ET</small></h2><div class="wrap"><table><thead><tr><th>Mode</th><th>Today</th><th>7 days</th><th>All time</th><th></th></tr></thead><tbody>';
+      for (const r of rows) h += `<tr><td>${esc(ML[r.k])}</td><td>${fN(r.playsToday || 0)} <span class="muted">(${fN(r.playersToday || 0)})</span></td><td>${fN(r.plays7d || 0)} <span class="muted">(${fN(r.players7d || 0)})</span></td><td>${fN(r.playsAll || 0)} <span class="muted">(${fN(r.playersAll || 0)})</span></td><td style="min-width:90px"><div style="height:8px;border-radius:4px;background:#f7931a;width:${Math.round((r.plays7d || 0) / mx * 100)}%"></div></td></tr>`;
+      h += "</tbody></table></div></section>";
+    }
     h += `<section><h2>Trends <small>${B.mode === "day" ? "by day (ET)" : "today by hour (ET)"}</small>
       <span class="bk-seg"><button data-bkmode="day" class="${B.mode === "day" ? "on" : ""}">By day</button><button data-bkmode="hour" class="${B.mode === "hour" ? "on" : ""}">Today by hour</button></span></h2>`;
     h += '<div class="bk-charts">' + charts(d) + "</div></section>";
