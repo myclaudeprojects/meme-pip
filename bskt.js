@@ -130,7 +130,7 @@
     h += card("Rewards wallet left", fN(w.rewardsBskt) + " <small class=muted>BSKT</small>", (p.runwayDaysRewards ? `<b>~${fN(p.runwayDaysRewards)} days</b> runway at ${fN(p.bsktPerDay)} BSKT/day` : "runway: no pace yet") + ` · inventory incl. payout wallet ${fN(e.inventory)}`);
     h += card("Token price", fUsd(m.price), ch == null ? "" : `<span class="${ch >= 0 ? "pos" : "neg"}">${ch >= 0 ? "+" : ""}${ch.toFixed(2)}%</span> 24h · ${esc(m.status || "")}${m.progress != null ? " " + (m.progress * 100).toFixed(1) + "% to graduation" : ""}`);
     h += card("Market cap", fUsd(m.mcap), `liquidity ${fUsd(m.liquidityUsd)}`);
-    h += card("Holders", fN(m.holders), hDelta == null ? "Bordrless holder count" : `${hDelta >= 0 ? "+" : ""}${hDelta} today`);
+    h += card("Holders", fN(m.holders), hDelta == null ? "Bordrless holder count" : `${hDelta >= 0 ? "+" : ""}${hDelta} today · Bordrless count`);
     h += card("24h volume", fUsd(m.vol24), `${fN(m.trades24)} trades in 24h` + (m.lastTradeAt ? ` · last ${ago(m.lastTradeAt * 1000)}` : ""));
     h += card("Global cap today", capPct == null ? "–" : capPct.toFixed(capPct < 1 ? 2 : 1) + "%", `${fN(e.credited)} of ${fN(e.cap)} BSKT credited (UTC day, resets 8 PM ET)` + (e.capHit ? ' · <span class="neg">CAP HIT</span>' : "") + (e.pending ? ` · ${fN(e.pending)} pending` : ""), capPct > 80 ? "warn" : "");
     h += "</div>";
