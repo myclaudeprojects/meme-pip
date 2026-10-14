@@ -129,6 +129,14 @@
     h += card("BSKT withdrawn today", st ? fN(tw.bskt || 0) : fN(e.sent), st ? `${fN(tw.n || 0)} withdrawals today · game day (UTC) sent ${fN(e.sent)}` : "game day (UTC) sent");
     h += card("Withdrawn all-time", st ? fN(T.withdrawnBskt) : "–", st ? `${fN(T.withdrawals)} withdrawals` + (T.withdrawalsInFlight ? ` · ${T.withdrawalsInFlight} in flight` : "") + (T.withdrawalsFailed ? ` · ${T.withdrawalsFailed} failed` : "") : "");
     h += card("Rewards wallet left", fN(w.rewardsBskt) + " <small class=muted>BSKT</small>", (p.runwayDaysRewards ? `<b>~${fN(p.runwayDaysRewards)} days</b> runway at ${fN(p.bsktPerDay)} BSKT/day` : "runway: no pace yet") + ` · inventory incl. payout wallet ${fN(e.inventory)}`);
+    const F = st && st.farm;   // farm / held split (owner 2026-10-14): headline numbers above already exclude held/farm accounts
+    if (F) {
+      const B = F.batch || {}, L = B.last;
+      h += card("Earned today: legit vs farm", fN(F.earnedTodayLegit), `held/farm accounts ${fN(F.earnedTodayFarm)} (excluded from headline)`);
+      h += card("Withdrawn today: legit vs farm", fN(F.withdrawnTodayLegit), `${fN(F.withdrawnTodayLegitN)} legit · farm ${fN(F.withdrawnTodayFarm)} (${fN(F.withdrawnTodayFarmN)}) · farm all-time ${fN(F.farmWithdrawnAll)}`);
+      h += card("Held (farm/review)", fN(F.heldBskt) + " <small class=muted>BSKT</small>", `${fN(F.heldWithdrawals)} withdrawals · ${fN(F.heldAccounts)} accounts · unwithdrawn balance ${fN(F.heldClaimableBskt)} · ${fN(F.bannedWallets)} wallets banned · ${fN(F.blockedIps)} IPs blocked`);
+      h += card("Withdrawal batches", `${fN(B.delayed)} waiting`, `${fN(B.delayedBskt)} BSKT in ${B.delayH}h delay · queued to pay ${fN(B.queued)} (${fN(B.queuedBskt)}) · next batch ${B.nextAt ? new Date(B.nextAt).toLocaleString("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit", month: "short", day: "numeric" }) + " ET" : "–"}` + (L ? ` · last: ${L.released} paid / ${L.held} held` : ""));
+    }
     h += card("Token price", fUsd(m.price), ch == null ? "" : `<span class="${ch >= 0 ? "pos" : "neg"}">${ch >= 0 ? "+" : ""}${ch.toFixed(2)}%</span> 24h · ${esc(m.status || "")}${m.progress != null ? " " + (m.progress * 100).toFixed(1) + "% to graduation" : ""}`);
     h += card("Market cap", fUsd(m.mcap), `liquidity ${fUsd(m.liquidityUsd)}`);
     h += card("Holders", fN(m.holders), hDelta == null ? "Bordrless holder count" : `${hDelta >= 0 ? "+" : ""}${hDelta} today · Bordrless count`);
