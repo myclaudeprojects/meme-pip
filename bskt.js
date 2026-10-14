@@ -134,6 +134,7 @@
       const B = F.batch || {}, L = B.last;
       h += card("Earned today: legit vs farm", fN(F.earnedTodayLegit), `held/farm accounts ${fN(F.earnedTodayFarm)} (excluded from headline)`);
       h += card("Withdrawn today: legit vs farm", fN(F.withdrawnTodayLegit), `${fN(F.withdrawnTodayLegitN)} legit · farm ${fN(F.withdrawnTodayFarm)} (${fN(F.withdrawnTodayFarmN)}) · farm all-time ${fN(F.farmWithdrawnAll)}`);
+      h += card("Withdrawal fees", fN(F.creatorFeeAccruedBskt || 0) + " <small class=muted>BSKT creator fee accrued</small>", `sent to creator wallet: ${F.creatorFeeSentSol || 0} SOL (destination wallet pending owner confirmation) · network-cost fees collected ${fN(F.costFeeCollectedBskt || 0)} BSKT`);
       h += card("Held (farm/review)", fN(F.heldBskt) + " <small class=muted>BSKT</small>", `${fN(F.heldWithdrawals)} withdrawals · ${fN(F.heldAccounts)} accounts · unwithdrawn balance ${fN(F.heldClaimableBskt)} · ${fN(F.bannedWallets)} wallets banned · ${fN(F.blockedIps)} IPs blocked`);
       h += card("Withdrawal batches", `${fN(B.delayed)} waiting`, `${fN(B.delayedBskt)} BSKT in ${B.delayH}h delay · queued to pay ${fN(B.queued)} (${fN(B.queuedBskt)}) · next batch ${B.nextAt ? new Date(B.nextAt).toLocaleString("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit", month: "short", day: "numeric" }) + " ET" : "–"}` + (L ? ` · last: ${L.released} paid / ${L.held} held` : ""));
     }
