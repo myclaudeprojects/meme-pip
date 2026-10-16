@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-15 20:48:10 EDT",
-  "state_updated_et": "2026-10-15 20:47:56 EDT",
+  "generated_et": "2026-10-15 20:48:16 EDT",
+  "state_updated_et": "10/15/2026, 8:48:10 PM ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -38,31 +38,8 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 1,
-  "positions": [
-    {
-      "mint": "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump",
-      "symbol": "1",
-      "name": "Trump $1 Coin",
-      "status": "open",
-      "entry_et": "2026-10-15 20:44:48 EDT",
-      "cost_usd": 1000.52,
-      "cost_sol": 9.48451884,
-      "tokens_ui": 478897.481592,
-      "entry_price_usd": 0.0020892154134408247,
-      "entry_mc": 1986956.0,
-      "tp_multiple": 1.4,
-      "tp_target_usd": 1400.7279999999998,
-      "tp_target_mc": 2781738.4,
-      "buy_sig": "4hxzyvMnTspxeRsNTChZ5hJWhcgccWo2eoHACHAK7TH4iwV1E9LMQiZJwVYzsxDeNdCikUiebBZcCzkiTKtgGCZT",
-      "pool": "7UERUjSX2cipj7MgPEWyRrRfsGFDac4bu74M4JC1LpFz",
-      "last_bag_usd": 979.824247337232,
-      "last_mult": 0.9793150035353936,
-      "last_check_et": "2026-10-15 20:47:56 EDT",
-      "exit_reason": null,
-      "pnl_usd": null
-    }
-  ],
+  "open_organic_count": 0,
+  "positions": [],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -393,6 +370,28 @@
       "last_check_et": "2026-10-08 16:50:39 EDT",
       "exit_reason": null,
       "pnl_usd": null
+    },
+    {
+      "mint": "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump",
+      "symbol": "1",
+      "name": "Trump $1 Coin",
+      "status": "closed",
+      "entry_et": "2026-10-15 20:44:48 EDT",
+      "cost_usd": 1000.52,
+      "cost_sol": 9.48451884,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 0.0020892154134408247,
+      "entry_mc": 1986956.0,
+      "tp_multiple": 1.258206,
+      "tp_target_usd": 1258.86026712,
+      "tp_target_mc": 2499999.9609359996,
+      "buy_sig": "4hxzyvMnTspxeRsNTChZ5hJWhcgccWo2eoHACHAK7TH4iwV1E9LMQiZJwVYzsxDeNdCikUiebBZcCzkiTKtgGCZT",
+      "pool": "7UERUjSX2cipj7MgPEWyRrRfsGFDac4bu74M4JC1LpFz",
+      "last_bag_usd": 979.824247337232,
+      "last_mult": 0.9793150035353936,
+      "last_check_et": "2026-10-15 20:47:56 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
     }
   ],
   "manual_positions": [
@@ -504,63 +503,6 @@
       "created_src": null,
       "m": [],
       "d": []
-    },
-    "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
-      "symbol": "1",
-      "created_ts": 1792095364.0,
-      "created_src": "Jupiter firstPool.createdAt",
-      "m": [
-        [
-          1792111526,
-          10124
-        ],
-        [
-          1792111528,
-          10124
-        ],
-        [
-          1792111561,
-          10121
-        ],
-        [
-          1792111621,
-          10125
-        ],
-        [
-          1792111681,
-          10100
-        ]
-      ],
-      "d": [
-        [
-          1792095364,
-          3
-        ],
-        [
-          1792107961,
-          9105
-        ],
-        [
-          1792108021,
-          9427
-        ],
-        [
-          1792108081,
-          9380
-        ],
-        [
-          1792111261,
-          10120
-        ],
-        [
-          1792111321,
-          10120
-        ],
-        [
-          1792111381,
-          10109
-        ]
-      ]
     }
   },
   "scanner_first_seen": {
