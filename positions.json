@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-16 03:55:26 EDT",
-  "state_updated_et": "2026-10-16 03:55:14 EDT",
+  "generated_et": "2026-10-16 03:56:29 EDT",
+  "state_updated_et": "2026-10-16 03:56:04 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -432,7 +432,7 @@
     }
   ],
   "last_decision": {
-    "last_skip_reason": null,
+    "last_skip_reason": "scheduled review 03:55: SKIP PsyopAnime (near-top post-pump bot-heavy); SKIP Nihilism (1h dump bot-heavy serial deployer); open=0",
     "last_scan_et": "2026-10-16 03:55:14 EDT",
     "last_scan_n_in_band": 2,
     "last_scan_best": {
@@ -456,12 +456,6 @@
     "note": "dashboard refresh: on-chain SOL balance; '1' (2bCCHQ\u2026pump) $1k buy NOT filled (0 tokens in wallet); BORDR 0 (owner exited); MAKERSS 17.53M (~$46 cost) still held"
   },
   "recent_notes": [
-    {
-      "et": "2026-10-08 13:49:52 EDT",
-      "event": "early_exit_due",
-      "symbol": "SENTS",
-      "reason": "early_first_slowdown@1.148x:first_slowdown:hc5_stall=-0.659%,buys_lt_sells=57/122"
-    },
     {
       "et": "2026-10-08 13:53:46 EDT",
       "event": "early_exit_due",
@@ -520,6 +514,11 @@
       "event": "early_exit_due",
       "symbol": "ROOMS",
       "reason": "early_first_slowdown@1.004x:first_slowdown:hc1_nonpositive=-2.672%"
+    },
+    {
+      "et": "2026-10-16 03:56:04 EDT",
+      "event": "scheduled_review",
+      "detail": "scheduled review 03:55: SKIP PsyopAnime (near-top post-pump bot-heavy); SKIP Nihilism (1h dump bot-heavy serial deployer); open=0"
     }
   ],
   "holder_history": {
