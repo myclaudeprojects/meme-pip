@@ -131,13 +131,26 @@
     else S.scanErr = u.sources.map((s) => s.err).filter(Boolean)[0] || "no data";
   }
 
+  // Box-written live.json (holdings + prices) is primary; browser RPC/price calls are an optional fallback that fails silently.
+  async function loadLive() {
+    try { const r = await fetch("live.json?ts=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error("HTTP " + r.status); S.live = await r.json(); }
+    catch (e) { if (!S.live) S.live = null; }
+    const L = S.live; if (!L) return;
+    const w = L.sol_wallet || {};
+    S.wallet = { at: L.generated_ts, sol: Number(w.sol) || 0, tokens: (w.tokens || []).map((t) => ({ mint: t.mint, amount: Number(t.amount) })), tokensOk: true, tokenSrc: "box live.json", warn: [], rpc: "box" };
+    S.walletErr = null; if (L.arc) { S.arc = { at: L.generated_ts, usdc: Number(L.arc.usdc), method: "box" }; S.arcErr = null; }
+    S.prices = Object.assign({}, S.prices, L.prices || {});
+    setSrc("Box live data", true, "live.json " + (L.generated_et || ""));
+  }
+
   async function loadWallets() {
-    const jobs = [];
-    jobs.push(C.getSolWallet().then((w) => { S.wallet = Object.assign({ at: Date.now() }, w); S.walletErr = null;
+    await loadLive();
+    const jobs = [], hasLive = !!S.live;
+    if (!hasLive) jobs.push(C.getSolWallet().then((w) => { S.wallet = Object.assign({ at: Date.now() }, w); S.walletErr = null;
       setSrc("Solana RPC (SOL balance)", !!w.rpc, w.rpc ? C.hostOf(w.rpc) : "all RPCs failed; SOL from Jupiter holdings");
       setSrc("Token holdings", w.tokensOk, w.tokensOk ? w.tokenSrc + " (" + w.tokens.length + " accounts)" : "unavailable: " + w.warn.join("; ")); })
       .catch((e) => { S.walletErr = e.message; setSrc("Solana RPC (SOL balance)", false, e.message); setSrc("Token holdings", false, e.message); }));
-    jobs.push(C.getArcUsdc().then((a) => { S.arc = Object.assign({ at: Date.now() }, a); S.arcErr = null;
+    if (!hasLive) jobs.push(C.getArcUsdc().then((a) => { S.arc = Object.assign({ at: Date.now() }, a); S.arcErr = null;
       setSrc("Arc RPC", true, C.hostOf(CFG.ARC_RPC) + " via " + a.method); })
       .catch((e) => { S.arcErr = e.message; setSrc("Arc RPC", false, e.message); }));
     await Promise.all(jobs);
@@ -145,8 +158,8 @@
     const mints = new Set([CFG.SOL_MINT]);
     for (const t of (S.wallet && S.wallet.tokens) || []) if (t.amount > 0) mints.add(t.mint);
     for (const p of snapPositions()) if (p.mint) mints.add(p.mint);
-    try { S.prices = await C.getPrices([...mints]); setSrc("Jupiter price", true, Object.keys(S.prices).length + " prices"); }
-    catch (e) { setSrc("Jupiter price", false, e.message); }
+    try { const bp = await C.getPrices([...mints]); S.prices = Object.assign({}, S.prices, bp); if (!hasLive) setSrc("Jupiter price", true, Object.keys(bp).length + " prices"); }
+    catch (e) { if (!hasLive) setSrc("Jupiter price", false, e.message); }
     const posMints = [...mints].filter((m) => m !== CFG.SOL_MINT && !CFG.STABLES.includes(m));
     if (posMints.length) {
       try { S.info = Object.assign(S.info, await C.getTokenInfo(posMints)); } catch (e) { /* non-fatal */ }
@@ -256,7 +269,11 @@
       }
       const tag = p.mint === CFG.FRANK ? ' <span class="badge HELD">FRANK, separate</span>' : (p.snap && p.snap._kind === "dust") ? ' <span class="badge SKIP">legacy dust</span>' : (p.snap && p.snap._kind === "manual") ? ' <span class="badge HELD">manual hold</span>' : "";
       const miss = p.missing ? '<div class="warn" style="font-size:11px">In snapshot as open but not in wallet now (likely sold since snapshot)</div>' : (!p.live ? '<div class="muted" style="font-size:11px">value from snapshot token amount × live price</div>' : "");
-      const buyLink = (p.snap && p.snap.buy_sig) ? `<div class="muted" style="font-size:11px"><a href="https://solscan.io/tx/${esc(p.snap.buy_sig)}" target="_blank" rel="noopener">buy tx</a>${p.snap.cost_sol ? " · " + Number(p.snap.cost_sol).toFixed(4) + " SOL" : ""}</div>` : "";
+      const li = (S.live && S.live.info && S.live.info[p.mint]) || null;
+      const curMc = li && li.mc ? Number(li.mc) : null, emc = p.snap && p.snap.entry_mc;
+      const mcLine = (p.snap && p.snap._kind === "manual" && (emc || curMc)) ? `<div class="muted" style="font-size:11px">avg entry MC $${emc ? C.fmtK(emc) : "-"} → now $${curMc ? C.fmtK(curMc) : "-"}` +
+        (cost && p.value != null ? ` · PnL <span class="${p.value - cost >= 0 ? "pos" : "neg"}">${p.value - cost >= 0 ? "+" : ""}${C.fmtUsd(p.value - cost)}</span>` : "") + `</div>` : "";
+      const buyLink = mcLine + ((p.snap && p.snap.buy_sig) ? `<div class="muted" style="font-size:11px"><a href="https://solscan.io/tx/${esc(p.snap.buy_sig)}" target="_blank" rel="noopener">buy tx</a>${p.snap.cost_sol ? " · " + Number(p.snap.cost_sol).toFixed(4) + " SOL" : ""}</div>` : "");
       html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a>${tag}${miss}${buyLink}</td>` +
         `<td>${p.amount != null ? Number(p.amount).toLocaleString("en-US", { maximumFractionDigits: 0 }) : "-"}</td><td>${C.fmtUsd(p.value)}</td><td>${cost ? C.fmtUsd(cost) : "-"}</td>` +
         `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
@@ -501,7 +518,8 @@
     $("rules").textContent = `SKIP rules: exclude lists · organic score ≤ 0 · holders not rising (5m or 1h ≤ 0) or ~flat 5m (< ${R.minHc5Flat}%) · holders falling 6h · ` +
       `pool < ${R.minPoolAgeMin} min · organic buy share < ${R.minOrgBuyPct}% · 1h price > +${R.maxPc1}% · top holders > ${R.maxTopHolders}% · < ${R.minNob1} organic buyers 1h · price > $1 · tokenized securities.`;
     const blocked = Object.entries(S.sources).filter(([k, v]) => !v.ok && k !== "positions.json snapshot");
-    $("banner").innerHTML = blocked.length ? `<div class="msg err">Some live sources failed from this browser: ${blocked.map(([k, v]) => esc(k) + " (" + esc(v.detail) + ")").join("; ")}. ` +
+    if (S.live) { $("banner").innerHTML = ""; return; }
+    $("banner").innerHTML = blocked.length ? `<div class="msg warn">Some live sources failed from this browser: ${blocked.map(([k, v]) => esc(k) + " (" + esc(v.detail) + ")").join("; ")}. ` +
       `If it says CORS/blocked, try disabling ad/privacy blockers for localhost, or run via serve.py instead of opening the file directly.</div>` : "";
   }
 
