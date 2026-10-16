@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-15 20:45:03 EDT",
-  "state_updated_et": "2026-10-15 20:31:51 EDT",
+  "generated_et": "2026-10-15 20:46:05 EDT",
+  "state_updated_et": "2026-10-15 20:45:27 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -13,6 +13,7 @@
     "new_buys_paused_until": null
   },
   "exclude_mints": [
+    "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump",
     "41MjNbWHZeFmxwMHPwTfsJP3aPbvsvR5tsgnmhNKpump",
     "75gGuxuqKhQQiHae8JKDQaetK3XguKf1rUJ1csispump",
     "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -24,6 +25,7 @@
     "RACEyWiM2ztEZcJx2AHXU2eWjhxU57x3vXn92b39dLD"
   ],
   "exclude_symbols": [
+    "1",
     "ART",
     "ATTENTION",
     "ATTENTION+",
@@ -36,8 +38,28 @@
     "TON618",
     "TWEETCRAFT"
   ],
-  "open_organic_count": 0,
-  "positions": [],
+  "open_organic_count": 1,
+  "positions": [
+    {
+      "mint": "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump",
+      "symbol": "1",
+      "name": "Trump $1 Coin",
+      "status": "open",
+      "entry_et": "2026-10-15 20:44:48 EDT",
+      "cost_usd": 1000.52,
+      "tokens_ui": 478897.481592,
+      "entry_price_usd": 0.0020892154134408247,
+      "entry_mc": 1986956.0,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 1400.7279999999998,
+      "tp_target_mc": 2781738.4,
+      "last_bag_usd": 964.97842540788,
+      "last_mult": 0.964476897421221,
+      "last_check_et": "2026-10-15 20:45:27 EDT",
+      "exit_reason": null,
+      "pnl_usd": null
+    }
+  ],
   "history": [
     {
       "mint": "85WdpEBNDSN9oNkPomBGspnBZsaKb7WF1NQ51pdouxML",
@@ -438,6 +460,39 @@
       "created_src": null,
       "m": [],
       "d": []
+    },
+    "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
+      "symbol": "1",
+      "created_ts": 1792095364.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1792111526,
+          10124
+        ],
+        [
+          1792111528,
+          10124
+        ],
+        [
+          1792111561,
+          10121
+        ]
+      ],
+      "d": [
+        [
+          1792095364,
+          3
+        ],
+        [
+          1792107961,
+          9105
+        ],
+        [
+          1792111261,
+          10120
+        ]
+      ]
     }
   },
   "scanner_first_seen": {
