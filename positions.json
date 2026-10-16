@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-15 21:20:35 EDT",
-  "state_updated_et": "2026-10-15 21:17:03 EDT",
+  "generated_et": "2026-10-15 21:22:37 EDT",
+  "state_updated_et": "10/15/2026, 21:22:29 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -392,6 +392,28 @@
       "last_check_et": "2026-10-15 20:47:56 EDT",
       "exit_reason": null,
       "pnl_usd": null
+    },
+    {
+      "mint": "4crBrhzWaD4bfpdbBTS1jnvsZRto64uWUTxUD6Bf4aHR",
+      "symbol": "ROOMS",
+      "name": null,
+      "status": "closed",
+      "entry_et": "10/15/2026, 21:22:00 ET",
+      "cost_usd": 500.0,
+      "cost_sol": 4.746535029428517,
+      "tokens_ui": 0.0,
+      "entry_price_usd": 7.512459010596012e-05,
+      "entry_mc": null,
+      "tp_multiple": 1.4,
+      "tp_target_usd": 700.0,
+      "tp_target_mc": null,
+      "buy_sig": "2GHk96c9RTYGiZkovqxU2hVQkVnzTbWFXTkYd98ELwBqjjubvyoJnzwNZMNaiq11LhfaZmdoM1Wq3h8AAkvSfzAV",
+      "pool": "3SFhoMBUPafT2Vp6LMvSrgAVeo3xisM13GhypbLc3gid",
+      "last_bag_usd": 502.1658014611521,
+      "last_mult": 1.0043316029223042,
+      "last_check_et": "2026-10-15 21:22:26 EDT",
+      "exit_reason": "first_slowdown:hc1_nonpositive=-2.672%",
+      "pnl_usd": null
     }
   ],
   "manual_positions": [
@@ -410,7 +432,7 @@
     }
   ],
   "last_decision": {
-    "last_skip_reason": "SYCAMORE: bot-heavy org~0.2% of 1h buy vol / nob1=3; post-pump h24+566%; serial deployer (devMints=12)",
+    "last_skip_reason": null,
     "last_scan_et": "2026-10-15 21:17:03 EDT",
     "last_scan_n_in_band": 1,
     "last_scan_best": {
@@ -419,10 +441,10 @@
       "mcap": 282408.8830263323
     },
     "last_buy": {
-      "as_of_et": "10/8/2026, 16:49:39 ET",
-      "symbol": "X",
-      "mint": "9Hcksg9o6oXbJWN7FTAL2HFrvknqTzmmNybBYP4UA6cP",
-      "cost_usd": 242.63466415299996
+      "as_of_et": "10/15/2026, 21:22:00 ET",
+      "symbol": "ROOMS",
+      "mint": "4crBrhzWaD4bfpdbBTS1jnvsZRto64uWUTxUD6Bf4aHR",
+      "cost_usd": 500
     }
   },
   "cash_snapshot": {
@@ -434,12 +456,6 @@
     "note": "dashboard refresh: on-chain SOL balance; '1' (2bCCHQ\u2026pump) $1k buy NOT filled (0 tokens in wallet); BORDR 0 (owner exited); MAKERSS 17.53M (~$46 cost) still held"
   },
   "recent_notes": [
-    {
-      "et": "2026-10-08 13:05:10 EDT",
-      "event": "early_exit_due",
-      "symbol": "PANDA",
-      "reason": "early_first_slowdown@0.964x:first_slowdown:hc5_stall=-0.059%,holders_flat_or_down=1687->1681,holders_off_peak=1687->1681"
-    },
     {
       "et": "2026-10-08 13:49:52 EDT",
       "event": "early_exit_due",
@@ -498,6 +514,12 @@
       "et": "2026-10-15 15:09:03 EDT",
       "event": "scheduled_review",
       "detail": "no sell; skip MEMEOS+SOC; no buy; open=0"
+    },
+    {
+      "et": "2026-10-15 21:22:26 EDT",
+      "event": "early_exit_due",
+      "symbol": "ROOMS",
+      "reason": "early_first_slowdown@1.004x:first_slowdown:hc1_nonpositive=-2.672%"
     }
   ],
   "holder_history": {
