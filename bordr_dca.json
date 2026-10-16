@@ -1,0 +1,37 @@
+{
+  "title": "BORDR DCA (owner 2026-10-16 3:31am ET)",
+  "rule": "$250 per buy every 2 min until SOL wallet = 0.2 SOL; Meteora pool direct",
+  "wallet": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
+  "mint": "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr",
+  "pool": "4xp7kN4nVt19caq4kM629vL8vJEqpSFVdZAh27wvYPh8",
+  "buys": [
+    {
+      "n": 1,
+      "t_et": "10/16/2026, 3:34:25 AM",
+      "sig": "5Pr9kDwfYYDnVirEx2DvkXqJnuXm5SL3Rybwc2zG7MJq2uvZkjUPJLx6yKobC2xfqk9V129tyVzDM66ezYDAxPcM",
+      "sol": 2.356489772,
+      "usd": 250,
+      "bordr": 39659.835634,
+      "fill_mc": 6303417,
+      "mc_after": 6158998,
+      "verified_onchain": true,
+      "slot": 457555673
+    }
+  ],
+  "planned": 14,
+  "status": "running",
+  "updated_et": "10/16/2026, 3:34:25 AM ET",
+  "buys_done": 1,
+  "total_usd_in": 250,
+  "total_sol_in": 2.35649,
+  "bordr_bought": 39659.84,
+  "bordr_held": 39659.835634,
+  "avg_entry_mc": 6303417,
+  "current_mc": 6158998,
+  "dca_value_usd": 244.27,
+  "dca_pnl_usd": -5.73,
+  "sol_left": 29.6709671,
+  "sol_floor": 0.2,
+  "sol_usd": 106.09,
+  "last_tx": "https://solscan.io/tx/5Pr9kDwfYYDnVirEx2DvkXqJnuXm5SL3Rybwc2zG7MJq2uvZkjUPJLx6yKobC2xfqk9V129tyVzDM66ezYDAxPcM"
+}
