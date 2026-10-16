@@ -256,7 +256,8 @@
       }
       const tag = p.mint === CFG.FRANK ? ' <span class="badge HELD">FRANK, separate</span>' : (p.snap && p.snap._kind === "dust") ? ' <span class="badge SKIP">legacy dust</span>' : (p.snap && p.snap._kind === "manual") ? ' <span class="badge HELD">manual hold</span>' : "";
       const miss = p.missing ? '<div class="warn" style="font-size:11px">In snapshot as open but not in wallet now (likely sold since snapshot)</div>' : (!p.live ? '<div class="muted" style="font-size:11px">value from snapshot token amount × live price</div>' : "");
-      html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a>${tag}${miss}</td>` +
+      const buyLink = (p.snap && p.snap.buy_sig) ? `<div class="muted" style="font-size:11px"><a href="https://solscan.io/tx/${esc(p.snap.buy_sig)}" target="_blank" rel="noopener">buy tx</a>${p.snap.cost_sol ? " · " + Number(p.snap.cost_sol).toFixed(4) + " SOL" : ""}</div>` : "";
+      html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a>${tag}${miss}${buyLink}</td>` +
         `<td>${p.amount != null ? Number(p.amount).toLocaleString("en-US", { maximumFractionDigits: 0 }) : "-"}</td><td>${C.fmtUsd(p.value)}</td><td>${cost ? C.fmtUsd(cost) : "-"}</td>` +
         `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
         `<td class="l">${bar}</td><td>${info ? info.holders.toLocaleString() : "-"}</td>` +
