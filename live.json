@@ -1,10 +1,10 @@
 {
- "generated_et": "2026-10-16 23:26:48 EDT",
- "generated_ts": 1792207608400,
+ "generated_et": "2026-10-16 23:28:53 EDT",
+ "generated_ts": 1792207733373,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 9.209450448,
+  "sol": 7.01536993,
   "tokens": [
    {
     "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -19,6 +19,10 @@
     "amount": 0.501
    },
    {
+    "mint": "FhTRVAkQeiaLRJHYc13DBNhgw9N8ZPacvonaKfXxpump",
+    "amount": 1866967.023828
+   },
+   {
     "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
     "amount": 30.179215
    }
@@ -29,10 +33,11 @@
   "usdc": 306.34212238720363
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 104.62,
+  "So11111111111111111111111111111111111111112": 104.76,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.82,
-  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": 22.75,
-  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.003215
+  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": 22.87,
+  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.003344,
+  "FhTRVAkQeiaLRJHYc13DBNhgw9N8ZPacvonaKfXxpump": 0.0001224
  },
  "info": {
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
@@ -43,15 +48,21 @@
   },
   "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": {
    "symbol": "PUMP",
-   "mc": 10532375573771,
+   "mc": 10585314600090,
    "pair": "4C8KctYZtMTZwV83Y5AcTPVT2aXYYu2t9ZhHdotFGnno",
    "dex": "meteora"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
    "symbol": "BORDR",
-   "mc": 3215859,
+   "mc": 3344013,
    "pair": "FTmwv748VxVVrRohjYzvdfyL4SXP3C6QTnHSem5QhewZ",
    "dex": "meteora"
+  },
+  "FhTRVAkQeiaLRJHYc13DBNhgw9N8ZPacvonaKfXxpump": {
+   "symbol": "MOMO",
+   "mc": 119293,
+   "pair": "psEVxbyorPSLZ55VNJsbAW7A1YAnPDsymyJijp1CuJz",
+   "dex": "pumpswap"
   }
  }
 }
