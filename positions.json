@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-17 12:20:09 EDT",
-  "state_updated_et": "2026-10-17 12:12:10 EDT",
+  "generated_et": "2026-10-17 12:21:10 EDT",
+  "state_updated_et": "2026-10-17 12:20:27 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -446,9 +446,13 @@
   ],
   "last_decision": {
     "last_skip_reason": "scheduled review 05:07: open=0 no sell; SKIP MERGE FEq7\u2026 (age~0.62h<2h; pc1~3388%>100%; mid-pump m5~-21% at ~$212k; bot-heavy); SKIP e/acc Cbcy\u2026 (near top ~$813k; flat holders; thin nob1=2); SOL wallet ~0.205 SOL (~$22) \u2014 insufficient for $200 buy (Arc untouched per organic idle rules); ROOMS closed on-chain; BORDR/Arc untouched; no buy",
-    "last_scan_et": "2026-10-17 12:12:10 EDT",
-    "last_scan_n_in_band": 0,
-    "last_scan_best": null,
+    "last_scan_et": "2026-10-17 12:20:27 EDT",
+    "last_scan_n_in_band": 1,
+    "last_scan_best": {
+      "symbol": "CyberAxe",
+      "mint": "2Srf6mhufzWJKZ5nniVXgwamLmDJWXPQBmddJ1MMpump",
+      "mcap": 601733.9395768419
+    },
     "last_buy": {
       "as_of_et": "10/15/2026, 21:22:00 ET",
       "symbol": "ROOMS",
@@ -5346,7 +5350,7 @@
   },
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
-    "last_scan_ts": 1792253530.2877786,
+    "last_scan_ts": 1792254027.7873921,
     "tokens": {
       "6KDpQM4BVDdtAkjtyFDiBCkbii8q8BieEyXXm6kNpump": {
         "first_seen": 1792103841,
@@ -5493,7 +5497,7 @@
       },
       "EEpng77ZPn9FbgbT4xsRjwuxNCcMBYq3HTwEscyTpump": {
         "first_seen": 1792163310,
-        "last_seen": 1792253527,
+        "last_seen": 1792254025,
         "symbol": "HeeHaw"
       },
       "72QvBVwpxqmheEPfaCwWSWqEFsUy3rhWt6JhQBMNTwD1": {
@@ -5523,7 +5527,7 @@
       },
       "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx": {
         "first_seen": 1792157786,
-        "last_seen": 1792253529,
+        "last_seen": 1792254027,
         "symbol": "HIMS"
       },
       "HzYCHqAN2uoHGRnL9v2ChCfFQX3bvJuJd5zu2Hd5MZQy": {
@@ -5583,7 +5587,7 @@
       },
       "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF": {
         "first_seen": 1791736416,
-        "last_seen": 1792253529,
+        "last_seen": 1792254027,
         "symbol": "DJT"
       },
       "6ir6ih6y9t9JWBLQSP5PRLVDzBxBRqQkMMnxkkT6pump": {
@@ -5683,7 +5687,7 @@
       },
       "TSPXcLV76s6V2zDiZQ18kBfcbnjaE2ZzNT3ga2Pd99v": {
         "first_seen": 1792124358,
-        "last_seen": 1792253528,
+        "last_seen": 1792254026,
         "symbol": "tSpaceX"
       },
       "HgcxVs6kJhPAaGqnPNGaa7zYgNT49hJrLufiqcNMuYZT": {
@@ -5738,7 +5742,7 @@
       },
       "TKLSidmLVt3cqGaaodG8tyRzoANfQwoh67AccjmubeZ": {
         "first_seen": 1792250576,
-        "last_seen": 1792253528,
+        "last_seen": 1792254026,
         "symbol": "tKalshi"
       },
       "9g4Pib6AM3oVdP9YA7ZcssAXAuhoUzkjR8w27doYpump": {
@@ -6098,7 +6102,7 @@
       },
       "DKNGQFNGQmoBdXSRGKJ8tTu7uPDasw5JDcfMmWniNfow": {
         "first_seen": 1792253528,
-        "last_seen": 1792253528,
+        "last_seen": 1792254026,
         "symbol": "DKNG"
       },
       "A9E2AopuG56LWYiXsvGLLTcLjUjQ539PY6k5Fhfepump": {
@@ -6203,7 +6207,7 @@
       },
       "DzMwArmdzPqcqgvyqAmTxy79XdA9NwK9mMteqWLJpump": {
         "first_seen": 1792239818,
-        "last_seen": 1792250577,
+        "last_seen": 1792254027,
         "symbol": "Normie"
       },
       "DD3AC2Cmr5rXzJ6ErRHeryx3ASLVMhSBALiUqeKcpump": {
@@ -6333,7 +6337,7 @@
       },
       "BABANGA4JE7Kkam4nTrALAwAVgsNJUuFJnnkF7S16BZp": {
         "first_seen": 1792179411,
-        "last_seen": 1792253529,
+        "last_seen": 1792254027,
         "symbol": "BABA"
       },
       "B5WTLaRwaUQpKk7ir1wniNB6m5o8GgMrimhKMYan2R6B": {
@@ -6942,8 +6946,8 @@
         "symbol": "XPL"
       },
       "F6qoefQq4iCBLoNZ34RjEqHjHkD8vtmoRSdw9Nd55J1k": {
-        "first_seen": 1792158689,
-        "last_seen": 1792162407,
+        "first_seen": 1792254026,
+        "last_seen": 1792254026,
         "symbol": "SHIB"
       },
       "4VScHuqZ13uma3S34iNkiSAQvZDEeGebjbM5bPcapump": {
@@ -7478,7 +7482,7 @@
       },
       "5eyib4qghYGHNh7VvxSFGYLFJSanjq9hug9fR52kksnm": {
         "first_seen": 1792253529,
-        "last_seen": 1792253529,
+        "last_seen": 1792254026,
         "symbol": "PSG"
       },
       "DAfKg6exaeMMUQeqwRq3UP5KYPJjFNyVuVzFfr4kpump": {
@@ -7558,7 +7562,7 @@
       },
       "2Srf6mhufzWJKZ5nniVXgwamLmDJWXPQBmddJ1MMpump": {
         "first_seen": 1792250577,
-        "last_seen": 1792253529,
+        "last_seen": 1792254027,
         "symbol": "CyberAxe"
       },
       "Egv73vvRrhZH9J3AhYdfm9Q3doRWtvKUo2jgRz6Epump": {
@@ -7843,12 +7847,12 @@
       },
       "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
         "first_seen": 1792243500,
-        "last_seen": 1792253529,
+        "last_seen": 1792254027,
         "symbol": "1"
       },
       "ALDVtr9JeLjKH91fHFvLxFoyd7C6eLUxi9dUoN2FsWdD": {
         "first_seen": 1792097144,
-        "last_seen": 1792253527,
+        "last_seen": 1792254025,
         "symbol": "BUBBLE"
       },
       "PUSAG1stksTcAoK9MjinEHUwAYRJsbovywYCk37m6hy": {
@@ -8028,12 +8032,12 @@
       },
       "purpFPo5voy6fEu8jxSCwVdMs1zyYEYAH6FBQvTYCZK": {
         "first_seen": 1792196800,
-        "last_seen": 1792253528,
+        "last_seen": 1792254026,
         "symbol": "PURPS"
       },
       "nPD9vif19C2oY1jhHRrAJSSpMu9tJQtibfxoZ4qcxph": {
         "first_seen": 1792245245,
-        "last_seen": 1792253528,
+        "last_seen": 1792254026,
         "symbol": "XSTOK"
       },
       "ADkd6izPxJtKueHAzKsDEnGRNEq5ERu1g3ses1wKpump": {
@@ -8098,7 +8102,7 @@
       },
       "ysPp2Bt2j2UQu2tZwtSJz7JxyrmQ8GJcNJE5NyDoS5a": {
         "first_seen": 1792215264,
-        "last_seen": 1792253529,
+        "last_seen": 1792254026,
         "symbol": "MUSK4"
       },
       "8FnBBoqYdVAps3Ekpvhr48sNkxsPVKq8iyzWDrYYpump": {
@@ -8213,7 +8217,7 @@
       },
       "1htv5Nzfdy44FJWAdTXZoACJW4BWbB2XwZC6SVopurp": {
         "first_seen": 1792197700,
-        "last_seen": 1792253529,
+        "last_seen": 1792254027,
         "symbol": "Aloooong"
       },
       "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump": {
@@ -8293,7 +8297,7 @@
       },
       "3XEqNHe3jHTRWAZCTHbb1UwpSfNbJL9oU1ErsM86pump": {
         "first_seen": 1792230553,
-        "last_seen": 1792253529,
+        "last_seen": 1792254027,
         "symbol": "MAKERS"
       },
       "BP8RUdhLKBL2vgVXc3n7oTSZKWaQVbD8S6QcPaMVBAPo": {
