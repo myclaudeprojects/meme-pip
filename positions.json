@@ -1,6 +1,6 @@
 {
-  "generated_et": "2026-10-17 05:30:35 EDT",
-  "state_updated_et": "2026-10-17 05:27:19 EDT",
+  "generated_et": "2026-10-17 05:34:01 EDT",
+  "state_updated_et": "2026-10-17 05:33:13 EDT",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
     "mcap_min": 200000.0,
@@ -446,12 +446,12 @@
   ],
   "last_decision": {
     "last_skip_reason": "scheduled review 05:07: open=0 no sell; SKIP MERGE FEq7\u2026 (age~0.62h<2h; pc1~3388%>100%; mid-pump m5~-21% at ~$212k; bot-heavy); SKIP e/acc Cbcy\u2026 (near top ~$813k; flat holders; thin nob1=2); SOL wallet ~0.205 SOL (~$22) \u2014 insufficient for $200 buy (Arc untouched per organic idle rules); ROOMS closed on-chain; BORDR/Arc untouched; no buy",
-    "last_scan_et": "2026-10-17 05:27:19 EDT",
+    "last_scan_et": "2026-10-17 05:33:13 EDT",
     "last_scan_n_in_band": 2,
     "last_scan_best": {
-      "symbol": "NUBI",
-      "mint": "2e3zQiA8JWeDjjVeuqzv9X1Q3aqRRaPqL8UYEbxVpump",
-      "mcap": 800209.8762455493
+      "symbol": "SLOPCORE",
+      "mint": "EkFRff9a2jKztJHML1LG9FRmEkPJDR6XAYp3uCPdpump",
+      "mcap": 410493.3454110574
     },
     "last_buy": {
       "as_of_et": "10/15/2026, 21:22:00 ET",
@@ -2245,14 +2245,6 @@
           5178
         ],
         [
-          1792207939,
-          5179
-        ],
-        [
-          1792207999,
-          5177
-        ],
-        [
           1792208120,
           5177
         ],
@@ -2337,8 +2329,8 @@
           5201
         ],
         [
-          1792210210,
-          5200
+          1792210150,
+          5198
         ],
         [
           1792210270,
@@ -2437,8 +2429,8 @@
           5211
         ],
         [
-          1792212957,
-          5209
+          1792212897,
+          5211
         ],
         [
           1792213017,
@@ -2537,7 +2529,7 @@
           5200
         ],
         [
-          1792215333,
+          1792215272,
           5201
         ],
         [
@@ -2637,8 +2629,8 @@
           5206
         ],
         [
-          1792218017,
-          5208
+          1792217957,
+          5207
         ],
         [
           1792218078,
@@ -2737,8 +2729,8 @@
           5198
         ],
         [
-          1792220695,
-          5200
+          1792220635,
+          5199
         ],
         [
           1792220756,
@@ -2837,8 +2829,8 @@
           5208
         ],
         [
-          1792223642,
-          5209
+          1792223582,
+          5208
         ],
         [
           1792223702,
@@ -2933,8 +2925,16 @@
           5232
         ],
         [
+          1792229371,
+          5235
+        ],
+        [
           1792229431,
           5234
+        ],
+        [
+          1792229636,
+          5235
         ]
       ],
       "d": [
@@ -4503,18 +4503,6 @@
           5175
         ],
         [
-          1792207851,
-          5177
-        ],
-        [
-          1792207911,
-          5179
-        ],
-        [
-          1792208001,
-          5177
-        ],
-        [
           1792208061,
           5176
         ],
@@ -4543,16 +4531,16 @@
           5178
         ],
         [
-          1792208592,
-          5178
+          1792208544,
+          5180
         ],
         [
-          1792208712,
-          5178
-        ],
-        [
-          1792208772,
+          1792208604,
           5177
+        ],
+        [
+          1792208724,
+          5178
         ],
         [
           1792208845,
@@ -4943,15 +4931,15 @@
           5202
         ],
         [
-          1792215945,
+          1792215894,
           5203
         ],
         [
-          1792216005,
-          5204
+          1792215955,
+          5203
         ],
         [
-          1792216066,
+          1792216015,
           5204
         ],
         [
@@ -5311,32 +5299,44 @@
           5220
         ],
         [
-          1792228137,
+          1792225891,
+          5221
+        ],
+        [
+          1792226036,
+          5221
+        ],
+        [
+          1792228257,
           5234
         ],
         [
-          1792228317,
-          5234
+          1792228438,
+          5237
         ],
         [
-          1792228498,
-          5235
-        ],
-        [
-          1792228618,
+          1792228558,
           5236
         ],
         [
-          1792228739,
+          1792228678,
+          5237
+        ],
+        [
+          1792228799,
           5239
         ],
         [
-          1792228890,
-          5238
+          1792228950,
+          5237
         ],
         [
-          1792229131,
+          1792229071,
           5236
+        ],
+        [
+          1792229336,
+          5234
         ]
       ]
     },
@@ -5350,7 +5350,7 @@
   },
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
-    "last_scan_ts": 1792229239.2974312,
+    "last_scan_ts": 1792229593.4520009,
     "tokens": {
       "7536qC4LEs3W2GtSKbhVGNJSiRfuXJhKVthxsgfkpump": {
         "first_seen": 1791637587,
@@ -5412,8 +5412,8 @@
         "symbol": "PONS"
       },
       "H4KUxsEgCp2yDpFvyDuGM5k6XevSKKrrKUxZ3Zr6nyJc": {
-        "first_seen": 1792170861,
-        "last_seen": 1792207331,
+        "first_seen": 1792229591,
+        "last_seen": 1792229591,
         "symbol": "COCKROACH"
       },
       "qntUzPUsJ51abNP7VYNxkmsQ4RnvEZAhavUxsCxpxH4": {
@@ -5515,7 +5515,7 @@
       },
       "EkFRff9a2jKztJHML1LG9FRmEkPJDR6XAYp3uCPdpump": {
         "first_seen": 1792171856,
-        "last_seen": 1792229239,
+        "last_seen": 1792229593,
         "symbol": "SLOPCORE"
       },
       "3VPoXaRcXxju8qgkVRN87UuXZxbdBD7zyaXPDqqmpump": {
@@ -5525,7 +5525,7 @@
       },
       "EEpng77ZPn9FbgbT4xsRjwuxNCcMBYq3HTwEscyTpump": {
         "first_seen": 1792163310,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "HeeHaw"
       },
       "72QvBVwpxqmheEPfaCwWSWqEFsUy3rhWt6JhQBMNTwD1": {
@@ -5550,12 +5550,12 @@
       },
       "9qriMjPPAJTMCtfQnz7Mo9BsV2jAWTr2ff7yc3JWpump": {
         "first_seen": 1792229237,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "9qri"
       },
       "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx": {
         "first_seen": 1792157786,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "HIMS"
       },
       "HzYCHqAN2uoHGRnL9v2ChCfFQX3bvJuJd5zu2Hd5MZQy": {
@@ -5625,7 +5625,7 @@
       },
       "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF": {
         "first_seen": 1791736416,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "DJT"
       },
       "6ir6ih6y9t9JWBLQSP5PRLVDzBxBRqQkMMnxkkT6pump": {
@@ -5655,7 +5655,7 @@
       },
       "68AGsjomsgTtiTaDhF6XGCeVJDnFeh415ngYYgVxGzns": {
         "first_seen": 1792227820,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "OWL"
       },
       "D9npHkB7jsx5vqqZhUBLp3wmvr6kBLL28NrfrT3ipump": {
@@ -5700,7 +5700,7 @@
       },
       "DuEy8wWrzCUun5ZbbG9hkVqXqqicpTQw8gB7nEAzpCHQ": {
         "first_seen": 1792177510,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "FLUID"
       },
       "EygStH4gHv1h4E8w4raYv6NGsrDiij3nbfCc26iTpump": {
@@ -5790,7 +5790,7 @@
       },
       "9g4Pib6AM3oVdP9YA7ZcssAXAuhoUzkjR8w27doYpump": {
         "first_seen": 1792075242,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "Pepper"
       },
       "3e9CNFHjof1G5Te3NwBMBFZHdkoM8Gtef7qBEAdVpump": {
@@ -6315,7 +6315,7 @@
       },
       "2nP9yKQNSGQy851iyawDvBkzkK2R2aqKArQCKc2gpump": {
         "first_seen": 1792124879,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "PsyopAnime"
       },
       "HJ6iNrnZtJJu7BH7r78ojtEZGdyKjZENNXXhAEqgpump": {
@@ -6380,7 +6380,7 @@
       },
       "BABANGA4JE7Kkam4nTrALAwAVgsNJUuFJnnkF7S16BZp": {
         "first_seen": 1792179411,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "BABA"
       },
       "B5WTLaRwaUQpKk7ir1wniNB6m5o8GgMrimhKMYan2R6B": {
@@ -7385,7 +7385,7 @@
       },
       "6yjNqPzTSanBWSa6dxVEgTjePXBrZ2FoHLDQwYwEsyM6": {
         "first_seen": 1792229237,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "Chud"
       },
       "wzAyQTorWyoVXuJKj2x8EqKEGJpS13z6EWE9z5Aondo": {
@@ -7895,7 +7895,7 @@
       },
       "ALDVtr9JeLjKH91fHFvLxFoyd7C6eLUxi9dUoN2FsWdD": {
         "first_seen": 1792097144,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "BUBBLE"
       },
       "PUSAG1stksTcAoK9MjinEHUwAYRJsbovywYCk37m6hy": {
@@ -7954,13 +7954,13 @@
         "symbol": "DRAINLOVE"
       },
       "DioisRY2M15WKza2te7pCvEAe7B1EVp4N1ZrM6tn52Sp": {
-        "first_seen": 1792115229,
-        "last_seen": 1792174566,
+        "first_seen": 1792229591,
+        "last_seen": 1792229591,
         "symbol": "HAMSTER"
       },
       "3w5cKpkfz2TAS22oXhMSZGjpsK6URL5d5db2thvwMtVx": {
         "first_seen": 1792116135,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "FTR"
       },
       "4ZYonK7RhCaQ24YmGDwJpz1g8WbjyrLZQ8AcXf28WYPt": {
@@ -8075,7 +8075,7 @@
       },
       "purpFPo5voy6fEu8jxSCwVdMs1zyYEYAH6FBQvTYCZK": {
         "first_seen": 1792196800,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "PURPS"
       },
       "nPD9vif19C2oY1jhHRrAJSSpMu9tJQtibfxoZ4qcxph": {
@@ -8120,7 +8120,7 @@
       },
       "PrekqLJvJ3qVdXmBGDiexvwUTF4rLFDa6HWS4HJbw9S": {
         "first_seen": 1792213453,
-        "last_seen": 1792220538,
+        "last_seen": 1792229591,
         "symbol": "NEURALINK"
       },
       "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump": {
@@ -8145,7 +8145,7 @@
       },
       "ysPp2Bt2j2UQu2tZwtSJz7JxyrmQ8GJcNJE5NyDoS5a": {
         "first_seen": 1792215264,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "MUSK4"
       },
       "8FnBBoqYdVAps3Ekpvhr48sNkxsPVKq8iyzWDrYYpump": {
@@ -8260,7 +8260,7 @@
       },
       "1htv5Nzfdy44FJWAdTXZoACJW4BWbB2XwZC6SVopurp": {
         "first_seen": 1792197700,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "Aloooong"
       },
       "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump": {
@@ -8305,12 +8305,12 @@
       },
       "rVWG97Yj6ZbuF9zeQo8TosQG6mUcUeL8BocfHu3pump": {
         "first_seen": 1792219461,
-        "last_seen": 1792229238,
+        "last_seen": 1792229592,
         "symbol": "PRIME"
       },
       "BREAKLm9nsBW8M5ZTk52EUpwSC5cdCepdjUMSPnCxTgd": {
         "first_seen": 1792220538,
-        "last_seen": 1792229236,
+        "last_seen": 1792229591,
         "symbol": "BREAK"
       },
       "DeatoN4UYU2B658Lh4ZV1VXy1u2ros32UEwnAtCRv4nB": {
@@ -8320,13 +8320,18 @@
       },
       "2e3zQiA8JWeDjjVeuqzv9X1Q3aqRRaPqL8UYEbxVpump": {
         "first_seen": 1792229239,
-        "last_seen": 1792229239,
+        "last_seen": 1792229593,
         "symbol": "NUBI"
       },
       "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump": {
         "first_seen": 1792229237,
-        "last_seen": 1792229237,
+        "last_seen": 1792229591,
         "symbol": "GLITCH"
+      },
+      "DRtvTCzfiKGhCVREmBbZdN9sB8PHeq9KdRZ3VmFhpump": {
+        "first_seen": 1792229591,
+        "last_seen": 1792229591,
+        "symbol": "ChiefPussy"
       }
     }
   },
