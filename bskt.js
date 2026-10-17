@@ -163,8 +163,9 @@
     h += '<section><h2>Creator ref links <small>playbskt.com/?ref=code · welcome bonus per new player</small></h2><div class="bk-ref">';
     if (st && st.ref) {
       h += '<div class="wrap"><table><thead><tr><th class="l">Code</th><th>Visits</th><th>Unique</th><th>Signups</th><th>Players</th><th>Wallets</th><th>Bonuses paid</th><th>BSKT paid</th><th>Pending</th><th>Runs</th><th>BSKT earned</th></tr></thead><tbody>';
-      const codes = (st.ref.codes || []).slice().sort((a, b) => b.signups - a.signups || b.visits - a.visits);
-      codes.forEach((c) => { h += `<tr><td class="l"><b>${esc(c.code)}</b>${c.active ? "" : ' <span class="muted">(off)</span>'}${c.video ? ` <a class="muted" href="${esc(c.video)}" target="_blank" rel="noopener" title="${esc((c.creator || "") + (c.publishedEt ? " · published " + c.publishedEt + " ET" : ""))}">▶ video</a>` : ""}${c.registered === false ? ' <span class="muted" title="code not in the API ref_codes table yet, so visits/signups are not counted">(not registered)</span>' : ""}</td><td>${fN(c.visits)}</td><td>${fN(c.uniqueVisitors)}</td><td>${fN(c.signups)}</td><td>${fN(c.players)}</td><td>${fN(c.wallets)}</td><td>${fN(c.bonusesPaid)}</td><td>${fN(c.bonusPaidBskt)}</td><td>${fN(c.bonusesPending)}</td><td>${fN(c.verifiedRuns)}</td><td>${fN(c.pointsEarned)}</td></tr>`; });
+      // hide inactive codes (owner 2026-10-15: Parallax write-off — active=false must not appear on the creator dashboard)
+      const codes = (st.ref.codes || []).filter((c) => c.active !== false).slice().sort((a, b) => b.signups - a.signups || b.visits - a.visits);
+      codes.forEach((c) => { h += `<tr><td class="l"><b>${esc(c.code)}</b>${c.video ? ` <a class="muted" href="${esc(c.video)}" target="_blank" rel="noopener" title="${esc((c.creator || "") + (c.publishedEt ? " · published " + c.publishedEt + " ET" : ""))}">▶ video</a>` : ""}${c.ytViews != null ? ` <a class="muted" href="${esc((c.ytVideos && c.ytVideos[0] && c.ytVideos[0].url) || c.video || "#")}" target="_blank" rel="noopener" title="${esc("YouTube views (refreshed by the box recorder)" + (c.ytVideos || []).map((v) => "\n" + v.url + ": " + (v.views == null ? "n/a" : fN(v.views)) + (v.title ? " · " + v.title : "")).join(""))}">· ${fN(c.ytViews)} YT views</a>` : ""}${c.registered === false ? ' <span class="muted" title="code not in the API ref_codes table yet, so visits/signups are not counted">(not registered)</span>' : ""}</td><td>${fN(c.visits)}</td><td>${fN(c.uniqueVisitors)}</td><td>${fN(c.signups)}</td><td>${fN(c.players)}</td><td>${fN(c.wallets)}</td><td>${fN(c.bonusesPaid)}</td><td>${fN(c.bonusPaidBskt)}</td><td>${fN(c.bonusesPending)}</td><td>${fN(c.verifiedRuns)}</td><td>${fN(c.pointsEarned)}</td></tr>`; });
       const sum = (k) => codes.reduce((s, c) => s + (num(c[k]) || 0), 0);
       if (codes.length > 1) h += `<tr class="bk-sum"><td class="l">Total</td><td>${fN(sum("visits"))}</td><td>${fN(sum("uniqueVisitors"))}</td><td>${fN(sum("signups"))}</td><td>${fN(sum("players"))}</td><td>${fN(sum("wallets"))}</td><td>${fN(sum("bonusesPaid"))}</td><td>${fN(sum("bonusPaidBskt"))}</td><td>${fN(sum("bonusesPending"))}</td><td>${fN(sum("verifiedRuns"))}</td><td>${fN(sum("pointsEarned"))}</td></tr>`;
       h += "</tbody></table></div>";
@@ -247,7 +248,8 @@
   function refTrend(d) {
     const st = d.stats; if (!st || !st.ref || !(st.ref.daily || []).length) return "";
     const f = firstDay(d), all = dayRange(d, 60).filter((x) => x >= f), labels = all.map((x) => ({ t: dLabel(x), full: x }));
-    const codes = [...new Set(st.ref.daily.map((r) => r.code))], cols = ["#d29922", "#bc8cff", "#3fb950", "#58a6ff", "#f85149", "#79c0ff"];
+    const active = new Set((st.ref.codes || []).filter((c) => c.active !== false).map((c) => c.code));
+    const codes = [...new Set(st.ref.daily.map((r) => r.code).filter((c) => !active.size || active.has(c)))], cols = ["#d29922", "#bc8cff", "#3fb950", "#58a6ff", "#f85149", "#79c0ff"];
     const v = (code) => all.map((x) => { const r = st.ref.daily.find((q) => q.code === code && q.day === x); return r ? r.signups : 0; });
     return '<div class="bk-chart"><div class="bk-ct">Signups per day by creator</div>' + bars(labels, codes.map((c, i) => ({ name: c, c: cols[i % cols.length], v: v(c) })), { stacked: true }) + "</div>";
   }
