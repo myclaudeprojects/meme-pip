@@ -29,7 +29,8 @@
                      "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"],
     SOL_MINT: "So11111111111111111111111111111111111111112",
     STABLES: ["EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",  // USDC
-              "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"], // USDT
+              "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",  // USDT
+              "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh"], // WBTC reward drips: hidden from positions (owner 2026-10-19)
     SI276: "HMYd9tosnUXuNHmq7pXmoePRVBLBBjA3JBfydq6upump",
     FRANK: "HbPDWSqu8hpVMX6gMjwMDGe5rVgicWo3Qh3Jaojypump",
     // Defaults; overridden by positions.json (state.json) when present.
