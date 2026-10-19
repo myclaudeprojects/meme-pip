@@ -1,10 +1,10 @@
 {
- "generated_et": "2026-10-19 00:07:16 EDT",
- "generated_ts": 1792382836560,
+ "generated_et": "2026-10-19 00:10:02 EDT",
+ "generated_ts": 1792383002362,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 8.893706661,
+  "sol": 8.84432005,
   "tokens": [
    {
     "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -17,6 +17,10 @@
    {
     "mint": "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump",
     "amount": 23414681.018211
+   },
+   {
+    "mint": "9a2kDWcC1P5qeyo3Hc3RbX4f3xXnbyDrm9KwGoeppump",
+    "amount": 706727.75539
    },
    {
     "mint": "E8cMx9uJts2nqXRTTy6WxWNzj7k85v7rnYtuiHD7yJVV",
@@ -41,41 +45,48 @@
   "usdc": 235.948450480009
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 105.065,
-  "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": 1.803e-05,
+  "So11111111111111111111111111111111111111112": 105.12,
+  "9a2kDWcC1P5qeyo3Hc3RbX4f3xXnbyDrm9KwGoeppump": 9.336e-06,
+  "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": 1.835e-05,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.71,
-  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.005157,
-  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 0.9998,
-  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987
+  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.004949,
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 1.00011,
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999
  },
  "info": {
+  "9a2kDWcC1P5qeyo3Hc3RbX4f3xXnbyDrm9KwGoeppump": {
+   "symbol": "BEPE",
+   "mc": 9336.8,
+   "pair": "DKceChPC8vosRLeUoT21QPLxBEkuCB1vVKSTbd42bHD",
+   "dex": "pumpfun"
+  },
   "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": {
    "symbol": "FrunkStore",
-   "mc": 18034.21,
+   "mc": 18352.51,
    "pair": "BkVR6yDX99RtGN5RKQFkqYEPCuujqzoTQvJzhrXoYBny",
    "dex": "pumpfun"
   },
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
    "symbol": "TRUMP",
-   "mc": 483104197,
+   "mc": 483410551,
    "pair": "Ckp1kwZqosaLU1h3zWtuaMBubyWM7LX3cxYezRVin7p2",
    "dex": "orca"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
    "symbol": "BORDR",
-   "mc": 5156872,
+   "mc": 4949827,
    "pair": "FTmwv748VxVVrRohjYzvdfyL4SXP3C6QTnHSem5QhewZ",
    "dex": "meteora"
   },
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
    "symbol": "USDC",
-   "mc": 72346341588,
+   "mc": 72368985007,
    "pair": "DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
    "dex": "pancakeswap"
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183932821427,
+   "mc": 183975540945,
    "pair": "22HUWiJaTNph96KQTKZVy2wg8KzfCems5nyW7E5H5J6w",
    "dex": "pancakeswap"
   }
