@@ -1,10 +1,10 @@
 {
- "generated_et": "2026-10-18 22:09:23 EDT",
- "generated_ts": 1792375763290,
+ "generated_et": "2026-10-18 22:11:28 EDT",
+ "generated_ts": 1792375888412,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 13.582374293,
+  "sol": 9.772506578,
   "tokens": [
    {
     "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -13,6 +13,10 @@
    {
     "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
     "amount": 0.020508
+   },
+   {
+    "mint": "AkDAiyNyazPXEoXfY1jkehT8TvMd1pUpiwWQ89yjpump",
+    "amount": 2551674.513427
    },
    {
     "mint": "E8cMx9uJts2nqXRTTy6WxWNzj7k85v7rnYtuiHD7yJVV",
@@ -25,42 +29,60 @@
    {
     "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
     "amount": 0.501
+   },
+   {
+    "mint": "HfzNFxar7oggDCHnK2ekkygDsLNuCGh3dXdRQS3wJTJY",
+    "amount": 8724463.972458
    }
   ]
  },
  "arc": {
   "address": "0x341BB8851Ff8fD9EAE20ea083c2F779e646B8488",
-  "usdc": 180.8128837030526
+  "usdc": 175.76171079671514
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 105.125,
+  "So11111111111111111111111111111111111111112": 105.315,
+  "HfzNFxar7oggDCHnK2ekkygDsLNuCGh3dXdRQS3wJTJY": 2.822e-05,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.73,
-  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.00499,
-  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 0.9993,
-  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9981
+  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.004898,
+  "AkDAiyNyazPXEoXfY1jkehT8TvMd1pUpiwWQ89yjpump": 8.022e-05,
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 0.9985,
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9974
  },
  "info": {
+  "HfzNFxar7oggDCHnK2ekkygDsLNuCGh3dXdRQS3wJTJY": {
+   "symbol": "SPORE",
+   "mc": 28224.72,
+   "pair": "3C79TsfQzPKAeXaYTQALo4EFW6YX4dVU9k7zYt135hX8",
+   "dex": "pumpfun"
+  },
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
    "symbol": "TRUMP",
-   "mc": 489004888,
+   "mc": 489697916,
    "pair": "Ckp1kwZqosaLU1h3zWtuaMBubyWM7LX3cxYezRVin7p2",
    "dex": "orca"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
    "symbol": "BORDR",
-   "mc": 4989901,
+   "mc": 4898373,
    "pair": "FTmwv748VxVVrRohjYzvdfyL4SXP3C6QTnHSem5QhewZ",
    "dex": "meteora"
   },
+  "AkDAiyNyazPXEoXfY1jkehT8TvMd1pUpiwWQ89yjpump": {
+   "symbol": "dotshare",
+   "mc": 76483,
+   "pair": "7tdxSj4gEmSKeBXqgMm2Pvz3QRwUUo5T6WcmLF7H2Df3",
+   "dex": "pumpswap"
+  },
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
    "symbol": "USDC",
-   "mc": 72563195755,
+   "mc": 72259145481,
    "pair": "DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
    "dex": "pancakeswap"
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183810091488,
+   "mc": 183684682831,
    "pair": "22HUWiJaTNph96KQTKZVy2wg8KzfCems5nyW7E5H5J6w",
    "dex": "pancakeswap"
   }
