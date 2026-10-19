@@ -1,10 +1,10 @@
 {
- "generated_et": "2026-10-18 21:56:56 EDT",
- "generated_ts": 1792375016818,
+ "generated_et": "2026-10-18 21:59:01 EDT",
+ "generated_ts": 1792375141337,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 10.597709614,
+  "sol": 13.582374293,
   "tokens": [
    {
     "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -13,10 +13,6 @@
    {
     "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
     "amount": 0.020508
-   },
-   {
-    "mint": "DNM1AePswCnFFydQ2dz1yUJ3m4CBEKiCEkgpQ8YYpump",
-    "amount": 4594184.968971
    },
    {
     "mint": "E8cMx9uJts2nqXRTTy6WxWNzj7k85v7rnYtuiHD7yJVV",
@@ -37,17 +33,16 @@
   "usdc": 215.28699912443898
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 104.765,
+  "So11111111111111111111111111111111111111112": 104.735,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.73,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.005246,
-  "DNM1AePswCnFFydQ2dz1yUJ3m4CBEKiCEkgpQ8YYpump": 8.889e-05,
-  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 0.9999,
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 1.00014,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999
  },
  "info": {
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
    "symbol": "TRUMP",
-   "mc": 489315741,
+   "mc": 489638170,
    "pair": "Ckp1kwZqosaLU1h3zWtuaMBubyWM7LX3cxYezRVin7p2",
    "dex": "orca"
   },
@@ -57,21 +52,15 @@
    "pair": "FTmwv748VxVVrRohjYzvdfyL4SXP3C6QTnHSem5QhewZ",
    "dex": "meteora"
   },
-  "DNM1AePswCnFFydQ2dz1yUJ3m4CBEKiCEkgpQ8YYpump": {
-   "symbol": "MASKMODE",
-   "mc": 88895,
-   "pair": "CgEvWhgiuNYj6mjGsWM8Sv93iCuvxvN9BBYas8xL8tit",
-   "dex": "pumpswap"
-  },
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
    "symbol": "USDC",
-   "mc": 72356725663,
+   "mc": 72620214014,
    "pair": "DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
    "dex": "pancakeswap"
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183977251026,
+   "mc": 183980524299,
    "pair": "22HUWiJaTNph96KQTKZVy2wg8KzfCems5nyW7E5H5J6w",
    "dex": "pancakeswap"
   }
