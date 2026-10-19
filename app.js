@@ -274,7 +274,7 @@
       const mcLine = (p.snap && p.snap._kind === "manual" && (emc || curMc)) ? `<div class="muted" style="font-size:11px">avg entry MC $${emc ? C.fmtK(emc) : "-"} → now $${curMc ? C.fmtK(curMc) : "-"}` +
         (cost && p.value != null ? ` · PnL <span class="${p.value - cost >= 0 ? "pos" : "neg"}">${p.value - cost >= 0 ? "+" : ""}${C.fmtUsd(p.value - cost)}</span>` : "") + `</div>` : "";
       const buyLink = mcLine + ((p.snap && p.snap.buy_sig) ? `<div class="muted" style="font-size:11px"><a href="https://solscan.io/tx/${esc(p.snap.buy_sig)}" target="_blank" rel="noopener">buy tx</a>${p.snap.cost_sol ? " · " + Number(p.snap.cost_sol).toFixed(4) + " SOL" : ""}</div>` : "");
-      html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a>${tag}${miss}${buyLink}</td>` +
+      html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a> <a href="https://pump.fun/coin/${encodeURIComponent(p.mint)}" target="_blank" rel="noopener" style="font-size:11px">pump.fun</a>${tag}${miss}${buyLink}</td>` +
         `<td>${p.amount != null ? Number(p.amount).toLocaleString("en-US", { maximumFractionDigits: 0 }) : "-"}</td><td>${C.fmtUsd(p.value)}</td><td>${cost ? C.fmtUsd(cost) : "-"}</td>` +
         `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
         `<td class="l">${bar}</td><td>${info ? info.holders.toLocaleString() : "-"}</td>` +
