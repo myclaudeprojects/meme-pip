@@ -1,10 +1,10 @@
 {
- "generated_et": "2026-10-19 00:56:27 EDT",
- "generated_ts": 1792385787963,
+ "generated_et": "2026-10-19 00:58:32 EDT",
+ "generated_ts": 1792385912671,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 6.772509058,
+  "sol": 8.197755751,
   "tokens": [
    {
     "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -27,10 +27,6 @@
     "amount": 706727.75539
    },
    {
-    "mint": "9nHQ4PvUrqKpvBQT6FUatjbuYsGgnykLBmCZVZKTpump",
-    "amount": 29383434.907536
-   },
-   {
     "mint": "E8cMx9uJts2nqXRTTy6WxWNzj7k85v7rnYtuiHD7yJVV",
     "amount": 1000.0
    },
@@ -50,24 +46,17 @@
  },
  "arc": {
   "address": "0x341BB8851Ff8fD9EAE20ea083c2F779e646B8488",
-  "usdc": 386.0508990934552
+  "usdc": 386.048693805948
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 105.67,
-  "9nHQ4PvUrqKpvBQT6FUatjbuYsGgnykLBmCZVZKTpump": 6.693e-06,
+  "So11111111111111111111111111111111111111112": 105.61,
   "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": 1.144e-05,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.72,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.005032,
-  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 0.9999,
-  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9989
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 1.00055,
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9994
  },
  "info": {
-  "9nHQ4PvUrqKpvBQT6FUatjbuYsGgnykLBmCZVZKTpump": {
-   "symbol": "bit",
-   "mc": 6693.7,
-   "pair": "9cPB8MAvhUt6HfBfW7xaZ8c9Quh1P2YoJS6eTM8xciA5",
-   "dex": "pumpfun"
-  },
   "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": {
    "symbol": "FrunkStore",
    "mc": 11447.7,
@@ -76,7 +65,7 @@
   },
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
    "symbol": "TRUMP",
-   "mc": 484927542,
+   "mc": 485281256,
    "pair": "Ckp1kwZqosaLU1h3zWtuaMBubyWM7LX3cxYezRVin7p2",
    "dex": "orca"
   },
@@ -88,13 +77,13 @@
   },
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
    "symbol": "USDC",
-   "mc": 72354968467,
+   "mc": 72400512337,
    "pair": "DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
    "dex": "pancakeswap"
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183959225808,
+   "mc": 184054042926,
    "pair": "22HUWiJaTNph96KQTKZVy2wg8KzfCems5nyW7E5H5J6w",
    "dex": "pancakeswap"
   }
