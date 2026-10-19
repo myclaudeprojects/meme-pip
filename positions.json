@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-19 10:15:26 EDT",
+  "generated_et": "2026-10-19 10:15:28 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -467,6 +467,19 @@
       "tp_multiple": null,
       "tp_target_mc": null,
       "opened_et": "2026-10-11 08:10:07 ET"
+    },
+    {
+      "mint": "D3S6J9s1byrNBt3ZKwEDiPsNRqHtoEP8zQKdhyBdpump",
+      "symbol": "MV_PIERRE_D3S6",
+      "status": "manual",
+      "cost_usd": 5.0039,
+      "cost_src": "cost_usd",
+      "cost_sol": 0.048124237,
+      "tokens_ui": 2791.85186,
+      "entry_mc": 1777832.0,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "10/19/2026, 10:15:28 ET"
     },
     {
       "mint": "5Bb7bLinAJtBnLxiAwoTAh1gipPb4jyKq1MV9FdMpump",
@@ -5397,6 +5410,75 @@
       "created_src": null,
       "m": [],
       "d": []
+    },
+    "D3S6J9s1byrNBt3ZKwEDiPsNRqHtoEP8zQKdhyBdpump": {
+      "symbol": "PIERRE",
+      "created_ts": 1792340536.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1792364264,
+          3545
+        ],
+        [
+          1792364325,
+          3540
+        ],
+        [
+          1792364385,
+          3536
+        ],
+        [
+          1792364445,
+          3535
+        ]
+      ],
+      "d": [
+        [
+          1792340536,
+          16
+        ],
+        [
+          1792342664,
+          168
+        ],
+        [
+          1792342845,
+          166
+        ],
+        [
+          1792360664,
+          3463
+        ],
+        [
+          1792360725,
+          3469
+        ],
+        [
+          1792360785,
+          3467
+        ],
+        [
+          1792360845,
+          3469
+        ],
+        [
+          1792363964,
+          3523
+        ],
+        [
+          1792364025,
+          3541
+        ],
+        [
+          1792364085,
+          3541
+        ],
+        [
+          1792364145,
+          3543
+        ]
+      ]
     }
   },
   "scanner_first_seen": {
