@@ -1,10 +1,10 @@
 {
- "generated_et": "2026-10-19 09:20:55 EDT",
- "generated_ts": 1792416055306,
+ "generated_et": "2026-10-19 09:21:58 EDT",
+ "generated_ts": 1792416118370,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 8.377857273,
+  "sol": 9.193980908,
   "tokens": [
    {
     "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
@@ -17,10 +17,6 @@
    {
     "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
     "amount": 0.020508
-   },
-   {
-    "mint": "BnmpaN4efCLTt5ATwA7DoNN1qPa1TsM4H3qDFBnDpump",
-    "amount": 17370054.455168
    },
    {
     "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
@@ -41,41 +37,34 @@
   "usdc": 380.2703812232427
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 105.275,
-  "BnmpaN4efCLTt5ATwA7DoNN1qPa1TsM4H3qDFBnDpump": 5.651e-06,
-  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": 0.004491,
+  "So11111111111111111111111111111111111111112": 105.225,
+  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": 0.004501,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.71,
-  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 82419.066,
-  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.003947
+  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 82291.25,
+  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.003789
  },
  "info": {
-  "BnmpaN4efCLTt5ATwA7DoNN1qPa1TsM4H3qDFBnDpump": {
-   "symbol": "S",
-   "mc": 5651.49,
-   "pair": "DfPBjUo2duEqzUGfftnfEXjGTPCNEGaLJjTQB8vyGiVv",
-   "dex": "pumpfun"
-  },
   "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": {
    "symbol": "PUMP",
-   "mc": 2076981242,
+   "mc": 2081765339,
    "pair": "BofA2ViUSudPBTUms2KRuG6AHNeMawjNfwqTJDgx5BKW",
    "dex": "orca"
   },
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
    "symbol": "TRUMP",
-   "mc": 484116574,
+   "mc": 484562987,
    "pair": "Ckp1kwZqosaLU1h3zWtuaMBubyWM7LX3cxYezRVin7p2",
    "dex": "orca"
   },
   "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": {
    "symbol": "WBTC",
-   "mc": 318079568,
+   "mc": 317586307,
    "pair": "B5EwJVDuAauzUEEdwvbuXzbFFgEYnUqqS37TUM1c4PQA",
    "dex": "orca"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
    "symbol": "BORDR",
-   "mc": 3947640,
+   "mc": 3788987,
    "pair": "FTmwv748VxVVrRohjYzvdfyL4SXP3C6QTnHSem5QhewZ",
    "dex": "meteora"
   }
