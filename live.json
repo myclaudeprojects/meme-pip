@@ -1,10 +1,10 @@
 {
- "generated_et": "2026-10-19 07:21:09 EDT",
- "generated_ts": 1792408869565,
+ "generated_et": "2026-10-19 07:23:13 EDT",
+ "generated_ts": 1792408993591,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 8.095345073,
+  "sol": 8.095346073,
   "tokens": [
    {
     "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
@@ -24,38 +24,43 @@
    },
    {
     "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-    "amount": 1.512461
+    "amount": 1.512561
+   },
+   {
+    "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+    "amount": 0.001
    }
   ]
  },
  "arc": {
   "address": "0x341BB8851Ff8fD9EAE20ea083c2F779e646B8488",
-  "usdc": 333.9478480025095
+  "usdc": 323.5083065387182
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 104.44,
-  "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": 1.325e-05,
-  "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.69,
-  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 81882.82,
+  "So11111111111111111111111111111111111111112": 104.49,
+  "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": 1.396e-05,
+  "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.7,
+  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 81989.57,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.003689,
-  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 1.000074
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 0.9998,
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999
  },
  "info": {
   "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": {
    "symbol": "FrunkStore",
-   "mc": 13259.73,
+   "mc": 13963.01,
    "pair": "BkVR6yDX99RtGN5RKQFkqYEPCuujqzoTQvJzhrXoYBny",
    "dex": "pumpfun"
   },
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
    "symbol": "TRUMP",
-   "mc": 479070121,
+   "mc": 479384024,
    "pair": "Ckp1kwZqosaLU1h3zWtuaMBubyWM7LX3cxYezRVin7p2",
    "dex": "orca"
   },
   "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": {
    "symbol": "WBTC",
-   "mc": 316010067,
+   "mc": 316422042,
    "pair": "B5EwJVDuAauzUEEdwvbuXzbFFgEYnUqqS37TUM1c4PQA",
    "dex": "orca"
   },
@@ -67,8 +72,14 @@
   },
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
    "symbol": "USDC",
-   "mc": 72365870263,
+   "mc": 72352501232,
    "pair": "DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
+   "dex": "pancakeswap"
+  },
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
+   "symbol": "USDT",
+   "mc": 183986465146,
+   "pair": "22HUWiJaTNph96KQTKZVy2wg8KzfCems5nyW7E5H5J6w",
    "dex": "pancakeswap"
   }
  }
