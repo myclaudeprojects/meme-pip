@@ -1,14 +1,14 @@
 {
- "generated_et": "2026-10-19 01:40:02 EDT",
- "generated_ts": 1792388402452,
+ "generated_et": "2026-10-19 01:42:06 EDT",
+ "generated_ts": 1792388526753,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 6.471674287,
+  "sol": 8.681822634,
   "tokens": [
    {
     "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-    "amount": 5.26e-06
+    "amount": 1.24e-05
    },
    {
     "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -21,10 +21,6 @@
    {
     "mint": "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump",
     "amount": 23414681.018211
-   },
-   {
-    "mint": "BBZsgF5upDjkbuTutsqbEHw2oYrZJYPDEBAPf3nwpump",
-    "amount": 20562240.600188
    },
    {
     "mint": "BZ4mJTVhrJvbKRtZPDZiHwcH6ujgdtUpne2Ky4sBpump",
@@ -49,32 +45,25 @@
   "usdc": 251.47416997536737
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 105.53,
-  "BZ4mJTVhrJvbKRtZPDZiHwcH6ujgdtUpne2Ky4sBpump": 8.438e-06,
-  "BBZsgF5upDjkbuTutsqbEHw2oYrZJYPDEBAPf3nwpump": 1.188e-05,
+  "So11111111111111111111111111111111111111112": 105.515,
+  "BZ4mJTVhrJvbKRtZPDZiHwcH6ujgdtUpne2Ky4sBpump": 8.627e-06,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.71,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.004931,
-  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 82533.21,
+  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 82635.65,
   "9T1DbbiKfhfubEabDj5SWSMzBuyU4tJHkpSgR51Tpump": 1.246e-05,
-  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 1.00013,
-  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 0.9999,
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 1.00011
  },
  "info": {
   "BZ4mJTVhrJvbKRtZPDZiHwcH6ujgdtUpne2Ky4sBpump": {
    "symbol": "BOB",
-   "mc": 8438.1,
+   "mc": 8627.21,
    "pair": "GSqYYFwKivqrHQFJ7nZWWDpbJLHvRXcfEH273drprY5c",
-   "dex": "pumpfun"
-  },
-  "BBZsgF5upDjkbuTutsqbEHw2oYrZJYPDEBAPf3nwpump": {
-   "symbol": "BITCAT",
-   "mc": 11880.47,
-   "pair": "DsA9uLCdtKoFayM9HZ73XiRQiHLPvn2DsaicQUNVVgsz",
    "dex": "pumpfun"
   },
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": {
    "symbol": "TRUMP",
-   "mc": 483130839,
+   "mc": 483171725,
    "pair": "Ckp1kwZqosaLU1h3zWtuaMBubyWM7LX3cxYezRVin7p2",
    "dex": "orca"
   },
@@ -86,7 +75,7 @@
   },
   "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": {
    "symbol": "WBTC",
-   "mc": 318520119,
+   "mc": 318915436,
    "pair": "B5EwJVDuAauzUEEdwvbuXzbFFgEYnUqqS37TUM1c4PQA",
    "dex": "orca"
   },
@@ -98,13 +87,13 @@
   },
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
    "symbol": "USDC",
-   "mc": 72370603349,
+   "mc": 72358818548,
    "pair": "DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
    "dex": "pancakeswap"
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 184004533048,
+   "mc": 184178356481,
    "pair": "22HUWiJaTNph96KQTKZVy2wg8KzfCems5nyW7E5H5J6w",
    "dex": "pancakeswap"
   }
