@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-10-19 16:54:36 EDT",
- "generated_ts": 1792443276063,
+ "generated_et": "2026-10-19 16:56:41 EDT",
+ "generated_ts": 1792443401834,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -31,6 +31,10 @@
     "amount": 0.001
    },
    {
+    "mint": "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
+    "amount": 0.112831
+   },
+   {
     "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
     "amount": 330.413486
    }
@@ -38,11 +42,10 @@
  },
  "arc": {
   "address": "0x341BB8851Ff8fD9EAE20ea083c2F779e646B8488",
-  "usdc": 146.89361863454687
+  "usdc": 325.3089442770444
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 104.295,
-  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": 0.004365,
+  "So11111111111111111111111111111111111111112": 104.345,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9989,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009979,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.1074,
@@ -62,29 +65,46 @@
   "DuXfm3HPvY5i2VP4nujH5HYRE28EVwwuPm8D63Ahzwya": 0.9998,
   "2o69gwy6ZhL66KQxNk5Z2YeihCNpPjNneqr2Sn771can": 0.04999,
   "Bess9scjhF94Y5z4k57SmYwysJ4jcUxAbGsQ9Gu6vmuW": 1.00000041,
-  "Cs8iY7vSocaSxhYTmddPAJJ1wRvpt3qVfQBRrNE4pump": 3.791e-05,
+  "Cs8iY7vSocaSxhYTmddPAJJ1wRvpt3qVfQBRrNE4pump": 6.127e-05,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.003879,
   "HygNWegGFjQqNMCsQmXbFgr3ViybkEN6fQtmvLXVXJmd": 0.0001046,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 2.611e-05,
   "BhWQdgq3u8z4JhRGwXttegDum2UZ9WdfXNcmmo2hrREV": 5.754e-06,
   "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD": 1.032,
+  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 82205.54,
+  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": 0.004366,
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": 1.001,
   "CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp": 0.2966,
-  "dBKbTmqZ1a8HrQSt1s9YVeXS6rS6R8dpGMXZfTJa913": 5.962e-06,
-  "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump": 0.001213,
-  "F7ZY9iWN8ykYxNY3ixpoavEYDZE9DQLEmget5Xcypump": 3.262e-08,
+  "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump": 0.001208,
+  "F7ZY9iWN8ykYxNY3ixpoavEYDZE9DQLEmget5Xcypump": 2.555e-08,
   "USoEHwaQxrdk66KrrMdd1rhzvfvUDxvNW1Kn75yPjnB": 0.004197,
+  "dBKbTmqZ1a8HrQSt1s9YVeXS6rS6R8dpGMXZfTJa913": 5.962e-06,
   "GKuVoyf1Y7CFuXfwohwT9at2ThK1XMDMny7b2aWBN4zL": 6.501e-06,
   "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": 1.7,
-  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": 81867.79
+  "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx": 28.19,
+  "FUaPhDoVwrpYwC4N414Sd3T8iBuUp8C8z5GcS4jppump": 1.636e-05,
+  "xBzvVJLcU9RXa3EHHc7xFpnRtMPwX5sp1aGG1TVpump": 5.366e-06,
+  "GbEXx4AZhJhMQJfeyMQ35ohdbeJ7Z9mQDw8cHvmCpump": 4.127e-06,
+  "znfeqg7n3D1Nbabq3vSJmPZ1xK9Uk6US9bor8RXpump": 3.261e-06,
+  "9fWtMwWoRnpCr5TDQBZEf1xRGN4bXa7afJ3uzLBApump": 3.08e-06,
+  "9e68FyCZVdrCqk4s8GJLPSuas8WR4hz37vmVvC2opump": 3.476e-06,
+  "4522c3NNwLU1TtBxqp7fkgqUHMFk9D6hSXfLwBLKpump": 3.45e-06,
+  "6UttLs5LxVTWN3xiixf1yCzqbFr4Vjz8Q3U3bU3fpump": 3.369e-06,
+  "7u5vxjhfLVCos9aZPaoBxQAU8zcAf6p5mzLdErUbpump": 3.075e-06,
+  "4JbYTtxBz9TCdhQj4CXTa1yDcrunYivqHknckBa5pump": 3.076e-06,
+  "Gw6fcyH5H9Tkdz2kR6WqKByCGr9wgp7vNLgYc2Kkpump": 3.075e-06,
+  "DPs7G7vgQPHdxmhyAQvAJJsUQRZyESq6PqRotCtr38Pv": 3.075e-06,
+  "8jprrhtpqTCyPFNgg6EXVneBbtGSU4nzNV4fVXYupump": 3.075e-06,
+  "HSUMi4rMgjrx7zRUabw3ogGu1pa5hmF2eVcXj9Apump": 2.567e-05,
+  "8xCaiHTRK54YY4UYuntEc2Q8chLxgBEcDRLZPS1rpump": 3.075e-06,
+  "5kC6JvuF2tpiLWXpvZmNTWqqtdWph5xTVPdN8FTrpump": 3.075e-06,
+  "4CBYNmn1t6MHRUKT2D2iwpseD71WrtcsvdbnztRdpump": 3.076e-06,
+  "F5DppgJsuD8kkdsFa3EsZ1Wzpv31CuEjNmADpDGVgemN": 4.363e-06,
+  "2vc1brMtWHjfacM15A5HtvNfXa2q2ZqSrYY5pyp6pump": 3.076e-06,
+  "HbD4wa3Tpj3ZSh1fHivAS4PacEpqWSfjAE1VoRPpump": 3.075e-06,
+  "6k28PQAUF6q8PGxM1V7evoRLXEpRpfSdiLkuhc7fpump": 3.075e-06
  },
  "info": {
-  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": {
-   "symbol": "PUMP",
-   "mc": 2017942405,
-   "pair": "2uF4Xh61rDwxnG9woyxsVQP7zuA6kLFpb3NvnRQeoiSd",
-   "dex": "pumpswap"
-  },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
    "mc": 183956979354,
@@ -93,7 +113,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 18837843,
+   "mc": 18837844,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -111,7 +131,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 18094754,
+   "mc": 18092560,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -201,7 +221,7 @@
   },
   "Cs8iY7vSocaSxhYTmddPAJJ1wRvpt3qVfQBRrNE4pump": {
    "symbol": "nutcoin",
-   "mc": 37908,
+   "mc": 61259,
    "pair": "9avDjMMyUEW15hZm8nGQWGT64EX2pFvEeEhrmxpkCUUX",
    "dex": "pumpswap"
   },
@@ -235,33 +255,39 @@
    "pair": "EkPyMqfSQJMQcnQ3cCwxg3Xszj5crzSFTC8g2HvGhXk8",
    "dex": "meteora"
   },
+  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": {
+   "symbol": "WBTC",
+   "mc": 317255543,
+   "pair": "B5EwJVDuAauzUEEdwvbuXzbFFgEYnUqqS37TUM1c4PQA",
+   "dex": "orca"
+  },
+  "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn": {
+   "symbol": "PUMP",
+   "mc": 2018316133,
+   "pair": "2uF4Xh61rDwxnG9woyxsVQP7zuA6kLFpb3NvnRQeoiSd",
+   "dex": "pumpswap"
+  },
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
    "symbol": "USDC",
-   "mc": 72504538200,
+   "mc": 72504538203,
    "pair": "BZtgQEyS6eXUXicYPHecYQ7PybqodXQMvkjUbP4R8mUU",
    "dex": "raydium"
   },
   "CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp": {
    "symbol": "CARDS",
-   "mc": 267763940,
+   "mc": 267771632,
    "pair": "HnhpJPJgBG2KwniMTNW8cVBHvk1hFog3RC3kjnyc23tD",
    "dex": "raydium"
   },
-  "dBKbTmqZ1a8HrQSt1s9YVeXS6rS6R8dpGMXZfTJa913": {
-   "symbol": "PCARDZ",
-   "mc": 5962.36,
-   "pair": "9etPhnowkJUHX8cQ8wWH6CJqqpYGFiXC2A3Sg7tNu6zt",
-   "dex": "pumpfun"
-  },
   "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump": {
    "symbol": "CBUCKS",
-   "mc": 1144754,
+   "mc": 1139776,
    "pair": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
    "dex": "pumpswap"
   },
   "F7ZY9iWN8ykYxNY3ixpoavEYDZE9DQLEmget5Xcypump": {
    "symbol": "Money",
-   "mc": 32.62,
+   "mc": 25.56,
    "pair": "9ycTkW5Kss2t4ZwYUUFdkCBPR4kt87y6Bc7oTt46Ahbe",
    "dex": "pumpfun"
   },
@@ -270,6 +296,12 @@
    "mc": 4197488,
    "pair": "6ESbso1k12jJBEbNthW8qwjPRGZpU3rrMskTeuiV9jiF",
    "dex": "meteora"
+  },
+  "dBKbTmqZ1a8HrQSt1s9YVeXS6rS6R8dpGMXZfTJa913": {
+   "symbol": "PCARDZ",
+   "mc": 5962.36,
+   "pair": "9etPhnowkJUHX8cQ8wWH6CJqqpYGFiXC2A3Sg7tNu6zt",
+   "dex": "pumpfun"
   },
   "GKuVoyf1Y7CFuXfwohwT9at2ThK1XMDMny7b2aWBN4zL": {
    "symbol": "FUSE",
@@ -283,11 +315,137 @@
    "pair": "9d9mb8kooFfaD3SctgZtkxQypkshx6ezhbKio89ixyy2",
    "dex": "meteora"
   },
-  "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": {
-   "symbol": "WBTC",
-   "mc": 315952052,
-   "pair": "B5EwJVDuAauzUEEdwvbuXzbFFgEYnUqqS37TUM1c4PQA",
+  "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx": {
+   "symbol": "HIMS",
+   "mc": 177877,
+   "pair": "7iqWWNjubSTjmWXk9eYJViDLZjBN2KjrYt5Z9j8n8exQ",
    "dex": "orca"
+  },
+  "FUaPhDoVwrpYwC4N414Sd3T8iBuUp8C8z5GcS4jppump": {
+   "symbol": "jorkin",
+   "mc": 16361.87,
+   "pair": "8z8rpUxDv93iJjEPih82ccQUgMKHxBpQP7V1rtExgkgg",
+   "dex": "pumpfun"
+  },
+  "xBzvVJLcU9RXa3EHHc7xFpnRtMPwX5sp1aGG1TVpump": {
+   "symbol": "NNN",
+   "mc": 5366.21,
+   "pair": "5XF9icvGdJ4RaRU8pw3t7GEnkN5ZVaj4UtP13Pmc7aaQ",
+   "dex": "pumpfun"
+  },
+  "GbEXx4AZhJhMQJfeyMQ35ohdbeJ7Z9mQDw8cHvmCpump": {
+   "symbol": "jorkin",
+   "mc": 4127.39,
+   "pair": "74AX1KrG5ZatAbcuQ5YRgJS9D4tPaXMDCXVn6pry7aZV",
+   "dex": "pumpfun"
+  },
+  "znfeqg7n3D1Nbabq3vSJmPZ1xK9Uk6US9bor8RXpump": {
+   "symbol": "Never",
+   "mc": 3261.96,
+   "pair": "8F8kRNd3gjDLjK7BX6EogdEC2GCeuFTFPKJeQc9Bangx",
+   "dex": "pumpfun"
+  },
+  "9fWtMwWoRnpCr5TDQBZEf1xRGN4bXa7afJ3uzLBApump": {
+   "symbol": "nutcoin",
+   "mc": 3080.7,
+   "pair": "8ej68HTnM36TtEy8oe1sRKEyywDeKKViv1C1XAohYedm",
+   "dex": "pumpfun"
+  },
+  "9e68FyCZVdrCqk4s8GJLPSuas8WR4hz37vmVvC2opump": {
+   "symbol": "jorkin",
+   "mc": 3476.8,
+   "pair": "Ce3vD1WL7esUiqwph8USUjRf1znRnuNEmPfg9268i3Qc",
+   "dex": "pumpfun"
+  },
+  "4522c3NNwLU1TtBxqp7fkgqUHMFk9D6hSXfLwBLKpump": {
+   "symbol": "NONUT",
+   "mc": 3450.73,
+   "pair": "87cbPdMxLmyHqbj1m6kCgQEAbBFppfftRKQyNoS1tbDz",
+   "dex": "pumpfun"
+  },
+  "6UttLs5LxVTWN3xiixf1yCzqbFr4Vjz8Q3U3bU3fpump": {
+   "symbol": "Goontek",
+   "mc": 3369.58,
+   "pair": "2oKeuThoyr7JSnGqGbzYxgRnPsg6tFdjU2Bbqg5rAWUQ",
+   "dex": "pumpfun"
+  },
+  "7u5vxjhfLVCos9aZPaoBxQAU8zcAf6p5mzLdErUbpump": {
+   "symbol": "NUT",
+   "mc": 3075.1,
+   "pair": "35w1vsrQmDfV5anXvjo8o9XJ8zCVkeamGKgwoFzdu3tC",
+   "dex": "pumpfun"
+  },
+  "4JbYTtxBz9TCdhQj4CXTa1yDcrunYivqHknckBa5pump": {
+   "symbol": "J4K",
+   "mc": 3076.37,
+   "pair": "8gt8XhVkjzQocC3uammatB7uy5e89VGDtwFJqgQVKE3T",
+   "dex": "pumpfun"
+  },
+  "Gw6fcyH5H9Tkdz2kR6WqKByCGr9wgp7vNLgYc2Kkpump": {
+   "symbol": "Coomer",
+   "mc": 3075.1,
+   "pair": "FVbpTvCjvAejYK5TUdPJiV2xbH2HRrYyMcZHuaHtGyk9",
+   "dex": "pumpfun"
+  },
+  "DPs7G7vgQPHdxmhyAQvAJJsUQRZyESq6PqRotCtr38Pv": {
+   "symbol": "NUT",
+   "mc": 3075.1,
+   "pair": "DGz4ak2KJ2XiwhWKwu5Z7HU9975T9DtkqCsXQbwJHAJd",
+   "dex": "pumpfun"
+  },
+  "8jprrhtpqTCyPFNgg6EXVneBbtGSU4nzNV4fVXYupump": {
+   "symbol": "nutcoin",
+   "mc": 3075.09,
+   "pair": "3fKgnPPeEkpHwubDAB4ZzfHMnp8gKb9n5oZ7Vy8H3L1f",
+   "dex": "pumpfun"
+  },
+  "HSUMi4rMgjrx7zRUabw3ogGu1pa5hmF2eVcXj9Apump": {
+   "symbol": "goon",
+   "mc": 25088,
+   "pair": "9PYormkWiWYAALGWkNNBjSEqKk79HPoRaLgQhMfY4fuv",
+   "dex": "pumpswap"
+  },
+  "8xCaiHTRK54YY4UYuntEc2Q8chLxgBEcDRLZPS1rpump": {
+   "symbol": "NNN",
+   "mc": 3075.09,
+   "pair": "3bvyb5uhctUwxx6z11vhEthooQQsNVkMf74cSntsT8Ur",
+   "dex": "pumpfun"
+  },
+  "5kC6JvuF2tpiLWXpvZmNTWqqtdWph5xTVPdN8FTrpump": {
+   "symbol": "Nut",
+   "mc": 3075.1,
+   "pair": "GtdHHJPnEs9KaEb1y7SANDTfxb6ouM37ktXeRKghyE7Y",
+   "dex": "pumpfun"
+  },
+  "4CBYNmn1t6MHRUKT2D2iwpseD71WrtcsvdbnztRdpump": {
+   "symbol": "GOON",
+   "mc": 3076.22,
+   "pair": "CnZ96hQjMNNSvKLCxDVFgNyKio51saNboZ5cEN85ZNSK",
+   "dex": "pumpfun"
+  },
+  "F5DppgJsuD8kkdsFa3EsZ1Wzpv31CuEjNmADpDGVgemN": {
+   "symbol": "COOMER",
+   "mc": 4363.03,
+   "pair": "AZeZMBfEvywkCsMfEnqs612SJp1cCrSyJUiBhdnssZmo",
+   "dex": "pumpfun"
+  },
+  "2vc1brMtWHjfacM15A5HtvNfXa2q2ZqSrYY5pyp6pump": {
+   "symbol": "BLUEBALLS",
+   "mc": 3076.99,
+   "pair": "2kcQ3FsCWto7dMRhnyiyxLc1HWc7EiTti3KoKnbRVwtE",
+   "dex": "pumpfun"
+  },
+  "HbD4wa3Tpj3ZSh1fHivAS4PacEpqWSfjAE1VoRPpump": {
+   "symbol": "Nut",
+   "mc": 3075.1,
+   "pair": "3g9JY9tzZ3mauVdASyzh2w2fPJ8VUQQwjEV8GqCpsHvw",
+   "dex": "pumpfun"
+  },
+  "6k28PQAUF6q8PGxM1V7evoRLXEpRpfSdiLkuhc7fpump": {
+   "symbol": "NUT",
+   "mc": 3075.1,
+   "pair": "CpPQjYqeNVKq5RWeGGp3nxaqg5v6gD6XMRihecFwtDSp",
+   "dex": "pumpfun"
   }
  }
 }
