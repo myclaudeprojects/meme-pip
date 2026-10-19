@@ -1,0 +1,502 @@
+/* Organic loop dashboard - UI (READ-ONLY). Renders public data; never trades or signs. */
+(function () {
+  "use strict";
+  const C = window.OrganicCore, CFG = C.CONFIG;
+  const SCAN_MS = 30000, WALLET_MS = 60000, SNAP_MS = 300000;
+  // Optional ?minpos=N to change the $5 position threshold (display only).
+  const MIN_POS_USD = (() => { const v = Number(new URLSearchParams(location.search).get("minpos")); return Number.isFinite(v) && v > 0 ? v : CFG.POSITION_MIN_USD; })();
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+  const cls = (v) => (v > 0 ? "pos" : v < 0 ? "neg" : "muted");
+  // Chart links point at the live pool (PumpSwap first, else deepest-liquidity pair), never the dead pump.fun curve.
+  const POOL = {};
+  const dex = (mint) => POOL[mint] ? "https://dexscreener.com/solana/" + POOL[mint] : "https://dexscreener.com/solana/" + encodeURIComponent(mint);
+  const fixLinks = async () => {
+    const links = [...document.querySelectorAll('a[href^="https://dexscreener.com/solana/"]')];
+    const mintOf = (a) => decodeURIComponent(a.href.split("/solana/")[1] || "").split(/[?#]/)[0];
+    const need = [...new Set(links.map(mintOf).filter((m) => m && m.length > 30 && !POOL[m] && !Object.values(POOL).includes(m)))];
+    for (let i = 0; i < need.length; i += 30) {
+      try {
+        const r = await fetch("https://api.dexscreener.com/latest/dex/tokens/" + need.slice(i, i + 30).join(","));
+        const j = await r.json();
+        const by = {};
+        for (const p of j.pairs || []) { const m = p.baseToken && p.baseToken.address; if (m) (by[m] = by[m] || []).push(p); }
+        for (const [m, ps] of Object.entries(by)) {
+          const live = ps.filter((p) => p.dexId !== "pumpfun");
+          const pick = live.find((p) => p.dexId === "pumpswap") || live.sort((a, b) => ((b.liquidity || {}).usd || 0) - ((a.liquidity || {}).usd || 0))[0];
+          if (pick) POOL[m] = pick.pairAddress;
+        }
+      } catch (e) {}
+    }
+    for (const a of links) { const m = mintOf(a); if (POOL[m]) a.href = "https://dexscreener.com/solana/" + POOL[m]; }
+  };
+  let fixT = null;
+  new MutationObserver(() => { clearTimeout(fixT); fixT = setTimeout(fixLinks, 300); }).observe(document.documentElement, { childList: true, subtree: true });
+  const short = (a) => a.slice(0, 4) + "…" + a.slice(-4);
+
+  const S = { snap: null, snapSrc: null, scan: null, wallet: null, walletErr: null, arc: null, arcErr: null,
+              prices: {}, info: {}, sources: {}, nextScan: 0, nextWallet: 0, nextSnap: 0, busy: false,
+              hist: loadHist() };
+
+  function loadHist() { try { return JSON.parse(localStorage.getItem("organicHolderHist") || "{}"); } catch (e) { return {}; } }
+  function saveHist() { try { localStorage.setItem("organicHolderHist", JSON.stringify(S.hist)); } catch (e) { /* ignore */ } }
+  function pushHist(mint, holders, hc5) {
+    if (!holders) return;
+    const a = S.hist[mint] || (S.hist[mint] = []);
+    const last = a[a.length - 1];
+    if (!last || Date.now() - last.t > 25000) a.push({ t: Date.now(), h: holders, hc5 });
+    if (a.length > 1500) thinLocal(a);
+  }
+  // Keep the whole lifetime in this browser too: full detail for 6h, then 1 point / 5 min (6-48h), 1 / 30 min older.
+  function thinLocal(a) {
+    const now = Date.now(), seen = new Set(), out = [];
+    for (const x of a) { const age = now - x.t;
+      if (age <= 6 * 3600e3) { out.push(x); continue; }
+      const b = age <= 48 * 3600e3 ? 300e3 : 1800e3, k = b + ":" + Math.floor(x.t / b);
+      if (!seen.has(k)) { seen.add(k); out.push(x); } }
+    a.splice(0, a.length, ...out);
+  }
+  // Lifetime series for a mint: measured = box recorder (positions.json holder_history.m) + this browser's samples;
+  // derived = back-calculated from Jupiter holderChange % windows; start = token launch time.
+  function holderSeries(mint) {
+    const hh = (S.snap && S.snap.holder_history && S.snap.holder_history[mint]) || {};
+    const by = new Map();
+    for (const [t, h] of hh.m || []) by.set(Math.round(t / 20) * 20000, { t: t * 1000, h, src: "box" });
+    for (const x of S.hist[mint] || []) by.set(Math.round(x.t / 20000) * 20000, { t: x.t, h: x.h, hc5: x.hc5, src: "page" });
+    const m = [...by.values()].sort((a, b) => a.t - b.t);
+    const d = (hh.d || []).map(([t, h]) => ({ t: t * 1000, h, src: "derived" })).sort((a, b) => a.t - b.t);
+    const all = m.concat(d).sort((a, b) => a.t - b.t);
+    const created = hh.created_ts ? hh.created_ts * 1000 : null;
+    return { m, d, all, created, start: created || (all[0] && all[0].t) || null };
+  }
+  function setSrc(name, ok, detail) { S.sources[name] = { ok, detail, t: Date.now() }; }
+
+  // ---------- params from snapshot ----------
+  function params() {
+    const p = (S.snap && S.snap.params) || {};
+    return { mcapMin: p.mcap_min || CFG.MCAP_MIN, mcapMax: p.mcap_max || CFG.MCAP_MAX,
+             maxPos: p.max_positions || CFG.MAX_POSITIONS, buyUsd: p.buy_usd || CFG.BUY_USD,
+             tp: p.tp_multiple || CFG.TP_MULT, early: p.early_exit_prefer_multiple || CFG.EARLY_MULT,
+             paused: p.new_buys_paused_until || null };
+  }
+  function snapPositions() {
+    const s = S.snap; if (!s) return [];
+    const open = (s.positions || []).map((p) => Object.assign({ _kind: "open" }, p));
+    const dust = (s.history || []).filter((p) => p.status === "moonbag").map((p) => Object.assign({ _kind: "dust" }, p));
+    const manual = (s.manual_positions || []).map((p) => Object.assign({ _kind: "manual" }, p));
+    return open.concat(dust, manual);
+  }
+
+  // ---------- loaders ----------
+  async function loadSnapshot() {
+    try {
+      const r = await fetch("positions.json?ts=" + Date.now(), { cache: "no-store" });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      S.snap = await r.json(); S.snapSrc = "positions.json";
+    } catch (e) {
+      if (window.POSITIONS_SNAPSHOT) { S.snap = window.POSITIONS_SNAPSHOT; S.snapSrc = "positions.js (embedded)"; }
+      else { S.snap = null; S.snapSrc = null; }
+    }
+    setSrc("positions.json snapshot", !!S.snap, S.snap ? "from " + S.snapSrc + ", generated " + S.snap.generated_et : "not found (cost basis unavailable)");
+  }
+
+  async function loadScan() {
+    const u = await C.scanUniverse();
+    const okN = u.sources.filter((s) => s.ok).length;
+    setSrc("Jupiter token lists", okN > 0, okN + "/" + u.sources.length + " lists OK" +
+      (okN < u.sources.length ? " - failed: " + u.sources.filter((s) => !s.ok).map((s) => s.path + " (" + s.err + ")").join(", ") : ""));
+    if (okN > 0) { S.scan = Object.assign({ at: Date.now() }, u); S.scanErr = null; }
+    else S.scanErr = u.sources.map((s) => s.err).filter(Boolean)[0] || "no data";
+  }
+
+  async function loadWallets() {
+    const jobs = [];
+    jobs.push(C.getSolWallet().then((w) => { S.wallet = Object.assign({ at: Date.now() }, w); S.walletErr = null;
+      setSrc("Solana RPC (SOL balance)", !!w.rpc, w.rpc ? C.hostOf(w.rpc) : "all RPCs failed; SOL from Jupiter holdings");
+      setSrc("Token holdings", w.tokensOk, w.tokensOk ? w.tokenSrc + " (" + w.tokens.length + " accounts)" : "unavailable: " + w.warn.join("; ")); })
+      .catch((e) => { S.walletErr = e.message; setSrc("Solana RPC (SOL balance)", false, e.message); setSrc("Token holdings", false, e.message); }));
+    jobs.push(C.getArcUsdc().then((a) => { S.arc = Object.assign({ at: Date.now() }, a); S.arcErr = null;
+      setSrc("Arc RPC", true, C.hostOf(CFG.ARC_RPC) + " via " + a.method); })
+      .catch((e) => { S.arcErr = e.message; setSrc("Arc RPC", false, e.message); }));
+    await Promise.all(jobs);
+
+    const mints = new Set([CFG.SOL_MINT]);
+    for (const t of (S.wallet && S.wallet.tokens) || []) if (t.amount > 0) mints.add(t.mint);
+    for (const p of snapPositions()) if (p.mint) mints.add(p.mint);
+    try { S.prices = await C.getPrices([...mints]); setSrc("Jupiter price", true, Object.keys(S.prices).length + " prices"); }
+    catch (e) { setSrc("Jupiter price", false, e.message); }
+    const posMints = [...mints].filter((m) => m !== CFG.SOL_MINT && !CFG.STABLES.includes(m));
+    if (posMints.length) {
+      try { S.info = Object.assign(S.info, await C.getTokenInfo(posMints)); } catch (e) { /* non-fatal */ }
+    }
+  }
+
+  // ---------- positions model ----------
+  function buildPositions() {
+    const snapBy = {}; for (const p of snapPositions()) if (p.mint) snapBy[p.mint] = p;
+    const out = [], seen = new Set();
+    const tokens = (S.wallet && S.wallet.tokensOk) ? S.wallet.tokens : null;
+    if (tokens) {
+      for (const t of tokens) {
+        if (t.mint === CFG.SOL_MINT || CFG.STABLES.includes(t.mint)) continue;
+        const px = S.prices[t.mint]; const value = px != null ? px * t.amount : null;
+        if (value == null || value < MIN_POS_USD) continue;
+        seen.add(t.mint);
+        out.push({ mint: t.mint, amount: t.amount, value, snap: snapBy[t.mint] || null, live: true });
+      }
+    }
+    for (const p of snapPositions()) {
+      if ((p._kind !== "open" && p._kind !== "manual") || seen.has(p.mint)) continue;
+      const px = S.prices[p.mint];
+      out.push({ mint: p.mint, amount: tokens ? 0 : p.tokens_ui, value: tokens ? 0 : (px != null && p.tokens_ui ? px * p.tokens_ui : null),
+                 snap: p, live: false, missing: !!tokens });
+    }
+    return out;
+  }
+
+  // ---------- render ----------
+  function render() {
+    const P = params();
+    $("updated").textContent = C.nowEt();
+    $("f-sol").innerHTML = `<a href="https://solscan.io/account/${CFG.SOL_WALLET}" target="_blank" rel="noopener">${short(CFG.SOL_WALLET)}</a>`;
+    $("f-arc").textContent = short(CFG.ARC_WALLET);
+    renderCards(P); const pos = renderPositions(P); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
+    renderHolderPanel();
+  }
+
+  function renderCards(P) {
+    const solPx = S.prices[CFG.SOL_MINT];
+    if (S.wallet) {
+      $("c-sol").textContent = S.wallet.sol.toFixed(4) + " SOL";
+      $("c-sol-s").textContent = (solPx ? C.fmtUsd(S.wallet.sol * solPx) + " @ " + C.fmtUsd(solPx) + "/SOL" : "SOL price unavailable") + " · " + short(CFG.SOL_WALLET);
+      let tot = 0, n = 0, usdc = 0;
+      for (const t of S.wallet.tokens) {
+        if (!(t.amount > 0)) continue; n++;
+        const px = S.prices[t.mint]; if (px != null) tot += px * t.amount;
+        if (t.mint === CFG.STABLES[0]) usdc += t.amount;
+      }
+      $("c-spl").innerHTML = S.wallet.tokensOk ? esc(C.fmtUsd(tot)) : '<span class="neg">unavailable</span>';
+      $("c-spl-s").textContent = (S.wallet.tokensOk ? "" : "token list blocked: " + S.wallet.warn.join("; ") + " · ") + n + " non-empty token mints · USDC " + usdc.toFixed(2) + (solPx ? " · Sol cash ≈ " + C.fmtUsd(S.wallet.sol * solPx + usdc) : "");
+    } else {
+      $("c-sol").innerHTML = '<span class="neg">unavailable</span>'; $("c-sol-s").textContent = S.walletErr || "loading…";
+      $("c-spl").innerHTML = '<span class="neg">unavailable</span>'; $("c-spl-s").textContent = S.walletErr ? "Solana RPC blocked/unreachable from this browser" : "loading…";
+    }
+    if (S.arc) { $("c-arc").textContent = C.fmtUsd(S.arc.usdc); $("c-arc-s").textContent = short(CFG.ARC_WALLET) + " · chain " + CFG.ARC_CHAIN_ID; }
+    else { $("c-arc").innerHTML = '<span class="neg">unavailable</span>'; $("c-arc-s").textContent = S.arcErr || "loading…"; }
+    $("c-strat").textContent = `$${(P.mcapMin / 1e3).toFixed(0)}k–$${(P.mcapMax / 1e6).toFixed(1)}M · TP ${P.tp}× · max ${P.maxPos}`;
+    $("c-strat-s").textContent = `$${P.buyUsd} buys from Sol cash · early full sell on first holder slowdown (prefer ~${P.early}×)` + (P.paused ? " · new buys paused until " + P.paused : "");
+  }
+
+  function spark(mint) {
+    const sr = holderSeries(mint), a = sr.all; if (a.length < 2) return '<span class="muted">collecting…</span>';
+    const t0 = Math.min(sr.start || a[0].t, a[0].t), t1 = Math.max(Date.now(), a[a.length - 1].t);
+    const hs = a.map((x) => x.h), lo = Math.min(...hs), hi = Math.max(...hs), w = 110, h = 26;
+    const X = (t) => ((t - t0) / Math.max(1, t1 - t0) * w).toFixed(1), Y = (v) => (h - 2 - (hi === lo ? 0.5 : (v - lo) / (hi - lo)) * (h - 4)).toFixed(1);
+    const pts = a.map((x) => X(x.t) + "," + Y(x.h)).join(" ");
+    const col = hs[hs.length - 1] >= hs[0] ? "#3fb950" : "#f85149";
+    const gap = a[0].t > t0 ? `<line x1="0" x2="${X(a[0].t)}" y1="${h - 1}" y2="${h - 1}" stroke="#8b949e" stroke-dasharray="2 2"/>` : "";
+    return `<svg class="spark" width="${w}" height="${h}"><title>Holders over token lifetime: ${fmtSpan(t1 - t0)} (since ${dtfmt(t0)} ET)</title>${gap}<polyline fill="none" stroke="${col}" stroke-width="1.6" points="${pts}"/></svg>`;
+  }
+
+  function holderSignal(mint, info) {
+    const a = S.hist[mint] || [];
+    const prev = a.length >= 2 ? a[a.length - 2] : null, cur = a[a.length - 1];
+    const sig = [];
+    if (info) { if (info.hc5 <= 0) sig.push("5m holders " + C.fmtPct(info.hc5)); if (info.hc1 <= 0) sig.push("1h holders " + C.fmtPct(info.hc1)); }
+    if (prev && cur && cur.h < prev.h) sig.push("holders down vs last poll (" + prev.h + "→" + cur.h + ")");
+    return sig.length ? `<span class="warn">Slowdown signal: ${esc(sig.join(", "))}. The bot exits early on the first slowdown</span>`
+                      : (info ? '<span class="pos">Holder growth still rising</span>' : '<span class="muted">no holder data</span>');
+  }
+
+  function renderPositions(P) {
+    const pos = buildPositions();
+    const organic = pos.filter((p) => !(p.snap && (p.snap._kind === "dust" || p.snap._kind === "manual")) && p.mint !== CFG.FRANK);
+    $("c-pos").textContent = organic.length + " / " + P.maxPos;
+    $("c-pos-s").textContent = (S.wallet && S.wallet.tokensOk) ? "inferred from on-chain holdings > $" + MIN_POS_USD + " (excl. SOL/USDC)" : "on-chain holdings unavailable; using snapshot";
+    $("pos-note").textContent = S.snap ? "cost basis from positions.json (" + (S.snap.generated_et || "?") + ")" : "no positions.json, so value only";
+    if (!pos.length) {
+      $("positions").innerHTML = `<div class="msg ok">No open positions${S.wallet && S.wallet.tokensOk ? " (no SPL holding worth more than $" + MIN_POS_USD + " besides SOL/USDC)" : ""}.</div>` +
+        (S.walletErr ? `<div class="msg err">Wallet read failed: ${esc(S.walletErr)}</div>` : "");
+      return pos;
+    }
+    let html = '<div class="wrap"><table><thead><tr><th class="l">Token</th><th>Tokens held</th><th>Value</th><th>Cost</th><th>Multiple</th><th class="l">Progress to TP</th><th>Holders</th><th>Δ5m</th><th>Δ1h</th><th class="l">Trend</th></tr></thead><tbody>';
+    for (const p of pos) {
+      const info = S.info[p.mint]; if (info) pushHist(p.mint, info.holders, info.hc5);
+      const sym = (info && info.symbol) || (p.snap && p.snap.symbol) || short(p.mint);
+      const cost = p.snap && p.snap.cost_usd; const tp = (p.snap && p.snap._kind === "open") ? P.tp : (p.snap && p.snap.tp_multiple) || P.tp;
+      const mult = cost && p.value != null ? p.value / cost : null;
+      let bar = '<span class="muted">cost unknown client-side</span>';
+      if (mult != null) {
+        const w = Math.max(0, Math.min(1, mult / tp)) * 100;
+        bar = `<div class="bar" title="${mult.toFixed(2)}× of ${tp}× target"><i class="${mult < 1 ? "down" : ""}" style="width:${w.toFixed(1)}%"></i>` +
+              `<b class="one" style="left:${(100 / tp).toFixed(1)}%" title="1.0× (cost)"></b><b style="left:${(100 * P.early / tp).toFixed(1)}%" title="${P.early}× early-exit preference"></b></div>` +
+              `<div class="muted" style="font-size:11px">${p.snap._kind === "manual" ? "Exit" : "TP"} at ${C.fmtUsd(cost * tp)} (${Number(tp).toFixed(tp >= 10 ? 0 : 1)}×)${p.snap.entry_mc ? " · entry MC $" + C.fmtK(p.snap.entry_mc) + " → TP MC ≈ $" + C.fmtK(p.snap.entry_mc * tp) : ""}</div>`;
+      }
+      const tag = p.mint === CFG.FRANK ? ' <span class="badge HELD">FRANK, separate</span>' : (p.snap && p.snap._kind === "dust") ? ' <span class="badge SKIP">legacy dust</span>' : (p.snap && p.snap._kind === "manual") ? ' <span class="badge HELD">manual hold</span>' : "";
+      const miss = p.missing ? '<div class="warn" style="font-size:11px">In snapshot as open but not in wallet now (likely sold since snapshot)</div>' : (!p.live ? '<div class="muted" style="font-size:11px">value from snapshot token amount × live price</div>' : "");
+      html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a>${tag}${miss}</td>` +
+        `<td>${p.amount != null ? Number(p.amount).toLocaleString("en-US", { maximumFractionDigits: 0 }) : "-"}</td><td>${C.fmtUsd(p.value)}</td><td>${cost ? C.fmtUsd(cost) : "-"}</td>` +
+        `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
+        `<td class="l">${bar}</td><td>${info ? info.holders.toLocaleString() : "-"}</td>` +
+        `<td class="${cls(info && info.hc5)}">${info ? C.fmtPct(info.hc5) : "-"}</td><td class="${cls(info && info.hc1)}">${info ? C.fmtPct(info.hc1) : "-"}</td>` +
+        `<td class="l"><a href="#" class="spark-link" data-mint="${esc(p.mint)}" title="Click for holder details">${spark(p.mint)}</a><div style="font-size:11px">${holderSignal(p.mint, info)}</div></td></tr>`;
+    }
+    html += "</tbody></table></div>";
+    if (S.walletErr) html += `<div class="msg err">Live wallet read failed (${esc(S.walletErr)}). Rows above come from the snapshot.</div>`;
+    $("positions").innerHTML = html; saveHist();
+    return pos;
+  }
+
+  // ---------- holder detail panel (click the trend line) ----------
+  let openMint = null, hpRange = "all";
+  const tfmt = (t) => new Date(t).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", second: "2-digit" });
+  const dtfmt = (t) => new Date(t).toLocaleString("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  const hmfmt = (t) => new Date(t).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
+  function fmtSpan(ms) { const m = ms / 60000; return m < 90 ? Math.round(m) + " min" : m < 48 * 60 ? (m / 60).toFixed(1) + " h" : (m / 1440).toFixed(1) + " days"; }
+  const RANGES = { "1h": 3600e3, "6h": 6 * 3600e3, "24h": 24 * 3600e3, all: null };
+  function newHoldersBetween(a, fromT, toT) {
+    const pts = a.filter((x) => x.t >= fromT && x.t <= toT); if (pts.length < 2) return null;
+    return pts[pts.length - 1].h - pts[0].h;
+  }
+  function bigChart(sr, range) {
+    const now = Date.now(), span = RANGES[range];
+    const lifeStart = Math.min(sr.start || now, sr.all.length ? sr.all[0].t : now);
+    const t0 = span ? Math.max(now - span, range === "all" ? 0 : lifeStart) : lifeStart, t1 = now;
+    const inR = (x) => x.t >= t0 && x.t <= t1;
+    // include the last point before the window so the line enters from the left edge
+    const prevOf = (arr) => { let p = null; for (const x of arr) if (x.t < t0) p = x; return p; };
+    const all = sr.all.filter(inR), m = sr.m.filter(inR), d = sr.d.filter(inR);
+    const pa = prevOf(sr.all); if (pa) all.unshift(pa);
+    if (all.length < 1) return '<div class="muted">No holder samples in this range yet.</div>';
+    const W = 640, H = 210, L = 52, R = 12, T = 10, B = 30;
+    const hs = all.map((x) => x.h), lo = Math.min(...hs), hi = Math.max(...hs);
+    const X = (t) => L + (Math.max(t0, Math.min(t1, t)) - t0) / Math.max(1, t1 - t0) * (W - L - R);
+    const Y = (h) => T + (hi === lo ? 0.5 : 1 - (h - lo) / (hi - lo)) * (H - T - B);
+    const col = hs[hs.length - 1] >= hs[0] ? "#3fb950" : "#f85149";
+    let g = "";
+    for (let i = 0; i <= 4; i++) { const v = lo + (hi - lo) * i / 4, y = Y(v);
+      g += `<line x1="${L}" x2="${W - R}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#30363d" stroke-dasharray="3 3"/><text x="${L - 6}" y="${(y + 4).toFixed(1)}" fill="#8b949e" font-size="11" text-anchor="end">${Math.round(v).toLocaleString()}</text>`; }
+    const long = t1 - t0 > 20 * 3600e3;
+    for (let i = 0; i <= 4; i++) { const t = t0 + (t1 - t0) * i / 4, x = X(t);
+      g += `<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${T}" y2="${H - B}" stroke="#21262d"/>` +
+        `<text x="${x.toFixed(1)}" y="${H - 12}" fill="#8b949e" font-size="11" text-anchor="${i === 0 ? "start" : i === 4 ? "end" : "middle"}">${long ? dtfmt(t) : hmfmt(t)}</text>`; }
+    g += `<text x="${W - R}" y="${H - 1}" fill="#8b949e" font-size="10" text-anchor="end">ET</text>`;
+    const firstT = all[0].t;
+    if (firstT > t0 + (t1 - t0) * 0.01) g += `<rect x="${L}" y="${T}" width="${(X(firstT) - L).toFixed(1)}" height="${H - T - B}" fill="#8b949e14"/><text x="${((L + X(firstT)) / 2).toFixed(1)}" y="${(T + 16)}" fill="#8b949e" font-size="10" text-anchor="middle">no holder data</text>`;
+    if (sr.created && sr.created >= t0) g += `<line x1="${X(sr.created).toFixed(1)}" x2="${X(sr.created).toFixed(1)}" y1="${T}" y2="${H - B}" stroke="#d29922" stroke-dasharray="4 3"/><text x="${(X(sr.created) + 3).toFixed(1)}" y="${H - B - 4}" fill="#d29922" font-size="10">launch</text>`;
+    const line = (arr, extra) => arr.length > 1 ? `<polyline fill="none" stroke="${col}" ${extra} points="${arr.map((x) => X(x.t).toFixed(1) + "," + Y(x.h).toFixed(1)).join(" ")}"/>` : "";
+    const tip = (x, d) => `<title>${dtfmt(x.t)} ET: ${x.h.toLocaleString()} holders${d != null ? " (" + (d >= 0 ? "+" : "") + d + ")" : ""}${x.src === "derived" ? " (derived from Jupiter % change)" : ""}</title>`;
+    const showDots = m.length <= 150;
+    const dots = (showDots ? m.map((x, i) => `<circle cx="${X(x.t).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r="2.5" fill="${col}">${tip(x, i ? x.h - m[i - 1].h : null)}</circle>`).join("") : "") +
+      d.map((x) => `<circle cx="${X(x.t).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r="3.5" fill="#0d1117" stroke="${col}" stroke-width="1.5">${tip(x)}</circle>`).join("");
+    return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;height:auto">${g}${line(all, 'stroke-width="1.4" stroke-dasharray="4 3" opacity="0.7"')}${line(m, 'stroke-width="2"')}${dots}</svg>`;
+  }
+  function renderHolderPanel() {
+    if (!openMint) return;
+    const m = openMint, info = S.info[m], sr = holderSeries(m), a = sr.m;
+    const sym = (info && info.symbol) || short(m), now = Date.now();
+    const last5 = newHoldersBetween(a, now - 5 * 60000, now), prev5 = newHoldersBetween(a, now - 10 * 60000, now - 5 * 60000);
+    let pace = '<span class="muted">Needs about 10 minutes of history on this page.</span>';
+    if (last5 != null && prev5 != null) {
+      const slow = (prev5 >= 4 && last5 < prev5 * 0.5) || last5 <= 0;
+      pace = `<b>${last5 >= 0 ? "+" : ""}${last5}</b> new holders in the last 5 min vs <b>${prev5 >= 0 ? "+" : ""}${prev5}</b> in the 5 min before. ` +
+        (slow ? '<span class="warn">Pace is slowing.</span>' : '<span class="pos">Pace is holding up.</span>');
+    } else if (last5 != null) pace = `<b>${last5 >= 0 ? "+" : ""}${last5}</b> new holders in the last 5 min (not enough history yet for the prior 5 min).`;
+    const first = sr.all[0], cur = a[a.length - 1] || sr.all[sr.all.length - 1];
+    const sess = first && cur ? `${(cur.h - first.h >= 0 ? "+" : "")}${(cur.h - first.h).toLocaleString()} since ${dtfmt(first.t)} ET` : "-";
+    const stat = (k, v, c) => `<div class="hstat"><div class="muted">${k}</div><div class="${c || ""}">${v}</div></div>`;
+    let h = `<div class="hp-head"><h2 style="margin:0">${esc(sym)} holders</h2><button id="hp-close" title="Close">✕</button></div>`;
+    h += '<div class="hstats">' +
+      stat("Holders now", info ? info.holders.toLocaleString() : (cur ? cur.h.toLocaleString() : "-")) +
+      stat("Change over recorded history", sess) +
+      stat("Token age", sr.created ? fmtSpan(now - sr.created) + " (launched " + dtfmt(sr.created) + " ET)" : "-") +
+      stat("Holders Δ5m", info ? C.fmtPct(info.hc5) : "-", cls(info && info.hc5)) +
+      stat("Holders Δ1h", info ? C.fmtPct(info.hc1) : "-", cls(info && info.hc1)) +
+      stat("Holders Δ6h", info ? C.fmtPct(info.hc6) : "-", cls(info && info.hc6)) +
+      stat("Holders Δ24h", info ? C.fmtPct(info.hc24) : "-", cls(info && info.hc24)) +
+      stat("Organic buyers 1h", info ? info.nob1.toLocaleString() : "-") +
+      stat("Organic buy share 1h", info && info.orgBuyPct != null ? info.orgBuyPct.toFixed(0) + "%" : "-") +
+      stat("Organic score", info ? info.org.toFixed(1) + (info.orgLabel ? " (" + esc(info.orgLabel) + ")" : "") : "-") +
+      stat("Top holders own", info && info.topHolders != null ? info.topHolders.toFixed(1) + "%" : "-") +
+      stat("Market cap", info ? "$" + C.fmtK(info.mcap) : "-") +
+      stat("Liquidity", info ? "$" + C.fmtK(info.liq) : "-") + "</div>";
+    h += `<div style="margin:10px 0;font-size:13px">${pace}</div>`;
+    h += '<div class="hp-ranges" style="margin:6px 0">' + Object.keys(RANGES).map((k) =>
+      `<button data-range="${k}" class="${k === hpRange ? "on" : ""}">${k === "all" ? "All" : k}</button>`).join("") + "</div>";
+    h += bigChart(sr, hpRange);
+    const firstM = a[0];
+    h += `<div class="muted" style="font-size:11px">Solid line/dots = measured holder counts${firstM ? " (since " + dtfmt(firstM.t) + " ET)" : ""}. Hollow dots + dashed line = derived from Jupiter's 5m/1h/6h/24h holder % change. Shaded = no data (no free source has a holder-count history before that).</div>`;
+    const rows = a.slice(-15).reverse();
+    if (rows.length) {
+      h += '<table style="margin-top:10px"><thead><tr><th class="l">Time (ET)</th><th>Holders</th><th>Change</th><th>Jupiter Δ5m</th></tr></thead><tbody>';
+      rows.forEach((x, i) => { const p = a[a.length - 1 - i - 1]; const d = p ? x.h - p.h : null;
+        h += `<tr><td class="l">${tfmt(x.t)}</td><td>${x.h.toLocaleString()}</td><td class="${cls(d)}">${d == null ? "-" : (d >= 0 ? "+" : "") + d}</td><td class="${cls(x.hc5)}">${x.hc5 == null ? "-" : C.fmtPct(x.hc5)}</td></tr>`; });
+      h += "</tbody></table>";
+    }
+    h += `<div style="margin-top:10px;font-size:13px"><a href="https://solscan.io/token/${encodeURIComponent(m)}#holders" target="_blank" rel="noopener">Full holder list on Solscan</a> · <a href="${dex(m)}" target="_blank" rel="noopener">Chart</a></div>`;
+    h += '<div class="muted" style="margin-top:6px;font-size:11px">History is recorded on the bot box about once a minute for the whole life of each position (older points thinned) and merged with samples this browser takes while the page is open.</div>';
+    $("holder-panel-body").innerHTML = h;
+    $("hp-close").onclick = closeHolder;
+    for (const b of document.querySelectorAll(".hp-ranges button")) b.onclick = () => { hpRange = b.dataset.range; renderHolderPanel(); };
+  }
+  function openHolder(mint) { openMint = mint; $("holder-panel").style.display = "flex"; renderHolderPanel(); }
+  function closeHolder() { openMint = null; $("holder-panel").style.display = "none"; }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest(".spark-link");
+    if (a) { e.preventDefault(); openHolder(a.dataset.mint); return; }
+    if (e.target.id === "holder-panel") closeHolder();
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && openMint) closeHolder(); });
+
+  function renderDecision(P) {
+    const s = S.snap;
+    if (!s) { $("decision").innerHTML = '<div class="msg">positions.json not found. On the bot box, run <code>python3 dashboard_snapshot.py</code> and copy dashboard/positions.json here to see the bot\'s last decision and cost basis.</div>'; $("snap-age").textContent = ""; return; }
+    const d = s.last_decision || {};
+    $("snap-age").textContent = "snapshot " + (s.generated_et || "?") + (S.snapSrc ? " · " + S.snapSrc : "");
+    let h = "";
+    if (d.last_skip_reason) h += `<div class="pre">${esc(d.last_skip_reason)}</div>`;
+    h += '<div style="margin-top:8px;font-size:13px">';
+    if (d.last_scan_et) h += `<div>Last bot scan: <b>${esc(d.last_scan_et)}</b> · ${esc(d.last_scan_n_in_band)} in band` +
+      (d.last_scan_best && d.last_scan_best.symbol ? ` · top: <a href="${dex(d.last_scan_best.mint)}" target="_blank" rel="noopener">${esc(d.last_scan_best.symbol)}</a> ($${C.fmtK(d.last_scan_best.mcap)})` : "") + "</div>";
+    if (d.last_buy && d.last_buy.symbol) h += `<div>Last buy: <b>${esc(d.last_buy.symbol)}</b> ${C.fmtUsd(d.last_buy.cost_usd)} at ${esc(d.last_buy.as_of_et)}</div>`;
+    const hist = (s.history || []).filter((x) => x.status === "closed");
+    if (hist.length) h += "<div style='margin-top:6px' class='muted'>Closed: " + hist.map((x) => esc(x.symbol) + (x.pnl_usd != null ? ` (<span class="${cls(x.pnl_usd)}">${x.pnl_usd >= 0 ? "+" : ""}${C.fmtUsd(x.pnl_usd)}</span>)` : "")).join(", ") + "</div>";
+    if (s.cash_snapshot && s.cash_snapshot.as_of_et) h += `<div class="muted">Bot cash note (${esc(s.cash_snapshot.as_of_et)}): ${esc(s.cash_snapshot.note || "")}</div>`;
+    h += "</div>";
+    $("decision").innerHTML = h;
+  }
+
+  function evalCtx(pos) {
+    const s = S.snap || {};
+    return { excludeMints: [...new Set([...(s.exclude_mints || []), ...CFG.EXCLUDE_MINTS])],
+             excludeSymbols: [...new Set([...(s.exclude_symbols || []), ...CFG.EXCLUDE_SYMBOLS])],
+             heldMints: (pos || []).filter((p) => p.live).map((p) => p.mint) };
+  }
+
+  // ---------- scanner "first seen" (display only) ----------
+  // Server: positions.json scanner_first_seen (bot scan lists, written by dashboard_snapshot.py).
+  // Page: tokens this browser sees appear between bot scans (localStorage). Gone > 6h and back = new again.
+  const FS_RENEW = 6 * 3600e3;
+  let scanSort = localStorage.getItem("scanSort") || "newest", fsLocal = (() => { try { return JSON.parse(localStorage.getItem("scanFirstSeen") || "{}"); } catch (e) { return {}; } })();
+  let lastScanAt = null, prevScanIds = null, scanRounds = 0;
+  function updateLocalFs(ids) {
+    const now = Date.now(), base = scanRounds === 0 && !Object.keys(fsLocal).length;
+    for (const id of ids) { const e = fsLocal[id];
+      if (!e || now - e.last > FS_RENEW) fsLocal[id] = { t: now, last: now, baseline: base || scanRounds === 0 };
+      else e.last = now; }
+    for (const [id, e] of Object.entries(fsLocal)) if (now - e.last > 7 * 86400e3) delete fsLocal[id];
+    try { localStorage.setItem("scanFirstSeen", JSON.stringify(fsLocal)); } catch (e) {}
+  }
+  function firstSeen(id) {
+    const sv = S.snap && S.snap.scanner_first_seen && S.snap.scanner_first_seen.tokens && S.snap.scanner_first_seen.tokens[id];
+    const lc = fsLocal[id];
+    const svT = sv ? sv.first_seen * 1000 : null;
+    // server renewed after a >6h gap or page-spotted earlier than the bot's scan -> use the newer evidence sensibly
+    if (sv && lc && !lc.baseline && lc.t < svT && svT - lc.t < FS_RENEW) return { t: lc.t, baseline: false, src: "page" };
+    if (sv) return { t: svT, baseline: !!sv.baseline, src: "bot scan" };
+    if (lc) return { t: lc.t, baseline: !!lc.baseline, src: "page" };
+    return { t: null, baseline: true, src: null };
+  }
+  function agoTxt(ms) { const m = Math.floor(ms / 60000); return m < 1 ? "just now" : m < 60 ? m + "m ago" : m < 1440 ? Math.floor(m / 60) + "h " + (m % 60) + "m ago" : Math.floor(m / 1440) + "d ago"; }
+  const hm = (t) => new Date(t).toLocaleTimeString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
+  function fsCell(f) {
+    if (!f.t) return '<td class="l fs muted">-</td>';
+    if (f.baseline) {
+      const since = S.snap && S.snap.scanner_first_seen && S.snap.scanner_first_seen.tracking_since;
+      const lbl = f.src === "page" ? `listed when page opened (${hm(f.t)})` : `on scanner before tracking began (${hm(f.t)})`;
+      return `<td class="l fs"><span class="muted" title="Already on the scanner when first-seen tracking started${since ? " (" + esc(since) + ")" : ""}">${lbl}</span></td>`;
+    }
+    const age = Date.now() - f.t;
+    const badge = age < 15 * 60e3 ? '<span class="badge NEW">NEW</span> ' : age < 60 * 60e3 ? '<span class="badge new">new</span> ' : "";
+    return `<td class="l fs" title="First seen ${esc(new Date(f.t).toLocaleString("en-US", { timeZone: "America/New_York" }))} ET (via ${f.src})">${badge}first seen ${agoTxt(age)}<div class="muted">${hm(f.t)} ET</div></td>`;
+  }
+  function renderSortBar() {
+    const el = $("scan-sort"); if (!el) return;
+    el.innerHTML = '<span class="muted">Sort:</span>' + [["newest", "Newest first"], ["verdict", "Verdict, then score (old sort)"]].map(([k, l]) => `<button data-sort="${k}" class="${scanSort === k ? "on" : ""}">${l}</button>`).join("") +
+      ' <span class="muted" style="margin-left:8px"><span class="badge NEW">NEW</span> first seen &lt; 15 min · <span class="badge new">new</span> &lt; 60 min</span>';
+    for (const b of el.querySelectorAll("button")) b.onclick = () => { scanSort = b.dataset.sort; localStorage.setItem("scanSort", scanSort); render(); };
+  }
+
+  function renderScan(P, pos) {
+    const tb = document.querySelector("#scan tbody");
+    renderSortBar();
+    if (!S.scan) { tb.innerHTML = `<tr><td class="l" colspan="17"><div class="msg err">Scan unavailable: ${esc(S.scanErr || "loading…")}. Jupiter token API blocked or unreachable from this browser.</div></td></tr>`; return; }
+    const ctx = evalCtx(pos);
+    const inBand = S.scan.cands.filter((c) => c.mcap >= P.mcapMin && c.mcap <= P.mcapMax);
+    const newRound = S.scan.at !== lastScanAt;
+    if (newRound) { updateLocalFs(inBand.map((c) => c.id)); }
+    const rows = inBand.map((c) => ({ c, e: C.evaluate(c, ctx), f: firstSeen(c.id) }));
+    const rank = { PASS: 0, HELD: 1, SKIP: 2 };
+    const oldSort = (a, b) => rank[a.e.verdict] - rank[b.e.verdict] || b.c.score - a.c.score;
+    const fsKey = (r) => r.f.t == null ? -Infinity : r.f.baseline ? r.f.t - 1e13 : r.f.t; // baseline (pre-tracking) rows sink below tracked ones
+    rows.sort(scanSort === "newest" ? ((a, b) => fsKey(b) - fsKey(a) || oldSort(a, b)) : oldSort);
+    const flashIds = new Set(newRound && prevScanIds ? inBand.map((c) => c.id).filter((id) => !prevScanIds.has(id)) : []);
+    if (newRound) { prevScanIds = new Set(inBand.map((c) => c.id)); lastScanAt = S.scan.at; scanRounds++; }
+    const nPass = rows.filter((r) => r.e.verdict === "PASS").length;
+    $("scan-note").textContent = `${rows.length} candidates in band · ${nPass} PASS · universe ${S.scan.cands.length} tokens · scanned ${C.nowEt(new Date(S.scan.at))}`;
+    const organicOpen = (pos || []).filter((p) => p.live && !(p.snap && p.snap._kind === "dust") && p.mint !== CFG.FRANK).length;
+    const best = rows.find((r) => r.e.verdict === "PASS");
+    $("top-pass").innerHTML = best
+      ? `<div class="msg ok">Top PASS right now: <b>${esc(best.c.symbol)}</b> ($${C.fmtK(best.c.mcap)} MC). ${organicOpen >= P.maxPos ? "Max positions reached, so the bot would not add." : "Information only. The bot makes its own decision on its next scan."}</div>`
+      : `<div class="msg">Nothing passes all rules right now, so the bot would skip.</div>`;
+    if (!rows.length) { tb.innerHTML = '<tr><td class="l muted" colspan="17">No tokens in the band in the current Jupiter lists.</td></tr>'; return; }
+    tb.innerHTML = rows.map(({ c, e, f }) => {
+      const top = c.topHolders == null ? "-" : c.topHolders.toFixed(0) + "%";
+      const age = f.t && !f.baseline ? Date.now() - f.t : Infinity;
+      const rc = [age < 15 * 60e3 ? "new15" : age < 60 * 60e3 ? "new60" : "", flashIds.has(c.id) ? "flash" : ""].join(" ").trim();
+      return `<tr class="${rc}" data-id="${esc(c.id)}">${fsCell(f)}<td class="l"><span class="badge ${e.verdict}">${e.verdict}</span></td>` +
+        `<td class="l"><a href="${dex(c.id)}" target="_blank" rel="noopener" title="${esc(c.name)} · ${esc(c.id)}">${esc(c.symbol)}</a></td>` +
+        `<td>$${C.fmtK(c.mcap)}</td><td>$${C.fmtK(c.liq)}</td><td>${c.holders.toLocaleString()}</td>` +
+        `<td class="${cls(c.hc5)}">${C.fmtPct(c.hc5)}</td><td class="${cls(c.hc1)}">${C.fmtPct(c.hc1)}</td>` +
+        `<td class="${cls(c.hc6)}">${C.fmtPct(c.hc6)}</td><td class="${cls(c.hc24)}">${C.fmtPct(c.hc24)}</td>` +
+        `<td>${c.nob1}</td><td class="${c.orgBuyPct == null || c.orgBuyPct < C.RULES.minOrgBuyPct ? "neg" : "pos"}">${c.orgBuyPct == null ? "-" : c.orgBuyPct.toFixed(1) + "%"}</td>` +
+        `<td class="${c.pc1 > C.RULES.maxPc1 ? "warn" : cls(c.pc1)}">${C.fmtPct(c.pc1, 1)}</td>` +
+        `<td class="${c.topHolders > C.RULES.maxTopHolders ? "neg" : ""}">${top}</td>` +
+        `<td class="${c.poolAgeMin != null && c.poolAgeMin < C.RULES.minPoolAgeMin ? "warn" : ""}">${C.fmtAge(c.poolAgeMin)}</td>` +
+        `<td>${c.org.toFixed(0)}</td><td class="reason">${e.reasons.map(esc).join(" · ")}</td></tr>`;
+    }).join("");
+  }
+
+  function renderRanges() {
+    if (!S.scan) { $("ranges").innerHTML = '<span class="muted">waiting for scan…</span>'; return; }
+    const b = C.bucketSummary(S.scan.cands, [[200e3, 500e3], [500e3, 1e6], [1e6, 2e6], [2e6, 5e6]]);
+    let h = '<table><thead><tr><th class="l">Range</th><th>Total</th><th>Rising holders</th><th class="l">Top rising (hc5 / hc1 / org buy %)</th></tr></thead><tbody>';
+    for (const r of b) {
+      const lbl = (v) => v >= 1e6 ? "$" + v / 1e6 + "M" : "$" + v / 1e3 + "k";
+      const band = r.hi <= 1e6 ? ' <span class="muted">(entry band)</span>' : "";
+      h += `<tr><td class="l">${lbl(r.lo)}–${lbl(r.hi)}${band}</td><td>${r.total}</td><td>${r.rising}</td><td class="reason">` +
+        (r.top.length ? r.top.slice(0, 4).map((c) => `<a href="${dex(c.id)}" target="_blank" rel="noopener">${esc(c.symbol)}</a> <span class="muted">$${C.fmtK(c.mcap)} ${C.fmtPct(c.hc5)}/${C.fmtPct(c.hc1, 1)}/${c.orgBuyPct == null ? "-" : c.orgBuyPct.toFixed(0) + "%"}</span>`).join(" · ") : '<span class="muted">none</span>') + "</td></tr>";
+    }
+    $("ranges").innerHTML = h + "</tbody></table>";
+  }
+
+  function renderSources() {
+    $("sources").innerHTML = Object.entries(S.sources).map(([k, v]) => `<span class="chip ${v.ok ? "ok" : "bad"}" title="${esc(v.detail)}">${esc(k)}: ${esc(v.detail)}</span>`).join("") || '<span class="muted">loading…</span>';
+    const R = C.RULES;
+    $("rules").textContent = `SKIP rules: exclude lists · organic score ≤ 0 · holders not rising (5m or 1h ≤ 0) or ~flat 5m (< ${R.minHc5Flat}%) · holders falling 6h · ` +
+      `pool < ${R.minPoolAgeMin} min · organic buy share < ${R.minOrgBuyPct}% · 1h price > +${R.maxPc1}% · top holders > ${R.maxTopHolders}% · < ${R.minNob1} organic buyers 1h · price > $1 · tokenized securities.`;
+    const blocked = Object.entries(S.sources).filter(([k, v]) => !v.ok && k !== "positions.json snapshot");
+    $("banner").innerHTML = blocked.length ? `<div class="msg err">Some live sources failed from this browser: ${blocked.map(([k, v]) => esc(k) + " (" + esc(v.detail) + ")").join("; ")}. ` +
+      `If it says CORS/blocked, try disabling ad/privacy blockers for localhost, or run via serve.py instead of opening the file directly.</div>` : "";
+  }
+
+  // ---------- loop ----------
+  async function tick(force) {
+    if (S.busy) return; S.busy = true;
+    const now = Date.now(), jobs = [];
+    try {
+      if (force || now >= S.nextSnap) { S.nextSnap = now + SNAP_MS; await loadSnapshot(); }
+      if (force || now >= S.nextWallet) { S.nextWallet = now + WALLET_MS; jobs.push(loadWallets().catch((e) => console.warn(e))); }
+      if (force || now >= S.nextScan) { S.nextScan = now + SCAN_MS; jobs.push(loadScan().catch((e) => { S.scanErr = e.message; })); }
+      await Promise.all(jobs);
+      render();
+    } finally { S.busy = false; }
+  }
+  setInterval(() => {
+    const s = Math.max(0, Math.round((S.nextScan - Date.now()) / 1000));
+    $("countdown").textContent = S.busy ? "refreshing…" : "next scan in " + s + "s";
+    if (!S.busy && Date.now() >= Math.min(S.nextScan, S.nextWallet)) tick(false);
+  }, 1000);
+  $("refresh").addEventListener("click", () => tick(true));
+  tick(true);
+})();
