@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-20 06:33:51 EDT",
+  "generated_et": "2026-10-20 06:35:54 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -456,7 +456,7 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-20 06:33:51 EDT"
+      "onchain_checked_et": "2026-10-20 06:35:54 EDT"
     }
   ],
   "last_decision": {
@@ -547,8 +547,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-20 06:33:51 EDT",
-    "generated_ts": 1792492431589,
+    "generated_et": "2026-10-20 06:35:54 EDT",
+    "generated_ts": 1792492554112,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 1.778474872,
@@ -576,7 +576,9 @@
       }
     ],
     "prices": {
-      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.086511707953517e-06
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.086511707953517e-06,
+      "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987433566595451
     }
   },
   "holder_history": {
@@ -1537,11 +1539,6 @@
         "last_seen": 1791901978,
         "symbol": "ELON"
       },
-      "5nkEwLHNagMERJWWuiaFsuRukLvauWkoVTRxZ5TNP4eL": {
-        "first_seen": 1791884926,
-        "last_seen": 1791887641,
-        "symbol": "SP"
-      },
       "GQdEL4MhL4v8bsmMvyBvjh6BdbWqasgkDnJGfaAHpump": {
         "first_seen": 1791885834,
         "last_seen": 1791924464,
@@ -1551,11 +1548,6 @@
         "first_seen": 1792163312,
         "last_seen": 1792168729,
         "symbol": "YILONGMA"
-      },
-      "9awhVaut9ZTfJSfTrFn5u6sJ9XPGtmKJytnSJUrJpump": {
-        "first_seen": 1791887641,
-        "last_seen": 1791887641,
-        "symbol": "ACHI"
       },
       "HCkhfdDNF2dqMxxtL51AzgWU26MBNkUkEzGAHtqkpump": {
         "first_seen": 1791989488,
