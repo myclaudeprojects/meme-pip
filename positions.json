@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-19 22:30:14 EDT",
+  "generated_et": "2026-10-19 22:30:42 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -443,22 +443,6 @@
   ],
   "manual_positions": [
     {
-      "mint": "HBj4XQQXBJTjkQRNqnps5joEM9E7RT8ruvD2KZV8QUgv",
-      "symbol": "BSKTBALL",
-      "status": "manual",
-      "cost_usd": 186.7,
-      "cost_src": "cost_usd",
-      "cost_sol": 1.784323401,
-      "tokens_ui": 56625794.068494,
-      "entry_mc": null,
-      "tp_multiple": null,
-      "tp_target_mc": null,
-      "opened_et": "10/19/2026, 22:17:56 ET",
-      "holding_account": null,
-      "onchain_amount": 56625794.068494,
-      "onchain_checked_et": "2026-10-19 22:30:14 EDT"
-    },
-    {
       "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
       "symbol": "BSKT",
       "status": "manual",
@@ -472,7 +456,7 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-19 22:30:14 EDT"
+      "onchain_checked_et": "2026-10-19 22:30:42 EDT"
     }
   ],
   "last_decision": {
@@ -563,11 +547,11 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-19 22:30:14 EDT",
-    "generated_ts": 1792463414594,
+    "generated_et": "2026-10-19 22:30:42 EDT",
+    "generated_ts": 1792463442834,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.076308132,
+    "sol": 1.729005831,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -580,11 +564,6 @@
         "program": "spl"
       },
       {
-        "mint": "HBj4XQQXBJTjkQRNqnps5joEM9E7RT8ruvD2KZV8QUgv",
-        "amount": 56625794.068494,
-        "program": "token-2022"
-      },
-      {
         "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
         "amount": 9280516.224556,
         "program": "bordrless",
@@ -594,8 +573,7 @@
     "prices": {
       "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.122424579295048e-06,
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987706529002747,
-      "HBj4XQQXBJTjkQRNqnps5joEM9E7RT8ruvD2KZV8QUgv": 3.2647478913099497e-06
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987686615654039
     }
   },
   "holder_history": {
