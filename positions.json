@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-20 06:44:15 EDT",
+  "generated_et": "2026-10-20 07:09:59 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -456,7 +456,7 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-20 06:44:15 EDT"
+      "onchain_checked_et": "2026-10-20 07:09:59 EDT"
     }
   ],
   "last_decision": {
@@ -547,8 +547,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-20 06:44:15 EDT",
-    "generated_ts": 1792493055188,
+    "generated_et": "2026-10-20 07:09:59 EDT",
+    "generated_ts": 1792494599557,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 1.778474872,
@@ -564,11 +564,6 @@
         "program": "spl"
       },
       {
-        "mint": "GYzYJjGo3vzDkDxpNhSvgUVtGJfhnrJwN7vPeBcv2aSH",
-        "amount": 1000000000.0,
-        "program": "token-2022"
-      },
-      {
         "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
         "amount": 9280516.224556,
         "program": "bordrless",
@@ -576,9 +571,9 @@
       }
     ],
     "prices": {
-      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.087377270961956e-06,
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.109382749544335e-06,
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986967604834368
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987379540769541
     }
   },
   "holder_history": {
@@ -1064,11 +1059,6 @@
         "last_seen": 1792328932,
         "symbol": "PYTHIA"
       },
-      "GWTP6M5bxhaJ1k2Kxvf8hhYaHE6jZMhh4cKzFuCpnc83": {
-        "first_seen": 1791887641,
-        "last_seen": 1791889542,
-        "symbol": "USEFUL"
-      },
       "DKNGQFNGQmoBdXSRGKJ8tTu7uPDasw5JDcfMmWniNfow": {
         "first_seen": 1792356912,
         "last_seen": 1792356912,
@@ -1474,11 +1464,6 @@
         "last_seen": 1791898359,
         "symbol": "Monke"
       },
-      "EiVbFDsxBrRs9KE7EoG5w6VFdB6tDxfA5Y34PdVCpump": {
-        "first_seen": 1791889414,
-        "last_seen": 1791889414,
-        "symbol": "PS5SX2"
-      },
       "HXxJdaQbrYRvwTAM8M8mUPyoRPvmyuUbPFBRkiAAMASS": {
         "first_seen": 1792313280,
         "last_seen": 1792352734,
@@ -1498,11 +1483,6 @@
         "first_seen": 1792302852,
         "last_seen": 1792359592,
         "symbol": "CBUCKS"
-      },
-      "BECHKSgFWCoEPFL5jg3SwyjdqJWmLzNixnA7hq85pump": {
-        "first_seen": 1791849603,
-        "last_seen": 1791889411,
-        "symbol": "ATTENTION"
       },
       "5g6wVay8NYQ5Tspo4irj9YqSFfQoPDW7apkX352N29PP": {
         "first_seen": 1792273365,
