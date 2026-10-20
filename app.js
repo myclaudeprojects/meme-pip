@@ -213,6 +213,8 @@
       if ((p._kind !== "open" && p._kind !== "manual") || seen.has(p.mint)) continue;
       const px = S.prices[p.mint];
       const zeroVerified = p.onchain_amount === 0;
+      const held = tokens ? tokens.find((t) => t.mint === p.mint && t.amount > 0) : null;
+      if (held) { out.push({ mint: p.mint, amount: held.amount, value: px != null ? px * held.amount : null, snap: p, live: true, missing: false, zeroVerified: false }); continue; }
       out.push({ mint: p.mint, amount: (tokens || zeroVerified) ? 0 : p.tokens_ui, value: (tokens || zeroVerified) ? 0 : (px != null && p.tokens_ui ? px * p.tokens_ui : null),
                  snap: p, live: false, missing: !!tokens || zeroVerified, zeroVerified });
     }
