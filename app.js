@@ -131,26 +131,55 @@
     else S.scanErr = u.sources.map((s) => s.err).filter(Boolean)[0] || "no data";
   }
 
-  // Box-written live.json (holdings + prices) is primary; browser RPC/price calls are an optional fallback that fails silently.
+  // Wallet holdings: the FRESHEST on-chain source wins. Candidates: positions.json wallet_onchain (box dashboard_snapshot.py,
+  // getTokenAccountsByOwner SPL+Token-2022 + Bordrless holdings) and live.json (box live_snapshot.py). A box source older than
+  // BOX_STALE_MS is not trusted for holdings (a stale file once showed a sold bag as a phantom row); then the browser reads the
+  // chain itself (RPC first, Jupiter fallback). Zero balances are always dropped.
+  const BOX_STALE_MS = 15 * 60 * 1000;
+  function boxWalletCandidates() {
+    const c = [];
+    const wo = S.snap && S.snap.wallet_onchain;
+    if (wo && wo.ok && Array.isArray(wo.tokens)) c.push({ ts: Number(wo.generated_ts) || 0, et: wo.generated_et, label: "box on-chain snapshot (positions.json)",
+      sol: Number(wo.sol) || 0, tokens: wo.tokens, prices: wo.prices || {} });
+    const L = S.live;
+    if (L && L.sol_wallet) c.push({ ts: Number(L.generated_ts) || 0, et: L.generated_et, label: "box live.json", sol: Number(L.sol_wallet.sol) || 0,
+      tokens: L.sol_wallet.tokens || [], prices: {} });
+    return c.sort((a, b) => b.ts - a.ts);
+  }
   async function loadLive() {
     try { const r = await fetch("live.json?ts=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error("HTTP " + r.status); S.live = await r.json(); }
     catch (e) { if (!S.live) S.live = null; }
-    const L = S.live; if (!L) return;
-    const w = L.sol_wallet || {};
-    S.wallet = { at: L.generated_ts, sol: Number(w.sol) || 0, tokens: (w.tokens || []).map((t) => ({ mint: t.mint, amount: Number(t.amount) })), tokensOk: true, tokenSrc: "box live.json", warn: [], rpc: "box" };
-    S.walletErr = null; if (L.arc) { S.arc = { at: L.generated_ts, usdc: Number(L.arc.usdc), method: "box" }; S.arcErr = null; }
-    S.prices = Object.assign({}, S.prices, L.prices || {});
-    setSrc("Box live data", true, "live.json " + (L.generated_et || ""));
+    const L = S.live;
+    if (L) {
+      if (L.arc && Date.now() - (Number(L.generated_ts) || 0) < BOX_STALE_MS) { S.arc = { at: L.generated_ts, usdc: Number(L.arc.usdc), method: "box" }; S.arcErr = null; }
+      // live.json prices are only a fallback; fresher browser/Jupiter prices overwrite them later.
+      S.prices = Object.assign({}, L.prices || {}, S.prices);
+    }
+    const best = boxWalletCandidates()[0];
+    if (!best || Date.now() - best.ts > BOX_STALE_MS) { S.boxWallet = best || null; return false; }
+    S.wallet = { at: best.ts, sol: best.sol, tokens: best.tokens.map((t) => ({ mint: t.mint, amount: Number(t.amount), program: t.program || null }))
+      .filter((t) => t.amount > 0), tokensOk: true, tokenSrc: best.label + " " + (best.et || ""), warn: [], rpc: "box" };
+    S.walletErr = null;
+    S.prices = Object.assign({}, S.prices, best.prices);
+    setSrc("Box wallet data", true, best.label + " " + (best.et || ""));
+    return true;
   }
 
   async function loadWallets() {
-    await loadLive();
-    const jobs = [], hasLive = !!S.live;
-    if (!hasLive) jobs.push(C.getSolWallet().then((w) => { S.wallet = Object.assign({ at: Date.now() }, w); S.walletErr = null;
+    const hasLive = await loadLive();
+    const arcFresh = !!S.arc && S.arc.method === "box";
+    const jobs = [];
+    if (!hasLive) jobs.push(C.getSolWallet().then((w) => {
+      // Bordrless holdings (non-SPL, e.g. BSKT) are invisible to token-account reads: keep them from the box snapshot.
+      const bw = S.boxWallet; const extra = bw ? bw.tokens.filter((t) => t.program === "bordrless" && Number(t.amount) > 0) : [];
+      for (const t of extra) if (!w.tokens.some((x) => x.mint === t.mint)) w.tokens.push({ mint: t.mint, amount: Number(t.amount), program: "bordrless" });
+      if (bw) S.prices = Object.assign({}, S.prices, bw.prices);
+      S.wallet = Object.assign({ at: Date.now() }, w); S.walletErr = null;
+      setSrc("Box wallet data", false, bw ? "stale (" + (bw.et || "?") + "), reading chain from browser" : "none");
       setSrc("Solana RPC (SOL balance)", !!w.rpc, w.rpc ? C.hostOf(w.rpc) : "all RPCs failed; SOL from Jupiter holdings");
-      setSrc("Token holdings", w.tokensOk, w.tokensOk ? w.tokenSrc + " (" + w.tokens.length + " accounts)" : "unavailable: " + w.warn.join("; ")); })
+      setSrc("Token holdings", w.tokensOk, w.tokensOk ? w.tokenSrc + " (" + w.tokens.length + " non-empty)" : "unavailable: " + w.warn.join("; ")); })
       .catch((e) => { S.walletErr = e.message; setSrc("Solana RPC (SOL balance)", false, e.message); setSrc("Token holdings", false, e.message); }));
-    if (!hasLive) jobs.push(C.getArcUsdc().then((a) => { S.arc = Object.assign({ at: Date.now() }, a); S.arcErr = null;
+    if (!arcFresh) jobs.push(C.getArcUsdc().then((a) => { S.arc = Object.assign({ at: Date.now() }, a); S.arcErr = null;
       setSrc("Arc RPC", true, C.hostOf(CFG.ARC_RPC) + " via " + a.method); })
       .catch((e) => { S.arcErr = e.message; setSrc("Arc RPC", false, e.message); }));
     await Promise.all(jobs);
@@ -158,8 +187,8 @@
     const mints = new Set([CFG.SOL_MINT]);
     for (const t of (S.wallet && S.wallet.tokens) || []) if (t.amount > 0) mints.add(t.mint);
     for (const p of snapPositions()) if (p.mint) mints.add(p.mint);
-    try { const bp = await C.getPrices([...mints]); S.prices = Object.assign({}, S.prices, bp); if (!hasLive) setSrc("Jupiter price", true, Object.keys(bp).length + " prices"); }
-    catch (e) { if (!hasLive) setSrc("Jupiter price", false, e.message); }
+    try { const bp = await C.getPrices([...mints]); S.prices = Object.assign({}, S.prices, bp); setSrc("Jupiter price", true, Object.keys(bp).length + " prices"); }
+    catch (e) { setSrc("Jupiter price", false, e.message); }
     const posMints = [...mints].filter((m) => m !== CFG.SOL_MINT && !CFG.STABLES.includes(m));
     if (posMints.length) {
       try { S.info = Object.assign(S.info, await C.getTokenInfo(posMints)); } catch (e) { /* non-fatal */ }
@@ -183,8 +212,9 @@
     for (const p of snapPositions()) {
       if ((p._kind !== "open" && p._kind !== "manual") || seen.has(p.mint)) continue;
       const px = S.prices[p.mint];
-      out.push({ mint: p.mint, amount: tokens ? 0 : p.tokens_ui, value: tokens ? 0 : (px != null && p.tokens_ui ? px * p.tokens_ui : null),
-                 snap: p, live: false, missing: !!tokens });
+      const zeroVerified = p.onchain_amount === 0;
+      out.push({ mint: p.mint, amount: (tokens || zeroVerified) ? 0 : p.tokens_ui, value: (tokens || zeroVerified) ? 0 : (px != null && p.tokens_ui ? px * p.tokens_ui : null),
+                 snap: p, live: false, missing: !!tokens || zeroVerified, zeroVerified });
     }
     return out;
   }
@@ -268,7 +298,7 @@
               `<div class="muted" style="font-size:11px">${p.snap._kind === "manual" ? "Exit" : "TP"} at ${C.fmtUsd(cost * tp)} (${Number(tp).toFixed(tp >= 10 ? 0 : 1)}×)${p.snap.entry_mc ? " · entry MC $" + C.fmtK(p.snap.entry_mc) + " → TP MC ≈ $" + C.fmtK(p.snap.entry_mc * tp) : ""}</div>`;
       }
       const tag = p.mint === CFG.FRANK ? ' <span class="badge HELD">FRANK, separate</span>' : (p.snap && p.snap._kind === "dust") ? ' <span class="badge SKIP">legacy dust</span>' : (p.snap && p.snap._kind === "manual") ? ' <span class="badge HELD">manual hold</span>' : "";
-      const miss = p.missing ? '<div class="warn" style="font-size:11px">In snapshot as open but not in wallet now (likely sold since snapshot)</div>' : (!p.live ? '<div class="muted" style="font-size:11px">value from snapshot token amount × live price</div>' : "");
+      const miss = p.zeroVerified ? `<div class="warn" style="font-size:11px">0 on-chain in ${short(CFG.SOL_WALLET)} (box check ${esc(p.snap.onchain_checked_et || "")}): sold / no longer held; position file still lists it as open</div>` : p.missing ? '<div class="warn" style="font-size:11px">In snapshot as open but not in wallet now (likely sold since snapshot)</div>' : (!p.live ? '<div class="muted" style="font-size:11px">value from snapshot token amount × live price</div>' : "");
       const li = (S.live && S.live.info && S.live.info[p.mint]) || null;
       const curMc = li && li.mc ? Number(li.mc) : null, emc = p.snap && p.snap.entry_mc;
       const mcLine = (p.snap && p.snap._kind === "manual" && (emc || curMc)) ? `<div class="muted" style="font-size:11px">avg entry MC $${emc ? C.fmtK(emc) : "-"} → now $${curMc ? C.fmtK(curMc) : "-"}` +

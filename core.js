@@ -176,41 +176,45 @@
   }
 
   // SOL balance: Solana RPC getBalance (fallback: Jupiter holdings).
-  // SPL tokens: Jupiter holdings (fallback: RPC getTokenAccountsByOwner; many free RPCs block that method).
+  // SPL tokens: chain first = RPC getTokenAccountsByOwner for BOTH SPL Token and Token-2022; Jupiter holdings only as fallback.
+  // Zero-balance accounts are always skipped (a sold bag can leave an open account with amount "0").
   async function getSolWallet(addr = CONFIG.SOL_WALLET) {
     const warn = []; let sol = null, rpc = null, tokens = null, tokenSrc = null, holdings = null;
     try { const b = await solRpc("getBalance", [addr]); sol = num(b.result && b.result.value) / 1e9; rpc = b.url; }
     catch (e) { warn.push(e.message); }
     try {
-      holdings = await fetchJson(CONFIG.JUP_HOLDINGS + encodeURIComponent(addr));
       const agg = {};
-      for (const [mint, accs] of Object.entries(holdings.tokens || {})) {
-        for (const a of accs || []) {
-          const t = agg[mint] || (agg[mint] = { mint, amount: 0, program: a.programId || null });
-          t.amount += num(a.uiAmount);
+      for (const prog of CONFIG.TOKEN_PROGRAMS) {
+        const r = await solRpc("getTokenAccountsByOwner", [addr, { programId: prog }, { encoding: "jsonParsed" }]);
+        for (const acc of (r.result && r.result.value) || []) {
+          const info = acc.account && acc.account.data && acc.account.data.parsed && acc.account.data.parsed.info;
+          if (!info || !info.tokenAmount || !(Number(info.tokenAmount.amount) > 0)) continue;
+          const t = agg[info.mint] || (agg[info.mint] = { mint: info.mint, amount: 0, program: prog });
+          t.amount += num(info.tokenAmount.uiAmountString != null ? info.tokenAmount.uiAmountString : info.tokenAmount.uiAmount);
         }
+        rpc = rpc || r.url;
       }
-      tokens = Object.values(agg); tokenSrc = "Jupiter holdings";
-      if (sol == null) sol = num(holdings.uiAmount);
-    } catch (e) { warn.push("Jupiter holdings: " + e.message); }
-    if (tokens == null) {
-      const agg = {};
+      tokens = Object.values(agg); tokenSrc = "Solana RPC (on-chain)";
+    } catch (e) { warn.push("RPC token accounts: " + e.message); }
+    if (tokens == null || sol == null) {
       try {
-        for (const prog of CONFIG.TOKEN_PROGRAMS) {
-          const r = await solRpc("getTokenAccountsByOwner", [addr, { programId: prog }, { encoding: "jsonParsed" }]);
-          for (const acc of (r.result && r.result.value) || []) {
-            const info = acc.account && acc.account.data && acc.account.data.parsed && acc.account.data.parsed.info;
-            if (!info) continue;
-            const t = agg[info.mint] || (agg[info.mint] = { mint: info.mint, amount: 0, program: prog });
-            t.amount += num(info.tokenAmount && info.tokenAmount.uiAmount);
+        holdings = await fetchJson(CONFIG.JUP_HOLDINGS + encodeURIComponent(addr));
+        if (tokens == null) {
+          const agg = {};
+          for (const [mint, accs] of Object.entries(holdings.tokens || {})) {
+            for (const a of accs || []) {
+              const amt = num(a.uiAmount); if (!(amt > 0)) continue;
+              const t = agg[mint] || (agg[mint] = { mint, amount: 0, program: a.programId || null });
+              t.amount += amt;
+            }
           }
-          rpc = rpc || r.url;
+          tokens = Object.values(agg); tokenSrc = "Jupiter holdings (fallback)";
         }
-        tokens = Object.values(agg); tokenSrc = "Solana RPC";
-      } catch (e) { warn.push(e.message); }
+        if (sol == null) sol = num(holdings.uiAmount);
+      } catch (e) { warn.push("Jupiter holdings: " + e.message); }
     }
     if (sol == null && tokens == null) throw new Error(warn.join("; ") || "wallet read failed");
-    return { sol, tokens: tokens || [], tokensOk: tokens != null, tokenSrc, rpc, warn };
+    return { sol, tokens: (tokens || []).filter((t) => t.amount > 0), tokensOk: tokens != null, tokenSrc, rpc, warn };
   }
 
   async function getPrices(mints) {

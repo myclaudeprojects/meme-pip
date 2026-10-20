@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-19 20:16:48 EDT",
+  "generated_et": "2026-10-19 20:32:05 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -453,7 +453,10 @@
       "entry_mc": 6433512.0,
       "tp_multiple": null,
       "tp_target_mc": null,
-      "opened_et": "2026-10-16 03:34 ET"
+      "opened_et": "2026-10-16 03:34 ET",
+      "holding_account": null,
+      "onchain_amount": 0.0,
+      "onchain_checked_et": "2026-10-19 20:32:05 EDT"
     },
     {
       "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
@@ -466,7 +469,10 @@
       "entry_mc": 5388.0,
       "tp_multiple": null,
       "tp_target_mc": null,
-      "opened_et": "2026-10-11 08:10:07 ET"
+      "opened_et": "2026-10-11 08:10:07 ET",
+      "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
+      "onchain_amount": 9280516.224556,
+      "onchain_checked_et": "2026-10-19 20:32:05 EDT"
     }
   ],
   "last_decision": {
@@ -555,6 +561,60 @@
       "detail": "open=0 no sell; SKIP QI (holders fading / mid-bounce / thin organic); SOL ~0.205 insufficient / idle no top-up; no buy; BORDR/Arc untouched"
     }
   ],
+  "wallet_onchain": {
+    "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
+    "generated_et": "2026-10-19 20:32:05 EDT",
+    "generated_ts": 1792456325620,
+    "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
+    "ok": true,
+    "sol": 1.385273521,
+    "tokens": [
+      {
+        "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+        "amount": 0.00052174,
+        "program": "spl"
+      },
+      {
+        "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
+        "amount": 17530877.487712,
+        "program": "token-2022"
+      },
+      {
+        "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+        "amount": 0.020508,
+        "program": "spl"
+      },
+      {
+        "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "amount": 1.512561,
+        "program": "spl"
+      },
+      {
+        "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+        "amount": 0.001,
+        "program": "spl"
+      },
+      {
+        "mint": "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
+        "amount": 0.158551,
+        "program": "token-2022"
+      },
+      {
+        "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
+        "amount": 9280516.224556,
+        "program": "bordrless",
+        "account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz"
+      },
+      {
+        "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+        "amount": 330.413486,
+        "program": "token-2022"
+      }
+    ],
+    "prices": {
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.114767642137441e-06
+    }
+  },
   "holder_history": {
     "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
       "symbol": "BORDR",
