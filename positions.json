@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-19 22:31:22 EDT",
+  "generated_et": "2026-10-19 22:33:33 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -443,6 +443,22 @@
   ],
   "manual_positions": [
     {
+      "mint": "9TRHgBKFhYkdy6hmrC6PpWDYaQSknQBeHef5iYcgLzez",
+      "symbol": "BSKTBALL2",
+      "status": "manual",
+      "cost_usd": 187.06,
+      "cost_src": "cost_usd",
+      "cost_sol": 1.788323199,
+      "tokens_ui": 59141732.283464,
+      "entry_mc": null,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "2026-10-19 22:33 ET",
+      "holding_account": null,
+      "onchain_amount": 59141732.283464,
+      "onchain_checked_et": "2026-10-19 22:33:33 EDT"
+    },
+    {
       "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
       "symbol": "BSKT",
       "status": "manual",
@@ -456,7 +472,7 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-19 22:31:22 EDT"
+      "onchain_checked_et": "2026-10-19 22:33:33 EDT"
     }
   ],
   "last_decision": {
@@ -547,11 +563,11 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-19 22:31:22 EDT",
-    "generated_ts": 1792463482206,
+    "generated_et": "2026-10-19 22:33:33 EDT",
+    "generated_ts": 1792463613185,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 1.729005831,
+    "sol": 0.050578793,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -559,9 +575,19 @@
         "program": "token-2022"
       },
       {
+        "mint": "9TRHgBKFhYkdy6hmrC6PpWDYaQSknQBeHef5iYcgLzez",
+        "amount": 59141732.283464,
+        "program": "token-2022"
+      },
+      {
         "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "amount": 0.001,
         "program": "spl"
+      },
+      {
+        "mint": "GYzYJjGo3vzDkDxpNhSvgUVtGJfhnrJwN7vPeBcv2aSH",
+        "amount": 1000000000.0,
+        "program": "token-2022"
       },
       {
         "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
@@ -571,7 +597,10 @@
       }
     ],
     "prices": {
-      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.122424579295048e-06
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.131067398709959e-06,
+      "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
+      "9TRHgBKFhYkdy6hmrC6PpWDYaQSknQBeHef5iYcgLzez": 3.3794237776498953e-06,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987452311923166
     }
   },
   "holder_history": {
