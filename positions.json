@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 13:40:29 EDT",
+  "generated_et": "2026-10-21 13:45:32 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -455,8 +455,8 @@
       "tp_target_mc": null,
       "opened_et": "2026-10-20 09:59 ET",
       "holding_account": "5J7NW6uhVZ9kh7pH5tsRR1tDEyEFdhEnYXMCxGNNP9Ti",
-      "onchain_amount": 11256846.64578,
-      "onchain_checked_et": "2026-10-21 13:40:29 EDT"
+      "onchain_amount": 4961676.294159,
+      "onchain_checked_et": "2026-10-21 13:45:32 EDT"
     },
     {
       "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
@@ -472,7 +472,7 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-21 13:40:29 EDT"
+      "onchain_checked_et": "2026-10-21 13:45:32 EDT"
     }
   ],
   "last_decision": {
@@ -563,15 +563,15 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 13:40:29 EDT",
-    "generated_ts": 1792604429642,
+    "generated_et": "2026-10-21 13:45:32 EDT",
+    "generated_ts": 1792604732870,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.487659135,
+    "sol": 1.409086641,
     "tokens": [
       {
         "mint": "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J",
-        "amount": 11256846.64578,
+        "amount": 4961676.294159,
         "program": "bordrless",
         "account": "5J7NW6uhVZ9kh7pH5tsRR1tDEyEFdhEnYXMCxGNNP9Ti"
       },
@@ -593,10 +593,10 @@
       }
     ],
     "prices": {
-      "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J": 1.656753998510276e-05,
+      "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J": 1.624326870998917e-05,
       "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.323484406313415e-06,
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990633490595762
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990776966475353
     }
   },
   "holder_history": {
