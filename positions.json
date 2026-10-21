@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 19:25:10 EDT",
+  "generated_et": "2026-10-21 19:28:16 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -456,7 +456,23 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-21 19:25:10 EDT"
+      "onchain_checked_et": "2026-10-21 19:28:16 EDT"
+    },
+    {
+      "mint": "BtZvvEgzvyZTTXqdEnQXNXrupY4jgB7CDUax6ReKpump",
+      "symbol": "ELOWAN",
+      "status": "manual",
+      "cost_usd": 125.17,
+      "cost_src": "cost_usd",
+      "cost_sol": 1.169559869,
+      "tokens_ui": 9483778.275813,
+      "entry_mc": 13198.0,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "2026-10-21 19:27 ET",
+      "holding_account": null,
+      "onchain_amount": 9483778.275813,
+      "onchain_checked_et": "2026-10-21 19:28:16 EDT"
     }
   ],
   "last_decision": {
@@ -547,15 +563,20 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 19:25:10 EDT",
-    "generated_ts": 1792625110956,
+    "generated_et": "2026-10-21 19:28:16 EDT",
+    "generated_ts": 1792625296668,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 1.303660635,
+    "sol": 0.134100766,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
         "amount": 17530877.487712,
+        "program": "token-2022"
+      },
+      {
+        "mint": "BtZvvEgzvyZTTXqdEnQXNXrupY4jgB7CDUax6ReKpump",
+        "amount": 9483778.275813,
         "program": "token-2022"
       },
       {
@@ -571,9 +592,10 @@
       }
     ],
     "prices": {
-      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.251365525022318e-06,
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.251118457488612e-06,
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990680489178254
+      "BtZvvEgzvyZTTXqdEnQXNXrupY4jgB7CDUax6ReKpump": 1.615903070831836e-05,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990956042425795
     }
   },
   "holder_history": {
