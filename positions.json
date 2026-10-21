@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 18:25:46 EDT",
+  "generated_et": "2026-10-21 19:04:25 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -443,22 +443,6 @@
   ],
   "manual_positions": [
     {
-      "mint": "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J",
-      "symbol": "B2",
-      "status": "manual",
-      "cost_usd": 88.24,
-      "cost_src": "cost_usd",
-      "cost_sol": 0.840825573,
-      "tokens_ui": 4961676.294159,
-      "entry_mc": 17783.0,
-      "tp_multiple": null,
-      "tp_target_mc": null,
-      "opened_et": "2026-10-20 09:59 ET",
-      "holding_account": "5J7NW6uhVZ9kh7pH5tsRR1tDEyEFdhEnYXMCxGNNP9Ti",
-      "onchain_amount": 4961676.294159,
-      "onchain_checked_et": "2026-10-21 18:25:46 EDT"
-    },
-    {
       "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
       "symbol": "BSKT",
       "status": "manual",
@@ -472,7 +456,23 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-21 18:25:46 EDT"
+      "onchain_checked_et": "2026-10-21 19:04:25 EDT"
+    },
+    {
+      "mint": "7u4JmWrWG41kYkKpyqbuYJR4uZhE7oLCUMCGfNkNCFWq",
+      "symbol": "CI",
+      "status": "manual",
+      "cost_usd": 125.86,
+      "cost_src": "cost_usd",
+      "cost_sol": 1.17191508,
+      "tokens_ui": 579654.751785,
+      "entry_mc": 208243.0,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "2026-10-21 19:03 ET",
+      "holding_account": null,
+      "onchain_amount": 579654.751785,
+      "onchain_checked_et": "2026-10-21 19:04:25 EDT"
     }
   ],
   "last_decision": {
@@ -563,21 +563,20 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 18:25:46 EDT",
-    "generated_ts": 1792621546171,
+    "generated_et": "2026-10-21 19:04:25 EDT",
+    "generated_ts": 1792623865740,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.487654135,
+    "sol": 0.028965575,
     "tokens": [
-      {
-        "mint": "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J",
-        "amount": 4961676.294159,
-        "program": "bordrless",
-        "account": "5J7NW6uhVZ9kh7pH5tsRR1tDEyEFdhEnYXMCxGNNP9Ti"
-      },
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
         "amount": 17530877.487712,
+        "program": "token-2022"
+      },
+      {
+        "mint": "7u4JmWrWG41kYkKpyqbuYJR4uZhE7oLCUMCGfNkNCFWq",
+        "amount": 579654.751785,
         "program": "token-2022"
       },
       {
@@ -593,10 +592,10 @@
       }
     ],
     "prices": {
-      "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J": 1.6127781413038215e-05,
-      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.284657630082506e-06,
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.2662709524625185e-06,
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991147119043808
+      "7u4JmWrWG41kYkKpyqbuYJR4uZhE7oLCUMCGfNkNCFWq": 0.00019823416195592546,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990815000277821
     }
   },
   "holder_history": {
@@ -610,7 +609,7 @@
   },
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
-    "last_scan_ts": 1792448215.652005,
+    "last_scan_ts": 1792622021.507281,
     "tokens": {
       "6KDpQM4BVDdtAkjtyFDiBCkbii8q8BieEyXXm6kNpump": {
         "first_seen": 1792103841,
@@ -713,8 +712,8 @@
         "symbol": "HeeHaw"
       },
       "72QvBVwpxqmheEPfaCwWSWqEFsUy3rhWt6JhQBMNTwD1": {
-        "first_seen": 1792448214,
-        "last_seen": 1792448214,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "ENA"
       },
       "Gyk9Z93Ri2JUjqES9HTpc7pxCJTLD7vhBhEjBhyApump": {
@@ -843,8 +842,8 @@
         "symbol": "tSpaceX"
       },
       "HgcxVs6kJhPAaGqnPNGaa7zYgNT49hJrLufiqcNMuYZT": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "FEELSGOOD"
       },
       "ZVMihT6DKXWKRGX54VGvnYv4ndES8XtneUUYMCLpump": {
@@ -1023,8 +1022,8 @@
         "symbol": "LOOKSMAX"
       },
       "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "AMD"
       },
       "CFNRDaxFcvRwRSNnA5cHrCCr6AHhk9dNkHWpRUjNupFL": {
@@ -1428,8 +1427,8 @@
         "symbol": "DEXTER"
       },
       "NTRNDMqQSiwEC2jJs3wJiZS6bpGYQJtMNQJgiX3WyV6": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "NTRNDM"
       },
       "GU5NkUVLzmJQxJKuho5dG4d1owChpcSQnhARrjYQpump": {
@@ -1596,11 +1595,6 @@
         "first_seen": 1792285050,
         "last_seen": 1792285050,
         "symbol": "KALSHI"
-      },
-      "HzPRXMeo6JLQj7dKH79fNnpApNzY8VBQ8g4Ne9Cwpump": {
-        "first_seen": 1792013616,
-        "last_seen": 1792018393,
-        "symbol": "smol"
       },
       "DRcSf5SrVeJTt7QTn5irVi3vFqsAqJtPKDUw89C6pump": {
         "first_seen": 1792015584,
@@ -1898,8 +1892,8 @@
         "symbol": "CRWV"
       },
       "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "1"
       },
       "ALDVtr9JeLjKH91fHFvLxFoyd7C6eLUxi9dUoN2FsWdD": {
@@ -2153,8 +2147,8 @@
         "symbol": "OMNI"
       },
       "ysPp2Bt2j2UQu2tZwtSJz7JxyrmQ8GJcNJE5NyDoS5a": {
-        "first_seen": 1792448214,
-        "last_seen": 1792448214,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "MUSK4"
       },
       "8FnBBoqYdVAps3Ekpvhr48sNkxsPVKq8iyzWDrYYpump": {
@@ -2198,8 +2192,8 @@
         "symbol": "SILLY.EXE"
       },
       "5ubruMYpgKqw9ip5J1qrXbVGmMdn2VCsMg421B4bpump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "onboard"
       },
       "9KcwEpr7TnnaTuoXVcc3J4wxq5ptVr7fsH53w9M7pump": {
@@ -2413,8 +2407,8 @@
         "symbol": "HeyGrok"
       },
       "55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "Gato"
       },
       "48hnR1CWtafBumJsJod6Q8yduwDuYyumCJzuBVzvpump": {
@@ -2438,8 +2432,8 @@
         "symbol": "Perro"
       },
       "HqmFi85adLD8BQA7en1HfajdAfzVFps5REgQaYuw6Ax8": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "WEFT"
       },
       "5b4n12eHotCTYxktAkKcD6xhakzoAnwZJJad8f8fpump": {
@@ -2498,8 +2492,8 @@
         "symbol": "ZeroFee"
       },
       "3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "SUPERCORE"
       },
       "7UAWdJjrBykopzco6bCBmMLdggaiec6bd4bTKmQqpump": {
@@ -2573,8 +2567,8 @@
         "symbol": "KNIGHT"
       },
       "Ez7eEs53hQiXgCGmcbhdX5i1jgg2gC3F6MoeosuVpump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "LUKE"
       },
       "Bb4jR951QtVjeFAYFLBYXDSMKjbTDroCLPbFLdd7pump": {
@@ -2583,8 +2577,8 @@
         "symbol": "memecoin"
       },
       "D3S6J9s1byrNBt3ZKwEDiPsNRqHtoEP8zQKdhyBdpump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "PIERRE"
       },
       "68R6PSWipAwGVmHpfvsCSfQG6chrqe7q4tA3uDoevJ2S": {
@@ -2593,13 +2587,13 @@
         "symbol": "zkat"
       },
       "ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "godspeed"
       },
       "DvdmEnztCmXwBnAbedD48XVGZJSxq31zNvnyftXdpump": {
-        "first_seen": 1792448215,
-        "last_seen": 1792448215,
+        "first_seen": 1792622021,
+        "last_seen": 1792622021,
         "symbol": "pill"
       }
     }
