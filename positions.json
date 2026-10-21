@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 00:10:30 EDT",
+  "generated_et": "2026-10-21 02:07:27 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -456,7 +456,7 @@
       "opened_et": "2026-10-20 09:59 ET",
       "holding_account": "5J7NW6uhVZ9kh7pH5tsRR1tDEyEFdhEnYXMCxGNNP9Ti",
       "onchain_amount": 11256846.64578,
-      "onchain_checked_et": "2026-10-21 00:10:30 EDT"
+      "onchain_checked_et": "2026-10-21 02:07:27 EDT"
     },
     {
       "mint": "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5",
@@ -472,7 +472,7 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-21 00:10:30 EDT"
+      "onchain_checked_et": "2026-10-21 02:07:27 EDT"
     }
   ],
   "last_decision": {
@@ -563,8 +563,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 00:10:30 EDT",
-    "generated_ts": 1792555830067,
+    "generated_et": "2026-10-21 02:07:27 EDT",
+    "generated_ts": 1792562847321,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.487659135,
@@ -593,10 +593,10 @@
       }
     ],
     "prices": {
-      "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J": 1.8507731914657775e-05,
-      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.182560471186443e-06,
+      "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J": 1.8484757295157774e-05,
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.176127086727975e-06,
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985323139370081
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985010831257428
     }
   },
   "holder_history": {
@@ -1077,11 +1077,6 @@
         "last_seen": 1792280523,
         "symbol": "NKE"
       },
-      "7C94RweVKZtBhA291WpXW7pkYEnbqhGvCFTU8nPoBTFY": {
-        "first_seen": 1791957467,
-        "last_seen": 1791957467,
-        "symbol": "BOTIFY"
-      },
       "BMKdM4yUxX12moFqVk195k7coMbaybd4RUKCUdm7D1Sk": {
         "first_seen": 1792310916,
         "last_seen": 1792310916,
@@ -1251,11 +1246,6 @@
         "first_seen": 1792300901,
         "last_seen": 1792302852,
         "symbol": "BTC"
-      },
-      "hKyXZVKmrBDPhKKhdSaaGf1qrFwUkwjqrdzRc63farm": {
-        "first_seen": 1791938545,
-        "last_seen": 1791954528,
-        "symbol": "FARM"
       },
       "GKboyzRdB93iEpfr6Gjs8A2wXe7Tp4kVD5WwkNfepump": {
         "first_seen": 1792294471,
@@ -1557,20 +1547,10 @@
         "last_seen": 1792310916,
         "symbol": "MASKCAT"
       },
-      "7LA4wwjoXU4hAdwX1eT5ouuSsMrHq9wHQBfAyPfJK1eQ": {
-        "first_seen": 1791951206,
-        "last_seen": 1791951206,
-        "symbol": "CLANKER"
-      },
       "GodL6KZ9uuUoQwELggtVzQkKmU1LfqmDokPibPeDKkhF": {
         "first_seen": 1792354896,
         "last_seen": 1792354896,
         "symbol": "GODL"
-      },
-      "FVGdJQVzAdKr8ZH7ahyhp4cvDszX3N8QYGSdzueopump": {
-        "first_seen": 1791952364,
-        "last_seen": 1791954530,
-        "symbol": "attn"
       },
       "HxKqU1V7L8jUfMwuScDMtww3Ex2TPWL7zYmFuCJ4Zvki": {
         "first_seen": 1792003105,
@@ -1586,11 +1566,6 @@
         "first_seen": 1791957469,
         "last_seen": 1791959878,
         "symbol": "SPCXon"
-      },
-      "HrZh7koZFedTSHng4bVmhULwejpmVdSKUYxaf2N5im1b": {
-        "first_seen": 1791957469,
-        "last_seen": 1791957469,
-        "symbol": "CATOSHI"
       },
       "EfNHz2Bdio2A177PX4YUmmggsF7wVGfUmbfRkX15pump": {
         "first_seen": 1791963184,
