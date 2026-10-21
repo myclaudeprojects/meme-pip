@@ -126,6 +126,8 @@
     <div class="card"><div class="k">Arc USDC (8488)</div><div class="v" id="c-arc">-</div><div class="s" id="c-arc-s">-</div></div>
     <div class="card"><div class="k">Open organic positions</div><div class="v" id="c-pos">-</div><div class="s" id="c-pos-s">-</div></div>
     <div class="card"><div class="k">Strategy</div><div class="v" id="c-strat" style="font-size:16px">-</div><div class="s" id="c-strat-s">-</div></div>
+    <div class="card"><div class="k">Realized PnL (closed trades)</div><div class="v" id="c-rpnl">-</div><div class="s" id="c-rpnl-s" style="word-break:normal">-</div></div>
+    <div class="card"><div class="k">Unrealized PnL (open)</div><div class="v" id="c-upnl">-</div><div class="s" id="c-upnl-s" style="word-break:normal">-</div></div>
     <div class="card"><div class="k">Cardboard</div><div class="v" id="c-cb">-</div><div class="s" id="c-cb-s" style="word-break:normal">-</div></div>
   </div>
 
@@ -139,6 +141,11 @@
       <div id="decision"><span class="muted">Loading…</span></div>
     </section>
   </div>
+
+  <section>
+    <h2>Closed trades: realized PnL <small id="rpnl-note"></small></h2>
+    <div id="realized"><span class="muted">Loading…</span></div>
+  </section>
 
   <section>
     <h2>Live scan: $200k–$1M band <small id="scan-note"></small></h2>
@@ -176,7 +183,7 @@
 <!-- Optional snapshot written by dashboard_snapshot.py (lets file:// opening show cost basis). Missing = fine. -->
 <script src="positions.js" onerror="void 0"></script>
 <script src="core.js?v=wb1"></script>
-<script src="app.js?v=bsktlink"></script>
+<script src="app.js?v=pnlfix"></script>
 <script src="bskt.js"></script>
 <script src="cardboard.js"></script>
 <div id="holder-panel"><div id="holder-panel-body"></div></div>

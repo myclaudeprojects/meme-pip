@@ -227,7 +227,7 @@
     $("updated").textContent = C.nowEt();
     $("f-sol").innerHTML = `<a href="https://solscan.io/account/${CFG.SOL_WALLET}" target="_blank" rel="noopener">${short(CFG.SOL_WALLET)}</a>`;
     $("f-arc").textContent = short(CFG.ARC_WALLET);
-    renderCards(P); const pos = renderPositions(P); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
+    renderCards(P); const pos = renderPositions(P); renderPnl(pos); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
     renderHolderPanel();
   }
 
@@ -431,11 +431,58 @@
     if (d.last_scan_et) h += `<div>Last bot scan: <b>${esc(d.last_scan_et)}</b> · ${esc(d.last_scan_n_in_band)} in band` +
       (d.last_scan_best && d.last_scan_best.symbol ? ` · top: <a href="${dex(d.last_scan_best.mint)}" target="_blank" rel="noopener">${esc(d.last_scan_best.symbol)}</a> ($${C.fmtK(d.last_scan_best.mcap)})` : "") + "</div>";
     if (d.last_buy && d.last_buy.symbol) h += `<div>Last buy: <b>${esc(d.last_buy.symbol)}</b> ${C.fmtUsd(d.last_buy.cost_usd)} at ${esc(d.last_buy.as_of_et)}</div>`;
-    const hist = (s.history || []).filter((x) => x.status === "closed");
-    if (hist.length) h += "<div style='margin-top:6px' class='muted'>Closed: " + hist.map((x) => esc(x.symbol) + (x.pnl_usd != null ? ` (<span class="${cls(x.pnl_usd)}">${x.pnl_usd >= 0 ? "+" : ""}${C.fmtUsd(x.pnl_usd)}</span>)` : "")).join(", ") + "</div>";
-    if (s.cash_snapshot && s.cash_snapshot.as_of_et) h += `<div class="muted">Bot cash note (${esc(s.cash_snapshot.as_of_et)}): ${esc(s.cash_snapshot.note || "")}</div>`;
+    const rz = s.realized;
+    if (rz && rz.today) h += `<div style='margin-top:6px'>Realized today (${esc(rz.today.date)}): <b class="${cls(rz.today.pnl_usd)}">${sgnUsd(rz.today.pnl_usd)}</b> · ${sgnSol(rz.today.pnl_sol)} over ${rz.today.n} closed trade${rz.today.n === 1 ? "" : "s"} (full list below)</div>`;
+    if (s.cash_snapshot && s.cash_snapshot.as_of_et) h += `<div class="muted">Cash (${esc(s.cash_snapshot.as_of_et)}): ${esc(s.cash_snapshot.note || "")}</div>`;
     h += "</div>";
     $("decision").innerHTML = h;
+  }
+
+  // ---------- PnL (2026-10-21 pnl fix): realized from positions.json ledger (chain-verified on the box), unrealized live ----------
+  const sgnUsd = (v) => (v == null ? "-" : (v >= 0 ? "+" : "-") + C.fmtUsd(Math.abs(v)));
+  const sgnSol = (v, dp = 4) => (v == null ? "-" : (v >= 0 ? "+" : "") + Number(v).toFixed(dp) + " SOL");
+  let showAllClosed = false;
+  function renderPnl(pos) {
+    const s = S.snap || {}, rz = s.realized;
+    if (rz && !rz.error) {
+      $("c-rpnl").innerHTML = `<span class="${cls(rz.realized_pnl_usd)}">${sgnUsd(rz.realized_pnl_usd)}</span>`;
+      $("c-rpnl-s").innerHTML = `${sgnSol(rz.realized_pnl_sol, 3)} · ${rz.n_known} closed (${rz.wins}W/${rz.losses}L)` +
+        (rz.today ? ` · today <span class="${cls(rz.today.pnl_usd)}">${sgnUsd(rz.today.pnl_usd)}</span> (${sgnSol(rz.today.pnl_sol, 3)}, ${rz.today.n})` : "") +
+        (rz.n_unknown ? ` · <span class="warn">${rz.n_unknown} unknown, excluded</span>` : "");
+    } else { $("c-rpnl").innerHTML = '<span class="muted">-</span>'; $("c-rpnl-s").textContent = rz && rz.error ? rz.error : "no ledger in positions.json"; }
+    // unrealized: live page values (wallet amount x live price) vs cost basis; box snapshot as fallback
+    let uv = 0, uc = 0, n = 0; const parts = [];
+    for (const p of pos || []) {
+      const c = p.snap && p.snap.cost_usd; if (!c || p.value == null || !(p.amount > 0)) continue;
+      uv += p.value; uc += c; n++; parts.push(esc((p.snap.symbol || short(p.mint))) + " " + sgnUsd(p.value - c));
+    }
+    if (n) { $("c-upnl").innerHTML = `<span class="${cls(uv - uc)}">${sgnUsd(uv - uc)}</span>`; $("c-upnl-s").innerHTML = `${n} open · value ${C.fmtUsd(uv)} vs cost ${C.fmtUsd(uc)} · ${parts.join(", ")}`; }
+    else if (s.unrealized && s.unrealized.n) { $("c-upnl").innerHTML = `<span class="${cls(s.unrealized.pnl_usd)}">${sgnUsd(s.unrealized.pnl_usd)}</span>`; $("c-upnl-s").textContent = `${s.unrealized.n} open · box snapshot ${s.unrealized.as_of_et}`; }
+    else { $("c-upnl").textContent = "$0.00"; $("c-upnl-s").textContent = "no open positions with a cost basis"; }
+    // closed-trade table, newest first
+    const rows = (s.history || []).filter((x) => x.status === "closed").slice().reverse();
+    if (!rows.length) { $("realized").innerHTML = '<span class="muted">No closed trades in positions.json.</span>'; return; }
+    $("rpnl-note").textContent = rz && !rz.error ? `${rows.length} trades · total ${sgnUsd(rz.realized_pnl_usd)} / ${sgnSol(rz.realized_pnl_sol, 3)} · ledger ${rz.generated_et || ""}` : "";
+    const lim = showAllClosed ? rows.length : 15;
+    let h = '<div class="wrap"><table><thead><tr><th class="l">Closed (ET)</th><th class="l">Token</th><th class="l">Type</th><th>Cost</th><th>Proceeds</th><th>PnL USD</th><th>PnL SOL</th><th>Multiple</th><th class="l">Source</th></tr></thead><tbody>';
+    for (const r of rows.slice(0, lim)) {
+      const sig = (r.sell_sigs || [])[r.sell_sigs ? r.sell_sigs.length - 1 : 0];
+      const mult = r.cost_sol && r.proceeds_sol != null ? r.proceeds_sol / r.cost_sol : null;
+      const fl = (r.flags || []).length ? ` <span class="warn" title="${esc(r.flags.join(" | "))}">⚠</span>` : "";
+      h += `<tr><td class="l">${esc(r.exit_et || "-")}</td><td class="l">${r.mint ? `<a href="${dex(r.mint)}" target="_blank" rel="noopener">${esc(r.symbol)}</a>` : esc(r.symbol)}</td>` +
+        `<td class="l muted">${esc(r.kind || "")}</td>` +
+        `<td>${r.cost_sol != null ? Number(r.cost_sol).toFixed(4) + " SOL" : "-"}<div class="muted" style="font-size:11px">${C.fmtUsd(r.cost_usd)}</div></td>` +
+        `<td>${r.proceeds_sol != null ? Number(r.proceeds_sol).toFixed(4) + " SOL" : '<span class="warn">unknown</span>'}<div class="muted" style="font-size:11px">${C.fmtUsd(r.proceeds_usd)}</div></td>` +
+        `<td class="${cls(r.pnl_usd)}">${sgnUsd(r.pnl_usd)}</td><td class="${cls(r.pnl_sol)}">${sgnSol(r.pnl_sol)}</td>` +
+        `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
+        `<td class="l muted" style="font-size:11px">${esc(r.proceeds_src || "-")}${sig ? ` · <a href="https://solscan.io/tx/${esc(sig)}" target="_blank" rel="noopener">sell tx</a>` : ""}${fl}</td></tr>`;
+    }
+    if (rz && !rz.error) h += `<tr class="bk-sum"><td class="l" colspan="5">Total realized (${rz.n_known} trades)</td><td class="${cls(rz.realized_pnl_usd)}">${sgnUsd(rz.realized_pnl_usd)}</td><td class="${cls(rz.realized_pnl_sol)}">${sgnSol(rz.realized_pnl_sol, 3)}</td><td colspan="2"></td></tr>`;
+    h += "</tbody></table></div>";
+    if (rows.length > 15) h += `<button id="rpnl-more" style="margin-top:6px">${showAllClosed ? "Show latest 15" : "Show all " + rows.length}</button>`;
+    h += `<div class="muted" style="font-size:11px;margin-top:6px">Proceeds = wallet SOL received by each sell tx (on-chain, net of fees) or the position file when no sig is recorded. USD = SOL x SOL price at sell from the trade record (else SOL price at entry). ⚠ = see tooltip.</div>`;
+    $("realized").innerHTML = h;
+    const b = $("rpnl-more"); if (b) b.onclick = () => { showAllClosed = !showAllClosed; renderPnl(pos); };
   }
 
   function evalCtx(pos) {
