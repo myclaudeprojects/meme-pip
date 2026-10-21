@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 19:04:25 EDT",
+  "generated_et": "2026-10-21 19:09:41 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json only. No keys, no signing.",
   "params": {
@@ -456,23 +456,7 @@
       "opened_et": "2026-10-11 08:10:07 ET",
       "holding_account": "3EcQbFYVaKV6b2SfYbtA5JXxkEy7Gxhr4XHLzrYvTEWz",
       "onchain_amount": 9280516.224556,
-      "onchain_checked_et": "2026-10-21 19:04:25 EDT"
-    },
-    {
-      "mint": "7u4JmWrWG41kYkKpyqbuYJR4uZhE7oLCUMCGfNkNCFWq",
-      "symbol": "CI",
-      "status": "manual",
-      "cost_usd": 125.86,
-      "cost_src": "cost_usd",
-      "cost_sol": 1.17191508,
-      "tokens_ui": 579654.751785,
-      "entry_mc": 208243.0,
-      "tp_multiple": null,
-      "tp_target_mc": null,
-      "opened_et": "2026-10-21 19:03 ET",
-      "holding_account": null,
-      "onchain_amount": 579654.751785,
-      "onchain_checked_et": "2026-10-21 19:04:25 EDT"
+      "onchain_checked_et": "2026-10-21 19:09:41 EDT"
     }
   ],
   "last_decision": {
@@ -563,20 +547,15 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 19:04:25 EDT",
-    "generated_ts": 1792623865740,
+    "generated_et": "2026-10-21 19:09:41 EDT",
+    "generated_ts": 1792624181038,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.028965575,
+    "sol": 1.21319946,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
         "amount": 17530877.487712,
-        "program": "token-2022"
-      },
-      {
-        "mint": "7u4JmWrWG41kYkKpyqbuYJR4uZhE7oLCUMCGfNkNCFWq",
-        "amount": 579654.751785,
         "program": "token-2022"
       },
       {
@@ -592,10 +571,9 @@
       }
     ],
     "prices": {
-      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.2662709524625185e-06,
+      "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5": 5.250983648814467e-06,
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "7u4JmWrWG41kYkKpyqbuYJR4uZhE7oLCUMCGfNkNCFWq": 0.00019823416195592546,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990815000277821
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990919883673824
     }
   },
   "holder_history": {
@@ -1585,11 +1563,6 @@
         "first_seen": 1792294473,
         "last_seen": 1792295597,
         "symbol": "SAN"
-      },
-      "kXzjEQ2frgfKHAUWGS1rZFH53tyWjD6b9njoQ82pump": {
-        "first_seen": 1792008189,
-        "last_seen": 1792019298,
-        "symbol": "CFLARE"
       },
       "PreLWGkkeqG1s4HEfFZSy9moCrJ7btsHuUtfcCeoRua": {
         "first_seen": 1792285050,
