@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 21:31:14 EDT",
+  "generated_et": "2026-10-21 21:31:41 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2284,10 +2284,10 @@
       "opened_et": "2026-10-21 21:16 ET",
       "holding_account": null,
       "onchain_amount": 0.0,
-      "onchain_checked_et": "2026-10-21 21:31:14 EDT",
+      "onchain_checked_et": "2026-10-21 21:31:41 EDT",
       "unrealized": {
         "value_usd": 0.0,
-        "price_usd": 1.2053778043794117e-05,
+        "price_usd": 1.255e-05,
         "pnl_usd": -21.91,
         "value_sol": 0.0,
         "pnl_sol": -0.204214
@@ -2311,13 +2311,13 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-21 21:31:15 EDT",
+    "as_of_et": "2026-10-21 21:31:42 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.388231993,
-    "sol_price_usd": 107.10807818120541,
-    "sol_usd_approx": 41.58,
+    "sol_price_usd": 107.16079407507071,
+    "sol_usd_approx": 41.6,
     "arc_usdc": 12.256057,
-    "total_cash_usd_approx": 53.84,
+    "total_cash_usd_approx": 53.86,
     "note": "Live cash: 0.3882 SOL + Arc USDC $12.26 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
@@ -2384,8 +2384,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 21:31:14 EDT",
-    "generated_ts": 1792632674458,
+    "generated_et": "2026-10-21 21:31:41 EDT",
+    "generated_ts": 1792632701926,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.388231993,
@@ -2403,11 +2403,11 @@
     ],
     "prices": {
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990290130596423
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990263519648052
     }
   },
   "realized": {
-    "generated_et": "2026-10-21 21:31:15 EDT",
+    "generated_et": "2026-10-21 21:31:42 EDT",
     "n_trades": 82,
     "n_known": 82,
     "n_unknown": 0,
@@ -2430,8 +2430,8 @@
     "cost_usd": 21.91,
     "pnl_usd": -21.91,
     "pnl_sol": -0.204214,
-    "sol_price_usd": 107.10807818120541,
-    "as_of_et": "2026-10-21 21:31:15 EDT"
+    "sol_price_usd": 107.16079407507071,
+    "as_of_et": "2026-10-21 21:31:42 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
