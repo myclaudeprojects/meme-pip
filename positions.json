@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 21:21:25 EDT",
+  "generated_et": "2026-10-21 21:28:48 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2257,13 +2257,36 @@
       "opened_et": "2026-10-21 21:16 ET",
       "holding_account": null,
       "onchain_amount": 0.0,
-      "onchain_checked_et": "2026-10-21 21:21:25 EDT",
+      "onchain_checked_et": "2026-10-21 21:28:48 EDT",
       "unrealized": {
         "value_usd": 0.0,
-        "price_usd": 1.674e-05,
+        "price_usd": 1.2079227744808012e-05,
         "pnl_usd": -21.91,
         "value_sol": 0.0,
         "pnl_sol": -0.204214
+      }
+    },
+    {
+      "mint": "E2FkKbPHiJ9NdGDN1YRpB8nsFzSGgxkTD3PGXuUtpump",
+      "symbol": "E2FK",
+      "status": "manual",
+      "cost_usd": 48.41,
+      "cost_src": "cost_usd",
+      "cost_sol": 0.45142518,
+      "tokens_ui": 1430610.832959,
+      "entry_mc": 33836.0,
+      "tp_multiple": 10.0,
+      "tp_target_mc": 338360.0,
+      "opened_et": "2026-10-21 21:27 ET",
+      "holding_account": null,
+      "onchain_amount": 1430610.832959,
+      "onchain_checked_et": "2026-10-21 21:28:48 EDT",
+      "unrealized": {
+        "value_usd": 50.56,
+        "price_usd": 3.533949983041072e-05,
+        "pnl_usd": 2.15,
+        "value_sol": 0.471658,
+        "pnl_sol": 0.020233
       }
     }
   ],
@@ -2284,14 +2307,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-21 21:21:26 EDT",
+    "as_of_et": "2026-10-21 21:28:48 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.438865659,
-    "sol_price_usd": 107.2666451056919,
-    "sol_usd_approx": 47.08,
-    "arc_usdc": 18.264885,
-    "total_cash_usd_approx": 65.34,
-    "note": "Live cash: 0.4389 SOL + Arc USDC $18.26 (Liar's Dice Arc wallets excluded)"
+    "sol_native": 0.025157766,
+    "sol_price_usd": 107.19,
+    "sol_usd_approx": 2.7,
+    "arc_usdc": 7.827116,
+    "total_cash_usd_approx": 10.53,
+    "note": "Live cash: 0.0252 SOL + Arc USDC $7.83 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2357,15 +2380,20 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 21:21:25 EDT",
-    "generated_ts": 1792632085466,
+    "generated_et": "2026-10-21 21:28:48 EDT",
+    "generated_ts": 1792632528414,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.438865659,
+    "sol": 0.025157766,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
         "amount": 17530877.487712,
+        "program": "token-2022"
+      },
+      {
+        "mint": "E2FkKbPHiJ9NdGDN1YRpB8nsFzSGgxkTD3PGXuUtpump",
+        "amount": 1430610.832959,
         "program": "token-2022"
       },
       {
@@ -2376,11 +2404,12 @@
     ],
     "prices": {
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9990188650066474
+      "E2FkKbPHiJ9NdGDN1YRpB8nsFzSGgxkTD3PGXuUtpump": 3.533949983041072e-05,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9989984618775832
     }
   },
   "realized": {
-    "generated_et": "2026-10-21 21:21:26 EDT",
+    "generated_et": "2026-10-21 21:28:48 EDT",
     "n_trades": 81,
     "n_known": 81,
     "n_unknown": 0,
@@ -2398,13 +2427,13 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "unrealized": {
-    "n": 1,
-    "value_usd": 0.0,
-    "cost_usd": 21.91,
-    "pnl_usd": -21.91,
-    "pnl_sol": -0.204214,
-    "sol_price_usd": 107.2666451056919,
-    "as_of_et": "2026-10-21 21:21:26 EDT"
+    "n": 2,
+    "value_usd": 50.56,
+    "cost_usd": 70.32,
+    "pnl_usd": -19.76,
+    "pnl_sol": -0.183982,
+    "sol_price_usd": 107.19,
+    "as_of_et": "2026-10-21 21:28:48 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3395,11 +3424,6 @@
         "first_seen": 1792250577,
         "last_seen": 1792358410,
         "symbol": "CyberAxe"
-      },
-      "BN5hY8m4JJTjsHDYWQtMYFJGzTuvmZS5bidkBQTnpump": {
-        "first_seen": 1792027348,
-        "last_seen": 1792027348,
-        "symbol": "RAVE"
       },
       "CY1P83KnKwFYostvjQcoR2HJLyEJWRBRaVQmYyyD3cR8": {
         "first_seen": 1792241415,
