@@ -2,7 +2,11 @@
 (function () {
   "use strict";
   const C = window.OrganicCore, CFG = C.CONFIG;
-  const SCAN_MS = 30000, WALLET_MS = 60000, SNAP_MS = 45000;
+  const SCAN_MS = 30000, WALLET_MS = 60000, SNAP_MS = 20000, LIVE_PX_MS = 5000;
+  // Bordrless bonding-curve pools (no Jupiter/DexScreener price, no CORS on the Bordrless API): price is read from the
+  // public pool account: u64 LE baseReserve@210, quoteReserve@218, virtualBase@226, virtualQuote@234; base 6 dp, quote SOL 9 dp.
+  const BORDRLESS_POOLS = { mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5: "5o1GdVhDTPtHnZW3eBum35xcZrpaBjf8VDHJ48KAvRYp",
+                            "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J": "ECrzqrmb7b7d8K3hpiztg2UMGYakR4dKiiTEmivS894X" };
   // Optional ?minpos=N to change the $5 position threshold (display only).
   const MIN_POS_USD = (() => { const v = Number(new URLSearchParams(location.search).get("minpos")); return Number.isFinite(v) && v > 0 ? v : CFG.POSITION_MIN_USD; })();
   const $ = (id) => document.getElementById(id);
@@ -58,6 +62,7 @@
 
   const S = { snap: null, snapSrc: null, scan: null, wallet: null, walletErr: null, arc: null, arcErr: null,
               prices: {}, info: {}, sources: {}, nextScan: 0, nextWallet: 0, nextSnap: 0, busy: false,
+              pxSrc: {}, pxAt: 0, pxBusy: false, pxErr: null,
               hist: loadHist() };
 
   function loadHist() { try { return JSON.parse(localStorage.getItem("organicHolderHist") || "{}"); } catch (e) { return {}; } }
@@ -114,7 +119,9 @@
     try {
       const r = await fetch("positions.json?ts=" + Date.now(), { cache: "no-store" });
       if (!r.ok) throw new Error("HTTP " + r.status);
+      const prevGen = S.snap && S.snap.generated_et;
       S.snap = await r.json(); S.snapSrc = "positions.json";
+      if (prevGen && prevGen !== S.snap.generated_et) S.nextWallet = 0; // new buy/sell on the box: re-read holdings now
     } catch (e) {
       if (window.POSITIONS_SNAPSHOT) { S.snap = window.POSITIONS_SNAPSHOT; S.snapSrc = "positions.js (embedded)"; }
       else { S.snap = null; S.snapSrc = null; }
@@ -286,12 +293,15 @@
         (S.walletErr ? `<div class="msg err">Wallet read failed: ${esc(S.walletErr)}</div>` : "");
       return pos;
     }
-    let html = '<div class="wrap"><table><thead><tr><th class="l">Token</th><th>Tokens held</th><th>Value</th><th>Cost</th><th>Multiple</th><th class="l">Progress to TP</th><th>Holders</th><th>Δ5m</th><th>Δ1h</th><th class="l">Trend</th></tr></thead><tbody>';
+    let html = '<div class="wrap"><table><thead><tr><th class="l">Token</th><th>Tokens held</th><th>Value (live)</th><th>Cost</th><th>PnL $</th><th>PnL %</th><th>Multiple</th><th class="l">Progress to TP</th><th>Holders</th><th>Δ5m</th><th>Δ1h</th><th class="l">Trend</th></tr></thead><tbody>';
+    let totV = 0, totC = 0;
     for (const p of pos) {
       const info = S.info[p.mint]; if (info) pushHist(p.mint, info.holders, info.hc5);
       const sym = (info && info.symbol) || (p.snap && p.snap.symbol) || short(p.mint);
       const cost = p.snap && p.snap.cost_usd; const tp = (p.snap && p.snap._kind === "open") ? P.tp : (p.snap && p.snap.tp_multiple) || P.tp;
       const mult = cost && p.value != null ? p.value / cost : null;
+      const pnl = cost && p.value != null ? p.value - cost : null;
+      if (pnl != null && p.amount > 0) { totV += p.value; totC += cost; }
       let bar = '<span class="muted">cost unknown client-side</span>';
       if (mult != null) {
         const w = Math.max(0, Math.min(1, mult / tp)) * 100;
@@ -303,16 +313,17 @@
       const miss = p.zeroVerified ? `<div class="warn" style="font-size:11px">0 on-chain in ${short(CFG.SOL_WALLET)} (box check ${esc(p.snap.onchain_checked_et || "")}): sold / no longer held; position file still lists it as open</div>` : p.missing ? '<div class="warn" style="font-size:11px">In snapshot as open but not in wallet now (likely sold since snapshot)</div>' : (!p.live ? '<div class="muted" style="font-size:11px">value from snapshot token amount × live price</div>' : "");
       const li = (S.live && S.live.info && S.live.info[p.mint]) || null;
       const curMc = li && li.mc ? Number(li.mc) : null, emc = p.snap && p.snap.entry_mc;
-      const mcLine = (p.snap && p.snap._kind === "manual" && (emc || curMc)) ? `<div class="muted" style="font-size:11px">avg entry MC $${emc ? C.fmtK(emc) : "-"} → now $${curMc ? C.fmtK(curMc) : "-"}` +
-        (cost && p.value != null ? ` · PnL <span class="${p.value - cost >= 0 ? "pos" : "neg"}">${p.value - cost >= 0 ? "+" : ""}${C.fmtUsd(p.value - cost)}</span>` : "") + `</div>` : "";
+      const mcLine = (p.snap && p.snap._kind === "manual" && (emc || curMc)) ? `<div class="muted" style="font-size:11px">avg entry MC $${emc ? C.fmtK(emc) : "-"} → now $${curMc ? C.fmtK(curMc) : "-"}</div>` : "";
       const buyLink = mcLine + ((p.snap && p.snap.buy_sig) ? `<div class="muted" style="font-size:11px"><a href="https://solscan.io/tx/${esc(p.snap.buy_sig)}" target="_blank" rel="noopener">buy tx</a>${p.snap.cost_sol ? " · " + Number(p.snap.cost_sol).toFixed(4) + " SOL" : ""}</div>` : "");
       html += `<tr><td class="l"><a href="${dex(p.mint)}" target="_blank" rel="noopener">${esc(sym)}</a> ${(p.mint === "4iWwcHf9tH6J6UjRgG9rXosXVxNdcKUFuqh1rbps6H7J" || p.mint === "mN8pEpVV4z7kvRS8QFWAmxKdAoKbLXPkdMHVuQgxFr5") ? `<a href="https://bordrless.app/token/${encodeURIComponent(p.mint)}" target="_blank" rel="noopener" style="font-size:11px">Bordrless</a>` : `<a href="https://pump.fun/coin/${encodeURIComponent(p.mint)}" target="_blank" rel="noopener" style="font-size:11px">pump.fun</a>`}${tag}${miss}${buyLink}</td>` +
-        `<td>${p.amount != null ? Number(p.amount).toLocaleString("en-US", { maximumFractionDigits: 0 }) : "-"}</td><td>${C.fmtUsd(p.value)}</td><td>${cost ? C.fmtUsd(cost) : "-"}</td>` +
+        `<td>${p.amount != null ? Number(p.amount).toLocaleString("en-US", { maximumFractionDigits: 0 }) : "-"}</td><td>${C.fmtUsd(p.value)}<div class="muted" style="font-size:11px" title="${esc(S.pxSrc[p.mint] || "")}">${S.prices[p.mint] != null ? "@ $" + Number(S.prices[p.mint]).toPrecision(4) + (S.pxSrc[p.mint] ? " · " + esc(S.pxSrc[p.mint].split(" x ")[0]) : "") : ""}</div></td><td>${cost ? C.fmtUsd(cost) : "-"}</td>` +
+        `<td class="${pnl == null ? "muted" : cls(pnl)}">${sgnUsd(pnl)}</td><td class="${pnl == null ? "muted" : cls(pnl)}">${pnl == null ? "-" : sgnPct(pnl / cost * 100)}</td>` +
         `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
         `<td class="l">${bar}</td><td>${info ? info.holders.toLocaleString() : "-"}</td>` +
         `<td class="${cls(info && info.hc5)}">${info ? C.fmtPct(info.hc5) : "-"}</td><td class="${cls(info && info.hc1)}">${info ? C.fmtPct(info.hc1) : "-"}</td>` +
         `<td class="l"><a href="#" class="spark-link" data-mint="${esc(p.mint)}" title="Click for holder details">${spark(p.mint)}</a><div style="font-size:11px">${holderSignal(p.mint, info)}</div></td></tr>`;
     }
+    if (totC) html += `<tr class="bk-sum"><td class="l" colspan="2">Total open</td><td>${C.fmtUsd(totV)}</td><td>${C.fmtUsd(totC)}</td><td class="${cls(totV - totC)}">${sgnUsd(totV - totC)}</td><td class="${cls(totV - totC)}">${sgnPct((totV / totC - 1) * 100)}</td><td colspan="6"></td></tr>`;
     html += "</tbody></table></div>";
     if (S.walletErr) html += `<div class="msg err">Live wallet read failed (${esc(S.walletErr)}). Rows above come from the snapshot.</div>`;
     $("positions").innerHTML = html; saveHist();
@@ -431,58 +442,78 @@
     if (d.last_scan_et) h += `<div>Last bot scan: <b>${esc(d.last_scan_et)}</b> · ${esc(d.last_scan_n_in_band)} in band` +
       (d.last_scan_best && d.last_scan_best.symbol ? ` · top: <a href="${dex(d.last_scan_best.mint)}" target="_blank" rel="noopener">${esc(d.last_scan_best.symbol)}</a> ($${C.fmtK(d.last_scan_best.mcap)})` : "") + "</div>";
     if (d.last_buy && d.last_buy.symbol) h += `<div>Last buy: <b>${esc(d.last_buy.symbol)}</b> ${C.fmtUsd(d.last_buy.cost_usd)} at ${esc(d.last_buy.as_of_et)}</div>`;
-    const rz = s.realized;
-    if (rz && rz.today) h += `<div style='margin-top:6px'>Realized today (${esc(rz.today.date)}): <b class="${cls(rz.today.pnl_usd)}">${sgnUsd(rz.today.pnl_usd)}</b> · ${sgnSol(rz.today.pnl_sol)} over ${rz.today.n} closed trade${rz.today.n === 1 ? "" : "s"} (full list below)</div>`;
     if (s.cash_snapshot && s.cash_snapshot.as_of_et) h += `<div class="muted">Cash (${esc(s.cash_snapshot.as_of_et)}): ${esc(s.cash_snapshot.note || "")}</div>`;
     h += "</div>";
     $("decision").innerHTML = h;
   }
 
-  // ---------- PnL (2026-10-21 pnl fix): realized from positions.json ledger (chain-verified on the box), unrealized live ----------
+  // ---------- Open PnL (2026-10-21 owner: real-time PnL on open positions only, no history) ----------
   const sgnUsd = (v) => (v == null ? "-" : (v >= 0 ? "+" : "-") + C.fmtUsd(Math.abs(v)));
-  const sgnSol = (v, dp = 4) => (v == null ? "-" : (v >= 0 ? "+" : "") + Number(v).toFixed(dp) + " SOL");
-  let showAllClosed = false;
+  const sgnPct = (v) => (v == null ? "-" : (v >= 0 ? "+" : "") + v.toFixed(2) + "%");
   function renderPnl(pos) {
-    const s = S.snap || {}, rz = s.realized;
-    if (rz && !rz.error) {
-      $("c-rpnl").innerHTML = `<span class="${cls(rz.realized_pnl_usd)}">${sgnUsd(rz.realized_pnl_usd)}</span>`;
-      $("c-rpnl-s").innerHTML = `${sgnSol(rz.realized_pnl_sol, 3)} · ${rz.n_known} closed (${rz.wins}W/${rz.losses}L)` +
-        (rz.today ? ` · today <span class="${cls(rz.today.pnl_usd)}">${sgnUsd(rz.today.pnl_usd)}</span> (${sgnSol(rz.today.pnl_sol, 3)}, ${rz.today.n})` : "") +
-        (rz.n_unknown ? ` · <span class="warn">${rz.n_unknown} unknown, excluded</span>` : "");
-    } else { $("c-rpnl").innerHTML = '<span class="muted">-</span>'; $("c-rpnl-s").textContent = rz && rz.error ? rz.error : "no ledger in positions.json"; }
-    // unrealized: live page values (wallet amount x live price) vs cost basis; box snapshot as fallback
     let uv = 0, uc = 0, n = 0; const parts = [];
     for (const p of pos || []) {
       const c = p.snap && p.snap.cost_usd; if (!c || p.value == null || !(p.amount > 0)) continue;
       uv += p.value; uc += c; n++; parts.push(esc((p.snap.symbol || short(p.mint))) + " " + sgnUsd(p.value - c));
     }
-    if (n) { $("c-upnl").innerHTML = `<span class="${cls(uv - uc)}">${sgnUsd(uv - uc)}</span>`; $("c-upnl-s").innerHTML = `${n} open · value ${C.fmtUsd(uv)} vs cost ${C.fmtUsd(uc)} · ${parts.join(", ")}`; }
-    else if (s.unrealized && s.unrealized.n) { $("c-upnl").innerHTML = `<span class="${cls(s.unrealized.pnl_usd)}">${sgnUsd(s.unrealized.pnl_usd)}</span>`; $("c-upnl-s").textContent = `${s.unrealized.n} open · box snapshot ${s.unrealized.as_of_et}`; }
+    if (n) { $("c-upnl").innerHTML = `<span class="${cls(uv - uc)}">${sgnUsd(uv - uc)}</span> <small class="${cls(uv - uc)}" style="font-size:14px">${sgnPct((uv / uc - 1) * 100)}</small>`;
+             $("c-upnl-s").innerHTML = `${n} open · value ${C.fmtUsd(uv)} vs cost ${C.fmtUsd(uc)} · ${parts.join(", ")}`; }
     else { $("c-upnl").textContent = "$0.00"; $("c-upnl-s").textContent = "no open positions with a cost basis"; }
-    // closed-trade table, newest first
-    const rows = (s.history || []).filter((x) => x.status === "closed").slice().reverse();
-    if (!rows.length) { $("realized").innerHTML = '<span class="muted">No closed trades in positions.json.</span>'; return; }
-    $("rpnl-note").textContent = rz && !rz.error ? `${rows.length} trades · total ${sgnUsd(rz.realized_pnl_usd)} / ${sgnSol(rz.realized_pnl_sol, 3)} · ledger ${rz.generated_et || ""}` : "";
-    const lim = showAllClosed ? rows.length : 15;
-    let h = '<div class="wrap"><table><thead><tr><th class="l">Closed (ET)</th><th class="l">Token</th><th class="l">Type</th><th>Cost</th><th>Proceeds</th><th>PnL USD</th><th>PnL SOL</th><th>Multiple</th><th class="l">Source</th></tr></thead><tbody>';
-    for (const r of rows.slice(0, lim)) {
-      const sig = (r.sell_sigs || [])[r.sell_sigs ? r.sell_sigs.length - 1 : 0];
-      const mult = r.cost_sol && r.proceeds_sol != null ? r.proceeds_sol / r.cost_sol : null;
-      const fl = (r.flags || []).length ? ` <span class="warn" title="${esc(r.flags.join(" | "))}">⚠</span>` : "";
-      h += `<tr><td class="l">${esc(r.exit_et || "-")}</td><td class="l">${r.mint ? `<a href="${dex(r.mint)}" target="_blank" rel="noopener">${esc(r.symbol)}</a>` : esc(r.symbol)}</td>` +
-        `<td class="l muted">${esc(r.kind || "")}</td>` +
-        `<td>${r.cost_sol != null ? Number(r.cost_sol).toFixed(4) + " SOL" : "-"}<div class="muted" style="font-size:11px">${C.fmtUsd(r.cost_usd)}</div></td>` +
-        `<td>${r.proceeds_sol != null ? Number(r.proceeds_sol).toFixed(4) + " SOL" : '<span class="warn">unknown</span>'}<div class="muted" style="font-size:11px">${C.fmtUsd(r.proceeds_usd)}</div></td>` +
-        `<td class="${cls(r.pnl_usd)}">${sgnUsd(r.pnl_usd)}</td><td class="${cls(r.pnl_sol)}">${sgnSol(r.pnl_sol)}</td>` +
-        `<td class="${mult == null ? "muted" : mult >= 1 ? "pos" : "neg"}">${mult == null ? "-" : mult.toFixed(2) + "×"}</td>` +
-        `<td class="l muted" style="font-size:11px">${esc(r.proceeds_src || "-")}${sig ? ` · <a href="https://solscan.io/tx/${esc(sig)}" target="_blank" rel="noopener">sell tx</a>` : ""}${fl}</td></tr>`;
-    }
-    if (rz && !rz.error) h += `<tr class="bk-sum"><td class="l" colspan="5">Total realized (${rz.n_known} trades)</td><td class="${cls(rz.realized_pnl_usd)}">${sgnUsd(rz.realized_pnl_usd)}</td><td class="${cls(rz.realized_pnl_sol)}">${sgnSol(rz.realized_pnl_sol, 3)}</td><td colspan="2"></td></tr>`;
-    h += "</tbody></table></div>";
-    if (rows.length > 15) h += `<button id="rpnl-more" style="margin-top:6px">${showAllClosed ? "Show latest 15" : "Show all " + rows.length}</button>`;
-    h += `<div class="muted" style="font-size:11px;margin-top:6px">Proceeds = wallet SOL received by each sell tx (on-chain, net of fees) or the position file when no sig is recorded. USD = SOL x SOL price at sell from the trade record (else SOL price at entry). ⚠ = see tooltip.</div>`;
-    $("realized").innerHTML = h;
-    const b = $("rpnl-more"); if (b) b.onclick = () => { showAllClosed = !showAllClosed; renderPnl(pos); };
+  }
+
+  // Live prices for open positions only, every LIVE_PX_MS: Jupiter -> DexScreener -> Bordrless curve (on-chain pool read).
+  function openMints() {
+    const m = new Set();
+    for (const p of snapPositions()) if (p.mint && (p._kind === "open" || p._kind === "manual" || p._kind === "dust")) m.add(p.mint);
+    for (const t of (S.wallet && S.wallet.tokens) || []) if (t.amount > 0 && t.mint !== CFG.SOL_MINT && !CFG.STABLES.includes(t.mint) && S.prices[t.mint] != null && S.prices[t.mint] * t.amount >= MIN_POS_USD) m.add(t.mint);
+    return [...m];
+  }
+  async function bordrlessPx(pool, solPx) {
+    const r = await C.solRpc("getAccountInfo", [pool, { encoding: "base64", commitment: "confirmed" }]);
+    const v = r.result && r.result.value; if (!v) throw new Error("pool not found");
+    const raw = atob(v.data[0]), dv = new DataView(new ArrayBuffer(raw.length));
+    for (let i = 0; i < raw.length; i++) dv.setUint8(i, raw.charCodeAt(i));
+    const u = (o) => Number(dv.getBigUint64(o, true));
+    const bR = u(210), qR = u(218), vB = u(226), vQ = u(234);
+    if (!(vB + bR > 0)) throw new Error("bad pool data");
+    return (vQ + qR) / (vB + bR) * 1e-3 * solPx; // lamports per raw unit -> SOL per token (6 dp) -> USD
+  }
+  async function livePrices() {
+    if (S.pxBusy) return; S.pxBusy = true;
+    try {
+      const mints = openMints(); if (!mints.length) { S.pxAt = Date.now(); S.pxErr = null; return; }
+      const got = {}, src = {}, errs = [];
+      try { const jp = await C.getPrices([CFG.SOL_MINT, ...mints]); for (const [k, v] of Object.entries(jp)) { got[k] = v; src[k] = "Jupiter"; } }
+      catch (e) { errs.push("Jupiter: " + e.message); }
+      const solPx = got[CFG.SOL_MINT] || S.prices[CFG.SOL_MINT];
+      const needDex = mints.filter((m) => got[m] == null && !BORDRLESS_POOLS[m]);
+      if (needDex.length) {
+        try {
+          const r = await fetch("https://api.dexscreener.com/latest/dex/tokens/" + needDex.slice(0, 30).join(",")); const j = await r.json();
+          for (const m of needDex) {
+            const ps = (j.pairs || []).filter((p) => p.baseToken && p.baseToken.address === m && Number(p.priceUsd) > 0 && p.dexId !== "pumpfun")
+              .sort((a, b) => ((b.liquidity || {}).usd || 0) - ((a.liquidity || {}).usd || 0));
+            if (ps[0]) { got[m] = Number(ps[0].priceUsd); src[m] = "DexScreener"; }
+          }
+        } catch (e) { errs.push("DexScreener: " + e.message); }
+      }
+      for (const m of mints) {
+        if (got[m] != null || !BORDRLESS_POOLS[m]) continue;
+        try { if (!solPx) throw new Error("no SOL price"); got[m] = await bordrlessPx(BORDRLESS_POOLS[m], solPx); src[m] = "Bordrless curve (on-chain) x SOL " + C.fmtUsd(solPx); }
+        catch (e) { errs.push("Bordrless " + short(m) + ": " + e.message); }
+      }
+      S.prices = Object.assign({}, S.prices, got); Object.assign(S.pxSrc, src);
+      const missing = mints.filter((m) => got[m] == null);
+      S.pxErr = missing.length ? "no live price for " + missing.map(short).join(", ") + (errs.length ? " (" + errs.join("; ") + ")" : "") : null;
+      if (mints.some((m) => got[m] != null)) S.pxAt = Date.now();
+      const pos = renderPositions(params()); renderPnl(pos);
+    } finally { S.pxBusy = false; }
+  }
+  function renderLiveAge() {
+    const el = $("live-age"); if (!el) return;
+    const s = S.pxAt ? Math.round((Date.now() - S.pxAt) / 1000) : null;
+    el.innerHTML = (s == null ? "live prices loading…" : `<span class="${s > 20 ? "warn" : "pos"}">● live PnL, updated ${s}s ago</span> · every ${LIVE_PX_MS / 1000}s`) +
+      (S.pxErr ? ` · <span class="warn">${esc(S.pxErr)}</span>` : "");
   }
 
   function evalCtx(pos) {
@@ -617,8 +648,10 @@
   setInterval(() => {
     const s = Math.max(0, Math.round((S.nextScan - Date.now()) / 1000));
     $("countdown").textContent = S.busy ? "refreshing…" : "next scan in " + s + "s";
-    if (!S.busy && Date.now() >= Math.min(S.nextScan, S.nextWallet)) tick(false);
+    if (!S.busy && Date.now() >= Math.min(S.nextScan, S.nextWallet, S.nextSnap)) tick(false);
+    renderLiveAge();
   }, 1000);
+  setInterval(() => { if (S.snap || S.wallet) livePrices().catch((e) => { S.pxErr = e.message; }); }, LIVE_PX_MS);
   $("refresh").addEventListener("click", () => tick(true));
   tick(true);
 })();
