@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 21:45:35 EDT",
+  "generated_et": "2026-10-21 21:46:14 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2368,13 +2368,13 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-21 21:45:36 EDT",
+    "as_of_et": "2026-10-21 21:46:15 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.300291405,
-    "sol_price_usd": 106.28816236408113,
-    "sol_usd_approx": 31.92,
+    "sol_price_usd": 106.23509240166588,
+    "sol_usd_approx": 31.9,
     "arc_usdc": 108.061178,
-    "total_cash_usd_approx": 139.98,
+    "total_cash_usd_approx": 139.96,
     "note": "Live cash: 0.3003 SOL + Arc USDC $108.06 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
@@ -2441,8 +2441,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 21:45:35 EDT",
-    "generated_ts": 1792633535931,
+    "generated_et": "2026-10-21 21:46:14 EDT",
+    "generated_ts": 1792633574641,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.300291405,
@@ -2460,11 +2460,11 @@
     ],
     "prices": {
       "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump": 8.150628928121038e-08,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9989811644480535
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998977404085077
     }
   },
   "realized": {
-    "generated_et": "2026-10-21 21:45:36 EDT",
+    "generated_et": "2026-10-21 21:46:15 EDT",
     "n_trades": 85,
     "n_known": 85,
     "n_unknown": 0,
@@ -2487,8 +2487,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 106.28816236408113,
-    "as_of_et": "2026-10-21 21:45:36 EDT"
+    "sol_price_usd": 106.23509240166588,
+    "as_of_et": "2026-10-21 21:46:15 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
