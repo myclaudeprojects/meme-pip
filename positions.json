@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-21 22:03:41 EDT",
+  "generated_et": "2026-10-22 17:53:48 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2395,14 +2395,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-21 22:03:42 EDT",
+    "as_of_et": "2026-10-22 17:53:49 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.611831277,
-    "sol_price_usd": 105.9866101124144,
-    "sol_usd_approx": 64.85,
-    "arc_usdc": 14.715171,
-    "total_cash_usd_approx": 79.57,
-    "note": "Live cash: 0.6118 SOL + Arc USDC $14.72 (Liar's Dice Arc wallets excluded)"
+    "sol_native": 0.282778007,
+    "sol_price_usd": 103.47908055116186,
+    "sol_usd_approx": 29.26,
+    "arc_usdc": null,
+    "arc_error": "HTTP Error 404: Not Found",
+    "total_cash_usd_approx": 29.26,
+    "note": "Live cash: 0.2828 SOL + Arc n/a (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2468,11 +2469,11 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-21 22:03:41 EDT",
-    "generated_ts": 1792634621964,
+    "generated_et": "2026-10-22 17:53:48 EDT",
+    "generated_ts": 1792706028364,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.611831277,
+    "sol": 0.282778007,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -2485,20 +2486,22 @@
         "program": "spl"
       }
     ],
-    "prices": {}
+    "prices": {
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9984318614331061
+    }
   },
   "realized": {
-    "generated_et": "2026-10-21 22:03:42 EDT",
+    "generated_et": "2026-10-22 17:53:49 EDT",
     "n_trades": 86,
     "n_known": 86,
     "n_unknown": 0,
     "realized_pnl_sol": 73.906926,
     "realized_pnl_usd": 8251.71,
     "today": {
-      "date": "2026-10-21",
-      "n": 11,
-      "pnl_sol": -3.195567,
-      "pnl_usd": -336.24
+      "date": "2026-10-22",
+      "n": 0,
+      "pnl_sol": 0,
+      "pnl_usd": 0
     },
     "wins": 20,
     "losses": 66,
@@ -2511,8 +2514,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 105.9866101124144,
-    "as_of_et": "2026-10-21 22:03:42 EDT"
+    "sol_price_usd": 103.47908055116186,
+    "as_of_et": "2026-10-22 17:53:49 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2573,11 +2576,6 @@
         "first_seen": 1792212518,
         "last_seen": 1792212518,
         "symbol": "Circuit"
-      },
-      "apiANKWvjcSFhavFEXvuE5wX8n312sVFtRpLQpX1api": {
-        "first_seen": 1792067950,
-        "last_seen": 1792068012,
-        "symbol": "API"
       },
       "7Xgc5RacHtGzfhw2HukUBk5V986yBbvshr7rrCoopump": {
         "first_seen": 1792362995,
@@ -2644,11 +2642,6 @@
         "last_seen": 1792312533,
         "symbol": "CALI"
       },
-      "6HU4CmRb15C2nQDx8Ld2f2W2wTdmog6aZiiXdrT5Pzi8": {
-        "first_seen": 1792084383,
-        "last_seen": 1792084383,
-        "symbol": "GROK"
-      },
       "7ga6rtE9qSb3wdEiDCpTu2kHqoGVfT52jD8ign1rYTvx": {
         "first_seen": 1792358411,
         "last_seen": 1792359594,
@@ -2704,11 +2697,6 @@
         "last_seen": 1792272291,
         "symbol": "STAR"
       },
-      "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo": {
-        "first_seen": 1791967707,
-        "last_seen": 1792068915,
-        "symbol": "TTWO"
-      },
       "9BVn3Y8tPghbnGuuuxoj2mGekqgSQV1M7nALF7brpump": {
         "first_seen": 1792256106,
         "last_seen": 1792256623,
@@ -2748,11 +2736,6 @@
         "first_seen": 1792622021,
         "last_seen": 1792622021,
         "symbol": "FEELSGOOD"
-      },
-      "ZVMihT6DKXWKRGX54VGvnYv4ndES8XtneUUYMCLpump": {
-        "first_seen": 1792063347,
-        "last_seen": 1792064251,
-        "symbol": "SNARKSTR"
       },
       "6hTLdzZaaCjmqtn7RtaEMQsCbXT5Pg8q76tRViEGpump": {
         "first_seen": 1792300321,
@@ -2864,11 +2847,6 @@
         "last_seen": 1792168730,
         "symbol": "ZSHIB"
       },
-      "6NX2MWBuJM2Fn63K4hUgMPivLXHV8pwsU1yTdmjKpump": {
-        "first_seen": 1792029865,
-        "last_seen": 1792029865,
-        "symbol": "pSOQ"
-      },
       "ACtfUWtgvaXrQGNMiohTusi5jcx5RJf5zwu9aAxkpump": {
         "first_seen": 1792329680,
         "last_seen": 1792352734,
@@ -2918,11 +2896,6 @@
         "first_seen": 1792288466,
         "last_seen": 1792325091,
         "symbol": "TETSUO"
-      },
-      "GPzpoXpD74E2C4CJNayuoyBqPQJEsPtdse3nhntrpump": {
-        "first_seen": 1792100762,
-        "last_seen": 1792100762,
-        "symbol": "LOOKSMAX"
       },
       "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES": {
         "first_seen": 1792622021,
@@ -3039,30 +3012,15 @@
         "last_seen": 1792304519,
         "symbol": "MLG"
       },
-      "3uXACfojUrya7VH51jVC1DCHq3uzK4A7g469Q954LABS": {
-        "first_seen": 1792058131,
-        "last_seen": 1792061422,
-        "symbol": "IQ"
-      },
       "7TKRV4SneC6xLRaAt21a6d1kheAzXHGKP9WDzri9aD2e": {
         "first_seen": 1792216268,
         "last_seen": 1792218404,
         "symbol": "SHINJUKU"
       },
-      "nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump": {
-        "first_seen": 1792069819,
-        "last_seen": 1792090714,
-        "symbol": "Dacity"
-      },
       "2nP9yKQNSGQy851iyawDvBkzkK2R2aqKArQCKc2gpump": {
         "first_seen": 1792265754,
         "last_seen": 1792352734,
         "symbol": "PsyopAnime"
-      },
-      "7b6dX3nE25xrfNViEKZHL9wVJFcBxQYuWPpmzHUxx28H": {
-        "first_seen": 1792069817,
-        "last_seen": 1792079765,
-        "symbol": "ROSE"
       },
       "BSjTbWDokgTnzwBT3vQpVePxUT4pDx8YevXLrtT6ZpEP": {
         "first_seen": 1792136203,
@@ -3098,11 +3056,6 @@
         "first_seen": 1792292130,
         "last_seen": 1792294473,
         "symbol": "CYPH"
-      },
-      "6JrR1iqPdinYTNvNPWTR2P7e2wSJ1rwdsrKGyhnzjUVr": {
-        "first_seen": 1792088000,
-        "last_seen": 1792090712,
-        "symbol": "wifout"
       },
       "4rLgnFcuADTS2VD7sGxQjoiajbZjYZ411nF7gm7kpump": {
         "first_seen": 1792287559,
@@ -3209,11 +3162,6 @@
         "last_seen": 1792254874,
         "symbol": "SAAR"
       },
-      "Bz7Nx1F3Mti1BVS7ZAVDLSKGEaejufxvX2DPdjpf8PqT": {
-        "first_seen": 1792059446,
-        "last_seen": 1792059446,
-        "symbol": "CHIPPY"
-      },
       "EyWrMXBb5DXppWs5uNa6repSEDoDSachbjeixU9KREVS": {
         "first_seen": 1792131790,
         "last_seen": 1792132196,
@@ -3238,11 +3186,6 @@
         "first_seen": 1792308771,
         "last_seen": 1792308771,
         "symbol": "Chinese"
-      },
-      "98AG3zJUawbvDnpgbDhmxpMKva43vtgPLLPSXqo1pump": {
-        "first_seen": 1791817175,
-        "last_seen": 1792051690,
-        "symbol": "HIRE"
       },
       "aqQRs3UJmHs7ktoLo46HZAzvG9P3oCoZ41nENqFbory": {
         "first_seen": 1792171856,
@@ -3324,11 +3267,6 @@
         "last_seen": 1792194992,
         "symbol": "APP"
       },
-      "EfPoo4wWgxKVToit7yX5VtXXBrhao4G8L7vrbKy6pump": {
-        "first_seen": 1792056986,
-        "last_seen": 1792057226,
-        "symbol": "DEXTER"
-      },
       "NTRNDMqQSiwEC2jJs3wJiZS6bpGYQJtMNQJgiX3WyV6": {
         "first_seen": 1792622021,
         "last_seen": 1792622021,
@@ -3339,20 +3277,10 @@
         "last_seen": 1792168729,
         "symbol": "YILONGMA"
       },
-      "3sKaoPryg4KrXubLWtoqF7MznLT7QNqKRxMMkkxTpump": {
-        "first_seen": 1791894740,
-        "last_seen": 1792069817,
-        "symbol": "SEALS"
-      },
       "Ccp6isbtxCknynmGKyky9xJav68UpRqeMoX76KxYpump": {
         "first_seen": 1792218404,
         "last_seen": 1792218404,
         "symbol": "TOWER"
-      },
-      "CZiwA6eLUthZFLvTVEWG9v1K9Pc7p3eiBKRba2G7pump": {
-        "first_seen": 1792005367,
-        "last_seen": 1792055241,
-        "symbol": "BOMBERS"
       },
       "6MBf1XdZNSAaDKcxxbnCAngRUxBmwbHS5Ybe2rLRpump": {
         "first_seen": 1792264140,
@@ -3364,11 +3292,6 @@
         "last_seen": 1792272291,
         "symbol": "MARINE"
       },
-      "BreuhVohXX5fv6q41uyb3sojtAuGoGaiAhKBMtcrpump": {
-        "first_seen": 1792098952,
-        "last_seen": 1792100760,
-        "symbol": "hehe"
-      },
       "CLrFZt7o6bE3xFXkYQHVkQBoRZXidZ82xAixUnfoogym": {
         "first_seen": 1792103843,
         "last_seen": 1792104378,
@@ -3378,11 +3301,6 @@
         "first_seen": 1792182597,
         "last_seen": 1792182597,
         "symbol": "ETCHY"
-      },
-      "EVD9rS4kGfSnwEzsQWxBnQAgM8ha3iCfbbe6GFNMpump": {
-        "first_seen": 1791978046,
-        "last_seen": 1792040709,
-        "symbol": "maxpain"
       },
       "9aqmJjCnnMQv42TXLk921ceUkN35nea2QP969n1caqjj": {
         "first_seen": 1792275633,
@@ -3399,11 +3317,6 @@
         "last_seen": 1792354896,
         "symbol": "GODL"
       },
-      "HxKqU1V7L8jUfMwuScDMtww3Ex2TPWL7zYmFuCJ4Zvki": {
-        "first_seen": 1792003105,
-        "last_seen": 1792077053,
-        "symbol": "FTR"
-      },
       "6yjNqPzTSanBWSa6dxVEgTjePXBrZ2FoHLDQwYwEsyM6": {
         "first_seen": 1792286495,
         "last_seen": 1792287559,
@@ -3413,11 +3326,6 @@
         "first_seen": 1792240767,
         "last_seen": 1792240767,
         "symbol": "ZReaL"
-      },
-      "7jNwX4Me9zGEjmWY7zARDG2LYjVs1WXD6DZ1JvSfpump": {
-        "first_seen": 1792006274,
-        "last_seen": 1792042861,
-        "symbol": "HUMPH"
       },
       "A2yA6AFtfKkfVkfsnGpvsKoUV5kQPpMYboZsBPvmkA9T": {
         "first_seen": 1792354243,
@@ -3459,11 +3367,6 @@
         "last_seen": 1792238214,
         "symbol": "MEMEOS"
       },
-      "76r29NpnRW8PAxpnSnVBFcZPUcukgvno1Kkiysg8pump": {
-        "first_seen": 1792042861,
-        "last_seen": 1792043765,
-        "symbol": "POCK"
-      },
       "5eyib4qghYGHNh7VvxSFGYLFJSanjq9hug9fR52kksnm": {
         "first_seen": 1792307898,
         "last_seen": 1792311729,
@@ -3494,11 +3397,6 @@
         "last_seen": 1792285050,
         "symbol": "KALSHI"
       },
-      "9WPTUkh8fKuCnepRWoPYLH3aK9gSjPHFDenBq2X1Czdp": {
-        "first_seen": 1792042861,
-        "last_seen": 1792042861,
-        "symbol": "SELFIE"
-      },
       "2Srf6mhufzWJKZ5nniVXgwamLmDJWXPQBmddJ1MMpump": {
         "first_seen": 1792250577,
         "last_seen": 1792358410,
@@ -3514,45 +3412,10 @@
         "last_seen": 1792114323,
         "symbol": "AMETHYST"
       },
-      "Gj4TowizfdkRJNsTgBEkj2WpBZZmGE7o9nN8q6RhBAGS": {
-        "first_seen": 1792029865,
-        "last_seen": 1792031826,
-        "symbol": "LORIA"
-      },
-      "AKyty62wfT7kcfFvSM65p88VnAUpTw9H1aBY9jTBpump": {
-        "first_seen": 1792030769,
-        "last_seen": 1792030769,
-        "symbol": "GIGALAUDIA"
-      },
-      "9gyfbPVwwZx4y1hotNSLcqXCQNpNqqz6ZRvo8yTLpump": {
-        "first_seen": 1792031826,
-        "last_seen": 1792032969,
-        "symbol": "YZY"
-      },
       "13i7SfDDzg3t4MQnfZNtFKptHpv8HR2eaGRMfetSpump": {
         "first_seen": 1792274666,
         "last_seen": 1792274666,
         "symbol": "\u718a\u732b"
-      },
-      "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump": {
-        "first_seen": 1792035046,
-        "last_seen": 1792077959,
-        "symbol": "FTR"
-      },
-      "FbKydFGVNWEfngPkLZwz7TXCvQz7oDEhANkDRBW3pump": {
-        "first_seen": 1792035046,
-        "last_seen": 1792035950,
-        "symbol": "WOJAKVEIL"
-      },
-      "4SvRmjzMJHKnAFAYtdPQFvbvkazyWaf8mY8Lc5aVpump": {
-        "first_seen": 1792035046,
-        "last_seen": 1792035950,
-        "symbol": "ADOPE"
-      },
-      "hf34pZHnV4entu9bdp4pFEmeKpivEUeSUhASgWopump": {
-        "first_seen": 1792036854,
-        "last_seen": 1792038319,
-        "symbol": "MUMU"
       },
       "Am8iBffqgaedfdK5XhtorbcRrKzwH9nyL3ySikQfpump": {
         "first_seen": 1792258017,
@@ -3564,21 +3427,6 @@
         "last_seen": 1792320563,
         "symbol": "three"
       },
-      "7b36cKRYFZsMp3vLByVwfVQxW2ndcYth5rhPnyypump": {
-        "first_seen": 1792043765,
-        "last_seen": 1792043765,
-        "symbol": "PINO"
-      },
-      "CoHH4XfCpEcAuQga8iSr3hCta3vyFxYW6BtQRAV3xQMo": {
-        "first_seen": 1792051693,
-        "last_seen": 1792051693,
-        "symbol": "NIHILISM"
-      },
-      "CvK9sGXzVTVNQJN8wAqxCwuVZybZtQuyf5tvSRCCpump": {
-        "first_seen": 1792051692,
-        "last_seen": 1792055245,
-        "symbol": "FROPE"
-      },
       "2ay4jNY3JxfuXJzhZ8DrAKkGzpirgD7Dv2ccL9zmpump": {
         "first_seen": 1792114326,
         "last_seen": 1792154174,
@@ -3588,21 +3436,6 @@
         "first_seen": 1792283985,
         "last_seen": 1792310175,
         "symbol": "ZILLIONS"
-      },
-      "2AF7CqwieUjUPALL7icuZtL3X7wENdjUjGBMmfV2pump": {
-        "first_seen": 1792058131,
-        "last_seen": 1792060841,
-        "symbol": "TINY"
-      },
-      "HUDmsj3BJ6EkbRBWpi2j8tzRLbv4xhho1x9AGw2Ypump": {
-        "first_seen": 1792059448,
-        "last_seen": 1792061424,
-        "symbol": "Nihilism"
-      },
-      "hornSiTqcyFr81fnNywbnRPbXhVJVjK2nugZZM4avLQ": {
-        "first_seen": 1792059446,
-        "last_seen": 1792059511,
-        "symbol": "HORN"
       },
       "4nswj3o1Lo9iWYvvRJxUD8vbCy9ay7QQoXYcncHNbonk": {
         "first_seen": 1792300321,
@@ -3614,30 +3447,10 @@
         "last_seen": 1792196800,
         "symbol": "SOC"
       },
-      "NBiSF3UaVUFtRzHwAfxyHsBCAZWGEKnMpewAE4oh7BG": {
-        "first_seen": 1792061422,
-        "last_seen": 1792064251,
-        "symbol": "NBIS"
-      },
-      "DxUbj2gg4fgD8cBhV9HFVpzYJAYMN6TdsHGREMAspump": {
-        "first_seen": 1792062326,
-        "last_seen": 1792065298,
-        "symbol": "GROKLET"
-      },
       "CbcyNo7m1amFWqEQm2m4PLv1UNvpcL3C1Ujm6AkzpKoU": {
         "first_seen": 1792354243,
         "last_seen": 1792354243,
         "symbol": "e/acc"
-      },
-      "7iwzC5orRb13BZ4eML2KRPDPYRfEVHsWUW4uMUZfpump": {
-        "first_seen": 1792063347,
-        "last_seen": 1792071628,
-        "symbol": "dopewif"
-      },
-      "BwfhQdmN6ChQSvMagZTMtL15JCL9skyEpm1ukB57pump": {
-        "first_seen": 1792063347,
-        "last_seen": 1792066204,
-        "symbol": "HELLCAT"
       },
       "4qH8A5GxvRMZgpRFjXASc6U9HAoEzKeUqxY2dPB7pump": {
         "first_seen": 1792354898,
@@ -3649,65 +3462,20 @@
         "last_seen": 1792123455,
         "symbol": "SYCAMORE"
       },
-      "bLip6GWmVHURBCsKqAjLqzdbutfUJ4YiatJMaR6pump": {
-        "first_seen": 1792065298,
-        "last_seen": 1792069820,
-        "symbol": "ALTAIDOPE"
-      },
-      "4uWm1gPcWn6K9MRhQhXxgnhBq1cG2tnpBze8pNDJpump": {
-        "first_seen": 1792066200,
-        "last_seen": 1792066200,
-        "symbol": "PEDO"
-      },
-      "FDEF2U9geiWS7sdGPCUo2r1wGswkJr2mmVTECiH6pump": {
-        "first_seen": 1792066202,
-        "last_seen": 1792068914,
-        "symbol": "MITCH"
-      },
-      "rc5QqCeRy58gCa4x3KMXiZNY9b86Z3YF3c3M8JLpump": {
-        "first_seen": 1792069820,
-        "last_seen": 1792072533,
-        "symbol": "BOTTLE"
-      },
-      "E4GUSZDyxaeYTEgqW4AjYVzxpHZMYqM3JE3JRuespump": {
-        "first_seen": 1792069819,
-        "last_seen": 1792069819,
-        "symbol": "DACITY"
-      },
-      "8CFJ8VDqcyZNFMJxQGZJ1FYGVqDVhdbeimygjRs5pump": {
-        "first_seen": 1792072532,
-        "last_seen": 1792073270,
-        "symbol": "XZON"
-      },
       "shib5gSoVKPjwkXrxRk7SbQFzb2R9rQB3TgQWYX4RwW": {
         "first_seen": 1792274666,
         "last_seen": 1792322449,
         "symbol": "SHIB"
-      },
-      "ALrNcQpz19ZZQLZVnrQvGu8G93KvWznGBdX7TAbX7ZeJ": {
-        "first_seen": 1792073270,
-        "last_seen": 1792073436,
-        "symbol": "DA"
       },
       "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump": {
         "first_seen": 1792320074,
         "last_seen": 1792322449,
         "symbol": "Macca"
       },
-      "67YVFQSVdAY1C7YcBjP528rB9BgtDJg4tA7tMjVWpump": {
-        "first_seen": 1792075246,
-        "last_seen": 1792089807,
-        "symbol": "INU"
-      },
       "NV2RYH954cTJ3ckFUpvfqaQXU4ARqqDH3562nFSpump": {
         "first_seen": 1792310177,
         "last_seen": 1792310916,
         "symbol": "Punch"
-      },
-      "EWY4owSJYMpwN33qGDu5gGxpkQkpMJu8ZUsQJaNZG5dv": {
-        "first_seen": 1792077958,
-        "last_seen": 1792077958,
-        "symbol": "EWY"
       },
       "Diy4Q5aiNEcdn7CWhuwYtuoHtHD9rKBTHCa9hi4qpump": {
         "first_seen": 1792080670,
@@ -3719,35 +3487,10 @@
         "last_seen": 1792330382,
         "symbol": "POLYMARKET"
       },
-      "6hjaMcRPvB4DEGpHqgHxmgipb2vrGQWMewZBAVSLpump": {
-        "first_seen": 1792081574,
-        "last_seen": 1792083384,
-        "symbol": "STATE?"
-      },
       "C7heQqfNzdMbUFQwcHkL9FvdwsFsDRBnfwZDDyWYCLTZ": {
         "first_seen": 1792153270,
         "last_seen": 1792153270,
         "symbol": "$COLLAT"
-      },
-      "FYFDLqtBd4ZAiDfbx7XxXndcjJuBEZCz5XKAqQwaHC8W": {
-        "first_seen": 1792084906,
-        "last_seen": 1792093423,
-        "symbol": "GRAIL"
-      },
-      "Dn4noZ5jgGfkntzcQSUZ8czkreiZ1ForXYoV2H8Dm7S1": {
-        "first_seen": 1792085287,
-        "last_seen": 1792088903,
-        "symbol": "USDTet"
-      },
-      "6rnnJiAXBTFf6vdd416HkBtGU3mGTCMoTGSU4HkSN7go": {
-        "first_seen": 1792088903,
-        "last_seen": 1792089807,
-        "symbol": "GO"
-      },
-      "6n48buQMwU47stjQr4Hiw59aRiDHXkXgi5ybDmqbuePS": {
-        "first_seen": 1792089808,
-        "last_seen": 1792094996,
-        "symbol": "TOAST"
       },
       "DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump": {
         "first_seen": 1792090712,
@@ -3759,11 +3502,6 @@
         "last_seen": 1792167828,
         "symbol": "FRONTIER"
       },
-      "CRWVJeR2yEZuDUKYfGuKCHvLz8ywn4LGvovHfy5WiFmi": {
-        "first_seen": 1792096239,
-        "last_seen": 1792096239,
-        "symbol": "CRWV"
-      },
       "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
         "first_seen": 1792622021,
         "last_seen": 1792622021,
@@ -3773,21 +3511,6 @@
         "first_seen": 1792356021,
         "last_seen": 1792357647,
         "symbol": "BUBBLE"
-      },
-      "PUSAG1stksTcAoK9MjinEHUwAYRJsbovywYCk37m6hy": {
-        "first_seen": 1792097143,
-        "last_seen": 1792097143,
-        "symbol": "PUSA"
-      },
-      "BswbLYXpo679JvdAit6J1S92ZzCph77QZW5GLBRFinUL": {
-        "first_seen": 1792098048,
-        "last_seen": 1792099855,
-        "symbol": "FINUL"
-      },
-      "5KDaKBRHpb8kuhC7Pdr9DLqrxw9eCTg53VyJCUdjpump": {
-        "first_seen": 1792099856,
-        "last_seen": 1792099856,
-        "symbol": "SHIBUG"
       },
       "8QB2YFkUY5VWF8Ti6nnG6b8RNqswmo3QPJi64cxBpump": {
         "first_seen": 1792100762,
