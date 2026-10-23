@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 12:05:15 EDT",
+  "generated_et": "2026-10-23 12:10:18 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 12:05:16 EDT",
+    "as_of_et": "2026-10-23 12:10:19 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 104.62720157547263,
+    "sol_price_usd": 104.55752002803229,
     "sol_usd_approx": 1.38,
-    "arc_usdc": 42.551433,
-    "total_cash_usd_approx": 43.93,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $42.55 (Liar's Dice Arc wallets excluded)"
+    "arc_usdc": 41.451358,
+    "total_cash_usd_approx": 42.83,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $41.45 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 12:05:15 EDT",
-    "generated_ts": 1792771515925,
+    "generated_et": "2026-10-23 12:10:18 EDT",
+    "generated_ts": 1792771818828,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2540,11 +2540,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985654680988444
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985450842971708
     }
   },
   "realized": {
-    "generated_et": "2026-10-23 12:05:16 EDT",
+    "generated_et": "2026-10-23 12:10:19 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2567,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.62720157547263,
-    "as_of_et": "2026-10-23 12:05:16 EDT"
+    "sol_price_usd": 104.55752002803229,
+    "as_of_et": "2026-10-23 12:10:19 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2845,11 +2845,6 @@
         "last_seen": 1792311729,
         "symbol": "SANTA"
       },
-      "6Rwcmkz9yiYVM5EzyMcr4JsQPGEAWhcUvLvfBperYnUt": {
-        "first_seen": 1792164214,
-        "last_seen": 1792166923,
-        "symbol": "KWIF"
-      },
       "ZesMGYmokFiEuDvNzWeMhB7jxF6eUW8c512vwSKSTNK": {
         "first_seen": 1792328932,
         "last_seen": 1792352734,
@@ -2944,11 +2939,6 @@
         "first_seen": 1792356912,
         "last_seen": 1792356912,
         "symbol": "DKNG"
-      },
-      "A9E2AopuG56LWYiXsvGLLTcLjUjQ539PY6k5Fhfepump": {
-        "first_seen": 1792166923,
-        "last_seen": 1792166923,
-        "symbol": "KABUTO"
       },
       "NKEda5nHhNGgjrE9nDdMvaEmkmJ96qqxzBVZEcKmjSg": {
         "first_seen": 1792272291,
@@ -3484,16 +3474,6 @@
         "first_seen": 1792271247,
         "last_seen": 1792272291,
         "symbol": "RAIN"
-      },
-      "7d1vpt5eri79nETcL74Punhp3mGkeBgUkMdPWep6pump": {
-        "first_seen": 1792166923,
-        "last_seen": 1792166923,
-        "symbol": "SHY"
-      },
-      "2JcXacFwt9mVAwBQ5nZkYwCyXQkRcdsYrDXn6hj22SbP": {
-        "first_seen": 1792166923,
-        "last_seen": 1792166923,
-        "symbol": "mini"
       },
       "2FcsqRrhvgSfYxJWh32xW873vyqBZ9jmMyXqYSPgNtuZ": {
         "first_seen": 1792167827,
