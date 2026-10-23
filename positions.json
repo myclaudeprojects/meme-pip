@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 12:20:19 EDT",
+  "generated_et": "2026-10-23 12:28:58 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 12:20:20 EDT",
+    "as_of_et": "2026-10-23 12:28:59 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 104.31577524524151,
+    "sol_price_usd": 104.32102056821033,
     "sol_usd_approx": 1.38,
-    "arc_usdc": 23.923902,
-    "total_cash_usd_approx": 25.3,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $23.92 (Liar's Dice Arc wallets excluded)"
+    "arc_usdc": 38.069346,
+    "total_cash_usd_approx": 39.45,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $38.07 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 12:20:19 EDT",
-    "generated_ts": 1792772419959,
+    "generated_et": "2026-10-23 12:28:58 EDT",
+    "generated_ts": 1792772938717,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2539,10 +2539,12 @@
         "program": "spl"
       }
     ],
-    "prices": {}
+    "prices": {
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985977511471903
+    }
   },
   "realized": {
-    "generated_et": "2026-10-23 12:20:20 EDT",
+    "generated_et": "2026-10-23 12:28:59 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2565,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.31577524524151,
-    "as_of_et": "2026-10-23 12:20:20 EDT"
+    "sol_price_usd": 104.32102056821033,
+    "as_of_et": "2026-10-23 12:28:59 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3402,11 +3404,6 @@
         "first_seen": 1792300320,
         "last_seen": 1792330382,
         "symbol": "POLYMARKET"
-      },
-      "58QyXQ1UDgHh64EiTsCeevVM9cLPqBDNf3qZE6EdfUhZ": {
-        "first_seen": 1792094996,
-        "last_seen": 1792167828,
-        "symbol": "FRONTIER"
       },
       "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
         "first_seen": 1792766993,
