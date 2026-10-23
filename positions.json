@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-22 21:52:18 EDT",
+  "generated_et": "2026-10-23 06:09:22 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2402,33 +2402,36 @@
       "proceeds_usd": 49.6,
       "pnl_sol": 0.220646,
       "pnl_usd": 22.84
-    }
-  ],
-  "manual_positions": [
+    },
     {
-      "mint": "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump",
+      "kind": "manual",
+      "source": "meteora/TURRI2_POSITION.json",
       "symbol": "TURRI",
-      "status": "manual",
-      "cost_usd": 48.0,
-      "cost_src": "cost_usd",
+      "mint": "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump",
+      "status": "closed",
+      "entry_et": "2026-10-22 21:51 ET",
+      "exit_et": "2026-10-23 06:09 ET",
       "cost_sol": 0.460942368,
-      "tokens_ui": 323283.874528,
-      "entry_mc": 148476.0,
-      "tp_multiple": null,
-      "tp_target_mc": null,
-      "opened_et": "2026-10-22 21:51 ET",
-      "holding_account": null,
-      "onchain_amount": 323283.874528,
-      "onchain_checked_et": "2026-10-22 21:52:18 EDT",
-      "unrealized": {
-        "value_usd": 43.49,
-        "price_usd": 0.0001345250605324625,
-        "pnl_usd": -4.51,
-        "value_sol": 0.417835,
-        "pnl_sol": -0.043108
-      }
+      "cost_usd": 48.0,
+      "file_proceeds_sol": null,
+      "file_proceeds_usd": null,
+      "sell_sigs": [
+        "2jzrrm51U4AptKzr1FhgdPqG4BnX2UuWJkJhuCUaTQAqSiJn6R4dyCHL2qsgftaeJiMNNn3vMJwez2BK4PPh9EWf"
+      ],
+      "buy_sig": "2ZXEx7HLe3ytP9syFHEpsiL91rfkD5HntU5KXCKaReGZoY8Qd4cdnAxd5jLSSYxD3De8Xu4SLBYa99k98fru257Q",
+      "exit_reason": null,
+      "flags": [],
+      "onchain_proceeds_sol": 0.487425402,
+      "proceeds_sol": 0.487425402,
+      "proceeds_src": "on-chain",
+      "sol_px_at_sell": 104.1345,
+      "usd_src": "entry SOL px",
+      "proceeds_usd": 50.76,
+      "pnl_sol": 0.026483,
+      "pnl_usd": 2.76
     }
   ],
+  "manual_positions": [],
   "last_decision": {
     "last_skip_reason": null,
     "last_scan_et": "2026-10-18 18:55:49 EDT",
@@ -2446,15 +2449,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-22 21:52:20 EDT",
+    "as_of_et": "2026-10-23 06:09:23 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.025765874,
-    "sol_price_usd": 104.08369067096424,
-    "sol_usd_approx": 2.68,
+    "sol_native": 0.513191276,
+    "sol_price_usd": 104.23,
+    "sol_usd_approx": 53.49,
     "arc_usdc": null,
     "arc_error": "HTTP Error 404: Not Found",
-    "total_cash_usd_approx": 2.68,
-    "note": "Live cash: 0.0258 SOL + Arc n/a (Liar's Dice Arc wallets excluded)"
+    "total_cash_usd_approx": 53.49,
+    "note": "Live cash: 0.5132 SOL + Arc n/a (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2520,20 +2523,15 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-22 21:52:18 EDT",
-    "generated_ts": 1792720338756,
+    "generated_et": "2026-10-23 06:09:22 EDT",
+    "generated_ts": 1792750162553,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.025765874,
+    "sol": 0.513191276,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
         "amount": 17530877.487712,
-        "program": "token-2022"
-      },
-      {
-        "mint": "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump",
-        "amount": 323283.874528,
         "program": "token-2022"
       },
       {
@@ -2542,37 +2540,34 @@
         "program": "spl"
       }
     ],
-    "prices": {
-      "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump": 0.0001345250605324625,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9983082610207883
-    }
+    "prices": {}
   },
   "realized": {
-    "generated_et": "2026-10-22 21:52:20 EDT",
-    "n_trades": 87,
-    "n_known": 87,
+    "generated_et": "2026-10-23 06:09:23 EDT",
+    "n_trades": 88,
+    "n_known": 88,
     "n_unknown": 0,
-    "realized_pnl_sol": 74.127572,
-    "realized_pnl_usd": 8274.55,
+    "realized_pnl_sol": 74.154055,
+    "realized_pnl_usd": 8277.31,
     "today": {
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "n": 1,
-      "pnl_sol": 0.220646,
-      "pnl_usd": 22.84
+      "pnl_sol": 0.026483,
+      "pnl_usd": 2.76
     },
-    "wins": 21,
+    "wins": 22,
     "losses": 66,
     "unknown": [],
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "unrealized": {
-    "n": 1,
-    "value_usd": 43.49,
-    "cost_usd": 48.0,
-    "pnl_usd": -4.51,
-    "pnl_sol": -0.043107,
-    "sol_price_usd": 104.08369067096424,
-    "as_of_et": "2026-10-22 21:52:20 EDT"
+    "n": 0,
+    "value_usd": 0.0,
+    "cost_usd": 0.0,
+    "pnl_usd": 0.0,
+    "pnl_sol": null,
+    "sol_price_usd": 104.23,
+    "as_of_et": "2026-10-23 06:09:23 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2759,11 +2754,6 @@
         "last_seen": 1792275635,
         "symbol": "ECASH"
       },
-      "chipCAT7vi5CZtbZsn9z7iMPXvFwyAnKz3QFu8XVuHm": {
-        "first_seen": 1792117039,
-        "last_seen": 1792117570,
-        "symbol": "CHIP"
-      },
       "DuEy8wWrzCUun5ZbbG9hkVqXqqicpTQw8gB7nEAzpCHQ": {
         "first_seen": 1792310175,
         "last_seen": 1792313280,
@@ -2773,11 +2763,6 @@
         "first_seen": 1792184502,
         "last_seen": 1792186577,
         "symbol": "LARP"
-      },
-      "FbmmdcCYHL7WETG89xtWmNFMzQAaQ8Zs9NXVbimibonk": {
-        "first_seen": 1792131031,
-        "last_seen": 1792131790,
-        "symbol": "DONT"
       },
       "TSPXcLV76s6V2zDiZQ18kBfcbnjaE2ZzNT3ga2Pd99v": {
         "first_seen": 1792124358,
@@ -2994,11 +2979,6 @@
         "last_seen": 1792305612,
         "symbol": "Chiikawa"
       },
-      "8DXqVUopcdviLvujTcpwEqkKzB43Arp6E1axzsEE5Btq": {
-        "first_seen": 1792132196,
-        "last_seen": 1792132196,
-        "symbol": "moin"
-      },
       "8dBnKHwNYH3hz2fFTJczVwzBTpJFAMtc53k3uA4zpump": {
         "first_seen": 1792193073,
         "last_seen": 1792194632,
@@ -3204,16 +3184,6 @@
         "last_seen": 1792254874,
         "symbol": "SAAR"
       },
-      "EyWrMXBb5DXppWs5uNa6repSEDoDSachbjeixU9KREVS": {
-        "first_seen": 1792131790,
-        "last_seen": 1792132196,
-        "symbol": "REVS"
-      },
-      "Ew8KqgSitYucieR5KnSAL2SUFspcwA8AgSuZ5xWspump": {
-        "first_seen": 1792141448,
-        "last_seen": 1792141448,
-        "symbol": "Kurumi"
-      },
       "MSTRdWXMeZxdE8osAQy3fA4rvTY5rgummDSMEx6U7Nz": {
         "first_seen": 1792174567,
         "last_seen": 1792176496,
@@ -3384,16 +3354,6 @@
         "last_seen": 1792330383,
         "symbol": "JBMB"
       },
-      "EdhTCqUxXRWQcUd5Fonyz9rapHAB6mABAuVkmPrtpump": {
-        "first_seen": 1792128208,
-        "last_seen": 1792133364,
-        "symbol": "UNITY"
-      },
-      "AMQ8BusAhpwbt3ufSCTi4k3BEQ7AecX9u12Jnk6Spump": {
-        "first_seen": 1792064253,
-        "last_seen": 1792123456,
-        "symbol": "DIKSHIT"
-      },
       "5q5pEZZwhkuazS4rGa66LcNotdsnUE9KcJ7xQmXSpump": {
         "first_seen": 1792238214,
         "last_seen": 1792238214,
@@ -3403,11 +3363,6 @@
         "first_seen": 1792307898,
         "last_seen": 1792311729,
         "symbol": "PSG"
-      },
-      "DAfKg6exaeMMUQeqwRq3UP5KYPJjFNyVuVzFfr4kpump": {
-        "first_seen": 1792131790,
-        "last_seen": 1792131790,
-        "symbol": "PICKLE"
       },
       "1EwcGE6WrssiY2sKSadB5E5DE9WhPDQvBC6kev1EDGE": {
         "first_seen": 1792168730,
@@ -3484,11 +3439,6 @@
         "last_seen": 1792362992,
         "symbol": "Groklet"
       },
-      "3EC7gRDGKgqPHc9ipJxxChoeyseE2xAbQHZUSSTfpump": {
-        "first_seen": 1792107090,
-        "last_seen": 1792123455,
-        "symbol": "SYCAMORE"
-      },
       "shib5gSoVKPjwkXrxRk7SbQFzb2R9rQB3TgQWYX4RwW": {
         "first_seen": 1792274666,
         "last_seen": 1792322449,
@@ -3554,26 +3504,6 @@
         "last_seen": 1792327826,
         "symbol": "FTR"
       },
-      "4ZYonK7RhCaQ24YmGDwJpz1g8WbjyrLZQ8AcXf28WYPt": {
-        "first_seen": 1792117943,
-        "last_seen": 1792117943,
-        "symbol": "POOL"
-      },
-      "wLZrRQk9XBynAJSRdeQgsQrVURXGdfo4ahb1oRBpump": {
-        "first_seen": 1792119752,
-        "last_seen": 1792119752,
-        "symbol": "CATCH"
-      },
-      "6vs4oxwMnHjoZzdQ7YVNTxjUivqoNjF6Dz8vaAe9pump": {
-        "first_seen": 1792120659,
-        "last_seen": 1792120659,
-        "symbol": "BANANA"
-      },
-      "DiveEYHTf3LveSNifUzeCrTbrZUQEm9PSapERXM8pump": {
-        "first_seen": 1792120657,
-        "last_seen": 1792133099,
-        "symbol": "STARMAN"
-      },
       "CC5D6puFmcsnGaJh7kNXeAcRpL2SZzQfoQezvx45uKjt": {
         "first_seen": 1792297185,
         "last_seen": 1792300903,
@@ -3583,46 +3513,6 @@
         "first_seen": 1792237339,
         "last_seen": 1792237339,
         "symbol": "SOUVENIR"
-      },
-      "2uwxxiD1PshoPrrSoNvttRD8Aa1nwxVDTFf4JK36pump": {
-        "first_seen": 1792131790,
-        "last_seen": 1792134003,
-        "symbol": "VICE"
-      },
-      "A13oRB9FFaiUjfi6LdCg6p9ka1u8SfGkUFs4SKvPpump": {
-        "first_seen": 1792133098,
-        "last_seen": 1792133098,
-        "symbol": "TOAD"
-      },
-      "7GCMYJcykHZ3qJH3e5vQi4J9qAPdb3Xninkgk6sYpump": {
-        "first_seen": 1792137622,
-        "last_seen": 1792140441,
-        "symbol": "LOOM"
-      },
-      "H2c31USxu35MDkBrGph8pUDUnmzo2e4Rf4hnvL2Upump": {
-        "first_seen": 1792139536,
-        "last_seen": 1792143255,
-        "symbol": "Shoggoth"
-      },
-      "FEq7W38ugzhdt8yg68fcxLDeCkNufDTHy6kxDGHgpump": {
-        "first_seen": 1792140442,
-        "last_seen": 1792141451,
-        "symbol": "MERGE"
-      },
-      "J7tYmq2JnQPvxyhcXpCDrvJnc9R5ts8rv7tgVHDPsw7U": {
-        "first_seen": 1792140440,
-        "last_seen": 1792142352,
-        "symbol": "FLOYDAI"
-      },
-      "35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump": {
-        "first_seen": 1792144159,
-        "last_seen": 1792145062,
-        "symbol": "VI"
-      },
-      "EWgq2xUb6eVCApeQombkPxd6uFjM8j9zRUXFS9MjKTiv": {
-        "first_seen": 1792144159,
-        "last_seen": 1792144159,
-        "symbol": "CTO"
       },
       "PreZad18qfPtbxNpMtMuAuX2zVpvkEU8DnJx56faCWd": {
         "first_seen": 1792149658,
