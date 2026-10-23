@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 13:55:57 EDT",
+  "generated_et": "2026-10-23 14:03:00 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 13:55:58 EDT",
+    "as_of_et": "2026-10-23 14:03:01 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 104.27389201008354,
-    "sol_usd_approx": 1.37,
-    "arc_usdc": 27.556418,
-    "total_cash_usd_approx": 28.93,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $27.56 (Liar's Dice Arc wallets excluded)"
+    "sol_price_usd": 104.39,
+    "sol_usd_approx": 1.38,
+    "arc_usdc": 16.339009,
+    "total_cash_usd_approx": 17.72,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $16.34 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 13:55:57 EDT",
-    "generated_ts": 1792778157591,
+    "generated_et": "2026-10-23 14:03:00 EDT",
+    "generated_ts": 1792778580930,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2540,11 +2540,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986359707390843
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986188313631792
     }
   },
   "realized": {
-    "generated_et": "2026-10-23 13:55:58 EDT",
+    "generated_et": "2026-10-23 14:03:01 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2567,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.27389201008354,
-    "as_of_et": "2026-10-23 13:55:58 EDT"
+    "sol_price_usd": 104.39,
+    "as_of_et": "2026-10-23 14:03:01 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3479,11 +3479,6 @@
         "first_seen": 1792766993,
         "last_seen": 1792766993,
         "symbol": "MUSK4"
-      },
-      "8FnBBoqYdVAps3Ekpvhr48sNkxsPVKq8iyzWDrYYpump": {
-        "first_seen": 1792173664,
-        "last_seen": 1792173664,
-        "symbol": "SKYROAD"
       },
       "9KDhovVA2kdjngkFooqEn5FoKkuZeDMYiQtVk7Lbm9up": {
         "first_seen": 1792175594,
