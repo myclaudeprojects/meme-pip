@@ -21,7 +21,7 @@
                { url: "https://solana.leorpc.com/?api_key=FREE", ct: "text/plain" },
                { url: "https://api.mainnet-beta.solana.com", ct: "application/json" }],
     // Arc RPC + chain taken from the loop's bridge scripts (chainId 5042 = 0x13b2).
-    ARC_RPC: "https://warp-arc-production.up.railway.app/rpc",
+    ARC_RPC: "https://rpc.mainnet.arc.io", // was warp-arc-production.up.railway.app (dead: 404)
     ARC_CHAIN_ID: 5042,
     // USDC on Arc: native gas token; ERC-20 interface at 0x3600..0000 (6 decimals).
     ARC_USDC: "0x3600000000000000000000000000000000000000",

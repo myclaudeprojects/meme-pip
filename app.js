@@ -174,6 +174,11 @@
 
   async function loadWallets() {
     const hasLive = await loadLive();
+    // Box positions.json cash_snapshot (dashboard_snapshot.py, Arc 8488 balanceOf; Liar's Dice Arc wallets excluded).
+    const cs = S.snap && (S.snap.cash_snapshot || S.snap.cash);
+    const csTs = cs ? (Number(cs.as_of_ts) || Number(S.snap.wallet_onchain && S.snap.wallet_onchain.generated_ts) || 0) : 0;
+    if (cs && cs.arc_usdc != null && (!S.arc || S.arc.method !== "box" || csTs > (Number(S.arc.at) || 0)) && Date.now() - csTs < BOX_STALE_MS) {
+      S.arc = { at: csTs, usdc: Number(cs.arc_usdc), method: "box" }; S.arcErr = null; setSrc("Arc USDC", true, "box positions.json cash_snapshot " + (cs.as_of_et || "")); }
     const arcFresh = !!S.arc && S.arc.method === "box";
     const jobs = [];
     if (!hasLive) jobs.push(C.getSolWallet().then((w) => {
@@ -188,7 +193,8 @@
       .catch((e) => { S.walletErr = e.message; setSrc("Solana RPC (SOL balance)", false, e.message); setSrc("Token holdings", false, e.message); }));
     if (!arcFresh) jobs.push(C.getArcUsdc().then((a) => { S.arc = Object.assign({ at: Date.now() }, a); S.arcErr = null;
       setSrc("Arc RPC", true, C.hostOf(CFG.ARC_RPC) + " via " + a.method); })
-      .catch((e) => { S.arcErr = e.message; setSrc("Arc RPC", false, e.message); }));
+      .catch((e) => { S.arcErr = e.message; setSrc("Arc RPC", false, e.message);
+        if (cs && cs.arc_usdc != null) { S.arc = { at: csTs, usdc: Number(cs.arc_usdc), method: "box (stale)" }; } }));
     await Promise.all(jobs);
 
     const mints = new Set([CFG.SOL_MINT]);
@@ -255,7 +261,9 @@
       $("c-sol").innerHTML = '<span class="neg">unavailable</span>'; $("c-sol-s").textContent = S.walletErr || "loading…";
       $("c-spl").innerHTML = '<span class="neg">unavailable</span>'; $("c-spl-s").textContent = S.walletErr ? "Solana RPC blocked/unreachable from this browser" : "loading…";
     }
-    if (S.arc) { $("c-arc").textContent = C.fmtUsd(S.arc.usdc); $("c-arc-s").textContent = short(CFG.ARC_WALLET) + " · chain " + CFG.ARC_CHAIN_ID; }
+    if (S.arc) { $("c-arc").textContent = C.fmtUsd(S.arc.usdc); const cs2 = S.snap && (S.snap.cash_snapshot || S.snap.cash);
+      $("c-arc-s").textContent = short(CFG.ARC_WALLET) + " · chain " + CFG.ARC_CHAIN_ID + (cs2 && cs2.total_cash_usd_approx != null ?
+        " · SOL " + (cs2.sol_native != null ? Number(cs2.sol_native).toFixed(4) : "n/a") + " · total cash ≈ " + C.fmtUsd(cs2.total_cash_usd_approx) : ""); }
     else { $("c-arc").innerHTML = '<span class="neg">unavailable</span>'; $("c-arc-s").textContent = S.arcErr || "loading…"; }
     $("c-strat").textContent = `$${(P.mcapMin / 1e3).toFixed(0)}k–$${(P.mcapMax / 1e6).toFixed(1)}M · TP ${P.tp}× · max ${P.maxPos}`;
     $("c-strat-s").textContent = `$${P.buyUsd} buys from Sol cash · early full sell on first holder slowdown (prefer ~${P.early}×)` + (P.paused ? " · new buys paused until " + P.paused : "");
