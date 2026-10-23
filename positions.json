@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 14:40:13 EDT",
+  "generated_et": "2026-10-23 14:45:39 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 14:40:13 EDT",
+    "as_of_et": "2026-10-23 14:45:39 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 103.97234699189826,
+    "sol_price_usd": 104.05308847873445,
     "sol_usd_approx": 1.37,
-    "arc_usdc": 21.923421,
-    "total_cash_usd_approx": 23.29,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $21.92 (Liar's Dice Arc wallets excluded)"
+    "arc_usdc": 4.921344,
+    "total_cash_usd_approx": 6.29,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $4.92 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 14:40:13 EDT",
-    "generated_ts": 1792780813411,
+    "generated_et": "2026-10-23 14:45:39 EDT",
+    "generated_ts": 1792781139281,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2539,10 +2539,12 @@
         "program": "spl"
       }
     ],
-    "prices": {}
+    "prices": {
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985513572523333
+    }
   },
   "realized": {
-    "generated_et": "2026-10-23 14:40:13 EDT",
+    "generated_et": "2026-10-23 14:45:39 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2565,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 103.97234699189826,
-    "as_of_et": "2026-10-23 14:40:13 EDT"
+    "sol_price_usd": 104.05308847873445,
+    "as_of_et": "2026-10-23 14:45:39 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
