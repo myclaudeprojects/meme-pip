@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 16:29:16 EDT",
+  "generated_et": "2026-10-23 16:30:19 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,10 +2449,10 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 16:29:17 EDT",
+    "as_of_et": "2026-10-23 16:30:20 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 103.5342879100456,
+    "sol_price_usd": 103.5452711270351,
     "sol_usd_approx": 1.36,
     "arc_usdc": 16.311784,
     "total_cash_usd_approx": 17.67,
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 16:29:16 EDT",
-    "generated_ts": 1792787356939,
+    "generated_et": "2026-10-23 16:30:19 EDT",
+    "generated_ts": 1792787419866,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2539,12 +2539,10 @@
         "program": "spl"
       }
     ],
-    "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986432184283051
-    }
+    "prices": {}
   },
   "realized": {
-    "generated_et": "2026-10-23 16:29:17 EDT",
+    "generated_et": "2026-10-23 16:30:20 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2567,8 +2565,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 103.5342879100456,
-    "as_of_et": "2026-10-23 16:29:17 EDT"
+    "sol_price_usd": 103.5452711270351,
+    "as_of_et": "2026-10-23 16:30:20 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3225,11 +3223,6 @@
         "last_seen": 1792272291,
         "symbol": "MARINE"
       },
-      "GM8EysYT8NRSsoULdeYShbRsUdhoUoiB9EN4eW3YETCH": {
-        "first_seen": 1792182597,
-        "last_seen": 1792182597,
-        "symbol": "ETCHY"
-      },
       "9aqmJjCnnMQv42TXLk921ceUkN35nea2QP969n1caqjj": {
         "first_seen": 1792275633,
         "last_seen": 1792314522,
@@ -3479,11 +3472,6 @@
         "first_seen": 1792766993,
         "last_seen": 1792766993,
         "symbol": "onboard"
-      },
-      "9KcwEpr7TnnaTuoXVcc3J4wxq5ptVr7fsH53w9M7pump": {
-        "first_seen": 1792182599,
-        "last_seen": 1792182599,
-        "symbol": "HUGO"
       },
       "HDYP5e1dUM3zjqw3tQvDHDxtt6CKxkgyEN3NdNcXTRiX": {
         "first_seen": 1792187481,
