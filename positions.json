@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-22 19:56:10 EDT",
+  "generated_et": "2026-10-22 20:01:10 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2380,25 +2380,25 @@
   "manual_positions": [
     {
       "mint": "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump",
-      "symbol": "DqYe",
+      "symbol": "TURRI",
       "status": "manual",
       "cost_usd": 26.76,
       "cost_src": "cost_usd",
       "cost_sol": 0.258561022,
       "tokens_ui": 385414.026176,
       "entry_mc": 69432.0,
-      "tp_multiple": null,
-      "tp_target_mc": null,
+      "tp_multiple": 10.0,
+      "tp_target_mc": 694320.0,
       "opened_et": "2026-10-22 19:55 ET",
       "holding_account": null,
       "onchain_amount": 385414.026176,
-      "onchain_checked_et": "2026-10-22 19:56:10 EDT",
+      "onchain_checked_et": "2026-10-22 20:01:10 EDT",
       "unrealized": {
-        "value_usd": 21.48,
-        "price_usd": 5.5734113213927855e-05,
-        "pnl_usd": -5.28,
-        "value_sol": 0.207375,
-        "pnl_sol": -0.051186
+        "value_usd": 18.96,
+        "price_usd": 4.920550714123771e-05,
+        "pnl_usd": -7.8,
+        "value_sol": 0.18326,
+        "pnl_sol": -0.075301
       }
     }
   ],
@@ -2419,10 +2419,10 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-22 19:56:12 EDT",
+    "as_of_et": "2026-10-22 20:01:11 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.020356576,
-    "sol_price_usd": 103.58381143950243,
+    "sol_price_usd": 103.48408078832486,
     "sol_usd_approx": 2.11,
     "arc_usdc": null,
     "arc_error": "HTTP Error 404: Not Found",
@@ -2493,8 +2493,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-22 19:56:10 EDT",
-    "generated_ts": 1792713370530,
+    "generated_et": "2026-10-22 20:01:10 EDT",
+    "generated_ts": 1792713670620,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.020356576,
@@ -2516,12 +2516,12 @@
       }
     ],
     "prices": {
-      "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump": 5.5734113213927855e-05,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998406416250043
+      "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump": 4.920550714123771e-05,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9983846826681877
     }
   },
   "realized": {
-    "generated_et": "2026-10-22 19:56:12 EDT",
+    "generated_et": "2026-10-22 20:01:11 EDT",
     "n_trades": 86,
     "n_known": 86,
     "n_unknown": 0,
@@ -2540,12 +2540,12 @@
   },
   "unrealized": {
     "n": 1,
-    "value_usd": 21.48,
+    "value_usd": 18.96,
     "cost_usd": 26.76,
-    "pnl_usd": -5.28,
-    "pnl_sol": -0.051186,
-    "sol_price_usd": 103.58381143950243,
-    "as_of_et": "2026-10-22 19:56:12 EDT"
+    "pnl_usd": -7.8,
+    "pnl_sol": -0.075301,
+    "sol_price_usd": 103.48408078832486,
+    "as_of_et": "2026-10-22 20:01:11 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
