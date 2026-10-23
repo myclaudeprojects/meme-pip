@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 19:11:08 EDT",
+  "generated_et": "2026-10-23 19:12:06 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2527,13 +2527,13 @@
       "opened_et": "2026-10-23 19:07 ET",
       "holding_account": null,
       "onchain_amount": 344852.635191,
-      "onchain_checked_et": "2026-10-23 19:11:08 EDT",
+      "onchain_checked_et": "2026-10-23 19:12:06 EDT",
       "unrealized": {
-        "value_usd": 11.92,
-        "price_usd": 3.4558422892591595e-05,
-        "pnl_usd": -0.99,
-        "value_sol": 0.116931,
-        "pnl_sol": -0.009548
+        "value_usd": 10.15,
+        "price_usd": 2.9442690669239906e-05,
+        "pnl_usd": -2.76,
+        "value_sol": 0.099697,
+        "pnl_sol": -0.026781
       }
     }
   ],
@@ -2554,15 +2554,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 19:11:09 EDT",
+    "as_of_et": "2026-10-23 19:12:07 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.022770922,
-    "sol_price_usd": 101.92,
+    "sol_price_usd": 101.84224957595892,
     "sol_usd_approx": 2.32,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 3.32,
     "note": "Live cash: 0.0228 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792797069174
+    "as_of_ts": 1792797127189
   },
   "recent_notes": [
     {
@@ -2628,8 +2628,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 19:11:08 EDT",
-    "generated_ts": 1792797068375,
+    "generated_et": "2026-10-23 19:12:06 EDT",
+    "generated_ts": 1792797126501,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.022770922,
@@ -2646,12 +2646,12 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986583342699805,
-      "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump": 3.4558422892591595e-05
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986555874543636,
+      "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump": 2.9442690669239906e-05
     }
   },
   "realized": {
-    "generated_et": "2026-10-23 19:11:09 EDT",
+    "generated_et": "2026-10-23 19:12:07 EDT",
     "n_trades": 91,
     "n_known": 91,
     "n_unknown": 0,
@@ -2669,24 +2669,24 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-23 19:11:09 EDT",
+    "as_of_et": "2026-10-23 19:12:07 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.022770922,
-    "sol_price_usd": 101.92,
+    "sol_price_usd": 101.84224957595892,
     "sol_usd_approx": 2.32,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 3.32,
     "note": "Live cash: 0.0228 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792797069174
+    "as_of_ts": 1792797127189
   },
   "unrealized": {
     "n": 1,
-    "value_usd": 11.92,
+    "value_usd": 10.15,
     "cost_usd": 12.91,
-    "pnl_usd": -0.99,
-    "pnl_sol": -0.009547,
-    "sol_price_usd": 101.92,
-    "as_of_et": "2026-10-23 19:11:09 EDT"
+    "pnl_usd": -2.76,
+    "pnl_sol": -0.026781,
+    "sol_price_usd": 101.84224957595892,
+    "as_of_et": "2026-10-23 19:12:07 EDT"
   },
   "holder_history": {
     "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump": {
@@ -2701,6 +2701,10 @@
         [
           1792797011,
           224
+        ],
+        [
+          1792797071,
+          223
         ]
       ],
       "d": [
@@ -2715,6 +2719,10 @@
         [
           1792796711,
           192
+        ],
+        [
+          1792796771,
+          206
         ]
       ]
     }
