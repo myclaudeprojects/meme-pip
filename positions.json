@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-22 21:51:58 EDT",
+  "generated_et": "2026-10-22 21:52:18 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2419,13 +2419,13 @@
       "opened_et": "2026-10-22 21:51 ET",
       "holding_account": null,
       "onchain_amount": 323283.874528,
-      "onchain_checked_et": "2026-10-22 21:51:58 EDT",
+      "onchain_checked_et": "2026-10-22 21:52:18 EDT",
       "unrealized": {
-        "value_usd": 46.98,
-        "price_usd": 0.0001453236820900182,
-        "pnl_usd": -1.02,
-        "value_sol": 0.451258,
-        "pnl_sol": -0.009684
+        "value_usd": 43.49,
+        "price_usd": 0.0001345250605324625,
+        "pnl_usd": -4.51,
+        "value_sol": 0.417835,
+        "pnl_sol": -0.043108
       }
     }
   ],
@@ -2446,10 +2446,10 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-22 21:51:59 EDT",
+    "as_of_et": "2026-10-22 21:52:20 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.025765874,
-    "sol_price_usd": 104.11071326717976,
+    "sol_price_usd": 104.08369067096424,
     "sol_usd_approx": 2.68,
     "arc_usdc": null,
     "arc_error": "HTTP Error 404: Not Found",
@@ -2520,8 +2520,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-22 21:51:58 EDT",
-    "generated_ts": 1792720318290,
+    "generated_et": "2026-10-22 21:52:18 EDT",
+    "generated_ts": 1792720338756,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.025765874,
@@ -2543,12 +2543,12 @@
       }
     ],
     "prices": {
-      "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump": 0.0001453236820900182,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998302058863528
+      "DqYemNm4ez4Epxgjgws74NpyGAaddgTyQQercSgpump": 0.0001345250605324625,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9983082610207883
     }
   },
   "realized": {
-    "generated_et": "2026-10-22 21:51:59 EDT",
+    "generated_et": "2026-10-22 21:52:20 EDT",
     "n_trades": 87,
     "n_known": 87,
     "n_unknown": 0,
@@ -2567,12 +2567,12 @@
   },
   "unrealized": {
     "n": 1,
-    "value_usd": 46.98,
+    "value_usd": 43.49,
     "cost_usd": 48.0,
-    "pnl_usd": -1.02,
-    "pnl_sol": -0.009684,
-    "sol_price_usd": 104.11071326717976,
-    "as_of_et": "2026-10-22 21:51:59 EDT"
+    "pnl_usd": -4.51,
+    "pnl_sol": -0.043107,
+    "sol_price_usd": 104.08369067096424,
+    "as_of_et": "2026-10-22 21:52:20 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
