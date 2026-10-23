@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 18:26:50 EDT",
+  "generated_et": "2026-10-23 18:27:53 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2458,7 +2458,31 @@
       "pnl_usd": -9.15
     }
   ],
-  "manual_positions": [],
+  "manual_positions": [
+    {
+      "mint": "FvitCVJCcuHAZC1TPCvNFMz6FyCv2TdhpmakKXQAcTrU",
+      "symbol": "TRUTHBOT",
+      "status": "manual",
+      "cost_usd": 36.99,
+      "cost_src": "cost_usd",
+      "cost_sol": 0.35750788,
+      "tokens_ui": 4072728.591188,
+      "entry_mc": 9083.0,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "2026-10-23 18:26 ET",
+      "holding_account": null,
+      "onchain_amount": 4072728.591188,
+      "onchain_checked_et": "2026-10-23 18:27:53 EDT",
+      "unrealized": {
+        "value_usd": 32.31,
+        "price_usd": 7.933814952046103e-06,
+        "pnl_usd": -4.68,
+        "value_sol": 0.312228,
+        "pnl_sol": -0.04528
+      }
+    }
+  ],
   "last_decision": {
     "last_skip_reason": null,
     "last_scan_et": "2026-10-18 18:55:49 EDT",
@@ -2476,15 +2500,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 18:26:51 EDT",
+    "as_of_et": "2026-10-23 18:27:53 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019123795,
-    "sol_price_usd": 103.47420533094153,
+    "sol_price_usd": 103.48930453341463,
     "sol_usd_approx": 1.98,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.98,
     "note": "Live cash: 0.0191 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792794411125
+    "as_of_ts": 1792794473669
   },
   "recent_notes": [
     {
@@ -2550,8 +2574,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 18:26:50 EDT",
-    "generated_ts": 1792794410529,
+    "generated_et": "2026-10-23 18:27:53 EDT",
+    "generated_ts": 1792794473055,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.019123795,
@@ -2567,13 +2591,10 @@
         "program": "token-2022"
       }
     ],
-    "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998641192086409,
-      "FvitCVJCcuHAZC1TPCvNFMz6FyCv2TdhpmakKXQAcTrU": 7.844004955982969e-06
-    }
+    "prices": {}
   },
   "realized": {
-    "generated_et": "2026-10-23 18:26:51 EDT",
+    "generated_et": "2026-10-23 18:27:53 EDT",
     "n_trades": 89,
     "n_known": 89,
     "n_unknown": 0,
@@ -2591,26 +2612,44 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-23 18:26:51 EDT",
+    "as_of_et": "2026-10-23 18:27:53 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019123795,
-    "sol_price_usd": 103.47420533094153,
+    "sol_price_usd": 103.48930453341463,
     "sol_usd_approx": 1.98,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.98,
     "note": "Live cash: 0.0191 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792794411125
+    "as_of_ts": 1792794473669
   },
   "unrealized": {
-    "n": 0,
-    "value_usd": 0.0,
-    "cost_usd": 0.0,
-    "pnl_usd": 0.0,
-    "pnl_sol": null,
-    "sol_price_usd": 103.47420533094153,
-    "as_of_et": "2026-10-23 18:26:51 EDT"
+    "n": 1,
+    "value_usd": 32.31,
+    "cost_usd": 36.99,
+    "pnl_usd": -4.68,
+    "pnl_sol": -0.04528,
+    "sol_price_usd": 103.48930453341463,
+    "as_of_et": "2026-10-23 18:27:53 EDT"
   },
-  "holder_history": {},
+  "holder_history": {
+    "FvitCVJCcuHAZC1TPCvNFMz6FyCv2TdhpmakKXQAcTrU": {
+      "symbol": "Truthbot",
+      "created_ts": 1792794289.0,
+      "created_src": "Jupiter firstPool.createdAt",
+      "m": [
+        [
+          1792794471,
+          97
+        ]
+      ],
+      "d": [
+        [
+          1792794289,
+          78
+        ]
+      ]
+    }
+  },
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
     "last_scan_ts": 1792766993.827757,
