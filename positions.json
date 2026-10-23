@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 14:30:12 EDT",
+  "generated_et": "2026-10-23 14:36:10 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 14:30:13 EDT",
+    "as_of_et": "2026-10-23 14:36:11 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 104.09178754556305,
+    "sol_price_usd": 104.2,
     "sol_usd_approx": 1.37,
-    "arc_usdc": 6.723061,
-    "total_cash_usd_approx": 8.09,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $6.72 (Liar's Dice Arc wallets excluded)"
+    "arc_usdc": 22.004719,
+    "total_cash_usd_approx": 23.37,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $22.00 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 14:30:12 EDT",
-    "generated_ts": 1792780212493,
+    "generated_et": "2026-10-23 14:36:10 EDT",
+    "generated_ts": 1792780570583,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2540,11 +2540,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998547293626524
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985617935170554
     }
   },
   "realized": {
-    "generated_et": "2026-10-23 14:30:13 EDT",
+    "generated_et": "2026-10-23 14:36:11 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2567,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.09178754556305,
-    "as_of_et": "2026-10-23 14:30:13 EDT"
+    "sol_price_usd": 104.2,
+    "as_of_et": "2026-10-23 14:36:11 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3479,11 +3479,6 @@
         "first_seen": 1792175594,
         "last_seen": 1792188385,
         "symbol": "Glow"
-      },
-      "USNv3NkKA27Dh4nsHJDPhW4VoEcTQmjoZyJt2dqdwFu": {
-        "first_seen": 1792175593,
-        "last_seen": 1792175593,
-        "symbol": "USO"
       },
       "CTg3ZgYx79zrE1MteDVkmkcGniiFrK1hJ6yiabropump": {
         "first_seen": 1792176496,
