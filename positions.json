@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 13:30:35 EDT",
+  "generated_et": "2026-10-23 13:35:38 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 13:30:35 EDT",
+    "as_of_et": "2026-10-23 13:35:38 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 104.34267418257546,
+    "sol_price_usd": 104.43565780290741,
     "sol_usd_approx": 1.38,
-    "arc_usdc": 29.083513,
-    "total_cash_usd_approx": 30.46,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $29.08 (Liar's Dice Arc wallets excluded)"
+    "arc_usdc": 13.230301,
+    "total_cash_usd_approx": 14.61,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $13.23 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 13:30:35 EDT",
-    "generated_ts": 1792776635495,
+    "generated_et": "2026-10-23 13:35:38 EDT",
+    "generated_ts": 1792776938224,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2542,7 +2542,7 @@
     "prices": {}
   },
   "realized": {
-    "generated_et": "2026-10-23 13:30:35 EDT",
+    "generated_et": "2026-10-23 13:35:38 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2565,8 +2565,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.34267418257546,
-    "as_of_et": "2026-10-23 13:30:35 EDT"
+    "sol_price_usd": 104.43565780290741,
+    "as_of_et": "2026-10-23 13:35:38 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3148,11 +3148,6 @@
         "last_seen": 1792308771,
         "symbol": "Chinese"
       },
-      "aqQRs3UJmHs7ktoLo46HZAzvG9P3oCoZ41nENqFbory": {
-        "first_seen": 1792171856,
-        "last_seen": 1792171856,
-        "symbol": "PIE"
-      },
       "GSp4qePZUHBtt5f4gE6AsRC9JUUqeZEJLeN2JZxLpump": {
         "first_seen": 1792256623,
         "last_seen": 1792258017,
@@ -3448,11 +3443,6 @@
         "last_seen": 1792272291,
         "symbol": "RAIN"
       },
-      "2FcsqRrhvgSfYxJWh32xW873vyqBZ9jmMyXqYSPgNtuZ": {
-        "first_seen": 1792167827,
-        "last_seen": 1792171856,
-        "symbol": "Lucia"
-      },
       "HWKD7fy3tZB2RjZnBMJgZFZLqPdST4q81WZgpn7dpump": {
         "first_seen": 1792169634,
         "last_seen": 1792177512,
@@ -3472,11 +3462,6 @@
         "first_seen": 1792170862,
         "last_seen": 1792174567,
         "symbol": "OWLDACITY"
-      },
-      "E416wJCtCgjVPeRirpHd1qDvKRUy5oW6dnNhWQuxpump": {
-        "first_seen": 1792171857,
-        "last_seen": 1792171857,
-        "symbol": "KAYLUB"
       },
       "G1ij1UjWBcUFtVHz5GVDAopPNMQcbwtdegH94LU6Jray": {
         "first_seen": 1792240767,
