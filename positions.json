@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 14:50:22 EDT",
+  "generated_et": "2026-10-23 15:05:56 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 14:50:22 EDT",
+    "as_of_et": "2026-10-23 15:05:56 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 103.93797969721426,
+    "sol_price_usd": 104.03486295661222,
     "sol_usd_approx": 1.37,
-    "arc_usdc": 20.495672,
-    "total_cash_usd_approx": 21.87,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $20.50 (Liar's Dice Arc wallets excluded)"
+    "arc_usdc": 8.037689,
+    "total_cash_usd_approx": 9.41,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $8.04 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 14:50:22 EDT",
-    "generated_ts": 1792781422367,
+    "generated_et": "2026-10-23 15:05:56 EDT",
+    "generated_ts": 1792782356182,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2539,10 +2539,12 @@
         "program": "spl"
       }
     ],
-    "prices": {}
+    "prices": {
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986044606323486
+    }
   },
   "realized": {
-    "generated_et": "2026-10-23 14:50:22 EDT",
+    "generated_et": "2026-10-23 15:05:56 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2565,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 103.93797969721426,
-    "as_of_et": "2026-10-23 14:50:22 EDT"
+    "sol_price_usd": 104.03486295661222,
+    "as_of_et": "2026-10-23 15:05:56 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3123,11 +3125,6 @@
         "last_seen": 1792294473,
         "symbol": "RARI"
       },
-      "9LzCMqDgTKYz9Drzqnpgee3SGa89up3a247ypMj2xrqM": {
-        "first_seen": 1792163310,
-        "last_seen": 1792177510,
-        "symbol": "AUDIO"
-      },
       "8H5yfL1GoDETLDaLYZzrgQuZs37eiKJjdfP21b6ypump": {
         "first_seen": 1792254874,
         "last_seen": 1792254874,
@@ -3438,11 +3435,6 @@
         "last_seen": 1792272291,
         "symbol": "RAIN"
       },
-      "HWKD7fy3tZB2RjZnBMJgZFZLqPdST4q81WZgpn7dpump": {
-        "first_seen": 1792169634,
-        "last_seen": 1792177512,
-        "symbol": "ELON 2028"
-      },
       "4tf5GEXU1dt7Vfj21oCu4P96ZEKEm3zMYqpzZsoCDeer": {
         "first_seen": 1792170862,
         "last_seen": 1792179413,
@@ -3472,11 +3464,6 @@
         "first_seen": 1792175594,
         "last_seen": 1792188385,
         "symbol": "Glow"
-      },
-      "CTg3ZgYx79zrE1MteDVkmkcGniiFrK1hJ6yiabropump": {
-        "first_seen": 1792176496,
-        "last_seen": 1792177510,
-        "symbol": "NEIRO"
       },
       "EpXtn6xGoZ4Y45vRjiDUHSCGbBoJD5FaEqZbF98YswH1": {
         "first_seen": 1792354896,
