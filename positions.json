@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 06:09:22 EDT",
+  "generated_et": "2026-10-23 06:09:47 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 06:09:23 EDT",
+    "as_of_et": "2026-10-23 06:09:47 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.513191276,
-    "sol_price_usd": 104.23,
-    "sol_usd_approx": 53.49,
+    "sol_price_usd": 104.13879550236356,
+    "sol_usd_approx": 53.44,
     "arc_usdc": null,
     "arc_error": "HTTP Error 404: Not Found",
-    "total_cash_usd_approx": 53.49,
+    "total_cash_usd_approx": 53.44,
     "note": "Live cash: 0.5132 SOL + Arc n/a (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
@@ -2523,8 +2523,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 06:09:22 EDT",
-    "generated_ts": 1792750162553,
+    "generated_et": "2026-10-23 06:09:47 EDT",
+    "generated_ts": 1792750187319,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.513191276,
@@ -2540,10 +2540,12 @@
         "program": "spl"
       }
     ],
-    "prices": {}
+    "prices": {
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9984246595249455
+    }
   },
   "realized": {
-    "generated_et": "2026-10-23 06:09:23 EDT",
+    "generated_et": "2026-10-23 06:09:47 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2566,8 +2568,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.23,
-    "as_of_et": "2026-10-23 06:09:23 EDT"
+    "sol_price_usd": 104.13879550236356,
+    "as_of_et": "2026-10-23 06:09:47 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
