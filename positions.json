@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 19:22:31 EDT",
+  "generated_et": "2026-10-23 19:24:03 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2510,33 +2510,36 @@
       "proceeds_usd": 13.6,
       "pnl_sol": -0.011195,
       "pnl_usd": -1.15
-    }
-  ],
-  "manual_positions": [
+    },
     {
-      "mint": "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump",
+      "kind": "manual",
+      "source": "meteora/QUEST_POSITION.json",
       "symbol": "QUEST",
-      "status": "manual",
-      "cost_usd": 12.91,
-      "cost_src": "cost_usd",
+      "mint": "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump",
+      "status": "closed",
+      "entry_et": "2026-10-23 19:07 ET",
+      "exit_et": "2026-10-23 19:23 ET",
       "cost_sol": 0.126478205,
-      "tokens_ui": 344852.635191,
-      "entry_mc": 37436.0,
-      "tp_multiple": null,
-      "tp_target_mc": null,
-      "opened_et": "2026-10-23 19:07 ET",
-      "holding_account": null,
-      "onchain_amount": 344852.635191,
-      "onchain_checked_et": "2026-10-23 19:22:31 EDT",
-      "unrealized": {
-        "value_usd": 7.98,
-        "price_usd": 2.3129067778257777e-05,
-        "pnl_usd": -4.93,
-        "value_sol": 0.077763,
-        "pnl_sol": -0.048716
-      }
+      "cost_usd": 12.91,
+      "file_proceeds_sol": 0.066814734,
+      "file_proceeds_usd": null,
+      "sell_sigs": [
+        "3mtZvm5h9tj4pUzDbfpu8gNTEBeLNTkyWfsf5Z7iF8rW9JJryCayVE8HNeA1cu3aoorJa6CH7AbWRhhPa7JmTHs4"
+      ],
+      "buy_sig": "uPUFYHFXMkp76ZLByRQspYCtH2DQthbzyNZkLaH8F4vGq3c4q54L5R35PuwJbfVN3wctFfK2PiDFWJvkeGPR5Yw",
+      "exit_reason": null,
+      "flags": [],
+      "onchain_proceeds_sol": 0.066814734,
+      "proceeds_sol": 0.066814734,
+      "proceeds_src": "on-chain",
+      "sol_px_at_sell": 102.0729,
+      "usd_src": "entry SOL px",
+      "proceeds_usd": 6.82,
+      "pnl_sol": -0.059663,
+      "pnl_usd": -6.09
     }
   ],
+  "manual_positions": [],
   "last_decision": {
     "last_skip_reason": null,
     "last_scan_et": "2026-10-18 18:55:49 EDT",
@@ -2554,15 +2557,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 19:22:31 EDT",
+    "as_of_et": "2026-10-23 19:24:03 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.022770922,
-    "sol_price_usd": 102.57,
-    "sol_usd_approx": 2.34,
+    "sol_native": 0.089585656,
+    "sol_price_usd": 102.69,
+    "sol_usd_approx": 9.2,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 3.34,
-    "note": "Live cash: 0.0228 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792797751953
+    "total_cash_usd_approx": 10.2,
+    "note": "Live cash: 0.0896 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1792797844054
   },
   "recent_notes": [
     {
@@ -2628,161 +2631,61 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 19:22:31 EDT",
-    "generated_ts": 1792797751205,
+    "generated_et": "2026-10-23 19:24:03 EDT",
+    "generated_ts": 1792797843141,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.022770922,
+    "sol": 0.089585656,
     "tokens": [
       {
         "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "amount": 0.0013,
         "program": "spl"
-      },
-      {
-        "mint": "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump",
-        "amount": 344852.635191,
-        "program": "token-2022"
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998608391693629,
-      "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump": 2.3129067778257777e-05
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985807380728413
     }
   },
   "realized": {
-    "generated_et": "2026-10-23 19:22:31 EDT",
-    "n_trades": 91,
-    "n_known": 91,
+    "generated_et": "2026-10-23 19:24:03 EDT",
+    "n_trades": 92,
+    "n_known": 92,
     "n_unknown": 0,
-    "realized_pnl_sol": 73.838394,
-    "realized_pnl_usd": 8244.64,
+    "realized_pnl_sol": 73.778731,
+    "realized_pnl_usd": 8238.55,
     "today": {
       "date": "2026-10-23",
-      "n": 4,
-      "pnl_sol": -0.289178,
-      "pnl_usd": -29.91
+      "n": 5,
+      "pnl_sol": -0.348841,
+      "pnl_usd": -36.0
     },
     "wins": 22,
-    "losses": 69,
+    "losses": 70,
     "unknown": [],
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-23 19:22:31 EDT",
+    "as_of_et": "2026-10-23 19:24:03 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.022770922,
-    "sol_price_usd": 102.57,
-    "sol_usd_approx": 2.34,
+    "sol_native": 0.089585656,
+    "sol_price_usd": 102.69,
+    "sol_usd_approx": 9.2,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 3.34,
-    "note": "Live cash: 0.0228 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792797751953
+    "total_cash_usd_approx": 10.2,
+    "note": "Live cash: 0.0896 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1792797844054
   },
   "unrealized": {
-    "n": 1,
-    "value_usd": 7.98,
-    "cost_usd": 12.91,
-    "pnl_usd": -4.93,
-    "pnl_sol": -0.048715,
-    "sol_price_usd": 102.57,
-    "as_of_et": "2026-10-23 19:22:31 EDT"
+    "n": 0,
+    "value_usd": 0.0,
+    "cost_usd": 0.0,
+    "pnl_usd": 0.0,
+    "pnl_sol": null,
+    "sol_price_usd": 102.69,
+    "as_of_et": "2026-10-23 19:24:03 EDT"
   },
-  "holder_history": {
-    "HAMTCT6uBAtu1idkameapeeqtiWBZCSniC47CyaJpump": {
-      "symbol": "QUEST",
-      "created_ts": 1792795845.0,
-      "created_src": "Jupiter firstPool.createdAt",
-      "m": [
-        [
-          1792796951,
-          239
-        ],
-        [
-          1792797011,
-          224
-        ],
-        [
-          1792797071,
-          223
-        ],
-        [
-          1792797131,
-          216
-        ],
-        [
-          1792797191,
-          227
-        ],
-        [
-          1792797251,
-          231
-        ],
-        [
-          1792797311,
-          237
-        ],
-        [
-          1792797371,
-          296
-        ],
-        [
-          1792797689,
-          344
-        ],
-        [
-          1792797749,
-          303
-        ]
-      ],
-      "d": [
-        [
-          1792795845,
-          78
-        ],
-        [
-          1792796651,
-          175
-        ],
-        [
-          1792796711,
-          192
-        ],
-        [
-          1792796771,
-          206
-        ],
-        [
-          1792796831,
-          213
-        ],
-        [
-          1792796891,
-          224
-        ],
-        [
-          1792796951,
-          236
-        ],
-        [
-          1792797011,
-          224
-        ],
-        [
-          1792797071,
-          225
-        ],
-        [
-          1792797389,
-          295
-        ],
-        [
-          1792797449,
-          310
-        ]
-      ]
-    }
-  },
+  "holder_history": {},
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
     "last_scan_ts": 1792766993.827757,
