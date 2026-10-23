@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 08:18:10 EDT",
+  "generated_et": "2026-10-23 08:21:47 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 08:18:10 EDT",
+    "as_of_et": "2026-10-23 08:21:48 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.043186276,
-    "sol_price_usd": 104.27105076457038,
-    "sol_usd_approx": 4.5,
-    "arc_usdc": 49.480946,
-    "total_cash_usd_approx": 53.98,
-    "note": "Live cash: 0.0432 SOL + Arc USDC $49.48 (Liar's Dice Arc wallets excluded)"
+    "sol_price_usd": 104.42765869661196,
+    "sol_usd_approx": 4.51,
+    "arc_usdc": 37.382175,
+    "total_cash_usd_approx": 41.89,
+    "note": "Live cash: 0.0432 SOL + Arc USDC $37.38 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 08:18:10 EDT",
-    "generated_ts": 1792757890009,
+    "generated_et": "2026-10-23 08:21:47 EDT",
+    "generated_ts": 1792758107676,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.043186276,
@@ -2540,11 +2540,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985207191439107
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985235343087228
     }
   },
   "realized": {
-    "generated_et": "2026-10-23 08:18:10 EDT",
+    "generated_et": "2026-10-23 08:21:48 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2567,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.27105076457038,
-    "as_of_et": "2026-10-23 08:18:10 EDT"
+    "sol_price_usd": 104.42765869661196,
+    "as_of_et": "2026-10-23 08:21:48 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -3450,11 +3450,6 @@
         "last_seen": 1792330382,
         "symbol": "POLYMARKET"
       },
-      "C7heQqfNzdMbUFQwcHkL9FvdwsFsDRBnfwZDDyWYCLTZ": {
-        "first_seen": 1792153270,
-        "last_seen": 1792153270,
-        "symbol": "$COLLAT"
-      },
       "58QyXQ1UDgHh64EiTsCeevVM9cLPqBDNf3qZE6EdfUhZ": {
         "first_seen": 1792094996,
         "last_seen": 1792167828,
@@ -3509,11 +3504,6 @@
         "first_seen": 1792152367,
         "last_seen": 1792155979,
         "symbol": "House"
-      },
-      "G9hEaf97UGHscJSwQanK93GDwJ6okmmb35vinT2Epump": {
-        "first_seen": 1792153270,
-        "last_seen": 1792153270,
-        "symbol": "TRUMPSTER"
       },
       "BFgdzMkTPdKKJeTipv2njtDEwhKxkgFueJQfJGt1jups": {
         "first_seen": 1792290264,
