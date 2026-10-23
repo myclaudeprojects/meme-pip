@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 06:09:47 EDT",
+  "generated_et": "2026-10-23 08:18:10 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,15 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 06:09:47 EDT",
+    "as_of_et": "2026-10-23 08:18:10 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.513191276,
-    "sol_price_usd": 104.13879550236356,
-    "sol_usd_approx": 53.44,
-    "arc_usdc": null,
-    "arc_error": "HTTP Error 404: Not Found",
-    "total_cash_usd_approx": 53.44,
-    "note": "Live cash: 0.5132 SOL + Arc n/a (Liar's Dice Arc wallets excluded)"
+    "sol_native": 0.043186276,
+    "sol_price_usd": 104.27105076457038,
+    "sol_usd_approx": 4.5,
+    "arc_usdc": 49.480946,
+    "total_cash_usd_approx": 53.98,
+    "note": "Live cash: 0.0432 SOL + Arc USDC $49.48 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2523,11 +2522,11 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 06:09:47 EDT",
-    "generated_ts": 1792750187319,
+    "generated_et": "2026-10-23 08:18:10 EDT",
+    "generated_ts": 1792757890009,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.513191276,
+    "sol": 0.043186276,
     "tokens": [
       {
         "mint": "5SVF4JRZfTgjdGu51FUkAdmcpT2UsdoJzwAAerxLpump",
@@ -2541,11 +2540,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9984246595249455
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985207191439107
     }
   },
   "realized": {
-    "generated_et": "2026-10-23 06:09:47 EDT",
+    "generated_et": "2026-10-23 08:18:10 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2568,8 +2567,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.13879550236356,
-    "as_of_et": "2026-10-23 06:09:47 EDT"
+    "sol_price_usd": 104.27105076457038,
+    "as_of_et": "2026-10-23 08:18:10 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2680,11 +2679,6 @@
         "first_seen": 1792354243,
         "last_seen": 1792356023,
         "symbol": "HIMS"
-      },
-      "LinkhB3afbBKb2EQQu7s7umdZceV3wcvAUJhQAfQ23L": {
-        "first_seen": 1792147771,
-        "last_seen": 1792147771,
-        "symbol": "LINK"
       },
       "8k4sBtEeK4pf26noKqApv8NBTnuSJcbdwpKYknk5PbAA": {
         "first_seen": 1792310177,
@@ -3061,11 +3055,6 @@
         "last_seen": 1792158689,
         "symbol": "GTA6"
       },
-      "avaxGHCq3T7hoxd73oY2KY9hJSTaeMibXvHy5KNzh5D": {
-        "first_seen": 1792145062,
-        "last_seen": 1792146869,
-        "symbol": "AVAX"
-      },
       "BABANGA4JE7Kkam4nTrALAwAVgsNJUuFJnnkF7S16BZp": {
         "first_seen": 1792179411,
         "last_seen": 1792356023,
@@ -3250,11 +3239,6 @@
         "first_seen": 1792267942,
         "last_seen": 1792294473,
         "symbol": "KEK"
-      },
-      "C2omVhcvt3DDY77S2KZzawFJQeETZofgZ4eNWWkXpump": {
-        "first_seen": 1792148756,
-        "last_seen": 1792148756,
-        "symbol": "BULLISH"
       },
       "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump": {
         "first_seen": 1792302852,
@@ -3516,20 +3500,10 @@
         "last_seen": 1792237339,
         "symbol": "SOUVENIR"
       },
-      "PreZad18qfPtbxNpMtMuAuX2zVpvkEU8DnJx56faCWd": {
-        "first_seen": 1792149658,
-        "last_seen": 1792152367,
-        "symbol": "FIGUREAI"
-      },
       "AT13ipG8K4HDyEJm3H1ZVQV2Bw8sihewoLQReSMsYo3o": {
         "first_seen": 1792150561,
         "last_seen": 1792156883,
         "symbol": "AU79"
-      },
-      "DinpDaRyUa9nTmYbJAdnZutwQ9qMJawmv62kNkyLpump": {
-        "first_seen": 1792152367,
-        "last_seen": 1792152367,
-        "symbol": "1"
       },
       "DitHyRMQiSDhn5cnKMJV2CDDt6sVct96YrECiM49pump": {
         "first_seen": 1792152367,
