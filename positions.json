@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 12:35:04 EDT",
+  "generated_et": "2026-10-23 12:41:28 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2449,14 +2449,14 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 12:35:04 EDT",
+    "as_of_et": "2026-10-23 12:41:28 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.013181276,
-    "sol_price_usd": 104.70769657447521,
+    "sol_price_usd": 104.66,
     "sol_usd_approx": 1.38,
-    "arc_usdc": 37.645558,
-    "total_cash_usd_approx": 39.03,
-    "note": "Live cash: 0.0132 SOL + Arc USDC $37.65 (Liar's Dice Arc wallets excluded)"
+    "arc_usdc": 25.617224,
+    "total_cash_usd_approx": 27.0,
+    "note": "Live cash: 0.0132 SOL + Arc USDC $25.62 (Liar's Dice Arc wallets excluded)"
   },
   "recent_notes": [
     {
@@ -2522,8 +2522,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 12:35:04 EDT",
-    "generated_ts": 1792773304062,
+    "generated_et": "2026-10-23 12:41:28 EDT",
+    "generated_ts": 1792773688112,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.013181276,
@@ -2539,12 +2539,10 @@
         "program": "spl"
       }
     ],
-    "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986041583345127
-    }
+    "prices": {}
   },
   "realized": {
-    "generated_et": "2026-10-23 12:35:04 EDT",
+    "generated_et": "2026-10-23 12:41:28 EDT",
     "n_trades": 88,
     "n_known": 88,
     "n_unknown": 0,
@@ -2567,8 +2565,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 104.70769657447521,
-    "as_of_et": "2026-10-23 12:35:04 EDT"
+    "sol_price_usd": 104.66,
+    "as_of_et": "2026-10-23 12:41:28 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2859,11 +2857,6 @@
         "first_seen": 1792310916,
         "last_seen": 1792310916,
         "symbol": "STONKCATS"
-      },
-      "BHdfzHB5NHU4wfF7P46cJkA4PogmHYfnp51ijLSgpHa4": {
-        "first_seen": 1792166020,
-        "last_seen": 1792168730,
-        "symbol": "ZSHIB"
       },
       "ACtfUWtgvaXrQGNMiohTusi5jcx5RJf5zwu9aAxkpump": {
         "first_seen": 1792329680,
@@ -3230,11 +3223,6 @@
         "last_seen": 1792766993,
         "symbol": "NTRNDM"
       },
-      "GU5NkUVLzmJQxJKuho5dG4d1owChpcSQnhARrjYQpump": {
-        "first_seen": 1792163312,
-        "last_seen": 1792168729,
-        "symbol": "YILONGMA"
-      },
       "Ccp6isbtxCknynmGKyky9xJav68UpRqeMoX76KxYpump": {
         "first_seen": 1792218404,
         "last_seen": 1792218404,
@@ -3309,11 +3297,6 @@
         "first_seen": 1792307898,
         "last_seen": 1792311729,
         "symbol": "PSG"
-      },
-      "1EwcGE6WrssiY2sKSadB5E5DE9WhPDQvBC6kev1EDGE": {
-        "first_seen": 1792168730,
-        "last_seen": 1792168730,
-        "symbol": "1EDGE"
       },
       "EmcxFTNVDqyLHp11NvwvLZ4D7LKGbG9i7B8RF7dwpump": {
         "first_seen": 1792354896,
