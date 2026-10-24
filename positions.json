@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-23 21:52:15 EDT",
+  "generated_et": "2026-10-23 21:55:20 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2557,15 +2557,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-23 21:52:16 EDT",
+    "as_of_et": "2026-10-23 21:55:21 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.089585656,
-    "sol_price_usd": 102.48,
+    "sol_price_usd": 102.48917905481026,
     "sol_usd_approx": 9.18,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 10.18,
     "note": "Live cash: 0.0896 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792806736788
+    "as_of_ts": 1792806921142
   },
   "recent_notes": [
     {
@@ -2631,8 +2631,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-23 21:52:15 EDT",
-    "generated_ts": 1792806735804,
+    "generated_et": "2026-10-23 21:55:20 EDT",
+    "generated_ts": 1792806920434,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.089585656,
@@ -2643,10 +2643,12 @@
         "program": "spl"
       }
     ],
-    "prices": {}
+    "prices": {
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986485064564595
+    }
   },
   "realized": {
-    "generated_et": "2026-10-23 21:52:16 EDT",
+    "generated_et": "2026-10-23 21:55:21 EDT",
     "n_trades": 92,
     "n_known": 92,
     "n_unknown": 0,
@@ -2664,15 +2666,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-23 21:52:16 EDT",
+    "as_of_et": "2026-10-23 21:55:21 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.089585656,
-    "sol_price_usd": 102.48,
+    "sol_price_usd": 102.48917905481026,
     "sol_usd_approx": 9.18,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 10.18,
     "note": "Live cash: 0.0896 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792806736788
+    "as_of_ts": 1792806921142
   },
   "unrealized": {
     "n": 0,
@@ -2680,8 +2682,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 102.48,
-    "as_of_et": "2026-10-23 21:52:16 EDT"
+    "sol_price_usd": 102.48917905481026,
+    "as_of_et": "2026-10-23 21:55:21 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2797,11 +2799,6 @@
         "first_seen": 1792276837,
         "last_seen": 1792276837,
         "symbol": "DRAM"
-      },
-      "7Y6Rix8X2botuMaJ2mno4UqSWdQZqU4RezY6qp7zpump": {
-        "first_seen": 1792198583,
-        "last_seen": 1792201971,
-        "symbol": "BOLT"
       },
       "WLDTE73PPdfFFjhpBz8Yuhvx5N45gvgEgyMXqwa3rFn": {
         "first_seen": 1792360517,
@@ -3552,16 +3549,6 @@
         "first_seen": 1792197700,
         "last_seen": 1792258578,
         "symbol": "Aloooong"
-      },
-      "2kuY5DHqRvYKfytfLfrey1oB1Z1J3voq343FWMp6pump": {
-        "first_seen": 1792199402,
-        "last_seen": 1792201973,
-        "symbol": "dev/null"
-      },
-      "DUhWgHD3KgHHmsYdQdJHDv359bySNzigYcqJ45Gcpump": {
-        "first_seen": 1792199401,
-        "last_seen": 1792201971,
-        "symbol": "Grrr"
       },
       "J5HCtfNxMMqijXYsRqWnxp9VDR1gKzG1p3qEBZm3BAGS": {
         "first_seen": 1792201296,
