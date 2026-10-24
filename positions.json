@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-24 18:15:37 EDT",
+  "generated_et": "2026-10-24 18:21:38 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2589,15 +2589,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-24 18:15:38 EDT",
+    "as_of_et": "2026-10-24 18:21:38 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.002189965,
-    "sol_price_usd": 101.30480567879312,
+    "sol_price_usd": 101.28583156778227,
     "sol_usd_approx": 0.22,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 1.22,
     "note": "Live cash: 0.0022 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792880138436
+    "as_of_ts": 1792880498873
   },
   "recent_notes": [
     {
@@ -2663,8 +2663,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-24 18:15:37 EDT",
-    "generated_ts": 1792880137777,
+    "generated_et": "2026-10-24 18:21:38 EDT",
+    "generated_ts": 1792880498188,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.002189965,
@@ -2675,12 +2675,10 @@
         "program": "spl"
       }
     ],
-    "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9983691653955046
-    }
+    "prices": {}
   },
   "realized": {
-    "generated_et": "2026-10-24 18:15:38 EDT",
+    "generated_et": "2026-10-24 18:21:38 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2698,15 +2696,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-24 18:15:38 EDT",
+    "as_of_et": "2026-10-24 18:21:38 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.002189965,
-    "sol_price_usd": 101.30480567879312,
+    "sol_price_usd": 101.28583156778227,
     "sol_usd_approx": 0.22,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 1.22,
     "note": "Live cash: 0.0022 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792880138436
+    "as_of_ts": 1792880498873
   },
   "unrealized": {
     "n": 0,
@@ -2714,8 +2712,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 101.30480567879312,
-    "as_of_et": "2026-10-24 18:15:38 EDT"
+    "sol_price_usd": 101.28583156778227,
+    "as_of_et": "2026-10-24 18:21:38 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2761,11 +2759,6 @@
         "first_seen": 1792362995,
         "last_seen": 1792362995,
         "symbol": "DRMR"
-      },
-      "6zzzG49KX5nksnqfogs31dwoMYSHaJXkropKbv1QZVga": {
-        "first_seen": 1792274013,
-        "last_seen": 1792275635,
-        "symbol": "Malfoid"
       },
       "uniHfuPhEQSrtpzXpJZDCSq53yaejKKpNhFUiKoHKHV": {
         "first_seen": 1792289242,
@@ -2841,11 +2834,6 @@
         "first_seen": 1792357649,
         "last_seen": 1792357649,
         "symbol": "OWL"
-      },
-      "cTxqg4vt21u1Q2f9DSEig6S1fxmxLSsUV2v2wWspump": {
-        "first_seen": 1792275635,
-        "last_seen": 1792275635,
-        "symbol": "ECASH"
       },
       "DuEy8wWrzCUun5ZbbG9hkVqXqqicpTQw8gB7nEAzpCHQ": {
         "first_seen": 1792310175,
@@ -3117,11 +3105,6 @@
         "last_seen": 1792294473,
         "symbol": "RARI"
       },
-      "7MCgYMzq3fov6oERdtTMAYbN2U9LZrrSYS1MBhjixZFr": {
-        "first_seen": 1792270156,
-        "last_seen": 1792275635,
-        "symbol": "POLLY"
-      },
       "Tm2iqbxYjKpW8xCMe6q1xUraNMNzcG5xMztAir3pump": {
         "first_seen": 1792308771,
         "last_seen": 1792308771,
@@ -3131,11 +3114,6 @@
         "first_seen": 1792299137,
         "last_seen": 1792310916,
         "symbol": "XMR20"
-      },
-      "iNTCy1qTsUEZQe3DSocLz1ZXXai34Gdw8THQh5rxFaF": {
-        "first_seen": 1792251372,
-        "last_seen": 1792275635,
-        "symbol": "INTC"
       },
       "6XhzSy3VTTkwqMUSQsStM3ncGy6ozcPnzLVmv4HZ64cC": {
         "first_seen": 1792301802,
