@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-24 10:15:10 EDT",
+  "generated_et": "2026-10-24 10:16:53 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2566,7 +2566,25 @@
       "pnl_usd": -0.39
     }
   ],
-  "manual_positions": [],
+  "manual_positions": [
+    {
+      "mint": "VIRTUALTRADE-PERP-12",
+      "symbol": "VIRTUAL-100x-LONG",
+      "status": "manual",
+      "cost_usd": 7.62,
+      "cost_src": "cost_usd",
+      "cost_sol": 0.0754943,
+      "tokens_ui": 1616607.0,
+      "entry_mc": null,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "2026-10-24 10:15 ET",
+      "holding_account": null,
+      "onchain_amount": 0.0,
+      "onchain_checked_et": "2026-10-24 10:16:53 EDT",
+      "unrealized": null
+    }
+  ],
   "last_decision": {
     "last_skip_reason": null,
     "last_scan_et": "2026-10-18 18:55:49 EDT",
@@ -2584,15 +2602,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-24 10:15:11 EDT",
+    "as_of_et": "2026-10-24 10:16:54 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.007400445,
-    "sol_price_usd": 100.77688577757057,
-    "sol_usd_approx": 0.75,
+    "sol_native": 0.004662725,
+    "sol_price_usd": 99.99815138553244,
+    "sol_usd_approx": 0.47,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 1.75,
-    "note": "Live cash: 0.0074 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792851311391
+    "total_cash_usd_approx": 1.47,
+    "note": "Live cash: 0.0047 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1792851414178
   },
   "recent_notes": [
     {
@@ -2658,11 +2676,11 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-24 10:15:10 EDT",
-    "generated_ts": 1792851310844,
+    "generated_et": "2026-10-24 10:16:53 EDT",
+    "generated_ts": 1792851413500,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.007400445,
+    "sol": 0.004662725,
     "tokens": [
       {
         "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
@@ -2671,11 +2689,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985716755136095
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985439431628127
     }
   },
   "realized": {
-    "generated_et": "2026-10-24 10:15:11 EDT",
+    "generated_et": "2026-10-24 10:16:54 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2693,15 +2711,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-24 10:15:11 EDT",
+    "as_of_et": "2026-10-24 10:16:54 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.007400445,
-    "sol_price_usd": 100.77688577757057,
-    "sol_usd_approx": 0.75,
+    "sol_native": 0.004662725,
+    "sol_price_usd": 99.99815138553244,
+    "sol_usd_approx": 0.47,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 1.75,
-    "note": "Live cash: 0.0074 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792851311391
+    "total_cash_usd_approx": 1.47,
+    "note": "Live cash: 0.0047 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1792851414178
   },
   "unrealized": {
     "n": 0,
@@ -2709,8 +2727,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 100.77688577757057,
-    "as_of_et": "2026-10-24 10:15:11 EDT"
+    "sol_price_usd": 99.99815138553244,
+    "as_of_et": "2026-10-24 10:16:54 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
