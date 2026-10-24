@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-24 10:20:16 EDT",
+  "generated_et": "2026-10-24 10:21:05 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -44,6 +44,33 @@
   "open_organic_count": 0,
   "positions": [],
   "history": [
+    {
+      "kind": "manual",
+      "source": "meteora/VIRTUALTRADE_POSITION.json",
+      "symbol": "VIRTUAL-100x-LONG",
+      "mint": "VIRTUALTRADE-PERP-12",
+      "status": "closed",
+      "entry_et": "2026-10-24 10:15 ET",
+      "exit_et": null,
+      "cost_sol": 0.0754943,
+      "cost_usd": 7.62,
+      "file_proceeds_sol": null,
+      "file_proceeds_usd": null,
+      "sell_sigs": [],
+      "buy_sig": "49Dp6y9JQs6Qm1MkriN6Y72gzBBGdpB73gRMMdFbCSgypcM4b92JwPdL4c2hVTHZLS6sqeawpm3C7cjZSMwhs3d2",
+      "exit_reason": null,
+      "flags": [
+        "proceeds UNKNOWN (no proceeds on disk, no sell sig)"
+      ],
+      "onchain_proceeds_sol": null,
+      "proceeds_sol": null,
+      "proceeds_src": null,
+      "sol_px_at_sell": 100.9348,
+      "usd_src": "entry SOL px",
+      "proceeds_usd": null,
+      "pnl_sol": null,
+      "pnl_usd": null
+    },
     {
       "kind": "organic",
       "source": "organic_loop/state.json",
@@ -2566,25 +2593,7 @@
       "pnl_usd": -0.39
     }
   ],
-  "manual_positions": [
-    {
-      "mint": "VIRTUALTRADE-PERP-12",
-      "symbol": "VIRTUAL-100x-LONG",
-      "status": "manual",
-      "cost_usd": 7.62,
-      "cost_src": "cost_usd",
-      "cost_sol": 0.0754943,
-      "tokens_ui": 1616607.0,
-      "entry_mc": null,
-      "tp_multiple": null,
-      "tp_target_mc": null,
-      "opened_et": "2026-10-24 10:15 ET",
-      "holding_account": null,
-      "onchain_amount": 0.0,
-      "onchain_checked_et": "2026-10-24 10:20:16 EDT",
-      "unrealized": null
-    }
-  ],
+  "manual_positions": [],
   "last_decision": {
     "last_skip_reason": null,
     "last_scan_et": "2026-10-18 18:55:49 EDT",
@@ -2602,15 +2611,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-24 10:20:16 EDT",
+    "as_of_et": "2026-10-24 10:21:05 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.004662725,
-    "sol_price_usd": 100.39191871338407,
+    "sol_price_usd": 100.5164670159267,
     "sol_usd_approx": 0.47,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 1.47,
     "note": "Live cash: 0.0047 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792851616565
+    "as_of_ts": 1792851665807
   },
   "recent_notes": [
     {
@@ -2676,8 +2685,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-24 10:20:16 EDT",
-    "generated_ts": 1792851616006,
+    "generated_et": "2026-10-24 10:21:05 EDT",
+    "generated_ts": 1792851665172,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.004662725,
@@ -2689,14 +2698,14 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998596920163988
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986163876736591
     }
   },
   "realized": {
-    "generated_et": "2026-10-24 10:20:16 EDT",
-    "n_trades": 93,
+    "generated_et": "2026-10-24 10:21:05 EDT",
+    "n_trades": 94,
     "n_known": 93,
-    "n_unknown": 0,
+    "n_unknown": 1,
     "realized_pnl_sol": 73.774932,
     "realized_pnl_usd": 8238.16,
     "today": {
@@ -2707,19 +2716,27 @@
     },
     "wins": 22,
     "losses": 71,
-    "unknown": [],
+    "unknown": [
+      {
+        "symbol": "VIRTUAL-100x-LONG",
+        "source": "meteora/VIRTUALTRADE_POSITION.json",
+        "flags": [
+          "proceeds UNKNOWN (no proceeds on disk, no sell sig)"
+        ]
+      }
+    ],
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-24 10:20:16 EDT",
+    "as_of_et": "2026-10-24 10:21:05 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.004662725,
-    "sol_price_usd": 100.39191871338407,
+    "sol_price_usd": 100.5164670159267,
     "sol_usd_approx": 0.47,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 1.47,
     "note": "Live cash: 0.0047 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792851616565
+    "as_of_ts": 1792851665807
   },
   "unrealized": {
     "n": 0,
@@ -2727,18 +2744,10 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 100.39191871338407,
-    "as_of_et": "2026-10-24 10:20:16 EDT"
+    "sol_price_usd": 100.5164670159267,
+    "as_of_et": "2026-10-24 10:21:05 EDT"
   },
-  "holder_history": {
-    "VIRTUALTRADE-PERP-12": {
-      "symbol": "VIRTUAL-100x-LONG",
-      "created_ts": null,
-      "created_src": null,
-      "m": [],
-      "d": []
-    }
-  },
+  "holder_history": {},
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
     "last_scan_ts": 1792766993.827757,
