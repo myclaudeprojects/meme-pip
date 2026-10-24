@@ -135,6 +135,10 @@
       <h2>Open positions <small id="live-age"></small> <small id="pos-note"></small></h2>
       <div id="positions"><span class="muted">Loading…</span></div>
     </section>
+    <section id="perp-sec" hidden>
+      <h2>Perp longs (virtualtrade.app) <small id="perp-note"></small> <small id="perp-total"></small></h2>
+      <div id="perps"><span class="muted">Loading…</span></div>
+    </section>
     <section>
       <h2>Last bot decision <small id="snap-age"></small></h2>
       <div id="decision"><span class="muted">Loading…</span></div>
@@ -177,7 +181,7 @@
 <!-- Optional snapshot written by dashboard_snapshot.py (lets file:// opening show cost basis). Missing = fine. -->
 <script src="positions.js" onerror="void 0"></script>
 <script src="core.js?v=arcfix1"></script>
-<script src="app.js?v=arcfix1"></script>
+<script src="app.js?v=perp1"></script>
 <script src="bskt.js"></script>
 <script src="cardboard.js"></script>
 <div id="holder-panel"><div id="holder-panel-body"></div></div>

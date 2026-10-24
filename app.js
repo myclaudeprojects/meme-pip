@@ -110,9 +110,11 @@
     const s = S.snap; if (!s) return [];
     const open = (s.positions || []).map((p) => Object.assign({ _kind: "open" }, p));
     const dust = (s.history || []).filter((p) => p.status === "moonbag").map((p) => Object.assign({ _kind: "dust" }, p));
-    const manual = (s.manual_positions || []).map((p) => Object.assign({ _kind: "manual" }, p));
+    const manual = (s.manual_positions || []).filter((p) => !String(p.mint || "").startsWith("VIRTUALTRADE-PERP")).map((p) => Object.assign({ _kind: "manual" }, p));
     return open.concat(dust, manual);
   }
+  // virtualtrade.app perp positions: separate model (equity = margin + notional x (px/entry - 1)), never token rows
+  function perpList() { const s = S.snap; return ((s && s.perp_positions) || []).filter((p) => p.onchain_alive !== false); }
 
   // ---------- loaders ----------
   async function loadSnapshot() {
@@ -240,7 +242,7 @@
     $("updated").textContent = C.nowEt();
     $("f-sol").innerHTML = `<a href="https://solscan.io/account/${CFG.SOL_WALLET}" target="_blank" rel="noopener">${short(CFG.SOL_WALLET)}</a>`;
     $("f-arc").textContent = short(CFG.ARC_WALLET);
-    renderCards(P); const pos = renderPositions(P); renderPnl(pos); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
+    renderCards(P); const pos = renderPositions(P); renderPnl(pos); renderPerps(); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
     renderHolderPanel();
   }
 
@@ -336,6 +338,49 @@
     if (S.walletErr) html += `<div class="msg err">Live wallet read failed (${esc(S.walletErr)}). Rows above come from the snapshot.</div>`;
     $("positions").innerHTML = html; saveHist();
     return pos;
+  }
+
+
+  // ---------- Perp longs (virtualtrade.app) ----------
+  const fmtPx = (v) => (v == null ? "-" : "$" + Number(v).toPrecision(4));
+  function perpCalc(p, px) {
+    const m = Number(p.margin_usd), n = Number(p.notional_usd), e = Number(p.entry_price_usd), l = Number(p.liq_price_usd);
+    if (!(px > 0 && m > 0 && n > 0 && e > 0)) return null;
+    const short = String(p.side || "long").toLowerCase() === "short";
+    const raw = m + n * (short ? e / px - 1 : px / e - 1);
+    const liquidated = l > 0 && (short ? px >= l : px <= l);
+    const eq = liquidated || raw < 0 ? 0 : raw;
+    const dist = l > 0 ? (short ? (l - px) / px : (px - l) / px) * 100 : null;
+    return { px, eq, pnl: eq - m, pct: (eq - m) / m * 100, dist, liquidated };
+  }
+  function renderPerps() {
+    const sec = $("perp-sec"), el = $("perps"); if (!sec || !el) return;
+    const list = perpList();
+    if (!list.length) { sec.hidden = true; return; }
+    sec.hidden = false;
+    let tm = 0, te = 0, tn = 0, nPriced = 0, anyLive = false;
+    let h = '<div class="wrap"><table><thead><tr><th class="l">Position</th><th>Live price</th><th>Equity (value)</th><th>PnL $</th><th>PnL % of margin</th><th>Dist. to liq</th><th>Entry</th><th>Liq price</th><th>Lev</th><th>Margin</th><th>Notional</th></tr></thead><tbody>';
+    for (const p of list) {
+      const live = S.prices[p.underlying_mint]; const sn = p.calc;
+      const px = live != null ? live : (sn && sn.price_usd) || null; const isLive = live != null; if (isLive) anyLive = true;
+      const c = perpCalc(p, px);
+      const m = Number(p.margin_usd) || 0; tm += m; tn += Number(p.notional_usd) || 0;
+      if (c) { te += c.eq; nPriced++; } else te += m;
+      const side = String(p.side || "long").toLowerCase();
+      h += `<tr><td class="l">${p.open_sig ? `<a href="https://solscan.io/tx/${esc(p.open_sig)}" target="_blank" rel="noopener">${esc(p.symbol || "perp #" + p.id)}</a>` : esc(p.symbol || "perp #" + p.id)} <span class="badge HELD">${esc(p.leverage)}× ${esc(side)}</span>` +
+        `<div class="muted" style="font-size:11px">#${esc(p.id)} · ${esc(p.market || "")} · opened ${esc(p.opened_et || "-")}${c && c.liquidated ? ' · <span class="neg">LIQUIDATED (price ≤ liq)</span>' : ""}</div></td>` +
+        `<td>${fmtPx(px)}<div class="muted" style="font-size:11px">${isLive ? esc(((S.pxSrc[p.underlying_mint] || "live").split(" x ")[0])) + " · live" : "snapshot price"}</div></td>` +
+        `<td>${c ? C.fmtUsd(c.eq) : "-"}</td>` +
+        `<td class="${c ? cls(c.pnl) : "muted"}">${c ? sgnUsd(c.pnl) : "-"}</td><td class="${c ? cls(c.pnl) : "muted"}">${c ? sgnPct(c.pct) : "-"}</td>` +
+        `<td class="${c && c.dist != null ? (c.dist < 5 ? "neg" : c.dist < 10 ? "warn" : "pos") : "muted"}">${c && c.dist != null ? c.dist.toFixed(2) + "% below" : "-"}</td>` +
+        `<td>${fmtPx(p.entry_price_usd)}</td><td>${fmtPx(p.liq_price_usd)}</td><td>${esc(p.leverage)}×</td><td>${C.fmtUsd(m)}</td><td>${C.fmtUsd(p.notional_usd)}</td></tr>`;
+    }
+    if (list.length > 0 && nPriced) h += `<tr class="bk-sum"><td class="l">Combined (${list.length} positions)</td><td></td><td>${C.fmtUsd(te)}</td><td class="${cls(te - tm)}">${sgnUsd(te - tm)}</td><td class="${cls(te - tm)}">${sgnPct((te / tm - 1) * 100)}</td><td colspan="4"></td><td>${C.fmtUsd(tm)}</td><td>${C.fmtUsd(tn)}</td></tr>`;
+    h += "</tbody></table></div>" +
+      `<div class="muted" style="font-size:11px;margin-top:6px">equity = margin + notional × (price ÷ entry − 1), floored at 0 (liquidated if price ≤ liq). Gross of the program's ~0.2% open/close fee on margin. Price = ${esc("VIRTUAL")} from Jupiter/DexScreener; the program settles on its own feed, which can differ slightly. Positions are on-chain perps on virtualtrade.app, not token holdings.</div>`;
+    el.innerHTML = h;
+    $("perp-note").innerHTML = anyLive ? '<span class="pos">● live</span>' : '<span class="warn">snapshot prices</span>';
+    const t = $("perp-total"); if (t && nPriced) t.innerHTML = `combined PnL <span class="${cls(te - tm)}">${sgnUsd(te - tm)} (${sgnPct((te / tm - 1) * 100)})</span> on ${C.fmtUsd(tm)} margin`;
   }
 
   // ---------- holder detail panel (click the trend line) ----------
@@ -473,6 +518,7 @@
   function openMints() {
     const m = new Set();
     for (const p of snapPositions()) if (p.mint && (p._kind === "open" || p._kind === "manual" || p._kind === "dust")) m.add(p.mint);
+    for (const p of perpList()) if (p.underlying_mint) m.add(p.underlying_mint);
     for (const t of (S.wallet && S.wallet.tokens) || []) if (t.amount > 0 && t.mint !== CFG.SOL_MINT && !CFG.STABLES.includes(t.mint) && S.prices[t.mint] != null && S.prices[t.mint] * t.amount >= MIN_POS_USD) m.add(t.mint);
     return [...m];
   }
@@ -514,7 +560,7 @@
       const missing = mints.filter((m) => got[m] == null);
       S.pxErr = missing.length ? "no live price for " + missing.map(short).join(", ") + (errs.length ? " (" + errs.join("; ") + ")" : "") : null;
       if (mints.some((m) => got[m] != null)) S.pxAt = Date.now();
-      const pos = renderPositions(params()); renderPnl(pos);
+      const pos = renderPositions(params()); renderPnl(pos); renderPerps();
     } finally { S.pxBusy = false; }
   }
   function renderLiveAge() {
