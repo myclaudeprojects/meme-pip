@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-24 18:04:04 EDT",
+  "generated_et": "2026-10-24 18:05:06 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2589,15 +2589,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-24 18:04:04 EDT",
+    "as_of_et": "2026-10-24 18:05:07 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.002189965,
-    "sol_price_usd": 101.3141650150001,
+    "sol_price_usd": 101.3324377817609,
     "sol_usd_approx": 0.22,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 1.22,
     "note": "Live cash: 0.0022 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792879444935
+    "as_of_ts": 1792879507477
   },
   "recent_notes": [
     {
@@ -2663,8 +2663,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-24 18:04:04 EDT",
-    "generated_ts": 1792879444339,
+    "generated_et": "2026-10-24 18:05:06 EDT",
+    "generated_ts": 1792879506814,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.002189965,
@@ -2676,11 +2676,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9983639064599086
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9983903155669455
     }
   },
   "realized": {
-    "generated_et": "2026-10-24 18:04:04 EDT",
+    "generated_et": "2026-10-24 18:05:07 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2698,15 +2698,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-24 18:04:04 EDT",
+    "as_of_et": "2026-10-24 18:05:07 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.002189965,
-    "sol_price_usd": 101.3141650150001,
+    "sol_price_usd": 101.3324377817609,
     "sol_usd_approx": 0.22,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 1.22,
     "note": "Live cash: 0.0022 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792879444935
+    "as_of_ts": 1792879507477
   },
   "unrealized": {
     "n": 0,
@@ -2714,8 +2714,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 101.3141650150001,
-    "as_of_et": "2026-10-24 18:04:04 EDT"
+    "sol_price_usd": 101.3324377817609,
+    "as_of_et": "2026-10-24 18:05:07 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2971,11 +2971,6 @@
         "first_seen": 1792293551,
         "last_seen": 1792325091,
         "symbol": "RAYCAT"
-      },
-      "8ryRQD6jWfxnSdvvVbQ8Tzwo1NgGP7w1X1nQPpb4pump": {
-        "first_seen": 1792272291,
-        "last_seen": 1792274666,
-        "symbol": "meowl"
       },
       "CreiuhfwdWCN5mJbMJtA9bBpYQrQF2tCBuZwSPWfpump": {
         "first_seen": 1792313280,
@@ -3242,11 +3237,6 @@
         "last_seen": 1792358410,
         "symbol": "CyberAxe"
       },
-      "13i7SfDDzg3t4MQnfZNtFKptHpv8HR2eaGRMfetSpump": {
-        "first_seen": 1792274666,
-        "last_seen": 1792274666,
-        "symbol": "\u718a\u732b"
-      },
       "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump": {
         "first_seen": 1792318821,
         "last_seen": 1792320563,
@@ -3406,11 +3396,6 @@
         "first_seen": 1792266523,
         "last_seen": 1792320564,
         "symbol": "blocus"
-      },
-      "EdPKeF1YSca3268cC5VMpi5RfeHcPQKqYChELaH4pump": {
-        "first_seen": 1792273366,
-        "last_seen": 1792274666,
-        "symbol": "Perro"
       },
       "HqmFi85adLD8BQA7en1HfajdAfzVFps5REgQaYuw6Ax8": {
         "first_seen": 1792766993,
