@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-24 02:25:35 EDT",
+  "generated_et": "2026-10-24 02:32:50 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2557,15 +2557,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-24 02:25:35 EDT",
+    "as_of_et": "2026-10-24 02:32:50 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.089585656,
-    "sol_price_usd": 102.16086244378253,
-    "sol_usd_approx": 9.15,
+    "sol_price_usd": 102.03415257424986,
+    "sol_usd_approx": 9.14,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 10.15,
+    "total_cash_usd_approx": 10.14,
     "note": "Live cash: 0.0896 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792823135958
+    "as_of_ts": 1792823570768
   },
   "recent_notes": [
     {
@@ -2631,8 +2631,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-24 02:25:35 EDT",
-    "generated_ts": 1792823135226,
+    "generated_et": "2026-10-24 02:32:50 EDT",
+    "generated_ts": 1792823570129,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.089585656,
@@ -2644,11 +2644,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986222194104674
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986251558993952
     }
   },
   "realized": {
-    "generated_et": "2026-10-24 02:25:35 EDT",
+    "generated_et": "2026-10-24 02:32:50 EDT",
     "n_trades": 92,
     "n_known": 92,
     "n_unknown": 0,
@@ -2666,15 +2666,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-24 02:25:35 EDT",
+    "as_of_et": "2026-10-24 02:32:50 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.089585656,
-    "sol_price_usd": 102.16086244378253,
-    "sol_usd_approx": 9.15,
+    "sol_price_usd": 102.03415257424986,
+    "sol_usd_approx": 9.14,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 10.15,
+    "total_cash_usd_approx": 10.14,
     "note": "Live cash: 0.0896 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792823135958
+    "as_of_ts": 1792823570768
   },
   "unrealized": {
     "n": 0,
@@ -2682,8 +2682,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 102.16086244378253,
-    "as_of_et": "2026-10-24 02:25:35 EDT"
+    "sol_price_usd": 102.03415257424986,
+    "as_of_et": "2026-10-24 02:32:50 EDT"
   },
   "holder_history": {},
   "scanner_first_seen": {
@@ -2945,11 +2945,6 @@
         "last_seen": 1792259577,
         "symbol": "CLAWHUNTER"
       },
-      "vAddewUHuYgRDrL6n3kXtBXMT635evJz8K93j6Wm1Ba": {
-        "first_seen": 1792216266,
-        "last_seen": 1792218404,
-        "symbol": "ASH"
-      },
       "6sSUwszKeT4WJJwEFCFMsuvwo1oGKkJHXioj56aZ4iJC": {
         "first_seen": 1792236202,
         "last_seen": 1792238670,
@@ -3074,11 +3069,6 @@
         "first_seen": 1792300321,
         "last_seen": 1792304519,
         "symbol": "MLG"
-      },
-      "7TKRV4SneC6xLRaAt21a6d1kheAzXHGKP9WDzri9aD2e": {
-        "first_seen": 1792216268,
-        "last_seen": 1792218404,
-        "symbol": "SHINJUKU"
       },
       "2nP9yKQNSGQy851iyawDvBkzkK2R2aqKArQCKc2gpump": {
         "first_seen": 1792265754,
@@ -3264,11 +3254,6 @@
         "first_seen": 1792766993,
         "last_seen": 1792766993,
         "symbol": "NTRNDM"
-      },
-      "Ccp6isbtxCknynmGKyky9xJav68UpRqeMoX76KxYpump": {
-        "first_seen": 1792218404,
-        "last_seen": 1792218404,
-        "symbol": "TOWER"
       },
       "6MBf1XdZNSAaDKcxxbnCAngRUxBmwbHS5Ybe2rLRpump": {
         "first_seen": 1792264140,
