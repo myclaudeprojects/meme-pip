@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-24 10:27:26 EDT",
+  "generated_et": "2026-10-24 10:29:08 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2568,6 +2568,23 @@
   ],
   "manual_positions": [
     {
+      "mint": "VIRTUALTRADE-PERP-14",
+      "symbol": "VIRTUAL-25x-LONG-2",
+      "status": "manual",
+      "cost_usd": 9.4,
+      "cost_src": "cost_usd",
+      "cost_sol": 0.093069,
+      "tokens_ui": 592237.9032258064,
+      "entry_mc": null,
+      "tp_multiple": null,
+      "tp_target_mc": null,
+      "opened_et": "2026-10-24 10:29 ET",
+      "holding_account": null,
+      "onchain_amount": 0.0,
+      "onchain_checked_et": "2026-10-24 10:29:08 EDT",
+      "unrealized": null
+    },
+    {
       "mint": "VIRTUALTRADE-PERP-13",
       "symbol": "VIRTUAL-25x-LONG",
       "status": "manual",
@@ -2581,7 +2598,7 @@
       "opened_et": "2026-10-24 10:24 ET",
       "holding_account": null,
       "onchain_amount": 0.0,
-      "onchain_checked_et": "2026-10-24 10:27:26 EDT",
+      "onchain_checked_et": "2026-10-24 10:29:08 EDT",
       "unrealized": null
     }
   ],
@@ -2602,15 +2619,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-24 10:27:26 EDT",
+    "as_of_et": "2026-10-24 10:29:08 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.003413845,
-    "sol_price_usd": 99.78786564275103,
-    "sol_usd_approx": 0.34,
+    "sol_native": 0.002189965,
+    "sol_price_usd": 100.31915552886151,
+    "sol_usd_approx": 0.22,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 1.34,
-    "note": "Live cash: 0.0034 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792852047102
+    "total_cash_usd_approx": 1.22,
+    "note": "Live cash: 0.0022 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1792852148719
   },
   "recent_notes": [
     {
@@ -2676,11 +2693,11 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-24 10:27:26 EDT",
-    "generated_ts": 1792852046277,
+    "generated_et": "2026-10-24 10:29:08 EDT",
+    "generated_ts": 1792852148021,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 0.003413845,
+    "sol": 0.002189965,
     "tokens": [
       {
         "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
@@ -2689,11 +2706,11 @@
       }
     ],
     "prices": {
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986189949792892
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986309259982701
     }
   },
   "realized": {
-    "generated_et": "2026-10-24 10:27:26 EDT",
+    "generated_et": "2026-10-24 10:29:08 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2711,15 +2728,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-24 10:27:26 EDT",
+    "as_of_et": "2026-10-24 10:29:08 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 0.003413845,
-    "sol_price_usd": 99.78786564275103,
-    "sol_usd_approx": 0.34,
+    "sol_native": 0.002189965,
+    "sol_price_usd": 100.31915552886151,
+    "sol_usd_approx": 0.22,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 1.34,
-    "note": "Live cash: 0.0034 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792852047102
+    "total_cash_usd_approx": 1.22,
+    "note": "Live cash: 0.0022 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1792852148719
   },
   "unrealized": {
     "n": 0,
@@ -2727,8 +2744,8 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 99.78786564275103,
-    "as_of_et": "2026-10-24 10:27:26 EDT"
+    "sol_price_usd": 100.31915552886151,
+    "as_of_et": "2026-10-24 10:29:08 EDT"
   },
   "holder_history": {
     "VIRTUALTRADE-PERP-13": {
