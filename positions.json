@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-25 07:20:25 EDT",
+  "generated_et": "2026-10-25 07:36:28 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2581,13 +2581,13 @@
       "opened_et": "2026-10-24 21:22 ET",
       "holding_account": null,
       "onchain_amount": 191859.19563,
-      "onchain_checked_et": "2026-10-25 07:20:25 EDT",
+      "onchain_checked_et": "2026-10-25 07:36:28 EDT",
       "unrealized": {
         "value_usd": 0.41,
         "price_usd": 2.1319480295736903e-06,
         "pnl_usd": -22.02,
-        "value_sol": 0.004058,
-        "pnl_sol": -0.215535
+        "value_sol": 0.004064,
+        "pnl_sol": -0.215529
       }
     }
   ],
@@ -2613,15 +2613,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-25 07:20:26 EDT",
+    "as_of_et": "2026-10-25 07:36:29 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019158377,
-    "sol_price_usd": 100.80919357534091,
+    "sol_price_usd": 100.64192889474515,
     "sol_usd_approx": 1.93,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.93,
     "note": "Live cash: 0.0192 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792927226385
+    "as_of_ts": 1792928189592
   },
   "recent_notes": [
     {
@@ -2687,8 +2687,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-25 07:20:25 EDT",
-    "generated_ts": 1792927225675,
+    "generated_et": "2026-10-25 07:36:28 EDT",
+    "generated_ts": 1792928188772,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.019158377,
@@ -2706,11 +2706,11 @@
     ],
     "prices": {
       "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": 2.1319480295736903e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985369950141241
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998523700170838
     }
   },
   "realized": {
-    "generated_et": "2026-10-25 07:20:26 EDT",
+    "generated_et": "2026-10-25 07:36:29 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2728,24 +2728,24 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-25 07:20:26 EDT",
+    "as_of_et": "2026-10-25 07:36:29 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019158377,
-    "sol_price_usd": 100.80919357534091,
+    "sol_price_usd": 100.64192889474515,
     "sol_usd_approx": 1.93,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.93,
     "note": "Live cash: 0.0192 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792927226385
+    "as_of_ts": 1792928189592
   },
   "unrealized": {
     "n": 1,
     "value_usd": 0.41,
     "cost_usd": 22.43,
     "pnl_usd": -22.02,
-    "pnl_sol": -0.215535,
-    "sol_price_usd": 100.80919357534091,
-    "as_of_et": "2026-10-25 07:20:26 EDT"
+    "pnl_sol": -0.215529,
+    "sol_price_usd": 100.64192889474515,
+    "as_of_et": "2026-10-25 07:36:29 EDT"
   },
   "holder_history": {
     "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": {
@@ -2915,10 +2915,6 @@
         ],
         [
           1792905636,
-          118
-        ],
-        [
-          1792905696,
           118
         ],
         [
@@ -3528,6 +3524,22 @@
         [
           1792927209,
           115
+        ],
+        [
+          1792927269,
+          115
+        ],
+        [
+          1792927329,
+          115
+        ],
+        [
+          1792927431,
+          115
+        ],
+        [
+          1792928189,
+          115
         ]
       ],
       "d": [
@@ -3700,27 +3712,7 @@
           117
         ],
         [
-          1792905789,
-          117
-        ],
-        [
-          1792905850,
-          117
-        ],
-        [
           1792905910,
-          117
-        ],
-        [
-          1792905970,
-          117
-        ],
-        [
-          1792906030,
-          117
-        ],
-        [
-          1792906090,
           117
         ],
         [
@@ -3728,23 +3720,11 @@
           117
         ],
         [
-          1792906344,
-          117
-        ],
-        [
-          1792906404,
-          117
-        ],
-        [
-          1792906464,
-          117
-        ],
-        [
           1792906524,
           117
         ],
         [
-          1792906585,
+          1792906589,
           117
         ],
         [
@@ -3841,11 +3821,6 @@
         "first_seen": 1792357647,
         "last_seen": 1792360516,
         "symbol": "BULLSHIT"
-      },
-      "HMYd9tosnUXuNHmq7pXmoePRVBLBBjA3JBfydq6upump": {
-        "first_seen": 1792322449,
-        "last_seen": 1792322449,
-        "symbol": "SI276"
       },
       "7Xgc5RacHtGzfhw2HukUBk5V986yBbvshr7rrCoopump": {
         "first_seen": 1792362995,
@@ -4092,16 +4067,6 @@
         "last_seen": 1792362992,
         "symbol": "Groklet"
       },
-      "shib5gSoVKPjwkXrxRk7SbQFzb2R9rQB3TgQWYX4RwW": {
-        "first_seen": 1792274666,
-        "last_seen": 1792322449,
-        "symbol": "SHIB"
-      },
-      "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump": {
-        "first_seen": 1792320074,
-        "last_seen": 1792322449,
-        "symbol": "Macca"
-      },
       "Pre8AREmFPtoJFT8mQSXQLh56cwJmM7CFDRuoGBZiUP": {
         "first_seen": 1792300320,
         "last_seen": 1792330382,
@@ -4187,20 +4152,10 @@
         "last_seen": 1792329680,
         "symbol": "CAPE"
       },
-      "BdXfLfcbDE8YvpbvvmmGTduqcDesaQVUm5xLxgUc2S5t": {
-        "first_seen": 1792310916,
-        "last_seen": 1792322449,
-        "symbol": "texcat"
-      },
       "3A3qjns31YZA6Ung91ZpoPD7J3p1bDFbTJ4ANFAPpump": {
         "first_seen": 1792320075,
         "last_seen": 1792352735,
         "symbol": "mucron"
-      },
-      "FFGQzvcNAucVQXueT7gPZegS8fK4aghXHNzGEvxWpump": {
-        "first_seen": 1792321386,
-        "last_seen": 1792322449,
-        "symbol": "europoor"
       },
       "EW9ezwtqvn3v8RpdKMEQai8n5bmajUiPnC4UBV7zpump": {
         "first_seen": 1792326122,
