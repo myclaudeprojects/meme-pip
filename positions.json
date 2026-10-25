@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-25 09:30:02 EDT",
+  "generated_et": "2026-10-25 09:35:05 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2581,7 +2581,7 @@
       "opened_et": "2026-10-24 21:22 ET",
       "holding_account": null,
       "onchain_amount": 191859.19563,
-      "onchain_checked_et": "2026-10-25 09:30:02 EDT",
+      "onchain_checked_et": "2026-10-25 09:35:05 EDT",
       "unrealized": {
         "value_usd": 0.41,
         "price_usd": 2.1319480295736903e-06,
@@ -2613,15 +2613,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-25 09:30:03 EDT",
+    "as_of_et": "2026-10-25 09:35:06 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019158377,
-    "sol_price_usd": 100.69,
+    "sol_price_usd": 100.69041987558177,
     "sol_usd_approx": 1.93,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.93,
     "note": "Live cash: 0.0192 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792935003333
+    "as_of_ts": 1792935306169
   },
   "recent_notes": [
     {
@@ -2687,8 +2687,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-25 09:30:02 EDT",
-    "generated_ts": 1792935002426,
+    "generated_et": "2026-10-25 09:35:05 EDT",
+    "generated_ts": 1792935305270,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.019158377,
@@ -2706,11 +2706,11 @@
     ],
     "prices": {
       "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": 2.1319480295736903e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9984607480940846
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9984616741955679
     }
   },
   "realized": {
-    "generated_et": "2026-10-25 09:30:03 EDT",
+    "generated_et": "2026-10-25 09:35:06 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2728,15 +2728,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-25 09:30:03 EDT",
+    "as_of_et": "2026-10-25 09:35:06 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019158377,
-    "sol_price_usd": 100.69,
+    "sol_price_usd": 100.69041987558177,
     "sol_usd_approx": 1.93,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.93,
     "note": "Live cash: 0.0192 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792935003333
+    "as_of_ts": 1792935306169
   },
   "unrealized": {
     "n": 1,
@@ -2744,8 +2744,8 @@
     "cost_usd": 22.43,
     "pnl_usd": -22.02,
     "pnl_sol": -0.215531,
-    "sol_price_usd": 100.69,
-    "as_of_et": "2026-10-25 09:30:03 EDT"
+    "sol_price_usd": 100.69041987558177,
+    "as_of_et": "2026-10-25 09:35:06 EDT"
   },
   "holder_history": {
     "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": {
@@ -3668,6 +3668,26 @@
         [
           1792934988,
           112
+        ],
+        [
+          1792935048,
+          112
+        ],
+        [
+          1792935108,
+          112
+        ],
+        [
+          1792935168,
+          112
+        ],
+        [
+          1792935228,
+          112
+        ],
+        [
+          1792935288,
+          112
         ]
       ],
       "d": [
@@ -3928,7 +3948,7 @@
           116
         ],
         [
-          1792913388,
+          1792913448,
           116
         ],
         [
@@ -4068,6 +4088,26 @@
           114
         ],
         [
+          1792931448,
+          114
+        ],
+        [
+          1792931508,
+          114
+        ],
+        [
+          1792931568,
+          114
+        ],
+        [
+          1792931628,
+          114
+        ],
+        [
+          1792931688,
+          114
+        ],
+        [
           1792933486,
           114
         ],
@@ -4089,6 +4129,22 @@
         ],
         [
           1792934688,
+          113
+        ],
+        [
+          1792934748,
+          113
+        ],
+        [
+          1792934808,
+          113
+        ],
+        [
+          1792934868,
+          113
+        ],
+        [
+          1792934928,
           113
         ]
       ]
@@ -4223,11 +4279,6 @@
         "last_seen": 1792356023,
         "symbol": "BABA"
       },
-      "DShht9B8wCRe5t3oqdPB77PnjJbKxbYaZyuWpZQjbonk": {
-        "first_seen": 1792329680,
-        "last_seen": 1792330383,
-        "symbol": "CONK"
-      },
       "HXxJdaQbrYRvwTAM8M8mUPyoRPvmyuUbPFBRkiAAMASS": {
         "first_seen": 1792313280,
         "last_seen": 1792352734,
@@ -4263,11 +4314,6 @@
         "last_seen": 1792354243,
         "symbol": "SAINDRA"
       },
-      "AHFXxCjJmgsK9PtGsHrdAAG9yKip8xAM89SvGJ4Dmoon": {
-        "first_seen": 1792330383,
-        "last_seen": 1792330383,
-        "symbol": "JBMB"
-      },
       "EmcxFTNVDqyLHp11NvwvLZ4D7LKGbG9i7B8RF7dwpump": {
         "first_seen": 1792354896,
         "last_seen": 1792357649,
@@ -4288,11 +4334,6 @@
         "last_seen": 1792362992,
         "symbol": "Groklet"
       },
-      "Pre8AREmFPtoJFT8mQSXQLh56cwJmM7CFDRuoGBZiUP": {
-        "first_seen": 1792300320,
-        "last_seen": 1792330382,
-        "symbol": "POLYMARKET"
-      },
       "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
         "first_seen": 1792766993,
         "last_seen": 1792766993,
@@ -4302,11 +4343,6 @@
         "first_seen": 1792356021,
         "last_seen": 1792357647,
         "symbol": "BUBBLE"
-      },
-      "DioisRY2M15WKza2te7pCvEAe7B1EVp4N1ZrM6tn52Sp": {
-        "first_seen": 1792323455,
-        "last_seen": 1792330383,
-        "symbol": "HAMSTER"
       },
       "purpFPo5voy6fEu8jxSCwVdMs1zyYEYAH6FBQvTYCZK": {
         "first_seen": 1792354243,
