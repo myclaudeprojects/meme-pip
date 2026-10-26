@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-26 03:25:38 EDT",
+  "generated_et": "2026-10-26 03:39:25 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2581,13 +2581,13 @@
       "opened_et": "2026-10-24 21:22 ET",
       "holding_account": null,
       "onchain_amount": 191859.19563,
-      "onchain_checked_et": "2026-10-26 03:25:38 EDT",
+      "onchain_checked_et": "2026-10-26 03:39:25 EDT",
       "unrealized": {
         "value_usd": 0.4,
         "price_usd": 2.0780494312863735e-06,
         "pnl_usd": -22.03,
-        "value_sol": 0.003953,
-        "pnl_sol": -0.21564
+        "value_sol": 0.003971,
+        "pnl_sol": -0.215622
       }
     }
   ],
@@ -2613,15 +2613,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-26 03:25:38 EDT",
+    "as_of_et": "2026-10-26 03:39:26 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019158377,
-    "sol_price_usd": 100.85160432025492,
-    "sol_usd_approx": 1.93,
+    "sol_price_usd": 100.3980973010531,
+    "sol_usd_approx": 1.92,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 2.93,
+    "total_cash_usd_approx": 2.92,
     "note": "Live cash: 0.0192 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792999538770
+    "as_of_ts": 1793000366264
   },
   "recent_notes": [
     {
@@ -2687,8 +2687,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-26 03:25:38 EDT",
-    "generated_ts": 1792999538136,
+    "generated_et": "2026-10-26 03:39:25 EDT",
+    "generated_ts": 1793000365478,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.019158377,
@@ -2706,11 +2706,11 @@
     ],
     "prices": {
       "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": 2.0780494312863735e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985913617451658
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985654197525632
     }
   },
   "realized": {
-    "generated_et": "2026-10-26 03:25:38 EDT",
+    "generated_et": "2026-10-26 03:39:26 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2728,24 +2728,24 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-26 03:25:38 EDT",
+    "as_of_et": "2026-10-26 03:39:26 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019158377,
-    "sol_price_usd": 100.85160432025492,
-    "sol_usd_approx": 1.93,
+    "sol_price_usd": 100.3980973010531,
+    "sol_usd_approx": 1.92,
     "arc_usdc": 0.999361,
-    "total_cash_usd_approx": 2.93,
+    "total_cash_usd_approx": 2.92,
     "note": "Live cash: 0.0192 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1792999538770
+    "as_of_ts": 1793000366264
   },
   "unrealized": {
     "n": 1,
     "value_usd": 0.4,
     "cost_usd": 22.43,
     "pnl_usd": -22.03,
-    "pnl_sol": -0.21564,
-    "sol_price_usd": 100.85160432025492,
-    "as_of_et": "2026-10-26 03:25:38 EDT"
+    "pnl_sol": -0.215622,
+    "sol_price_usd": 100.3980973010531,
+    "as_of_et": "2026-10-26 03:39:26 EDT"
   },
   "holder_history": {
     "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": {
@@ -3682,47 +3682,11 @@
           109
         ],
         [
-          1792978007,
-          109
-        ],
-        [
-          1792978067,
-          109
-        ],
-        [
-          1792978181,
-          109
-        ],
-        [
           1792978262,
           109
         ],
         [
-          1792978323,
-          109
-        ],
-        [
-          1792978383,
-          109
-        ],
-        [
-          1792978443,
-          109
-        ],
-        [
           1792978503,
-          109
-        ],
-        [
-          1792978563,
-          109
-        ],
-        [
-          1792978656,
-          109
-        ],
-        [
-          1792978716,
           109
         ],
         [
@@ -4347,6 +4311,26 @@
         ],
         [
           1792999529,
+          109
+        ],
+        [
+          1792999589,
+          109
+        ],
+        [
+          1792999649,
+          109
+        ],
+        [
+          1792999709,
+          109
+        ],
+        [
+          1792999780,
+          109
+        ],
+        [
+          1793000366,
           109
         ]
       ],
