@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-10-27 05:25:40 EDT",
+  "generated_et": "2026-10-27 05:33:20 EDT",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2581,13 +2581,13 @@
       "opened_et": "2026-10-24 21:22 ET",
       "holding_account": null,
       "onchain_amount": 191859.19563,
-      "onchain_checked_et": "2026-10-27 05:25:40 EDT",
+      "onchain_checked_et": "2026-10-27 05:33:20 EDT",
       "unrealized": {
         "value_usd": 0.39,
         "price_usd": 2.039569798647749e-06,
         "pnl_usd": -22.04,
-        "value_sol": 0.003926,
-        "pnl_sol": -0.215666
+        "value_sol": 0.003928,
+        "pnl_sol": -0.215665
       }
     }
   ],
@@ -2613,15 +2613,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-10-27 05:25:41 EDT",
+    "as_of_et": "2026-10-27 05:33:20 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019509874,
-    "sol_price_usd": 99.66,
+    "sol_price_usd": 99.62073708915496,
     "sol_usd_approx": 1.94,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.94,
     "note": "Live cash: 0.0195 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793093141427
+    "as_of_ts": 1793093600916
   },
   "recent_notes": [
     {
@@ -2687,8 +2687,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-10-27 05:25:40 EDT",
-    "generated_ts": 1793093140734,
+    "generated_et": "2026-10-27 05:33:20 EDT",
+    "generated_ts": 1793093600307,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.019509874,
@@ -2706,11 +2706,11 @@
     ],
     "prices": {
       "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": 2.039569798647749e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9979147353888076
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9978900915262924
     }
   },
   "realized": {
-    "generated_et": "2026-10-27 05:25:41 EDT",
+    "generated_et": "2026-10-27 05:33:20 EDT",
     "n_trades": 93,
     "n_known": 93,
     "n_unknown": 0,
@@ -2728,24 +2728,24 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-10-27 05:25:41 EDT",
+    "as_of_et": "2026-10-27 05:33:20 EDT",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.019509874,
-    "sol_price_usd": 99.66,
+    "sol_price_usd": 99.62073708915496,
     "sol_usd_approx": 1.94,
     "arc_usdc": 0.999361,
     "total_cash_usd_approx": 2.94,
     "note": "Live cash: 0.0195 SOL + Arc USDC $1.00 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793093141427
+    "as_of_ts": 1793093600916
   },
   "unrealized": {
     "n": 1,
     "value_usd": 0.39,
     "cost_usd": 22.43,
     "pnl_usd": -22.04,
-    "pnl_sol": -0.215667,
-    "sol_price_usd": 99.66,
-    "as_of_et": "2026-10-27 05:25:41 EDT"
+    "pnl_sol": -0.215665,
+    "sol_price_usd": 99.62073708915496,
+    "as_of_et": "2026-10-27 05:33:20 EDT"
   },
   "holder_history": {
     "3bam7kHXYshxfqofFjKm3Kc9VWPYwxnE3JsKuqccpump": {
@@ -5064,6 +5064,14 @@
         [
           1793093139,
           103
+        ],
+        [
+          1793093199,
+          103
+        ],
+        [
+          1793093600,
+          103
         ]
       ],
       "d": [
@@ -6168,6 +6176,10 @@
           108
         ],
         [
+          1793007200,
+          108
+        ],
+        [
           1793016482,
           109
         ],
@@ -6809,6 +6821,10 @@
         ],
         [
           1793071539,
+          104
+        ],
+        [
+          1793072000,
           104
         ],
         [
