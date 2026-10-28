@@ -125,6 +125,8 @@
     h += card("Players today", st ? fN(td.players || 0) : "–", st ? `new ${fN(td.newPlayers || 0)} · returning ${fN((td.players || 0) - (td.newPlayers || 0))}` : "stats endpoint unavailable");
     h += card("Players all-time", st ? fN(T.players) : "–", st ? `wallets connected ${fN(T.wallets)} · guests ${fN(T.guests)}` : "");
     h += card("Runs today", st ? fN((td.runsBskt || 0) + (td.runsJuke || 0)) : "–", st ? `BSKT Ball ${fN(td.runsBskt || 0)} · Juke Run ${fN(td.runsJuke || 0)}` + (td.bonusHits ? ` · ${td.bonusHits} bonus hits` : "") : "");
+    const fHM = (m) => { m = Math.round(m || 0); return m >= 60 ? `${Math.floor(m / 60)} h ${m % 60} m` : `${m} m`; };   // playtime (owner 2026-10-28)
+    h += card("Playtime today", st && td.playMin != null ? fHM(td.playMin) : "–", st && td.playMin != null ? `avg ${fN(Math.round(td.avgRunSecs || 0))} s/run · BSKT Ball ${fHM(td.playMinBskt)} · Juke Run ${fHM(td.playMinJuke)}` : "waiting for the stats endpoint");
     h += card("BSKT earned today", st ? fN(earnedT) : "–", st ? `BSKT Ball ${fN(td.earnedBskt || 0)} · Juke ${fN(td.earnedJuke || 0)} (ET day)` : "");
     h += card("BSKT withdrawn today", st ? fN(tw.bskt || 0) : fN(e.sent), st ? `${fN(tw.n || 0)} withdrawals today · game day (UTC) sent ${fN(e.sent)}` : "game day (UTC) sent");
     h += card("Withdrawn all-time", st ? fN(T.withdrawnBskt) : "–", st ? `${fN(T.withdrawals)} withdrawals` + (T.withdrawalsInFlight ? ` · ${T.withdrawalsInFlight} in flight` : "") + (T.withdrawalsFailed ? ` · ${T.withdrawalsFailed} failed` : "") : "");
@@ -220,6 +222,7 @@
       if (d.stats) {
         out += chartBox("Active players", bars(labels, [{ name: "New", c: C.new, v: g(D, "newPlayers") }, { name: "Returning", c: C.ret, v: all.map((x) => ((D[x] || {}).players || 0) - ((D[x] || {}).newPlayers || 0)) }], { stacked: true }));
         out += chartBox("Runs per game", bars(labels, [{ name: "BSKT Ball", c: C.bskt, v: g(D, "runsBskt") }, { name: "Juke Run", c: C.juke, v: g(D, "runsJuke") }], { stacked: true }));
+        out += chartBox("Playtime (minutes)", bars(labels, [{ name: "BSKT Ball", c: C.bskt, v: g(D, "playMinBskt") }, { name: "Juke Run", c: C.juke, v: g(D, "playMinJuke") }], { stacked: true }), "finished runs, wall-clock");
         out += chartBox("BSKT earned vs withdrawn", bars(labels, [{ name: "Earned", c: C.earn, v: all.map((x) => ((D[x] || {}).earnedBskt || 0) + ((D[x] || {}).earnedJuke || 0)) }, { name: "Withdrawn", c: C.wd, v: g(Wd, "bskt") }], {}));
       } else out += chartBox("Players / runs / BSKT earned", '<div class="muted bk-empty">Stats endpoint unavailable on the last snapshot.</div>');
       const xs = all.map((x) => new Date(x + "T12:00:00Z").getTime());
@@ -233,6 +236,7 @@
       if (d.stats) {
         out += chartBox("Active players", bars(labels, [{ name: "New", c: C.new, v: g(H, "newPlayers") }, { name: "Returning", c: C.ret, v: hrs.map((x) => ((H[x] || {}).players || 0) - ((H[x] || {}).newPlayers || 0)) }], { stacked: true }), "distinct per hour");
         out += chartBox("Runs per game", bars(labels, [{ name: "BSKT Ball", c: C.bskt, v: g(H, "runsBskt") }, { name: "Juke Run", c: C.juke, v: g(H, "runsJuke") }], { stacked: true }));
+        out += chartBox("Playtime (minutes)", bars(labels, [{ name: "BSKT Ball", c: C.bskt, v: g(H, "playMinBskt") }, { name: "Juke Run", c: C.juke, v: g(H, "playMinJuke") }], { stacked: true }), "finished runs, wall-clock");
         out += chartBox("BSKT earned vs withdrawn", bars(labels, [{ name: "Earned", c: C.earn, v: hrs.map((x) => ((H[x] || {}).earnedBskt || 0) + ((H[x] || {}).earnedJuke || 0)) }, { name: "Withdrawn", c: C.wd, v: g(Wh, "bskt") }], {}));
       } else out += chartBox("Players / runs / BSKT earned", '<div class="muted bk-empty">Stats endpoint unavailable on the last snapshot.</div>');
       const ser = (d.series || []).filter((s) => dayET(s.t * 1000) === d.today_et), xs = ser.map((s) => s.t * 1000);
