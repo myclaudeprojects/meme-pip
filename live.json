@@ -1,14 +1,18 @@
 {
- "generated_et": "2026-10-28 20:29:44 EDT",
- "generated_ts": 1793233784969,
+ "generated_et": "2026-10-28 20:31:46 EDT",
+ "generated_ts": 1793233906604,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-  "sol": 0.081166749,
+  "sol": 0.018150311,
   "tokens": [
    {
     "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
     "amount": 0.0015
+   },
+   {
+    "mint": "GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump",
+    "amount": 266799.572777
    }
   ]
  },
@@ -17,7 +21,7 @@
   "usdc": 0.05804115878118266
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 102.205,
+  "So11111111111111111111111111111111111111112": 102.105,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01794,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.07433,
@@ -36,7 +40,8 @@
   "2o69gwy6ZhL66KQxNk5Z2YeihCNpPjNneqr2Sn771can": 0.04999,
   "3H9z2W6sB7EZD7YHTZeueLXG2abG4KWAGe9dzJ18fmc9": 1.0081,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.0004657,
-  "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.296e-05
+  "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.296e-05,
+  "GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump": 2.896e-05
  },
  "info": {
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
@@ -47,7 +52,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 33872332,
+   "mc": 33872330,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -83,7 +88,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 19877547,
+   "mc": 19887571,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -95,7 +100,7 @@
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 2089664436,
+   "mc": 2089664618,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -152,6 +157,12 @@
    "mc": 32965,
    "pair": "BVv3uwvWEL2XsWAbwjp5NZG8gs9pv5oW5BJjBG64dfrk",
    "dex": "meteora"
+  },
+  "GnZdVkGALyUgoNA5PARXkxpWSKnBq32Tcb5Vh8hjpump": {
+   "symbol": "ARGUS",
+   "mc": 28968.52,
+   "pair": "GvTBnBQgHFESrrf7ka79bbK4KoKBvwwKeePxJUhiJLzo",
+   "dex": "pumpfun"
   }
  }
 }
