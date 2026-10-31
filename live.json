@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-10-31 07:52:59 EDT",
- "generated_ts": 1793447579865,
+ "generated_et": "2026-10-31 07:55:01 EDT",
+ "generated_ts": 1793447701545,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -21,14 +21,13 @@
   "usdc": 16.044024696870014
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 95.695,
+  "So11111111111111111111111111111111111111112": 95.745,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01721,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.05537,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002719,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.65,
   "9V4iZc2VcbbbLAwK8Do9YQXRK5ZJ3DEz4EEgaN4nDuns": 0.2126,
-  "EKtmPPLaCbEEKiwoHHtV7TsRsmPXs5CMGtQtZFSiinsc": 0.0004299,
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": 6.26,
   "Em8DYuvdQ28PNZqSiAvUxjG32XbpFPm9kwu2y5pdTray": 0.0002063,
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": 1.3,
@@ -41,6 +40,7 @@
   "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": 0.9989,
   "HK37Dqw9Cjhk2wPjfNqB1sU6aFQLCU7cuwEoUgq5C5NU": 0.000101,
   "Bess9scjhF94Y5z4k57SmYwysJ4jcUxAbGsQ9Gu6vmuW": 0.9998,
+  "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": 1.00098,
   "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.704e-06,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 0.0001734,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.096e-05
@@ -54,7 +54,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 32493369,
+   "mc": 32493228,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -66,7 +66,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 271916,
+   "mc": 271936,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -80,12 +80,6 @@
    "symbol": "UNS",
    "mc": 22461024,
    "pair": "CHRxbLewDoEbGTfwujPwY6sfLumzhzRsGor9pUQWtc1r",
-   "dex": "raydium"
-  },
-  "EKtmPPLaCbEEKiwoHHtV7TsRsmPXs5CMGtQtZFSiinsc": {
-   "symbol": "Stamp",
-   "mc": 427317,
-   "pair": "3zb9tdabHj79vgrLF3wE1jCDMtJX9SYpaWRZnc6xiiSA",
    "dex": "raydium"
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
@@ -108,7 +102,7 @@
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 2020963300,
+   "mc": 2021028466,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -159,6 +153,12 @@
    "mc": 9998462548,
    "pair": "MzAkpwXbRBKXGxk3EauiiNPZ6omBmjTCZAVvn6dja33",
    "dex": "meteora"
+  },
+  "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": {
+   "symbol": "USDe",
+   "mc": 316132697,
+   "pair": "Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3",
+   "dex": "pumpswap"
   },
   "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": {
    "symbol": "Dill",
