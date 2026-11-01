@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-01 07:39:53 EST",
- "generated_ts": 1793536793371,
+ "generated_et": "2026-11-01 07:41:55 EST",
+ "generated_ts": 1793536915058,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -25,8 +25,8 @@
   "usdc": 0.05868574417248395
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 94.515,
-  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999,
+  "So11111111111111111111111111111111111111112": 94.56,
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9989,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01743,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.05682,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002708,
@@ -48,9 +48,8 @@
   "3H9z2W6sB7EZD7YHTZeueLXG2abG4KWAGe9dzJ18fmc9": 1.0081,
   "2iWLUYCmAvw3yaQmLzjfM2485ZfVREFDPr7PCaNynjjG": 70993.41,
   "NKEda5nHhNGgjrE9nDdMvaEmkmJ96qqxzBVZEcKmjSg": 39.17,
-  "nikemwCaTqBamHqfRVqPzwtWsmuwdXb6To25xJ2znwT": 8.845e-05,
+  "nikemwCaTqBamHqfRVqPzwtWsmuwdXb6To25xJ2znwT": 9.597e-05,
   "SkA82maVyUBgt4HUvMTLRDGyXX1yJpAsMNPhxEeSTNK": 1.744e-05,
-  "5AUq6HHkgrds14zwY46HwjnbhMqWkJ4XTAeHgjkLpump": 3.072e-06,
   "6UymExPNxsyZwWzaPVvgjWy315yjSSupB8CKFbyjUEp3": 8.918e-06,
   "BFk9SsnBE27zXuqzMDeLsy3yvYAGqeUm8NRMK16Jpump": 3.078e-06,
   "32c8HjtHHQRn8Mz3hsE2k3X9pWLD4mPWHVEvnLSgcxzQ": 2.498e-06,
@@ -63,26 +62,27 @@
   "Esupp99tCAZq4rMaZ28386Psq2wVCyATYN5Zy43duv5y": 3.029e-06,
   "62D2W57cEenWLN2Hhk28icb8CKmcm62hGjmBD3H3pump": 4.354e-06,
   "5xtJVkrjp9HUhfUyVK5wWmJoA3Va3f8cHFq81Wj8yxAw": 3.176e-06,
+  "5AUq6HHkgrds14zwY46HwjnbhMqWkJ4XTAeHgjkLpump": 3.072e-06,
   "FoY2rYvaYHoybxpmNbTPZtJ8YNSco4LF2jkbfZaqpump": 3.092e-06,
-  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 3.272e-05,
+  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 3.364e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.029e-05
  },
  "info": {
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183988841047,
+   "mc": 183970177175,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 32911564,
+   "mc": 32911479,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": {
    "symbol": "FO",
-   "mc": 6632140,
+   "mc": 6632135,
    "pair": "AXXo7N2gcLeVyo8nDsN99UW8Fv6NCsa2DP21WD3SKtM3",
    "dex": "meteora"
   },
@@ -106,7 +106,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 20098032,
+   "mc": 20101843,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -124,7 +124,7 @@
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 1976455132,
+   "mc": 1976455344,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -196,13 +196,13 @@
   },
   "NKEda5nHhNGgjrE9nDdMvaEmkmJ96qqxzBVZEcKmjSg": {
    "symbol": "NKE",
-   "mc": 431408,
+   "mc": 431346,
    "pair": "6kRoMyYBuz4ReLmLyuqiTtSpVB61hAGRrD6xYBrotsBC",
    "dex": "raydium"
   },
   "nikemwCaTqBamHqfRVqPzwtWsmuwdXb6To25xJ2znwT": {
    "symbol": "niketyson",
-   "mc": 85621,
+   "mc": 92894,
    "pair": "CEQeHrfYWiXgZsSbrtkJKsRZe6eUWGWqpRAU7CdbE1ef",
    "dex": "pumpswap"
   },
@@ -211,12 +211,6 @@
    "mc": 17445,
    "pair": "Cki4EosmaLdYDW2nrHaKz47LbK3ohw9dNHVBP9VgTYJG",
    "dex": "raydium"
-  },
-  "5AUq6HHkgrds14zwY46HwjnbhMqWkJ4XTAeHgjkLpump": {
-   "symbol": "NIKEELON",
-   "mc": 3072.49,
-   "pair": "A1F5r2oRRnn32rH9w6MP6TQKsXMCvbmnoXkuNqZZ29Rd",
-   "dex": "pumpfun"
   },
   "6UymExPNxsyZwWzaPVvgjWy315yjSSupB8CKFbyjUEp3": {
    "symbol": "RUNNER",
@@ -290,16 +284,16 @@
    "pair": "DS8PmxqA9Q7ErwrZh4zo3viPcQRVt3rEfk5p9FuxMp54",
    "dex": "pumpfun"
   },
+  "5AUq6HHkgrds14zwY46HwjnbhMqWkJ4XTAeHgjkLpump": {
+   "symbol": "NIKEELON",
+   "mc": 3072.49,
+   "pair": "A1F5r2oRRnn32rH9w6MP6TQKsXMCvbmnoXkuNqZZ29Rd",
+   "dex": "pumpfun"
+  },
   "FoY2rYvaYHoybxpmNbTPZtJ8YNSco4LF2jkbfZaqpump": {
    "symbol": "niketyson",
    "mc": 3092.44,
    "pair": "7s4t97KnuEV5Crbv1NxueTyxD6AKu61FZUTbgR5fmsPU",
-   "dex": "pumpfun"
-  },
-  "13jhyLGn9RxuKhSbKDtUPHRH1CmksYLLHN8GcyuNQRts": {
-   "symbol": "NIKE",
-   "mc": null,
-   "pair": "GLwnAyeZp9QJRVBhQZGwMZGcpwpK14qVs1oU4tP7sfH4",
    "dex": "pumpfun"
   },
   "84brifYVeg5FdvkcCcAYCAfix2KSaD5ZpVkkW8p3dBS": {
@@ -308,9 +302,15 @@
    "pair": "BiduQTSNWUZg7LrNgDNkGuMnsMtWgfynkLgAVLu2S5DU",
    "dex": "pumpfun"
   },
+  "13jhyLGn9RxuKhSbKDtUPHRH1CmksYLLHN8GcyuNQRts": {
+   "symbol": "NIKE",
+   "mc": null,
+   "pair": "GLwnAyeZp9QJRVBhQZGwMZGcpwpK14qVs1oU4tP7sfH4",
+   "dex": "pumpfun"
+  },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
    "symbol": "BORDR",
-   "mc": 32719,
+   "mc": 33641,
    "pair": "4xp7kN4nVt19caq4kM629vL8vJEqpSFVdZAh27wvYPh8",
    "dex": "meteora"
   },
