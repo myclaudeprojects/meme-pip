@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-11-01 15:45:24 EST",
+  "generated_et": "2026-11-01 15:48:46 EST",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2754,33 +2754,36 @@
       "proceeds_usd": 520.12,
       "pnl_sol": 1.5948,
       "pnl_usd": 150.03
-    }
-  ],
-  "manual_positions": [
+    },
     {
-      "mint": "HNxyGpz8AkLqmfBBKMzmugkPE5Bahj2bGPPTNgWGpump",
+      "kind": "manual",
+      "source": "meteora/AI_POSITION.json",
       "symbol": "AI",
-      "status": "manual",
-      "cost_usd": 400.14,
-      "cost_src": "cost_usd",
+      "mint": "HNxyGpz8AkLqmfBBKMzmugkPE5Bahj2bGPPTNgWGpump",
+      "status": "closed",
+      "entry_et": "2026-11-01 15:13 ET",
+      "exit_et": "2026-11-01 15:48 ET",
       "cost_sol": 4.266468474,
-      "tokens_ui": 1935889.337914,
-      "entry_mc": 206700.0,
-      "tp_multiple": 1.7498790517658442,
-      "tp_target_mc": 361700.0,
-      "opened_et": "2026-11-01 15:13 ET",
-      "holding_account": null,
-      "onchain_amount": 1935889.337914,
-      "onchain_checked_et": "2026-11-01 15:45:24 EST",
-      "unrealized": {
-        "value_usd": 233.76,
-        "price_usd": 0.00012075296187675099,
-        "pnl_usd": -166.38,
-        "value_sol": 2.483023,
-        "pnl_sol": -1.783446
-      }
+      "cost_usd": 400.14,
+      "file_proceeds_sol": 2.032333778,
+      "file_proceeds_usd": null,
+      "sell_sigs": [
+        "3TJu5daYrH562ACvUv94m8K4Zem9UCZxCnvNp78jcBz2NzsVcMu9bDDxhChgUMwAP4WYATACFmrcgtBpLqMn1RSo"
+      ],
+      "buy_sig": "64h3yaaow9sh2dscCDVdrGC3rbcMX7C5mNSrembfuz7dVuGz1vmA2pwVdS6gP9nr2nM7fHNPZryyS8VgJpNZCoeH",
+      "exit_reason": null,
+      "flags": [],
+      "onchain_proceeds_sol": 2.032333778,
+      "proceeds_sol": 2.032333778,
+      "proceeds_src": "on-chain",
+      "sol_px_at_sell": 93.7872,
+      "usd_src": "entry SOL px",
+      "proceeds_usd": 190.61,
+      "pnl_sol": -2.234135,
+      "pnl_usd": -209.53
     }
   ],
+  "manual_positions": [],
   "perp_positions": [],
   "perp_summary": {
     "n": 0,
@@ -2803,15 +2806,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-11-01 15:45:24 EST",
+    "as_of_et": "2026-11-01 15:48:47 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 1.467822578,
-    "sol_price_usd": 94.14508335844111,
-    "sol_usd_approx": 138.19,
+    "sol_native": 3.500156356,
+    "sol_price_usd": 94.20259304872732,
+    "sol_usd_approx": 329.72,
     "arc_usdc": 0.058685,
-    "total_cash_usd_approx": 138.25,
-    "note": "Live cash: 1.4678 SOL + Arc USDC $0.06 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793565924767
+    "total_cash_usd_approx": 329.78,
+    "note": "Live cash: 3.5002 SOL + Arc USDC $0.06 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1793566127504
   },
   "recent_notes": [
     {
@@ -2877,11 +2880,11 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-11-01 15:45:24 EST",
-    "generated_ts": 1793565924243,
+    "generated_et": "2026-11-01 15:48:46 EST",
+    "generated_ts": 1793566126922,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
-    "sol": 1.467822578,
+    "sol": 3.500156356,
     "tokens": [
       {
         "mint": "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump",
@@ -2892,348 +2895,52 @@
         "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "amount": 0.0017,
         "program": "spl"
-      },
-      {
-        "mint": "HNxyGpz8AkLqmfBBKMzmugkPE5Bahj2bGPPTNgWGpump",
-        "amount": 1935889.337914,
-        "program": "token-2022"
       }
     ],
     "prices": {
       "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.7079894185697687e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998756409234904,
-      "HNxyGpz8AkLqmfBBKMzmugkPE5Bahj2bGPPTNgWGpump": 0.00012075296187675099
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998750820981755
     }
   },
   "realized": {
-    "generated_et": "2026-11-01 15:45:24 EST",
-    "n_trades": 100,
-    "n_known": 100,
+    "generated_et": "2026-11-01 15:48:47 EST",
+    "n_trades": 101,
+    "n_known": 101,
     "n_unknown": 0,
-    "realized_pnl_sol": 66.67908,
-    "realized_pnl_usd": 7570.57,
+    "realized_pnl_sol": 64.444945,
+    "realized_pnl_usd": 7361.04,
     "today": {
       "date": "2026-11-01",
-      "n": 2,
-      "pnl_sol": 3.081482,
-      "pnl_usd": 291.86
+      "n": 3,
+      "pnl_sol": 0.847347,
+      "pnl_usd": 82.33
     },
     "wins": 24,
-    "losses": 76,
+    "losses": 77,
     "unknown": [],
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-11-01 15:45:24 EST",
+    "as_of_et": "2026-11-01 15:48:47 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
-    "sol_native": 1.467822578,
-    "sol_price_usd": 94.14508335844111,
-    "sol_usd_approx": 138.19,
+    "sol_native": 3.500156356,
+    "sol_price_usd": 94.20259304872732,
+    "sol_usd_approx": 329.72,
     "arc_usdc": 0.058685,
-    "total_cash_usd_approx": 138.25,
-    "note": "Live cash: 1.4678 SOL + Arc USDC $0.06 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793565924767
+    "total_cash_usd_approx": 329.78,
+    "note": "Live cash: 3.5002 SOL + Arc USDC $0.06 (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1793566127504
   },
   "unrealized": {
-    "n": 1,
-    "value_usd": 233.76,
-    "cost_usd": 400.14,
-    "pnl_usd": -166.38,
-    "pnl_sol": -1.783445,
-    "sol_price_usd": 94.14508335844111,
-    "as_of_et": "2026-11-01 15:45:24 EST"
+    "n": 0,
+    "value_usd": 0.0,
+    "cost_usd": 0.0,
+    "pnl_usd": 0.0,
+    "pnl_sol": null,
+    "sol_price_usd": 94.20259304872732,
+    "as_of_et": "2026-11-01 15:48:47 EST"
   },
-  "holder_history": {
-    "HNxyGpz8AkLqmfBBKMzmugkPE5Bahj2bGPPTNgWGpump": {
-      "symbol": "AI",
-      "created_ts": 1793560795.0,
-      "created_src": "Jupiter firstPool.createdAt",
-      "m": [
-        [
-          1793564073,
-          1732
-        ],
-        [
-          1793564133,
-          1769
-        ],
-        [
-          1793564193,
-          1793
-        ],
-        [
-          1793564253,
-          1774
-        ],
-        [
-          1793564313,
-          1786
-        ],
-        [
-          1793564373,
-          1800
-        ],
-        [
-          1793564433,
-          1812
-        ],
-        [
-          1793564493,
-          1799
-        ],
-        [
-          1793564557,
-          1806
-        ],
-        [
-          1793564674,
-          1821
-        ],
-        [
-          1793564734,
-          1820
-        ],
-        [
-          1793564794,
-          1805
-        ],
-        [
-          1793564854,
-          1804
-        ],
-        [
-          1793564915,
-          1825
-        ],
-        [
-          1793564975,
-          1827
-        ],
-        [
-          1793565283,
-          1842
-        ],
-        [
-          1793565343,
-          1842
-        ],
-        [
-          1793565403,
-          1824
-        ],
-        [
-          1793565463,
-          1822
-        ],
-        [
-          1793565523,
-          1811
-        ],
-        [
-          1793565584,
-          1790
-        ],
-        [
-          1793565701,
-          1777
-        ],
-        [
-          1793565761,
-          1772
-        ],
-        [
-          1793565821,
-          1773
-        ],
-        [
-          1793565881,
-          1769
-        ]
-      ],
-      "d": [
-        [
-          1793560795,
-          92
-        ],
-        [
-          1793560833,
-          103
-        ],
-        [
-          1793560893,
-          80
-        ],
-        [
-          1793560957,
-          141
-        ],
-        [
-          1793561074,
-          476
-        ],
-        [
-          1793561134,
-          820
-        ],
-        [
-          1793561194,
-          877
-        ],
-        [
-          1793561254,
-          934
-        ],
-        [
-          1793561315,
-          940
-        ],
-        [
-          1793561375,
-          980
-        ],
-        [
-          1793561683,
-          1563
-        ],
-        [
-          1793561743,
-          1588
-        ],
-        [
-          1793561803,
-          1599
-        ],
-        [
-          1793561863,
-          1621
-        ],
-        [
-          1793561923,
-          1614
-        ],
-        [
-          1793561984,
-          1642
-        ],
-        [
-          1793562101,
-          1711
-        ],
-        [
-          1793562161,
-          1687
-        ],
-        [
-          1793562221,
-          1690
-        ],
-        [
-          1793562281,
-          1698
-        ],
-        [
-          1793563773,
-          1704
-        ],
-        [
-          1793563833,
-          1713
-        ],
-        [
-          1793563893,
-          1725
-        ],
-        [
-          1793563953,
-          1721
-        ],
-        [
-          1793564013,
-          1704
-        ],
-        [
-          1793564073,
-          1730
-        ],
-        [
-          1793564133,
-          1769
-        ],
-        [
-          1793564193,
-          1790
-        ],
-        [
-          1793564257,
-          1771
-        ],
-        [
-          1793564374,
-          1797
-        ],
-        [
-          1793564434,
-          1813
-        ],
-        [
-          1793564494,
-          1800
-        ],
-        [
-          1793564554,
-          1805
-        ],
-        [
-          1793564615,
-          1810
-        ],
-        [
-          1793564675,
-          1826
-        ],
-        [
-          1793564983,
-          1831
-        ],
-        [
-          1793565043,
-          1851
-        ],
-        [
-          1793565103,
-          1856
-        ],
-        [
-          1793565163,
-          1848
-        ],
-        [
-          1793565223,
-          1837
-        ],
-        [
-          1793565284,
-          1842
-        ],
-        [
-          1793565401,
-          1825
-        ],
-        [
-          1793565461,
-          1824
-        ],
-        [
-          1793565521,
-          1810
-        ],
-        [
-          1793565581,
-          1791
-        ]
-      ]
-    }
-  },
+  "holder_history": {},
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
     "last_scan_ts": 1793352263.3674786,
