@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-01 14:17:32 EST",
- "generated_ts": 1793560652366,
+ "generated_et": "2026-11-01 14:19:34 EST",
+ "generated_ts": 1793560774192,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -25,7 +25,7 @@
   "usdc": 0.05868574417248395
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 93.765,
+  "So11111111111111111111111111111111111111112": 93.775,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01754,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.05515,
@@ -39,7 +39,6 @@
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": 4.761e-05,
   "3o2GCwpoUTr6CezPdvMYHmxY9wcfVr5TU1oTb1uLJGVm": 0.007296,
   "3STApFSfFDiCWnfV5eimnCeoHZqmLzqu9hqcGnsZ4XoN": 0.9965,
-  "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": 1.00096,
   "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": 0.9989,
   "FgjFvGiJHrv1cAkZpcE5dPSSWg9xgBE4HJ8ZNaZbwE8a": 0.09208,
   "gNyJyS9pQt33o4y4L3gdWZAF2XHgPrCBRQuaiCZStMe": 0.1672,
@@ -47,7 +46,8 @@
   "3H9z2W6sB7EZD7YHTZeueLXG2abG4KWAGe9dzJ18fmc9": 1.0081,
   "EZAKuC95rHGz7N8rbV199FjVrxsg3nrbcREfZiYrqaZr": 0.09359,
   "AMRA3weARHDmajSyD7MHbyTvoQs3QeLKJDxm8o99baEZ": 1.0001,
-  "MAXXib7SQAQn4ymrwhhR9qMRUcYv8BNhbQxizJn5CCk": 0.0001106,
+  "EsoWuxLqSLH5So5AYA5KhcEoZqDU3J4nWNekrDEDi5eg": 1.00096,
+  "MAXXib7SQAQn4ymrwhhR9qMRUcYv8BNhbQxizJn5CCk": 0.0001199,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 3.355e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.191e-05
  },
@@ -60,7 +60,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 33122618,
+   "mc": 33122624,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -72,7 +72,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 270451,
+   "mc": 270471,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -96,7 +96,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 20103375,
+   "mc": 20099743,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -108,7 +108,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1366791925,
+   "mc": 1368524296,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
@@ -129,12 +129,6 @@
    "mc": 931727284209,
    "pair": "CAngSupLDAtHZ6Z3SG3ePZNk4U2Bcmjf28ugjmiaNrDs",
    "dex": "meteora"
-  },
-  "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": {
-   "symbol": "USDe",
-   "mc": 314834207,
-   "pair": "Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3",
-   "dex": "pumpswap"
   },
   "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": {
    "symbol": "DUSD",
@@ -178,11 +172,23 @@
    "pair": "mKD11DmAju1Ufs73KWtCXHqL7ubSfGFiGMAhc5gdZo6",
    "dex": "orca"
   },
+  "EsoWuxLqSLH5So5AYA5KhcEoZqDU3J4nWNekrDEDi5eg": {
+   "symbol": "XAU",
+   "mc": 100096829,
+   "pair": "GRiNpB1AYQdtGbbTbREUsAGhTHDq7cDoJBtXYx1sHgYJ",
+   "dex": "orca"
+  },
   "MAXXib7SQAQn4ymrwhhR9qMRUcYv8BNhbQxizJn5CCk": {
    "symbol": "Maxxmas",
-   "mc": 100674,
+   "mc": 109152,
    "pair": "5PMZkU7VN4xRM7ikmAXvdGkM8tNwnkebdbzGRHzAyubP",
    "dex": "pumpswap"
+  },
+  "7hJpL4cduHA6he2km9sL5NNs7Xss51p2oeW19KzHpump": {
+   "symbol": "CHARITY",
+   "mc": null,
+   "pair": "8FjhSpHV93tx5tUTkpYv2KpS3CLbYYDswkAaCagQS98y",
+   "dex": "pumpfun"
   },
   "2Q8yv2kAr3AhSJvxJkkfziGkbGkCZM9L776NPgXDpump": {
    "symbol": "imchimass",
@@ -226,16 +232,16 @@
    "pair": "BG7ZkBFgz8eTEo8sZobhBkkoVCBK2QUAyh5iKZGk3oGy",
    "dex": "pumpfun"
   },
-  "9mnVNW49KErWg5ySwXZ1TtvDMVn7xGX2N1qNPJz6Ro3k": {
-   "symbol": "MAXXING",
-   "mc": null,
-   "pair": "Ej3ivTryZKBJCqTKTJ4T92LBhMmifigPmHhPiYkyjLLL",
-   "dex": "pumpfun"
-  },
   "B7dfdxuGmsE4g3BxwuZHchaKTf6xsRKwUykpJmHqpump": {
    "symbol": "MG",
    "mc": null,
    "pair": "DyYPPte6BourniBBdPLxvcFrpU3NQ78SERohtnMbr8qi",
+   "dex": "pumpfun"
+  },
+  "9mnVNW49KErWg5ySwXZ1TtvDMVn7xGX2N1qNPJz6Ro3k": {
+   "symbol": "MAXXING",
+   "mc": null,
+   "pair": "Ej3ivTryZKBJCqTKTJ4T92LBhMmifigPmHhPiYkyjLLL",
    "dex": "pumpfun"
   },
   "EPHef4H26GywFH874X9PUzPBHNAFphj7YZQpW69xZVm6": {
