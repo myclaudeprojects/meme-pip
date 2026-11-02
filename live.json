@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-02 09:18:01 EST",
- "generated_ts": 1793629081820,
+ "generated_et": "2026-11-02 09:20:04 EST",
+ "generated_ts": 1793629204063,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -25,7 +25,7 @@
   "usdc": 0.04950348717026
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 94.03,
+  "So11111111111111111111111111111111111111112": 93.975,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01797,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.05461,
@@ -45,7 +45,7 @@
   "3H9z2W6sB7EZD7YHTZeueLXG2abG4KWAGe9dzJ18fmc9": 1.0081,
   "6oXXRU4gahKUp2jHEi88r7bxJERfT9UZqBomeKGnbeut": 1.0008,
   "2iWLUYCmAvw3yaQmLzjfM2485ZfVREFDPr7PCaNynjjG": 70993.39,
-  "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 0.0001132,
+  "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 0.000121,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 2.624e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.438e-05
  },
@@ -58,7 +58,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 33926526,
+   "mc": 33926533,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -70,7 +70,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 270015,
+   "mc": 270035,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -94,7 +94,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 20172718,
+   "mc": 20161301,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -112,13 +112,13 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1349318855,
+   "mc": 1349730408,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 2038095736,
+   "mc": 2038095975,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -136,7 +136,7 @@
   },
   "EZAKuC95rHGz7N8rbV199FjVrxsg3nrbcREfZiYrqaZr": {
    "symbol": "\ua4d3\u039fGE",
-   "mc": 4679739,
+   "mc": 4679738,
    "pair": "CMCDx87y3hgLLMYWMH2mdoZ82ykp3ziBfuQcnuuHbhuo",
    "dex": "raydium"
   },
@@ -166,7 +166,7 @@
   },
   "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": {
    "symbol": "Learjet",
-   "mc": 106968,
+   "mc": 114294,
    "pair": "B15nKKRQG4Mmgg1WBTWjXjEnJfQZp2NDtjx3r4DNouqL",
    "dex": "pumpswap"
   },
@@ -242,16 +242,16 @@
    "pair": "4HvLwbaDDrR75FD6WzS2GaDkAYmxqsFrSGZaAyPBAXPJ",
    "dex": "pumpfun"
   },
-  "FPwCug31S2YtC8DTDAK57fQzzuFfEvS6QEf6zrNDpump": {
-   "symbol": "BLACKBOX",
-   "mc": null,
-   "pair": "GKct1CcnezJ6qUVxQP1bPnbZMLMkpVhBH597CzfYFnaz",
-   "dex": "pumpfun"
-  },
   "C6XgZupF8Dm3XPX4JzCe9MkVsJsR9bYJjjMaiywGpump": {
    "symbol": "CAMRY",
    "mc": null,
    "pair": "FHpaEksYTF5uaKKi9NesRcfZJ62uZXdANsHgvr8d8o87",
+   "dex": "pumpfun"
+  },
+  "FPwCug31S2YtC8DTDAK57fQzzuFfEvS6QEf6zrNDpump": {
+   "symbol": "BLACKBOX",
+   "mc": null,
+   "pair": "GKct1CcnezJ6qUVxQP1bPnbZMLMkpVhBH597CzfYFnaz",
    "dex": "pumpfun"
   },
   "FZh4Ujf2hYAAFEyvYPxLfavXhAEzHb7iHyQdtkLmpump": {
@@ -266,16 +266,16 @@
    "pair": "Aap242z1YKKDxFBJdoHPNMUHgmyB2wgkSQQ6iTXJ78J4",
    "dex": "pumpfun"
   },
-  "eJNVGCAtPwbnrVgaFaCSmwyZnfZ1i2GiVDnVTk5pump": {
-   "symbol": "Cadillac",
-   "mc": null,
-   "pair": "4xKH6dC4bDNw3yYS4jD8aBswR2z6Twdc89V1pHiDUtxG",
-   "dex": "pumpfun"
-  },
   "H2rjJZqJxqaRxKt9Qrsei33vGusCfNFyTsGfs1xFpump": {
    "symbol": "Cadillac",
    "mc": null,
    "pair": "41EnD7FSN2e8iGCHrRnN4bUz3AZqYNeHGzLK34X9SaGd",
+   "dex": "pumpfun"
+  },
+  "eJNVGCAtPwbnrVgaFaCSmwyZnfZ1i2GiVDnVTk5pump": {
+   "symbol": "Cadillac",
+   "mc": null,
+   "pair": "4xKH6dC4bDNw3yYS4jD8aBswR2z6Twdc89V1pHiDUtxG",
    "dex": "pumpfun"
   },
   "3huVJjjmBFa4MqJ5P7AC9nXfPZfKQmsoGHhQA5U1pump": {
