@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-01 21:10:03 EST",
- "generated_ts": 1793585403068,
+ "generated_et": "2026-11-01 21:12:05 EST",
+ "generated_ts": 1793585525132,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -25,7 +25,7 @@
   "usdc": 0.04950348717026
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 94.895,
+  "So11111111111111111111111111111111111111112": 94.86,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01756,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.05537,
@@ -37,8 +37,8 @@
   "Em8DYuvdQ28PNZqSiAvUxjG32XbpFPm9kwu2y5pdTray": 0.0002057,
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": 1.31,
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": 4.771e-05,
-  "3o2GCwpoUTr6CezPdvMYHmxY9wcfVr5TU1oTb1uLJGVm": 0.007469,
   "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": 0.9985,
+  "3o2GCwpoUTr6CezPdvMYHmxY9wcfVr5TU1oTb1uLJGVm": 0.007469,
   "3STApFSfFDiCWnfV5eimnCeoHZqmLzqu9hqcGnsZ4XoN": 0.9965,
   "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": 1.00096,
   "FgjFvGiJHrv1cAkZpcE5dPSSWg9xgBE4HJ8ZNaZbwE8a": 0.09208,
@@ -46,8 +46,8 @@
   "EZAKuC95rHGz7N8rbV199FjVrxsg3nrbcREfZiYrqaZr": 0.09359,
   "GZDh9WxrV99o8JjUR3X66ruuC2y6FGu8WHrZLHoY3rgq": 0.01,
   "AMRA3weARHDmajSyD7MHbyTvoQs3QeLKJDxm8o99baEZ": 1.0001,
-  "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 0.0001605,
-  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 3.29e-05,
+  "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 0.0001564,
+  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 3.298e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.391e-05
  },
  "info": {
@@ -59,7 +59,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 33155641,
+   "mc": 33155708,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -71,7 +71,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 271082,
+   "mc": 271043,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -95,7 +95,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 20130338,
+   "mc": 20134289,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -107,14 +107,20 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1314296046,
+   "mc": 1318520468,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 2010196826,
+   "mc": 2010220032,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
+   "dex": "raydium"
+  },
+  "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": {
+   "symbol": "DUSD",
+   "mc": 45782488,
+   "pair": "DbsTAmxnFAWRvigSks6DahpKi5Ypz3w2BMKEejTJcGGm",
    "dex": "raydium"
   },
   "3o2GCwpoUTr6CezPdvMYHmxY9wcfVr5TU1oTb1uLJGVm": {
@@ -122,12 +128,6 @@
    "mc": 14939087,
    "pair": "DHocZn9H1b4eMrcoyr3tHi4KT1o4jZabkZBHReu73r5U",
    "dex": "orca"
-  },
-  "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": {
-   "symbol": "DUSD",
-   "mc": 45782694,
-   "pair": "DbsTAmxnFAWRvigSks6DahpKi5Ypz3w2BMKEejTJcGGm",
-   "dex": "raydium"
   },
   "3STApFSfFDiCWnfV5eimnCeoHZqmLzqu9hqcGnsZ4XoN": {
    "symbol": "\u054d\u0405\u216e\u03a4",
@@ -173,7 +173,7 @@
   },
   "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": {
    "symbol": "Learjet",
-   "mc": 151612,
+   "mc": 147696,
    "pair": "B15nKKRQG4Mmgg1WBTWjXjEnJfQZp2NDtjx3r4DNouqL",
    "dex": "pumpswap"
   },
@@ -207,16 +207,16 @@
    "pair": "ANcHGjtfvze6tpzaGCX8DReaWkqsbq5bHNc1YnLd1GXB",
    "dex": "pumpfun"
   },
-  "Ah3PbYjaVMNC7CytruWJwfnWmCovwzawocU21rNupump": {
-   "symbol": "Lear60inu",
-   "mc": null,
-   "pair": "EY7Z58d2zhonDn8GJ2SwUpAjp8Cs8KkgVp9GyWcY1QRj",
-   "dex": "pumpfun"
-  },
   "F2B7RiZkPR4Eh1iVV7gkQE57D8pZZBWWu447e74bpump": {
    "symbol": "CAR",
    "mc": null,
    "pair": "6PvovBQ6ik5LCTTvcbVpArEYigGq6Kw2JYrRQERrQovg",
+   "dex": "pumpfun"
+  },
+  "Ah3PbYjaVMNC7CytruWJwfnWmCovwzawocU21rNupump": {
+   "symbol": "Lear60inu",
+   "mc": null,
+   "pair": "EY7Z58d2zhonDn8GJ2SwUpAjp8Cs8KkgVp9GyWcY1QRj",
    "dex": "pumpfun"
   },
   "3VL9HVSiVkAp2ehawF6HYV4JmR45Riau3fkofcabpump": {
@@ -261,10 +261,10 @@
    "pair": "4XD9GqNrRKYYeESS7nYyGjXurUwFNrY7CEVbjnb5Pjru",
    "dex": "pumpfun"
   },
-  "eJNVGCAtPwbnrVgaFaCSmwyZnfZ1i2GiVDnVTk5pump": {
+  "H2rjJZqJxqaRxKt9Qrsei33vGusCfNFyTsGfs1xFpump": {
    "symbol": "Cadillac",
    "mc": null,
-   "pair": "4xKH6dC4bDNw3yYS4jD8aBswR2z6Twdc89V1pHiDUtxG",
+   "pair": "41EnD7FSN2e8iGCHrRnN4bUz3AZqYNeHGzLK34X9SaGd",
    "dex": "pumpfun"
   },
   "JB9C9Zr7pFQHC73Vm6HuQkNME6wc5SBHyjkgVzTkpump": {
@@ -273,10 +273,16 @@
    "pair": "Aap242z1YKKDxFBJdoHPNMUHgmyB2wgkSQQ6iTXJ78J4",
    "dex": "pumpfun"
   },
-  "H2rjJZqJxqaRxKt9Qrsei33vGusCfNFyTsGfs1xFpump": {
+  "eJNVGCAtPwbnrVgaFaCSmwyZnfZ1i2GiVDnVTk5pump": {
    "symbol": "Cadillac",
    "mc": null,
-   "pair": "41EnD7FSN2e8iGCHrRnN4bUz3AZqYNeHGzLK34X9SaGd",
+   "pair": "4xKH6dC4bDNw3yYS4jD8aBswR2z6Twdc89V1pHiDUtxG",
+   "dex": "pumpfun"
+  },
+  "3huVJjjmBFa4MqJ5P7AC9nXfPZfKQmsoGHhQA5U1pump": {
+   "symbol": "JOEVER",
+   "mc": null,
+   "pair": "BwC6Y9PMMpU4VMWvGYnnXb1z6tdtM62je6Amzgdec52W",
    "dex": "pumpfun"
   },
   "J4DD4bzTaL7gNifqpxnUhyzE2isBp4ysWpb3qbMPpump": {
@@ -285,10 +291,10 @@
    "pair": "GcJZRcDV8PjL6mRfBakeFfLv4HwqjvU3GWX1tG4VZMAt",
    "dex": "pumpfun"
   },
-  "3huVJjjmBFa4MqJ5P7AC9nXfPZfKQmsoGHhQA5U1pump": {
-   "symbol": "JOEVER",
+  "7uZb4MAz5BfCH1aroQmZWxjvVCvToJwQBgR9jfa7pump": {
+   "symbol": "LEARJET",
    "mc": null,
-   "pair": "BwC6Y9PMMpU4VMWvGYnnXb1z6tdtM62je6Amzgdec52W",
+   "pair": "8FyMNJyNbPWRv5BPT8YkHGVcy6aLiybnB3PoLbMa9A68",
    "dex": "pumpfun"
   },
   "9CAQsb14TTUjgLeuNexPHnz9NZtQKcUDdcsW8xhgpump": {
@@ -315,15 +321,9 @@
    "pair": "21CnhNwFCobxTZDf21NknFV8ntysmhQ68nJ3so2MC1Xq",
    "dex": "pumpfun"
   },
-  "7uZb4MAz5BfCH1aroQmZWxjvVCvToJwQBgR9jfa7pump": {
-   "symbol": "LEARJET",
-   "mc": null,
-   "pair": "8FyMNJyNbPWRv5BPT8YkHGVcy6aLiybnB3PoLbMa9A68",
-   "dex": "pumpfun"
-  },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
    "symbol": "BORDR",
-   "mc": 32907,
+   "mc": 32979,
    "pair": "4xp7kN4nVt19caq4kM629vL8vJEqpSFVdZAh27wvYPh8",
    "dex": "meteora"
   },
