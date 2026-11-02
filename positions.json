@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-11-02 10:16:16 EST",
+  "generated_et": "2026-11-02 10:20:20 EST",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2906,13 +2906,13 @@
       "opened_et": "2026-11-01 18:55 ET",
       "holding_account": null,
       "onchain_amount": 9078823.239138,
-      "onchain_checked_et": "2026-11-02 10:16:16 EST",
+      "onchain_checked_et": "2026-11-02 10:20:20 EST",
       "unrealized": {
-        "value_usd": 797.79,
-        "price_usd": 8.787422785212414e-05,
-        "pnl_usd": -858.81,
-        "value_sol": 8.461818,
-        "pnl_sol": -9.082281
+        "value_usd": 886.62,
+        "price_usd": 9.765823378050059e-05,
+        "pnl_usd": -769.98,
+        "value_sol": 9.426885,
+        "pnl_sol": -8.117214
       }
     }
   ],
@@ -2938,15 +2938,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-11-02 10:16:17 EST",
+    "as_of_et": "2026-11-02 10:20:21 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.096516975,
-    "sol_price_usd": 94.28170050875802,
-    "sol_usd_approx": 9.1,
+    "sol_price_usd": 94.05247104155875,
+    "sol_usd_approx": 9.08,
     "arc_usdc": 0.049503,
-    "total_cash_usd_approx": 9.15,
+    "total_cash_usd_approx": 9.13,
     "note": "Live cash: 0.0965 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793632577553
+    "as_of_ts": 1793632823851
   },
   "recent_notes": [
     {
@@ -3012,8 +3012,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-11-02 10:16:16 EST",
-    "generated_ts": 1793632576921,
+    "generated_et": "2026-11-02 10:20:20 EST",
+    "generated_ts": 1793632820579,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.096516975,
@@ -3036,12 +3036,12 @@
     ],
     "prices": {
       "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.7079894185697687e-06,
-      "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 8.787422785212414e-05,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9981443234423479
+      "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 9.765823378050059e-05,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9982181328867881
     }
   },
   "realized": {
-    "generated_et": "2026-11-02 10:16:17 EST",
+    "generated_et": "2026-11-02 10:20:21 EST",
     "n_trades": 105,
     "n_known": 105,
     "n_unknown": 0,
@@ -3059,24 +3059,24 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-11-02 10:16:17 EST",
+    "as_of_et": "2026-11-02 10:20:21 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.096516975,
-    "sol_price_usd": 94.28170050875802,
-    "sol_usd_approx": 9.1,
+    "sol_price_usd": 94.05247104155875,
+    "sol_usd_approx": 9.08,
     "arc_usdc": 0.049503,
-    "total_cash_usd_approx": 9.15,
+    "total_cash_usd_approx": 9.13,
     "note": "Live cash: 0.0965 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793632577553
+    "as_of_ts": 1793632823851
   },
   "unrealized": {
     "n": 1,
-    "value_usd": 797.79,
+    "value_usd": 886.62,
     "cost_usd": 1656.6,
-    "pnl_usd": -858.81,
-    "pnl_sol": -9.082281,
-    "sol_price_usd": 94.28170050875802,
-    "as_of_et": "2026-11-02 10:16:17 EST"
+    "pnl_usd": -769.98,
+    "pnl_sol": -8.117214,
+    "sol_price_usd": 94.05247104155875,
+    "as_of_et": "2026-11-02 10:20:21 EST"
   },
   "holder_history": {
     "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": {
@@ -3511,18 +3511,6 @@
         [
           1793610909,
           1294
-        ],
-        [
-          1793610969,
-          1296
-        ],
-        [
-          1793611029,
-          1297
-        ],
-        [
-          1793611140,
-          1298
         ],
         [
           1793611200,
@@ -4519,6 +4507,22 @@
         [
           1793632550,
           1258
+        ],
+        [
+          1793632610,
+          1260
+        ],
+        [
+          1793632670,
+          1257
+        ],
+        [
+          1793632730,
+          1260
+        ],
+        [
+          1793632794,
+          1258
         ]
       ],
       "d": [
@@ -5149,38 +5153,6 @@
         [
           1793610900,
           1295
-        ],
-        [
-          1793610950,
-          1294
-        ],
-        [
-          1793610960,
-          1295
-        ],
-        [
-          1793611003,
-          1297
-        ],
-        [
-          1793611020,
-          1297
-        ],
-        [
-          1793611063,
-          1299
-        ],
-        [
-          1793611080,
-          1299
-        ],
-        [
-          1793611123,
-          1299
-        ],
-        [
-          1793611183,
-          1300
         ],
         [
           1793611372,
@@ -6727,7 +6699,15 @@
           1307
         ],
         [
+          1793629010,
+          1307
+        ],
+        [
           1793629060,
+          1309
+        ],
+        [
+          1793629070,
           1309
         ],
         [
@@ -6735,8 +6715,16 @@
           1311
         ],
         [
+          1793629130,
+          1311
+        ],
+        [
           1793629180,
           1312
+        ],
+        [
+          1793629194,
+          1308
         ],
         [
           1793629240,
@@ -6919,8 +6907,24 @@
           1266
         ],
         [
+          1793632190,
+          1261
+        ],
+        [
           1793632250,
           1259
+        ],
+        [
+          1793632310,
+          1262
+        ],
+        [
+          1793632370,
+          1259
+        ],
+        [
+          1793632494,
+          1257
         ]
       ]
     }
