@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-11-02 08:15:27 EST",
+  "generated_et": "2026-11-02 08:20:54 EST",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -2906,13 +2906,13 @@
       "opened_et": "2026-11-01 18:55 ET",
       "holding_account": null,
       "onchain_amount": 9078823.239138,
-      "onchain_checked_et": "2026-11-02 08:15:27 EST",
+      "onchain_checked_et": "2026-11-02 08:20:54 EST",
       "unrealized": {
-        "value_usd": 1085.73,
-        "price_usd": 0.0001195893230079237,
-        "pnl_usd": -570.87,
-        "value_sol": 11.568443,
-        "pnl_sol": -5.975656
+        "value_usd": 990.88,
+        "price_usd": 0.00010914206184940111,
+        "pnl_usd": -665.72,
+        "value_sol": 10.582471,
+        "pnl_sol": -6.961628
       }
     }
   ],
@@ -2938,15 +2938,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-11-02 08:15:27 EST",
+    "as_of_et": "2026-11-02 08:20:55 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.055542253,
-    "sol_price_usd": 93.85276082021893,
-    "sol_usd_approx": 5.21,
+    "sol_price_usd": 93.6342282166423,
+    "sol_usd_approx": 5.2,
     "arc_usdc": 0.049503,
-    "total_cash_usd_approx": 5.26,
+    "total_cash_usd_approx": 5.25,
     "note": "Live cash: 0.0555 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793625327716
+    "as_of_ts": 1793625655315
   },
   "recent_notes": [
     {
@@ -3012,8 +3012,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-11-02 08:15:27 EST",
-    "generated_ts": 1793625327237,
+    "generated_et": "2026-11-02 08:20:54 EST",
+    "generated_ts": 1793625654776,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.055542253,
@@ -3036,12 +3036,12 @@
     ],
     "prices": {
       "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.7079894185697687e-06,
-      "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 0.0001195893230079237,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.99857100549709
+      "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 0.00010914206184940111,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985851457101119
     }
   },
   "realized": {
-    "generated_et": "2026-11-02 08:15:27 EST",
+    "generated_et": "2026-11-02 08:20:55 EST",
     "n_trades": 105,
     "n_known": 105,
     "n_unknown": 0,
@@ -3059,24 +3059,24 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-11-02 08:15:27 EST",
+    "as_of_et": "2026-11-02 08:20:55 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.055542253,
-    "sol_price_usd": 93.85276082021893,
-    "sol_usd_approx": 5.21,
+    "sol_price_usd": 93.6342282166423,
+    "sol_usd_approx": 5.2,
     "arc_usdc": 0.049503,
-    "total_cash_usd_approx": 5.26,
+    "total_cash_usd_approx": 5.25,
     "note": "Live cash: 0.0555 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793625327716
+    "as_of_ts": 1793625655315
   },
   "unrealized": {
     "n": 1,
-    "value_usd": 1085.73,
+    "value_usd": 990.88,
     "cost_usd": 1656.6,
-    "pnl_usd": -570.87,
-    "pnl_sol": -5.975656,
-    "sol_price_usd": 93.85276082021893,
-    "as_of_et": "2026-11-02 08:15:27 EST"
+    "pnl_usd": -665.72,
+    "pnl_sol": -6.961628,
+    "sol_price_usd": 93.6342282166423,
+    "as_of_et": "2026-11-02 08:20:55 EST"
   },
   "holder_history": {
     "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": {
@@ -4355,6 +4355,26 @@
         [
           1793625287,
           1327
+        ],
+        [
+          1793625347,
+          1329
+        ],
+        [
+          1793625407,
+          1330
+        ],
+        [
+          1793625535,
+          1326
+        ],
+        [
+          1793625595,
+          1326
+        ],
+        [
+          1793625655,
+          1331
         ]
       ],
       "d": [
@@ -4887,55 +4907,15 @@
           1312
         ],
         [
-          1793603687,
-          1307
-        ],
-        [
           1793603712,
           1308
-        ],
-        [
-          1793603728,
-          1308
-        ],
-        [
-          1793603772,
-          1314
-        ],
-        [
-          1793603788,
-          1314
-        ],
-        [
-          1793603832,
-          1314
-        ],
-        [
-          1793603848,
-          1313
-        ],
-        [
-          1793603892,
-          1312
-        ],
-        [
-          1793603908,
-          1310
-        ],
-        [
-          1793603952,
-          1311
-        ],
-        [
-          1793603968,
-          1311
         ],
         [
           1793604013,
           1314
         ],
         [
-          1793604028,
+          1793604055,
           1314
         ],
         [
@@ -6311,7 +6291,15 @@
           1317
         ],
         [
+          1793621747,
+          1321
+        ],
+        [
           1793621799,
+          1316
+        ],
+        [
+          1793621807,
           1316
         ],
         [
@@ -6323,11 +6311,23 @@
           1321
         ],
         [
+          1793621935,
+          1321
+        ],
+        [
           1793621979,
           1324
         ],
         [
+          1793621995,
+          1324
+        ],
+        [
           1793622039,
+          1322
+        ],
+        [
+          1793622055,
           1322
         ],
         [
@@ -6477,6 +6477,22 @@
         [
           1793624987,
           1332
+        ],
+        [
+          1793625047,
+          1330
+        ],
+        [
+          1793625107,
+          1327
+        ],
+        [
+          1793625295,
+          1327
+        ],
+        [
+          1793625355,
+          1329
         ]
       ]
     }
