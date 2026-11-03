@@ -108,7 +108,7 @@
   <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
     <h1>Solana Organic-Growth Loop</h1>
     <span class="viewonly">View only. The bot manages all trades</span>
-    <nav class="tabs"><button data-view="main" class="on">Positions &amp; scanner</button><button data-view="bskt">BSKT</button></nav>
+    <nav class="tabs"><button data-view="main" class="on">Positions &amp; scanner</button><button data-view="bskt">BSKT</button><button data-view="btc15" id="b15tab">BTC 15m</button></nav>
   </div>
   <div class="meta">
     <span>Last updated: <b id="updated">-</b></span>
@@ -175,6 +175,23 @@
 <main id="view-bskt" hidden>
   <div id="bskt-root"><span class="muted">Loading…</span></div>
 </main>
+<main id="view-btc15" hidden style="padding:16px;max-width:640px;margin:0 auto">
+  <div id="b15-root">
+  <div id="b15-box" style="border-radius:16px;padding:22px;color:#fff;text-align:center;transition:background .2s">
+    <div style="font-size:15px;opacity:.85">Time left in window</div>
+    <div id="b15-left" style="font-size:64px;font-weight:800;line-height:1.1">–</div>
+    <div id="b15-side" style="font-size:30px;font-weight:800;margin-top:6px">–</div>
+    <div id="b15-flip" style="font-size:20px;font-weight:800;color:#f2cc60;min-height:24px"></div>
+    <div id="b15-diff" style="font-size:22px;margin-top:6px">–</div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="card"><div class="k">BTC live (Coinbase)</div><div class="v" id="b15-price">–</div></div>
+    <div class="card"><div class="k">Target</div><div class="v" id="b15-tgt">–</div><div class="s">Paste the app's target to match it exactly:<br><input id="b15-man" inputmode="decimal" placeholder="e.g. 77723.03" style="width:100%;margin-top:4px;padding:6px;font-size:15px"></div></div>
+    <div class="card" style="grid-column:1/-1"><div class="k">Backtested odds for this spot</div><div class="v" id="b15-wr" style="font-size:18px">–</div><div class="s">From 2,999 BTC 15-min windows (Oct 3 – Nov 3). PLAY = 2:00 or less left and BTC at least 0.05% past target. Check the app's payout beats the number shown before buying.</div></div>
+  </div>
+  <div id="b15-err" class="muted" style="margin-top:8px"></div>
+  </div>
+</main>
 <footer>Read-only dashboard: public GET / JSON-RPC reads only. No keys, no signing, no orders.
   Sol <span id="f-sol"></span> · Arc <span id="f-arc"></span></footer>
 
@@ -184,6 +201,7 @@
 <script src="app.js?v=livemc1"></script>
 <script src="bskt.js"></script>
 <script src="cardboard.js"></script>
+<script src="btc15.js?v=1"></script>
 <div id="holder-panel"><div id="holder-panel-body"></div></div>
 </body>
 </html>
