@@ -15,8 +15,8 @@
   }
   async function getTarget(ws) {
     try {
-      const u = "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=" + new Date(ws).toISOString() + "&end=" + new Date(ws + 60000).toISOString();
-      const r = await (await fetch(u)).json(); const c = r.find((x) => x[0] * 1000 === ws) || r[r.length - 1];
+      const u = "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60";
+      const r = await (await fetch(u, { cache: "no-store" })).json(); const c = Array.isArray(r) ? r.find((x) => x[0] * 1000 === ws) : null;
       if (c) S.target = c[3]; // open
     } catch (e) { S.err = "target: " + e.message; }
   }
