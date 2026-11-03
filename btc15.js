@@ -5,7 +5,7 @@
   // Backtest 2026-10-03..11-03, 2,999 BTC 15m windows (Binance 1m): P(side BTC is on at T-left wins)
   const BK = [0, 0.02, 0.05, 0.10, 0.15, 0.25, 0.40, 99];
   const WR = { 3: [59.5, 76.4, 91.0, 96.3, 98.2, 99.0, 100], 2: [63.9, 82.8, 93.5, 98.4, 99.2, 99.5, 100], 1: [71.4, 90.0, 98.2, 99.6, 100, 100, 100] };
-  const S = { price: null, target: null, manual: null, winStart: 0, side: null, flipAt: 0, err: null };
+  const S = { vol: null, price: null, target: null, manual: null, winStart: 0, side: null, flipAt: 0, err: null };
   const fmt = (v) => v == null ? "–" : "$" + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   function winStart(t) { return Math.floor(t / 900000) * 900000; }
   function wr(leftMin, absPct) {
@@ -20,12 +20,28 @@
       if (c) S.target = c[3]; // open
     } catch (e) { S.err = "target: " + e.message; }
   }
+  async function getVol() {
+    // Compare this window's high-low range so far vs the same elapsed minutes in the previous 16 windows (Coinbase 1m candles).
+    try {
+      const r = await (await fetch("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60", { cache: "no-store" })).json();
+      if (!Array.isArray(r)) return;
+      const now = Date.now(), ws = winStart(now), el = Math.max(1, Math.ceil((now - ws) / 60000));
+      const rng = (a) => { if (!a.length) return null; let h = -Infinity, l = Infinity; a.forEach((c) => { h = Math.max(h, c[2]); l = Math.min(l, c[1]); }); return (h - l) / l * 100; };
+      const cur = r.filter((c) => c[0] * 1000 >= ws); if (S.price) cur.push([0, S.price, S.price]);
+      const past = [];
+      for (let k = 1; k <= 16; k++) { const w0 = ws - k * 900000; const a = r.filter((c) => c[0] * 1000 >= w0 && c[0] * 1000 < w0 + el * 60000); if (a.length >= Math.min(el, 3) * 0.6) { const v = rng(a); if (v != null) past.push(v); } }
+      const c = rng(cur); if (c == null || past.length < 4) return;
+      const avg = past.reduce((x, y) => x + y, 0) / past.length;
+      S.vol = { cur: c, avg, ratio: c / avg, el, n: past.length };
+    } catch (e) {}
+  }
   async function tick() {
     const now = Date.now(), ws = winStart(now);
     if (ws !== S.winStart) { S.winStart = ws; S.target = null; S.manual = null; S.side = null; const inp = $("b15-man"); if (inp) inp.value = ""; await getTarget(ws); }
     else if (S.target == null) await getTarget(ws);
     try { const r = await (await fetch("https://api.exchange.coinbase.com/products/BTC-USD/ticker")).json(); S.price = Number(r.price); S.err = null; }
     catch (e) { S.err = "price: " + e.message; }
+    if (!S.volAt || Date.now() - S.volAt > 10000) { S.volAt = Date.now(); getVol(); }
     render();
   }
   function render() {
@@ -50,6 +66,13 @@
     $("b15-wr").textContent = w == null ? "shows at 3:00 left" : w.toFixed(1) + "% wins · take it only if payout > " + (100 / w).toFixed(2) + "x";
     $("b15-flip").textContent = flipped ? "FLIPPED" : "";
     $("b15-err").textContent = S.err || "";
+    const v = S.vol;
+    if (v) {
+      const lv = v.ratio < 0.7 ? ["CALM", "#3fb950"] : v.ratio < 1.3 ? ["NORMAL", "#8b949e"] : v.ratio < 2 ? ["HIGH", "#d29922"] : ["WILD", "#f85149"];
+      $("b15-vol").textContent = v.ratio.toFixed(1) + "x normal · " + lv[0]; $("b15-vol").style.color = lv[1];
+      $("b15-volbar").style.width = Math.min(100, v.ratio / 3 * 100) + "%"; $("b15-volbar").style.background = lv[1];
+      $("b15-vols").textContent = "This candle's range so far " + v.cur.toFixed(3) + "% vs " + v.avg.toFixed(3) + "% avg at the same point (first " + v.el + " min) in the last " + v.n + " candles." + (v.ratio >= 1.3 ? " Big swings: only take bigger gaps ($80+)." : "");
+    }
   }
   function show(on) { $("view-btc15").hidden = !on; if (on) { if (location.hash !== "#btc15") history.replaceState(null, "", "#btc15"); render(); } else if (location.hash === "#btc15") history.replaceState(null, "", location.pathname + location.search); }
   document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => {
