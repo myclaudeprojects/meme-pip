@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-03 16:36:25 EST",
- "generated_ts": 1793741785989,
+ "generated_et": "2026-11-03 16:38:37 EST",
+ "generated_ts": 1793741917854,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,16 +29,16 @@
   "usdc": 32.128546436314
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 93.7,
-  "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 7.502e-06,
+  "So11111111111111111111111111111111111111112": 93.685,
+  "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 7.405e-06,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999,
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01891,
+  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01894,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.05739,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002697,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.56,
   "DRoPH9pb1eXQ3VvhwWuP1k5P5R9hkxVmniZCouihxH6w": 4.015e-05,
   "EKtmPPLaCbEEKiwoHHtV7TsRsmPXs5CMGtQtZFSiinsc": 0.0002249,
-  "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": 6.31,
+  "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": 6.3,
   "Em8DYuvdQ28PNZqSiAvUxjG32XbpFPm9kwu2y5pdTray": 0.0002044,
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": 4.952e-05,
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": 1.32,
@@ -50,14 +50,14 @@
   "EZAKuC95rHGz7N8rbV199FjVrxsg3nrbcREfZiYrqaZr": 0.09359,
   "2TuZAaGjMmDzLbESsBH1gUNu4jiGHMcH9Na92S2g3mLe": 0.09118,
   "2o69gwy6ZhL66KQxNk5Z2YeihCNpPjNneqr2Sn771can": 0.04999,
-  "AxPzkSJKU3ACqZu7qpq8ov29g4BENZBM4SAZwUUUFo8M": 0.000338,
+  "AxPzkSJKU3ACqZu7qpq8ov29g4BENZBM4SAZwUUUFo8M": 0.0002669,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 2.308e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.258e-05
  },
  "info": {
   "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": {
    "symbol": "Learjet",
-   "mc": 7084,
+   "mc": 6992,
    "pair": "B15nKKRQG4Mmgg1WBTWjXjEnJfQZp2NDtjx3r4DNouqL",
    "dex": "pumpswap"
   },
@@ -69,7 +69,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 35707498,
+   "mc": 35764548,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -81,7 +81,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 269763,
+   "mc": 269736,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -105,7 +105,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 20196060,
+   "mc": 20189018,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -177,15 +177,9 @@
   },
   "AxPzkSJKU3ACqZu7qpq8ov29g4BENZBM4SAZwUUUFo8M": {
    "symbol": "Mag",
-   "mc": 331952,
+   "mc": 262197,
    "pair": "54m3ACZLA7hK76HsbgRhYySVecaabP7T4J75uXe2ESNe",
    "dex": "pumpswap"
-  },
-  "Dc8U2LoNhMECHE7YobiTdKaJwVZAzqJFDzGWPbdM5DKz": {
-   "symbol": "memecoiners",
-   "mc": null,
-   "pair": "6y1mp8PWfXbV18cVa6VPM3dZmdjVqu4Ke4KH9vR9bCyF",
-   "dex": "pumpfun"
   },
   "Etit44AdjSqg6KsRjGxQCMHKN7U6NaWB4W2f2izedWqB": {
    "symbol": "memecoiners",
@@ -197,6 +191,12 @@
    "symbol": "MAGCAT",
    "mc": null,
    "pair": "C5Vy7jdDQbipfYxwEWuzVQy5w5itv8NK8B1EzCSzKaPs",
+   "dex": "pumpfun"
+  },
+  "Dc8U2LoNhMECHE7YobiTdKaJwVZAzqJFDzGWPbdM5DKz": {
+   "symbol": "memecoiners",
+   "mc": null,
+   "pair": "6y1mp8PWfXbV18cVa6VPM3dZmdjVqu4Ke4KH9vR9bCyF",
    "dex": "pumpfun"
   },
   "BEu5AXBeXipoCuLvmA6FnWWUcAVE8xz1h5S2y31wpump": {
@@ -313,16 +313,16 @@
    "pair": "8nvN768ShXUa4HwAXWYfu6dSP8ZA9xnkqWCumWbH9tYs",
    "dex": "pumpfun"
   },
-  "DsW32RFwfJ2s6mptEbRRDcnwJLBwa8MVJTvMZGNBpump": {
-   "symbol": "Magcoin",
+  "7DhhJArk8aBHVAistPfr4u64xwwvGdXMyXYaxDzupump": {
+   "symbol": "BABYMAG",
    "mc": null,
-   "pair": "biiqBTJRpwzZaUUFo8KtamGYtiTbz15BrK6QJehSUY9",
+   "pair": "35YRcgAzKhzyVYEowbnsy8L1M8hGUJSJme6U5n82y3Ko",
    "dex": "pumpfun"
   },
-  "CVdZkpjRSKH2zBoo41qssDSFW7KKdZEFpnJBHdanpump": {
-   "symbol": "Willy",
+  "HCUmCXPTTvWFwNh9UCrzk1PLQ4UrCYKv8kb7zqBqpump": {
+   "symbol": "Staley",
    "mc": null,
-   "pair": "47J8jkDDMEQSp4KpDnyQ1FGay8h63BedhZr9QHM6XsPV",
+   "pair": "J8gBwrsRE9VMqrKHRQpihQHA1ap85oDP9aK1nR5b1pLb",
    "dex": "pumpfun"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
