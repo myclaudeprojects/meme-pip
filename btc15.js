@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   const $ = (id) => document.getElementById(id);
-  const VER = 5;
+  const VER = 6;
   // Fetch with a 5s timeout so a stalled request on a sleeping phone can't freeze the tab.
   const _f = window.fetch.bind(window);
   const fetch = (u, o) => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 5000); return _f(u, Object.assign({}, o, { signal: c.signal })).finally(() => clearTimeout(t)); };
@@ -38,7 +38,13 @@
       for (let k = 1; k <= 16; k++) { const w0 = ws - k * 900000; const a = r.filter((c) => c[0] * 1000 >= w0 && c[0] * 1000 < w0 + el * 60000); if (a.length >= Math.min(el, 3) * 0.6) { const v = rng(a); if (v != null) past.push(v); } }
       const c = rng(cur); if (c == null || past.length < 4) return;
       const avg = past.reduce((x, y) => x + y, 0) / past.length;
-      S.vol = { cur: c, avg, ratio: c / avg, el, n: past.length };
+      // Safe lead (owner 2026-11-03): how far BTC actually moved over the last 2:00 of each of the last 8 finished candles.
+      // Minimum lead = 1.2x the 75th-percentile move (never under $40). Over $150, or this candle WILD (2x+), = too volatile, no PLAY.
+      const fin = [];
+      for (let k = 1; k <= 8; k++) { const w0 = ws - k * 900000; const a = r.find((x) => x[0] * 1000 === w0 + 780000), b = r.find((x) => x[0] * 1000 === w0 + 840000); if (a && b) fin.push(Math.abs(b[4] - a[3])); }
+      let minLead = 40;
+      if (fin.length >= 5) { fin.sort((x, y) => x - y); minLead = Math.max(40, Math.ceil(fin[Math.floor(fin.length * 0.75)] * 1.2 / 10) * 10); }
+      S.vol = { cur: c, avg, ratio: c / avg, el, n: past.length, minLead, nFin: fin.length, tooVol: minLead > 150 || c / avg >= 2 };
     } catch (e) {}
   }
   async function tick() {
@@ -59,25 +65,26 @@
     if (tgt && p) { usd = p - tgt; pct = (p / tgt - 1) * 100; side = usd >= 0 ? "OVER" : "UNDER"; }
     if (side && S.side && side !== S.side) S.flipAt = now; if (side) S.side = side;
     const w = pct == null ? null : wr(lm, Math.abs(pct));
-    const play = lm <= 2.05 && lm > 0.25 && pct != null && Math.abs(pct) >= 0.05;
+    const v = S.vol, minLead = v ? v.minLead : 40, tooVol = !!(v && v.tooVol);
+    const play = !tooVol && lm <= 2.05 && lm > 0.25 && pct != null && Math.abs(pct) >= 0.05 && Math.abs(usd) >= minLead;
     const flipped = now - S.flipAt < 10000;
     const col = side === "OVER" ? "#1a7f37" : side === "UNDER" ? "#cf222e" : "#30363d";
     const box = $("b15-box");
     box.style.background = col; box.style.opacity = play || lm <= 3 ? "1" : "0.45";
     box.style.outline = flipped ? "6px solid #f2cc60" : "none";
-    $("b15-side").textContent = side ? (play ? side + " — PLAY" : side + (lm > 2.05 ? " — wait for 2:00" : " — too close")) : "–";
+    $("b15-side").textContent = side ? (play ? side + " — PLAY" : side + (tooVol ? " — SIT OUT" : lm > 2.05 ? " — wait for 2:00" : " — need $" + minLead + "+")) : "–";
+    const wn = $("b15-warn"); if (wn) { wn.hidden = !tooVol; wn.textContent = "⚠ MARKET TOO VOLATILE — don't trade these conditions" + (v ? " (needs $" + minLead + "+ lead, this candle " + v.ratio.toFixed(1) + "x normal)" : ""); }
     $("b15-left").textContent = left > 0 ? mm + ":" + String(ss).padStart(2, "0") : "0:00";
     $("b15-price").textContent = fmt(p); $("b15-tgt").textContent = fmt(tgt) + (S.manual ? " (yours)" : "");
     $("b15-diff").textContent = usd == null ? "–" : (usd >= 0 ? "+" : "−") + "$" + Math.abs(usd).toFixed(2) + " (" + (pct >= 0 ? "+" : "") + pct.toFixed(3) + "%)";
     $("b15-wr").textContent = w == null ? "shows at 3:00 left" : w.toFixed(1) + "% wins · take it only if payout > " + (100 / w).toFixed(2) + "x";
     $("b15-flip").textContent = flipped ? "FLIPPED" : "";
     $("b15-err").textContent = S.err || "";
-    const v = S.vol;
     if (v) {
       const lv = v.ratio < 0.7 ? ["CALM", "#3fb950"] : v.ratio < 1.3 ? ["NORMAL", "#8b949e"] : v.ratio < 2 ? ["HIGH", "#d29922"] : ["WILD", "#f85149"];
       $("b15-vol").textContent = v.ratio.toFixed(1) + "x normal · " + lv[0]; $("b15-vol").style.color = lv[1];
       $("b15-volbar").style.width = Math.min(100, v.ratio / 3 * 100) + "%"; $("b15-volbar").style.background = lv[1];
-      $("b15-vols").textContent = "This candle's range so far " + v.cur.toFixed(3) + "% vs " + v.avg.toFixed(3) + "% avg at the same point (first " + v.el + " min) in the last " + v.n + " candles." + (v.ratio >= 1.3 ? " Big swings: only take bigger gaps ($80+)." : "");
+      $("b15-vols").textContent = "This candle's range so far " + v.cur.toFixed(3) + "% vs " + v.avg.toFixed(3) + "% avg at the same point (first " + v.el + " min) in the last " + v.n + " candles." + " Last 2:00 swings in recent candles mean you need a lead of at least $" + minLead + " at 2:00 left." + (tooVol ? " Too volatile right now: sit out." : "");
     }
   }
   function show(on) { $("view-btc15").hidden = !on; if (on) { if (location.hash !== "#btc15") history.replaceState(null, "", "#btc15"); render(); } else if (location.hash === "#btc15") history.replaceState(null, "", location.pathname + location.search); }
