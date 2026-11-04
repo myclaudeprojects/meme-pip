@@ -2,6 +2,10 @@
 (function () {
   "use strict";
   const $ = (id) => document.getElementById(id);
+  const VER = 5;
+  // Fetch with a 5s timeout so a stalled request on a sleeping phone can't freeze the tab.
+  const _f = window.fetch.bind(window);
+  const fetch = (u, o) => { const c = new AbortController(); const t = setTimeout(() => c.abort(), 5000); return _f(u, Object.assign({}, o, { signal: c.signal })).finally(() => clearTimeout(t)); };
   // Backtest 2026-10-03..11-03, 2,999 BTC 15m windows (Binance 1m): P(side BTC is on at T-left wins)
   const BK = [0, 0.02, 0.05, 0.10, 0.15, 0.25, 0.40, 99];
   const WR = { 3: [59.5, 76.4, 91.0, 96.3, 98.2, 99.0, 100], 2: [63.9, 82.8, 93.5, 98.4, 99.2, 99.5, 100], 1: [71.4, 90.0, 98.2, 99.6, 100, 100, 100] };
@@ -84,5 +88,10 @@
   window.addEventListener("hashchange", () => { if (location.hash === "#btc15") $("b15tab").click(); });
   $("b15-man").addEventListener("input", (e) => { const v = Number(String(e.target.value).replace(/[$,\s]/g, "")); S.manual = v > 0 ? v : null; render(); });
   if (location.hash === "#btc15") setTimeout(() => $("b15tab").click(), 0);
+  // Self-heal: when the phone wakes or the tab comes back, refetch right away.
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) { S.tgtAt = 0; S.volAt = 0; if (S.target == null) S.winStart = 0; tick(); } });
+  window.addEventListener("focus", () => { S.tgtAt = 0; tick(); });
+  // Auto-reload if a newer version of this tab has been deployed.
+  setInterval(async () => { try { const h = await (await fetch("index.html?x=" + Date.now(), { cache: "no-store" })).text(); const m = h.match(/btc15\.js\?v=(\d+)/); if (m && Number(m[1]) > VER && !$("view-btc15").hidden) location.reload(); } catch (e) {} }, 60000);
   tick(); setInterval(tick, 1000); setInterval(render, 250);
 })();
