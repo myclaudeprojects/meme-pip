@@ -3046,7 +3046,7 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-11-03 19:20:56 EST",
+    "as_of_et": "2026-11-03 19:20:57 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.0199544,
     "sol_price_usd": 91.91896609254924,
@@ -3054,7 +3054,7 @@
     "arc_usdc": 0.049503,
     "total_cash_usd_approx": 1.88,
     "note": "Live cash: 0.0200 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793751657041
+    "as_of_ts": 1793751657113
   },
   "recent_notes": [
     {
@@ -3121,7 +3121,7 @@
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
     "generated_et": "2026-11-03 19:20:56 EST",
-    "generated_ts": 1793751656232,
+    "generated_ts": 1793751656508,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.0199544,
@@ -3149,7 +3149,7 @@
     }
   },
   "realized": {
-    "generated_et": "2026-11-03 19:20:56 EST",
+    "generated_et": "2026-11-03 19:20:57 EST",
     "n_trades": 109,
     "n_known": 109,
     "n_unknown": 0,
@@ -3167,7 +3167,7 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-11-03 19:20:56 EST",
+    "as_of_et": "2026-11-03 19:20:57 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.0199544,
     "sol_price_usd": 91.91896609254924,
@@ -3175,7 +3175,7 @@
     "arc_usdc": 0.049503,
     "total_cash_usd_approx": 1.88,
     "note": "Live cash: 0.0200 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793751657041
+    "as_of_ts": 1793751657113
   },
   "unrealized": {
     "n": 1,
@@ -3184,7 +3184,7 @@
     "pnl_usd": -1604.32,
     "pnl_sol": -16.975347,
     "sol_price_usd": 91.91896609254924,
-    "as_of_et": "2026-11-03 19:20:56 EST"
+    "as_of_et": "2026-11-03 19:20:57 EST"
   },
   "holder_history": {
     "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": {
