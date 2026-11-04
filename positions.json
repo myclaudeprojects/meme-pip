@@ -3054,7 +3054,7 @@
     "arc_usdc": 0.049503,
     "total_cash_usd_approx": 1.89,
     "note": "Live cash: 0.0200 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793752272103
+    "as_of_ts": 1793752272216
   },
   "recent_notes": [
     {
@@ -3121,7 +3121,7 @@
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
     "generated_et": "2026-11-03 19:30:43 EST",
-    "generated_ts": 1793752243590,
+    "generated_ts": 1793752243680,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.0199544,
@@ -3142,7 +3142,11 @@
         "program": "spl"
       }
     ],
-    "prices": {}
+    "prices": {
+      "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.6482731771068262e-06,
+      "8Wi25nQhEay9KwAsoguEs3y1uxaJmCRQxRYnSY9dpump": 5.758351190357978e-06,
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9985223019836534
+    }
   },
   "realized": {
     "generated_et": "2026-11-03 19:31:12 EST",
@@ -3171,7 +3175,7 @@
     "arc_usdc": 0.049503,
     "total_cash_usd_approx": 1.89,
     "note": "Live cash: 0.0200 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793752272103
+    "as_of_ts": 1793752272216
   },
   "unrealized": {
     "n": 1,
