@@ -13,17 +13,19 @@
     for (let i = 0; i < BK.length - 1; i++) if (absPct >= BK[i] && absPct < BK[i + 1]) return WR[k][i];
     return 100;
   }
+  // Coinbase's CDN caches the plain candles URL for up to 5 min, so a new window's first candle can be missing. A unique start/end range forces fresh data.
+  function candlesUrl(fromMs) { return "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=" + new Date(fromMs).toISOString() + "&end=" + new Date().toISOString(); }
   async function getTarget(ws) {
     try {
-      const u = "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60";
-      const r = await (await fetch(u, { cache: "no-store" })).json(); const c = Array.isArray(r) ? r.find((x) => x[0] * 1000 === ws) : null;
+      S.tgtAt = Date.now();
+      const r = await (await fetch(candlesUrl(ws - 600000), { cache: "no-store" })).json(); const c = Array.isArray(r) ? r.find((x) => x[0] * 1000 === ws) : null;
       if (c) S.target = c[3]; // open
     } catch (e) { S.err = "target: " + e.message; }
   }
   async function getVol() {
     // Compare this window's high-low range so far vs the same elapsed minutes in the previous 16 windows (Coinbase 1m candles).
     try {
-      const r = await (await fetch("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60", { cache: "no-store" })).json();
+      const r = await (await fetch(candlesUrl(winStart(Date.now()) - 17 * 900000), { cache: "no-store" })).json();
       if (!Array.isArray(r)) return;
       const now = Date.now(), ws = winStart(now), el = Math.max(1, Math.ceil((now - ws) / 60000));
       const rng = (a) => { if (!a.length) return null; let h = -Infinity, l = Infinity; a.forEach((c) => { h = Math.max(h, c[2]); l = Math.min(l, c[1]); }); return (h - l) / l * 100; };
@@ -38,7 +40,7 @@
   async function tick() {
     const now = Date.now(), ws = winStart(now);
     if (ws !== S.winStart) { S.winStart = ws; S.target = null; S.manual = null; S.side = null; const inp = $("b15-man"); if (inp) inp.value = ""; await getTarget(ws); }
-    else if (S.target == null) await getTarget(ws);
+    else if (S.target == null && (!S.tgtAt || Date.now() - S.tgtAt > 3000)) await getTarget(ws);
     try { const r = await (await fetch("https://api.exchange.coinbase.com/products/BTC-USD/ticker")).json(); S.price = Number(r.price); S.err = null; }
     catch (e) { S.err = "price: " + e.message; }
     if (!S.volAt || Date.now() - S.volAt > 10000) { S.volAt = Date.now(); getVol(); }
