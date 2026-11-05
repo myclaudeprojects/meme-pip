@@ -186,10 +186,12 @@
     <div id="b15-diff" style="font-size:22px;margin-top:6px">–</div>
   </div>
   <div class="grid" style="margin-top:12px">
-    <div class="card"><div class="k">BTC live (Coinbase)</div><div class="v" id="b15-price">–</div></div>
-    <div class="card"><div class="k">Target</div><div class="v" id="b15-tgt">–</div><div class="s">Paste the app's target to match it exactly:<br><input id="b15-man" inputmode="decimal" placeholder="e.g. 77723.03" style="width:100%;margin-top:4px;padding:6px;font-size:15px"></div></div>
+    <div class="card"><div class="k">BTC estimate (spot avg)</div><div class="v" id="b15-price">–</div><div class="s" id="b15-price-sub">multi-exchange estimate of CF BRTI</div></div>
+    <div class="card"><div class="k">60s avg estimate</div><div class="v" id="b15-price60">–</div><div class="s" id="b15-diff-sub">settlement uses prior 60s BRTI avg</div></div>
+    <div class="card"><div class="k">Target</div><div class="v" id="b15-tgt">–</div><div class="s" id="b15-tgt-src">Kalshi KXBTC15M floor_strike</div><div class="s">Paste the app's target to override:<br><input id="b15-man" inputmode="decimal" placeholder="e.g. 77723.03" style="width:100%;margin-top:4px;padding:6px;font-size:15px"></div></div>
+    <div class="card"><div class="k">Kalshi Over / Under</div><div class="v" style="font-size:20px"><span id="b15-yes">–</span> / <span id="b15-no">–</span></div><div class="s">yes_ask / no_ask (Over / Under)</div></div>
     <div class="card" style="grid-column:1/-1"><div class="k">Volatility this candle</div><div class="v" id="b15-vol" style="font-size:20px">–</div><div style="height:8px;background:#30363d;border-radius:4px;margin:6px 0;overflow:hidden"><div id="b15-volbar" style="height:100%;width:0;transition:width .3s"></div></div><div class="s" id="b15-vols">Loading…</div></div>
-    <div class="card" style="grid-column:1/-1"><div class="k">Backtested odds for this spot</div><div class="v" id="b15-wr" style="font-size:18px">–</div><div class="s">From 2,999 BTC 15-min windows (Oct 3 – Nov 3). PLAY = 2:00 or less left, BTC at least 0.05% past target, and the lead beats the safe minimum for current volatility. Check the app's payout beats the number shown before buying.</div></div>
+    <div class="card" style="grid-column:1/-1"><div class="k">Backtested odds for this spot</div><div class="v" id="b15-wr" style="font-size:18px">–</div><div class="s">From 2,999 BTC 15-min windows (Oct 3 – Nov 3). PLAY = 2:00 or less left, BTC at least 0.05% past target, and the lead beats the safe minimum for current volatility. Check the app's payout beats the number shown before buying. Gap uses the 60s avg estimate vs Kalshi floor_strike.</div></div>
   </div>
   <div id="b15-err" class="muted" style="margin-top:8px"></div>
   </div>
@@ -203,7 +205,7 @@
 <script src="app.js?v=livemc1"></script>
 <script src="bskt.js"></script>
 <script src="cardboard.js"></script>
-<script src="btc15.js?v=6"></script>
+<script src="btc15.js?v=7"></script>
 <div id="holder-panel"><div id="holder-panel-body"></div></div>
 </body>
 </html>
