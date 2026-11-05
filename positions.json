@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-11-05 15:10:28 EST",
+  "generated_et": "2026-11-05 15:15:13 EST",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -3049,15 +3049,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-11-05 15:10:29 EST",
+    "as_of_et": "2026-11-05 15:15:13 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.020213881,
-    "sol_price_usd": 89.65059814690795,
+    "sol_price_usd": 89.7309534752501,
     "sol_usd_approx": 1.81,
     "arc_usdc": 0.049503,
     "total_cash_usd_approx": 1.86,
     "note": "Live cash: 0.0202 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793909429535
+    "as_of_ts": 1793909713830
   },
   "recent_notes": [
     {
@@ -3123,8 +3123,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-11-05 15:10:28 EST",
-    "generated_ts": 1793909428882,
+    "generated_et": "2026-11-05 15:15:13 EST",
+    "generated_ts": 1793909713179,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.020213881,
@@ -3142,11 +3142,11 @@
     ],
     "prices": {
       "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.6482731771068262e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9982253159834975
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9981689851063998
     }
   },
   "realized": {
-    "generated_et": "2026-11-05 15:10:29 EST",
+    "generated_et": "2026-11-05 15:15:13 EST",
     "n_trades": 110,
     "n_known": 110,
     "n_unknown": 0,
@@ -3164,15 +3164,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-11-05 15:10:29 EST",
+    "as_of_et": "2026-11-05 15:15:13 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.020213881,
-    "sol_price_usd": 89.65059814690795,
+    "sol_price_usd": 89.7309534752501,
     "sol_usd_approx": 1.81,
     "arc_usdc": 0.049503,
     "total_cash_usd_approx": 1.86,
     "note": "Live cash: 0.0202 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793909429535
+    "as_of_ts": 1793909713830
   },
   "unrealized": {
     "n": 0,
@@ -3180,85 +3180,12 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 89.65059814690795,
-    "as_of_et": "2026-11-05 15:10:29 EST"
+    "sol_price_usd": 89.7309534752501,
+    "as_of_et": "2026-11-05 15:15:13 EST"
   },
   "holder_history": {},
   "scanner_first_seen": {
-    "tracking_since": "2026-10-10 09:12:55 EDT",
-    "last_scan_ts": 1793352263.3674786,
-    "tokens": {
-      "72QvBVwpxqmheEPfaCwWSWqEFsUy3rhWt6JhQBMNTwD1": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "ENA"
-      },
-      "HgcxVs6kJhPAaGqnPNGaa7zYgNT49hJrLufiqcNMuYZT": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "FEELSGOOD"
-      },
-      "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "AMD"
-      },
-      "NTRNDMqQSiwEC2jJs3wJiZS6bpGYQJtMNQJgiX3WyV6": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "NTRNDM"
-      },
-      "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "1"
-      },
-      "ysPp2Bt2j2UQu2tZwtSJz7JxyrmQ8GJcNJE5NyDoS5a": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "MUSK4"
-      },
-      "5ubruMYpgKqw9ip5J1qrXbVGmMdn2VCsMg421B4bpump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "onboard"
-      },
-      "55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "Gato"
-      },
-      "HqmFi85adLD8BQA7en1HfajdAfzVFps5REgQaYuw6Ax8": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "WEFT"
-      },
-      "3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "SUPERCORE"
-      },
-      "Ez7eEs53hQiXgCGmcbhdX5i1jgg2gC3F6MoeosuVpump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "LUKE"
-      },
-      "D3S6J9s1byrNBt3ZKwEDiPsNRqHtoEP8zQKdhyBdpump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "PIERRE"
-      },
-      "ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "godspeed"
-      },
-      "DvdmEnztCmXwBnAbedD48XVGZJSxq31zNvnyftXdpump": {
-        "first_seen": 1793352263,
-        "last_seen": 1793352263,
-        "symbol": "pill"
-      }
-    }
+    "error": "[Errno 2] No such file or directory: '/workspace/sol-buy/organic_loop/scanner_first_seen.tmp' -> '/workspace/sol-buy/organic_loop/scanner_first_seen.json'"
   },
   "holder_history_note": "m = measured Jupiter holderCount samples (box recorder, ~1/min, older points downsampled); d = derived from Jupiter holderChange % windows; created_ts = token launch (Jupiter firstPool.createdAt)"
 }
