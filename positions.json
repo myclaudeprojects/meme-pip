@@ -3054,10 +3054,11 @@
     "sol_native": 0.020213881,
     "sol_price_usd": 89.13384155915517,
     "sol_usd_approx": 1.8,
-    "arc_usdc": 0.049503,
-    "total_cash_usd_approx": 1.85,
-    "note": "Live cash: 0.0202 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793901322429
+    "arc_usdc": null,
+    "arc_error": "<urlopen error _ssl.c:1012: The handshake operation timed out>",
+    "total_cash_usd_approx": 1.8,
+    "note": "Live cash: 0.0202 SOL + Arc n/a (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1793901337460
   },
   "recent_notes": [
     {
@@ -3124,7 +3125,7 @@
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
     "generated_et": "2026-11-05 12:55:21 EST",
-    "generated_ts": 1793901321829,
+    "generated_ts": 1793901321890,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.020213881,
@@ -3169,10 +3170,11 @@
     "sol_native": 0.020213881,
     "sol_price_usd": 89.13384155915517,
     "sol_usd_approx": 1.8,
-    "arc_usdc": 0.049503,
-    "total_cash_usd_approx": 1.85,
-    "note": "Live cash: 0.0202 SOL + Arc USDC $0.05 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1793901322429
+    "arc_usdc": null,
+    "arc_error": "<urlopen error _ssl.c:1012: The handshake operation timed out>",
+    "total_cash_usd_approx": 1.8,
+    "note": "Live cash: 0.0202 SOL + Arc n/a (Liar's Dice Arc wallets excluded)",
+    "as_of_ts": 1793901337460
   },
   "unrealized": {
     "n": 0,
