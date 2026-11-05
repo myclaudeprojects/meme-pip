@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   const $ = (id) => document.getElementById(id);
-  const VER = 7;
+  const VER = 8;
   // Free Render CORS proxy (whitelist: KXBTC15M markets only). Cold-starts on free tier.
   const KALSHI_PROXY = "https://kalshi-kxbtc15m-proxy.onrender.com/kxbtc15m";
   const _f = window.fetch.bind(window);
@@ -33,8 +33,6 @@
     { id: "coinbase", url: "https://api.exchange.coinbase.com/products/BTC-USD/ticker", parse: (j) => Number(j.price) },
     { id: "kraken", url: "https://api.kraken.com/0/public/Ticker?pair=XBTUSD", parse: (j) => Number(j && j.result && (j.result.XXBTZUSD || j.result.XBTUSD || Object.values(j.result)[0]).c[0]) },
     { id: "gemini", url: "https://api.gemini.com/v1/pubticker/btcusd", parse: (j) => Number(j.last) },
-    { id: "binanceus", url: "https://api.binance.us/api/v3/ticker/price?symbol=BTCUSD", parse: (j) => Number(j.price) },
-    { id: "cryptocom", url: "https://api.crypto.com/exchange/v1/public/get-tickers?instrument_name=BTC_USD", parse: (j) => { const d = j && j.result && j.result.data && j.result.data[0]; return d ? Number(d.a || d.k || d.b) : NaN; } }
   ];
 
   async function getKalshi(ws) {
@@ -122,7 +120,9 @@
     }));
     const ok = results.filter((p) => p != null);
     if (!ok.length) { S.err = (S.err || "") + (S.err ? "; " : "") + "price: all feeds failed"; return; }
-    const avg = ok.reduce((a, b) => a + b, 0) / ok.length;
+    // v8 (owner 2026-11-05): Binance.US/Crypto.com ran $40-70 high and skewed the gap; use the median of Coinbase/Kraken/Gemini (BRTI constituents).
+    ok.sort((a, b) => a - b);
+    const avg = ok.length % 2 ? ok[(ok.length - 1) / 2] : (ok[ok.length / 2 - 1] + ok[ok.length / 2]) / 2;
     S.price = avg;
     S.samples.push({ t: now, p: avg });
     const cut = now - 60000;
@@ -164,7 +164,8 @@
     const now = Date.now(), left = S.winStart + 900000 - now, lm = left / 60000;
     const tgt = S.manual || S.target;
     // Settlement-relevant estimate = rolling 60s avg when available; else live multi-exchange avg.
-    const p = S.price60 != null ? S.price60 : S.price;
+    // v8: gap uses the LIVE estimate so it matches the app's "current" number; 60s avg shown separately.
+    const p = S.price != null ? S.price : S.price60;
     const mm = Math.floor(left / 60000), ss = Math.floor((left % 60000) / 1000);
     let side = null, pct = null, usd = null;
     if (tgt && p) { usd = p - tgt; pct = (p / tgt - 1) * 100; side = usd >= 0 ? "OVER" : "UNDER"; }
@@ -186,7 +187,7 @@
       const liveSub = $("b15-price-sub");
       if (liveSub) {
         const n = Object.keys(S.exch).filter((k) => S.exch[k] && now - S.exch[k].t < 15000).length;
-        liveSub.textContent = "spot avg · " + n + " feeds · estimate of CF BRTI (not official)";
+        liveSub.textContent = "median of " + n + " feeds · estimate of CF BRTI (not official)";
       }
     }
     const p60el = $("b15-price60");
@@ -201,7 +202,7 @@
     }
     $("b15-diff").textContent = usd == null ? "–" : (usd >= 0 ? "+" : "−") + "$" + Math.abs(usd).toFixed(2) + " (" + (pct >= 0 ? "+" : "") + pct.toFixed(3) + "%)";
     const diffSub = $("b15-diff-sub");
-    if (diffSub) diffSub.textContent = S.price60 != null ? "gap vs 60s avg estimate" : "gap vs live spot estimate";
+    if (diffSub) diffSub.textContent = "gap vs live price estimate (median Coinbase/Kraken/Gemini)";
     $("b15-wr").textContent = w == null ? "shows at 3:00 left" : w.toFixed(1) + "% wins · take it only if payout > " + (100 / w).toFixed(2) + "x";
     $("b15-flip").textContent = flipped ? "FLIPPED" : "";
     $("b15-err").textContent = S.err || "";
