@@ -79,7 +79,7 @@
   #scan-sort button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
   .hp-ranges button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
   /* BSKT tab (2026-10-11) */
-  .tabs { display:flex; gap:4px; }
+  .tabs { display:flex; gap:4px; flex-wrap:wrap; }
   .tabs button { font-weight:600; font-size:13px; padding:5px 12px; }
   .tabs button.on { background:#1f6feb; border-color:#1f6feb; color:#fff; }
   .bk-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center; margin-bottom:10px; font-size:13px; }
@@ -101,6 +101,47 @@
   .badge.bk-claim { background:#d2992222; color:var(--amber); border:1px solid #d2992266; }
   .badge.bk-wd { background:#1f6feb22; color:var(--blue); border:1px solid #1f6feb66; }
   @media (max-width: 600px) { #view-bskt { padding:12px 10px 30px; } .bk-cards { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; } .bk-cards .v { font-size:18px; } .bk-lb { grid-template-columns:1fr; } }
+  /* Series 7 tab */
+  #view-series7 { max-width:880px; }
+  #view-series7 h2 { font-size:20px; margin:0; }
+  .s7-lede, .s7-rules { margin:8px 0 0; }
+  .s7-rules, .s7-panel .muted, .s7-due { color:var(--muted); }
+  .s7-boxes { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin-top:14px; }
+  .s7-box { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:8px 4px; text-align:center; min-width:0; }
+  .s7-box.on { border-color:var(--blue); }
+  .s7-box .k { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
+  .s7-box .v { font-size:20px; font-weight:650; }
+  .s7-box .s { color:var(--muted); font-size:12px; }
+  .s7-toolbar { display:flex; flex-wrap:wrap; gap:12px; align-items:end; justify-content:space-between; margin:14px 0; }
+  .s7-toolbar label, .s7-grid label { display:grid; gap:4px; font-size:13px; color:var(--muted); }
+  #view-series7 select, #view-series7 textarea, #view-series7 input[type="text"], #view-series7 input[inputmode="numeric"] {
+    background:var(--panel2); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:8px; font:inherit; width:100%;
+  }
+  #view-series7 .s7-toolbar select { width:auto; min-width:160px; }
+  .s7-stage { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; min-height:200px; }
+  .s7-kicker { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+  .s7-front { font-size:22px; font-weight:650; margin-top:8px; overflow-wrap:anywhere; cursor:pointer; }
+  .s7-back { font-size:16px; margin-top:12px; white-space:pre-wrap; overflow-wrap:anywhere; }
+  .s7-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  #view-series7 button, #view-series7 .s7-import { min-height:44px; }
+  #s7-flip { background:#1f6feb; border-color:#1f6feb; color:#fff; }
+  #s7-got { background:#238636; border-color:#238636; color:#fff; }
+  #s7-miss, #s7-reset-go { background:#8b2a26; border-color:#8b2a26; color:#fff; }
+  .s7-panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px; margin-top:14px; }
+  .s7-panel h3 { margin:0 0 8px; font-size:15px; }
+  .s7-grid { display:grid; gap:8px; }
+  .s7-row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:8px; }
+  #s7-import-confirm, #s7-reset-confirm { margin-top:10px; }
+  #view-series7 button:focus-visible, #view-series7 select:focus-visible, #view-series7 textarea:focus-visible, #view-series7 input:focus-visible {
+    outline:2px solid var(--blue); outline-offset:2px;
+  }
+  @media (max-width: 600px) {
+    #view-series7 { padding:12px 10px 32px; }
+    .s7-front { font-size:20px; }
+    .s7-box { padding:8px 2px; }
+    .s7-box .v { font-size:16px; }
+    .s7-actions button { flex:1 1 40%; }
+  }
 </style>
 </head>
 <body>
@@ -108,7 +149,7 @@
   <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
     <h1>Solana Organic-Growth Loop</h1>
     <span class="viewonly">View only. The bot manages all trades</span>
-    <nav class="tabs"><button data-view="main" class="on">Positions &amp; scanner</button><button data-view="bskt">BSKT</button><button data-view="btc15" id="b15tab">BTC 15m</button></nav>
+    <nav class="tabs"><button data-view="main" class="on">Positions &amp; scanner</button><button data-view="bskt">BSKT</button><button data-view="btc15" id="b15tab">BTC 15m</button><button data-view="series7" id="s7tab">Series 7</button></nav>
   </div>
   <div class="meta">
     <span>Last updated: <b id="updated">-</b></span>
@@ -196,6 +237,85 @@
   <div id="b15-err" class="muted" style="margin-top:8px"></div>
   </div>
 </main>
+<main id="view-series7" hidden>
+  <h2>Series 7</h2>
+  <p class="s7-lede">Study the cards that are due today. The front shows first. Flip the card, then choose Got it or Missed it.</p>
+  <p class="s7-rules">Got it moves the card up one box, through box 5. Missed it sends it back to box 1. The next review is 1, 3, 7, 14, or 30 days later for boxes 1 to 5, counted from today on your calendar. A card you have not studied is in box 1 and is due now. Missed cards come back tomorrow.</p>
+  <p id="s7-persist" class="msg" hidden></p>
+  <div id="s7-boxes" class="s7-boxes"></div>
+  <div class="s7-toolbar">
+    <label for="s7-chapter">Chapter
+      <select id="s7-chapter"><option value="all">All chapters</option></select>
+    </label>
+    <div id="s7-due" class="s7-due"></div>
+  </div>
+  <div class="s7-stage" id="s7-stage">
+    <div id="s7-meta" class="s7-kicker"></div>
+    <div id="s7-status" role="status"></div>
+    <div id="s7-front" class="s7-front"></div>
+    <div id="s7-back" class="s7-back" hidden></div>
+    <div class="s7-actions">
+      <button type="button" id="s7-flip" hidden>Flip</button>
+      <button type="button" id="s7-got" class="s7-got" hidden>Got it</button>
+      <button type="button" id="s7-miss" class="s7-miss" hidden>Missed it</button>
+      <button type="button" id="s7-retry" hidden>Try again</button>
+    </div>
+  </div>
+  <div class="s7-panel">
+    <h3>Add a card</h3>
+    <p class="muted">Custom cards start in box 1 and are due today. They stay in this browser with your other Series 7 progress.</p>
+    <form id="s7-add" class="s7-grid">
+      <label for="s7-add-front">Front
+        <textarea id="s7-add-front" maxlength="8000" rows="2"></textarea>
+      </label>
+      <label for="s7-add-back">Back
+        <textarea id="s7-add-back" maxlength="8000" rows="3"></textarea>
+      </label>
+      <label for="s7-add-chapter">Chapter
+        <input id="s7-add-chapter" inputmode="numeric" autocomplete="off">
+      </label>
+      <label for="s7-add-type">Type
+        <select id="s7-add-type">
+          <option value="term">Term</option>
+          <option value="concept">Concept</option>
+        </select>
+      </label>
+      <button type="submit">Add to box 1</button>
+    </form>
+    <p id="s7-add-msg" role="status"></p>
+  </div>
+  <div class="s7-panel">
+    <h3>Backup</h3>
+    <p class="muted">Progress is saved only in this browser, not on the server. There is no account for this tab. Export a backup before you switch devices or clear site data. Import replaces the progress in this browser. When the published card list changes, each card keeps the box and due date stored for its id.</p>
+    <div class="s7-row">
+      <button type="button" id="s7-export">Export backup</button>
+      <label class="s7-import" for="s7-import">Import backup
+        <input id="s7-import" type="file" accept="application/json,.json">
+      </label>
+      <button type="button" id="s7-download-raw" hidden>Download unreadable backup</button>
+    </div>
+    <div id="s7-import-confirm" hidden>
+      <p>Replace the progress in this browser with this backup?</p>
+      <div class="s7-row">
+        <button type="button" id="s7-import-cancel">Cancel</button>
+        <button type="button" id="s7-import-go">Replace progress</button>
+      </div>
+    </div>
+    <p id="s7-io-msg" role="status"></p>
+  </div>
+  <div class="s7-panel">
+    <h3>Reset progress</h3>
+    <p class="muted">This puts every card back in box 1, due today. Cards you added are kept. This cannot be undone.</p>
+    <button type="button" id="s7-reset">Reset progress</button>
+    <div id="s7-reset-confirm" hidden>
+      <p id="s7-reset-q">Reset all review progress in this browser?</p>
+      <div class="s7-row">
+        <button type="button" id="s7-reset-cancel">Cancel</button>
+        <button type="button" id="s7-reset-go">Reset everything</button>
+      </div>
+    </div>
+  </div>
+</main>
 <footer>Read-only dashboard: public GET / JSON-RPC reads only. No keys, no signing, no orders.
   Sol <span id="f-sol"></span> · Arc <span id="f-arc"></span></footer>
 
@@ -206,6 +326,7 @@
 <script src="bskt.js"></script>
 <script src="cardboard.js"></script>
 <script src="btc15.js?v=8"></script>
+<script src="series7/series7.js?v=1"></script>
 <div id="holder-panel"><div id="holder-panel-body"></div></div>
 </body>
 </html>
