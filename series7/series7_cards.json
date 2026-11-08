@@ -1,0 +1,842 @@
+[
+  {
+    "id": "ch3-term-01",
+    "chapter": 3,
+    "type": "term",
+    "front": "EMMA",
+    "back": "Electronic Municipal Market Access, an MSRB service that hosts official statements and continuing disclosures for investors, the public, and state and local governments. Underwriters must submit the official statement to EMMA within one business day of receiving it from the issuer, and customer delivery can be satisfied by telling the customer how to access it there."
+  },
+  {
+    "id": "ch3-term-02",
+    "chapter": 3,
+    "type": "term",
+    "front": "Participation amount",
+    "back": "Each syndicate member's share of a new municipal issue. Members purchase that share and take financial liability for selling it. How much liability they keep for unsold bonds depends on whether the syndicate is an eastern (undivided) or western (divided) account."
+  },
+  {
+    "id": "ch3-term-03",
+    "chapter": 3,
+    "type": "term",
+    "front": "NIIDS (NIIDs)",
+    "back": "New Issue Information Dissemination Service, operated by the DTCC. The syndicate manager must send new-issue award information to NIIDS generally no later than two business hours after the formal award so the industry can confirm, clear, and report sales."
+  },
+  {
+    "id": "ch3-term-04",
+    "chapter": 3,
+    "type": "term",
+    "front": "Undivided account",
+    "back": "Also called an eastern account. Each syndicate member is liable for any unsold portion of the issue according to its original participation percentage, even if that member already sold its own full allocation. This is the most common municipal syndicate structure."
+  },
+  {
+    "id": "ch3-term-05",
+    "chapter": 3,
+    "type": "term",
+    "front": "Order period",
+    "back": "The window set by the issuer and syndicate manager (in the Agreement Among Underwriters) during which the syndicate solicits and accepts orders. It typically starts the day after the bid is awarded. Orders are filled by a fixed priority sequence, not by the order they arrived."
+  },
+  {
+    "id": "ch3-term-06",
+    "chapter": 3,
+    "type": "term",
+    "front": "Municipal adviser",
+    "back": "A firm or person that advises a municipal issuer on structure, timing, pricing, ratings, disclosure documents, and related financial matters. Advisers register with the SEC and MSRB. Under MSRB Rule G-42, an adviser to a municipal entity owes a fiduciary duty of loyalty and care. An adviser may not underwrite the same issue it is advising on."
+  },
+  {
+    "id": "ch3-term-07",
+    "chapter": 3,
+    "type": "term",
+    "front": "Notice of Sale",
+    "back": "The published notice for a competitive municipal underwriting that states the sale date and time, structure, and bidding terms, and invites underwriters to submit sealed, firm bids. It often appears in The Bond Buyer and the Wall Street Journal and includes the bid form underwriters must complete."
+  },
+  {
+    "id": "ch3-term-08",
+    "chapter": 3,
+    "type": "term",
+    "front": "Preliminary official statement",
+    "back": "The first disclosure document used to market a municipal issue before final terms are set. It is subject to revision, usually carries a red legend saying it is preliminary, and generally omits the final offering price, interest rates by maturity, and the underwriter's name. Investors who got the preliminary OS must later receive the final OS."
+  },
+  {
+    "id": "ch3-term-09",
+    "chapter": 3,
+    "type": "term",
+    "front": "Continuing disclosure agreement",
+    "back": "A written issuer agreement, required by Rule 15c2-12 before broker-dealers may buy the bonds, to provide annual financial information and operating data plus ongoing event updates. Event notices (defaults, rating changes, bankruptcies, calls, adverse tax opinions, and similar) go to EMMA within 10 business days."
+  },
+  {
+    "id": "ch3-term-10",
+    "chapter": 3,
+    "type": "term",
+    "front": "Total takedown",
+    "back": "The portion of the municipal underwriting spread that compensates the underwriters who make the sale. When a selling group member sells the bond, it earns the concession; the rest of the takedown is the additional takedown, kept by the syndicate in proportion to participation. Example: $10 spread = $1 management fee + $9 total takedown."
+  },
+  {
+    "id": "ch3-concept-01",
+    "chapter": 3,
+    "type": "concept",
+    "front": "What authority does the MSRB have over broker-dealers, reps, and issuers?",
+    "back": "The MSRB writes rules for municipal securities dealers, advisers, and representatives, but it cannot discipline firms or individuals. FINRA enforces those rules at securities firms; bank regulators enforce them for bank municipal business; the SEC also has enforcement authority. The MSRB and other regulators do not have authority over municipal issuers themselves."
+  },
+  {
+    "id": "ch3-concept-02",
+    "chapter": 3,
+    "type": "concept",
+    "front": "Eastern vs. western accounts — what's the difference?",
+    "back": "Eastern (undivided): each member is liable for unsold bonds by its original participation %, even after selling its own allotment. Western (divided): each member is liable only for its own original participation and not for other members' unsold bonds. Most municipal syndicates are eastern."
+  },
+  {
+    "id": "ch3-concept-03",
+    "chapter": 3,
+    "type": "concept",
+    "front": "How do GO and revenue bond underwriting practices differ?",
+    "back": "GO issues are often required by statute to use competitive bidding to keep taxpayer costs low. Revenue bonds generally come to market on a negotiated basis. Negotiated sales are also used when credit is poor, the issue is unusually large or new, terms are unusual, or the market is highly volatile."
+  },
+  {
+    "id": "ch3-concept-04",
+    "chapter": 3,
+    "type": "concept",
+    "front": "Official statement vs. prospectus — how do they differ?",
+    "back": "A prospectus is the Act of 1933 disclosure document for registered corporate offerings. Municipal securities are exempt from that registration, so the primary disclosure document is the official statement. Rule 15c2-12 still makes underwriters obtain, review, and distribute an OS for issues of $1,000,000 or more, and antifraud standards still apply."
+  },
+  {
+    "id": "ch3-concept-05",
+    "chapter": 3,
+    "type": "concept",
+    "front": "What kind of information is available in EMMA?",
+    "back": "EMMA hosts official statements for new issues and continuing disclosure filings such as annual financial information, audited statements, and event notices (rating changes, defaults, bankruptcies, calls, adverse tax opinions, bank loans, leases, derivatives, and related guarantees)."
+  },
+  {
+    "id": "ch3-concept-06",
+    "chapter": 3,
+    "type": "concept",
+    "front": "Municipal vs. corporate underwriting spread components",
+    "back": "Both use a gross spread and a management fee. Municipal: total takedown for syndicate members who sell; additional takedown for the syndicate's retained share; selling concession for selling group members. Corporate labels: underwriting fee / underwriting concession instead of additional takedown / total takedown."
+  },
+  {
+    "id": "ch3-concept-07",
+    "chapter": 3,
+    "type": "concept",
+    "front": "What is the purpose of a legal opinion?",
+    "back": "Bond counsel's legal opinion confirms the issuer's authority to borrow, addresses the nature of the bond, and confirms tax-exempt status. An unqualified (approving) opinion has no reservations and is nearly required for marketability. A qualified opinion flags concerns and can kill the deal. A copy must accompany delivery of the bonds."
+  },
+  {
+    "id": "ch3-concept-08",
+    "chapter": 3,
+    "type": "concept",
+    "front": "Roles of municipal advisers vs. bond counsel",
+    "back": "Municipal advisers help with structure, timing, pricing, ratings, disclosure, and ongoing financial matters, and owe a fiduciary duty to municipal entity clients. Bond counsel drafts financing documents, reviews legal authority, discloses litigation risks, and issues the legal opinion on validity and tax status. Underwriters are not fiduciaries under federal law."
+  },
+  {
+    "id": "ch3-concept-09",
+    "chapter": 3,
+    "type": "concept",
+    "front": "Official statement vs. preliminary official statement",
+    "back": "The preliminary OS markets the deal before final terms and usually omits final price, interest rates, and underwriter name. The final OS includes those terms plus full disclosure on use of proceeds, security, call/put features, debt service sources, insurance, default consequences, and legal documents. Customers who received the preliminary OS must get the final OS when available."
+  },
+  {
+    "id": "ch3-concept-10",
+    "chapter": 3,
+    "type": "concept",
+    "front": "Rules when a rep buys munis through another broker-dealer",
+    "back": "An employee or partner (or their spouse or minor child) must give written notice to their employer before opening the account. The executing firm must send duplicate confirmations to the employing firm and follow any other written requirements from the employer. Notice is required; permission is not."
+  },
+  {
+    "id": "ch4-term-01",
+    "chapter": 4,
+    "type": "term",
+    "front": "Retail communication",
+    "back": "Any written or electronic communication distributed or made available to more than 25 retail investors within any 30-calendar-day period. Unless an exception applies, it must be approved by a qualified registered principal before the earlier of its first use or its filing with FINRA. (25 or fewer retail investors in 30 days = correspondence; only institutional investors = institutional communication.)"
+  },
+  {
+    "id": "ch4-term-02",
+    "chapter": 4,
+    "type": "term",
+    "front": "Disciplined firm",
+    "back": "A firm that has been expelled from membership by a securities regulator. Firms with enough reps from disciplined firms (5-9 reps: 40%+; 10-19 reps: 4 or more; 20+ reps: 20%+) must tape-record ALL calls between registered persons and existing or potential customers, starting within 60 days of FINRA notice. Tapes kept 3 years (first 2 easily accessible). A firm can avoid it by cutting staff below the threshold within 30 days, then can't rehire those people for 180 days."
+  },
+  {
+    "id": "ch4-term-03",
+    "chapter": 4,
+    "type": "term",
+    "front": "Static content",
+    "back": "Social media or online content posted for the longer term and not written in response to a real-time conversation: website copy, a Facebook timeline or profile, blog posts. Treated like a retail communication, so most of it needs registered principal approval before use and may need FINRA filing. Interactive content (tweets, comments, replies) can become static if copied into a static forum like a blog."
+  },
+  {
+    "id": "ch4-term-04",
+    "chapter": 4,
+    "type": "term",
+    "front": "Spot-checking",
+    "back": "Random review of communications that don't need prior principal approval, such as institutional communications. Firms must still have written supervisory procedures covering training, how communications are surveilled, actions taken when problems are found, and documentation of findings and corrective actions."
+  },
+  {
+    "id": "ch4-term-05",
+    "chapter": 4,
+    "type": "term",
+    "front": "Cherry-picking",
+    "back": "Showing only the past recommendations that support your case. To prevent it, a communication citing past recommendations must include ALL recommendations of the same type, kind, grade, or class of securities from at least the last 12 months, with name, date, buy or sell, price at the time, current market price, and a statement that future recommendations may not be profitable."
+  },
+  {
+    "id": "ch4-term-06",
+    "chapter": 4,
+    "type": "term",
+    "front": "Public appearance",
+    "back": "Under FINRA Rule 2210, unscripted participation in a seminar, forum, radio or TV interview, or other public speaking activity, with no minimum audience size. (For research analysts under Rule 2241: 15 or more people or any media present.) The speaker needs a reasonable basis for recommendations and must disclose any more-than-nominal financial interest and material conflicts. Prepared scripts are treated as retail communications or correspondence."
+  },
+  {
+    "id": "ch4-term-07",
+    "chapter": 4,
+    "type": "term",
+    "front": "Blackout period",
+    "back": "A period around a new offering when analysts at managers or co-managers may not publish research or make public appearances on the issuer. IPO: manager and underwriters/syndicate members 10 calendar days after the effective date. Follow-on: manager 3 calendar days; syndicate members none. Selling group: none. Applies only to non-Emerging Growth Companies."
+  },
+  {
+    "id": "ch4-term-08",
+    "chapter": 4,
+    "type": "term",
+    "front": "Recommendation (in a retail communication)",
+    "back": "When a communication recommends a security, the firm must disclose: that it makes a market in it (or the underlying), any more-than-nominal financial interest the firm or its officers hold, and that it managed or co-managed a public offering of the issuer in the past 12 months. For a corporate equity, the current price must be shown, and an offer to furnish supporting information on request must be included."
+  },
+  {
+    "id": "ch4-term-09",
+    "chapter": 4,
+    "type": "term",
+    "front": "Ranking entity",
+    "back": "An independent firm such as Morningstar or Lipper that ranks investment companies, and is not paid by the funds it ranks. Communications must name the category, number of funds in it, the ranking entity, the time period, and the criteria, plus say past performance doesn't guarantee future results. A fund called #1 must actually rank first. Funds can't publish their own rankings of their proprietary funds."
+  },
+  {
+    "id": "ch4-term-10",
+    "chapter": 4,
+    "type": "term",
+    "front": "Networking arrangement",
+    "back": "The relationship between a bank or other financial institution and the registered broker-dealer that sells investment products (NDIPs) on or off its premises, governed by a written agreement. On-premises services must be clearly separate, ideally physically apart from deposit services, with signage showing the broker-dealer's registered name."
+  },
+  {
+    "id": "ch4-concept-01",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Retail communications vs. correspondence",
+    "back": "Retail communication: distributed or made available to MORE than 25 retail investors in any 30-calendar-day period; needs principal approval before use. Correspondence: 25 or FEWER retail investors in 30 days; supervised and reviewed under firm procedures rather than pre-approved. Example: a prepared speech to more than 25 retail investors is retail; to 25 or fewer it's correspondence."
+  },
+  {
+    "id": "ch4-concept-02",
+    "chapter": 4,
+    "type": "concept",
+    "front": "What must be pre-filed vs. filed after use?",
+    "back": "Pre-file at least 10 business days before first use: investment company retail communications with homemade rankings or comparisons, bond fund volatility ratings, security futures, and any retail communication by a new member (first year). Standard options: 10 CALENDAR days before. File within 10 business days AFTER first use: other investment company retail communications not pre-filed, DPPs, CMOs, and structured products like ETNs."
+  },
+  {
+    "id": "ch4-concept-03",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Extra communication rules for variable annuities",
+    "back": "Clear identification: call it a variable annuity or variable life program, never imply it is or is like a mutual fund. Liquidity: don't imply it meets short-term needs; disclose sales charges, redemption charges, taxes and penalties, and the effect of loans and withdrawals. Guarantees: don't imply a guarantee applies to returns or principal, and don't tie insurer ratings to the separate account. 'Guaranteed' is OK only when linked to specific guaranteed features."
+  },
+  {
+    "id": "ch4-concept-04",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Rules for rep use of personal devices",
+    "back": "FINRA allows personal mobile devices, owned by the firm or the rep, of any make or type. The firm must be able to retain, retrieve, and supervise ALL business communications regardless of device. FINRA makes no distinction between phones and desktops. A rep can text clients about business only if the firm can supervise and archive the texts."
+  },
+  {
+    "id": "ch4-concept-05",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Adoption vs. entanglement",
+    "back": "Adoption: the firm explicitly or implicitly endorses or approves third-party content or its owner (co-branding with the firm's name or logo counts). Entanglement: the firm was involved in preparing the content, including paying for it. Either one makes the firm responsible for supervising that content. Linking to an independent site is fine if there's no adoption or entanglement and the firm doesn't know it's false or misleading."
+  },
+  {
+    "id": "ch4-concept-06",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Three required disclosures in networking arrangements",
+    "back": "Securities products are: (1) not insured by the FDIC; (2) not deposits or obligations of the financial institution, so not guaranteed by it; and (3) subject to investment risks, including possible loss of value. These go in account-opening disclosures, retail communications, confirmations, and statements, with the broker-dealer's name. Exceptions: radio spots 30 seconds or less, signs showing only location, electronic signs with minimal info."
+  },
+  {
+    "id": "ch4-concept-07",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Unique disclosure rules for research reports",
+    "back": "The report must reflect the analyst's true opinion and be certified as such; ratings can't be tied to analyst pay. Third-party research must name the preparer. If it has ratings: show the percentage of all buy, hold, and sell ratings, and which subject issuers got investment banking services in the past 12 months. A price target is not required. Investment banking can't supervise analysts, and analysts can't join pitches or roadshows."
+  },
+  {
+    "id": "ch4-concept-08",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Rules when sharing past recommendations",
+    "back": "Include all recommendations of the same type, kind, grade, or class of security from at least the past 12 months, not just winners. For each: name, date, buy or sell, price at the time of the recommendation, price to act on it, and current market price. Prominently state that future recommendations may not be profitable or match past performance."
+  },
+  {
+    "id": "ch4-concept-09",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Unique considerations for CMO sales communications",
+    "back": "Identify it as a collateralized mortgage obligation, never compare it to any other investment, disclose limits on government backing or guarantees, and disclose that yields and maturities can change with prepayments or refinancing. Retail buyers must get educational material with a glossary and questions to ask before the sale. Promoting a specific CMO requires coupon, anticipated yield, average life, tranche, final maturity, and collateral. Filed within 10 business days after first use."
+  },
+  {
+    "id": "ch4-concept-10",
+    "chapter": 4,
+    "type": "concept",
+    "front": "Recordkeeping requirements and allowed formats",
+    "back": "Keep all retail and institutional business communications, sent AND received, internal AND external (emails, IMs), for at least 3 years, the first 2 easily accessible, whether on the firm's platform or a third party's. Firms can't allow channels they can't archive. Records include the communication, dates of first and last use, the approving principal and approval date (or who prepared it if not pre-approved), and the source of any stats, charts, or graphs."
+  },
+  {
+    "id": "ch6-term-01",
+    "chapter": 6,
+    "type": "term",
+    "front": "Institutional customer",
+    "back": "A financial entity in the business of offering financial and investing services, or another person with substantial assets: banks, savings and loans, insurance companies, mutual funds or registered investment companies, federally or state registered investment advisers (the firm, not its reps), and any individual, corporation, partnership, trust, or other entity with total assets of at least $50 million. Treated as sophisticated, so best interest obligations generally don't apply."
+  },
+  {
+    "id": "ch6-term-02",
+    "chapter": 6,
+    "type": "term",
+    "front": "Negative consent",
+    "back": "Asking for a response only from customers who will NOT choose to make their own decisions, and treating silence as agreement. It is not sufficient for an institutional customer to state that it will exercise its own judgment, which is one of the two conditions for avoiding FINRA suitability requirements."
+  },
+  {
+    "id": "ch6-term-03",
+    "chapter": 6,
+    "type": "term",
+    "front": "Opt-out",
+    "back": "Under Reg S-P, customers must be given the chance to opt out of having their information shared with non-affiliated third parties, through a simple method like a check-the-box reply card, a toll-free number, or an electronic communication. Requiring a letter is not reasonable. Customers can't opt out of sharing with service providers, under permitted joint-marketing arrangements, or when permitted or required by law (regulatory, law enforcement, AML)."
+  },
+  {
+    "id": "ch6-term-04",
+    "chapter": 6,
+    "type": "term",
+    "front": "CIP (customer identification program)",
+    "back": "A required part of the AML program under the USA PATRIOT Act. Firms must verify the identity of anyone opening an account. Minimum info before opening: name, date of birth (individuals), street address (no PO boxes for individuals), and an ID number (SSN, TIN, or passport number). Identity may be verified promptly after opening. Identifying info is kept 5 years after the account closes; verification records 5 years after they are made."
+  },
+  {
+    "id": "ch6-term-05",
+    "chapter": 6,
+    "type": "term",
+    "front": "Documentary method",
+    "back": "Verifying identity by examining unexpired documents: passports or driver's licenses for U.S. citizens, green cards or alien ID cards for non-U.S. citizens. Non-documentary methods, such as a credit bureau check, may be used if other options are not possible."
+  },
+  {
+    "id": "ch6-term-06",
+    "chapter": 6,
+    "type": "term",
+    "front": "CRD (Central Registration Depository)",
+    "back": "Where FINRA maintains broker-dealers' filed Form CRS. If Form CRS information changes, firms must update the CRD within 30 days, and customers must receive a new relationship summary or communication of the changes within 60 days."
+  },
+  {
+    "id": "ch6-term-07",
+    "chapter": 6,
+    "type": "term",
+    "front": "Conflict of interest",
+    "back": "Information that could cause unfair bias or preference toward a security. It doesn't prohibit a recommendation if it's cured by disclosure. Three disclosures must accompany a recommendation if they apply: the firm makes a market in the security (or the underlying for an option or security future), the firm or its officers or partners have a more-than-nominal financial interest in the issuer, and the firm managed or co-managed a public offering of the issuer in the past 12 months. Reg BI may also require mitigation or elimination."
+  },
+  {
+    "id": "ch6-term-08",
+    "chapter": 6,
+    "type": "term",
+    "front": "Quantitative suitability",
+    "back": "Looks at the collective transactions in an account rather than a single trade: are trades excessive in timing, frequency, or quantity? Considerations: account turnover rate (percentage of holdings that change in a year), cost-equity ratio (total costs divided by average account equity), and use of in-and-out trading. Example: regularly trading in and out of similar large-cap positions for a long-term client."
+  },
+  {
+    "id": "ch6-term-09",
+    "chapter": 6,
+    "type": "term",
+    "front": "Form CRS",
+    "back": "The customer relationship summary that broker-dealers and investment advisers give retail investors at or before a recommendation of an account type, transaction, or strategy. It explains services offered, fees, costs, conflicts and standard of conduct, legal or disciplinary history, and how to get more information, plus conversation starters. Paper version generally 2 pages max (4 for a dual registrant). Posted on the firm's website; delivery records kept at least 6 years."
+  },
+  {
+    "id": "ch6-term-10",
+    "chapter": 6,
+    "type": "term",
+    "front": "Cherry-picking",
+    "back": "Showcasing the best past recommendations and concealing the worst. FINRA prevents it by requiring that all recommendations of the same type, kind, grade, or classification of securities from at least the last 12 months be included, each with name, purchase or sale date, buy, sell, or hold, price at the time, price to act on it, and general market conditions."
+  },
+  {
+    "id": "ch6-concept-01",
+    "chapter": 6,
+    "type": "concept",
+    "front": "Retail vs. institutional accounts and the general rules for each",
+    "back": "Institutional: financial entities and anyone with total assets of at least $50 million. FINRA suitability applies unless the broker believes the customer can evaluate risks on its own AND the customer states it will exercise its own judgment (negative consent isn't enough). Institutional accounts don't need a trusted contact or a responsible associated person. Retail: individuals, investment clubs, small businesses and others, covered by Reg BI instead of FINRA suitability."
+  },
+  {
+    "id": "ch6-concept-02",
+    "chapter": 6,
+    "type": "concept",
+    "front": "Info needed to open an account vs. info needed to verify identity",
+    "back": "To open (individual): name and residence, whether of legal age, and the associated person(s) responsible for the account; for entities, the people authorized to trade. To verify identity under the CIP: name, date of birth, street address (no PO boxes for individuals), and an ID number such as SSN, TIN, or passport number. Verification may happen promptly after opening."
+  },
+  {
+    "id": "ch6-concept-03",
+    "chapter": 6,
+    "type": "concept",
+    "front": "Safeguards BDs must have to protect accounts from identity theft",
+    "back": "Reg S-P policies and procedures covering personal devices, electronic communications (encrypted email), access management (only as needed, removed when not), training and monitoring, and outside vendors' compliance. If identity theft or a breach is suspected, contact the FINRA coordinator and the SEC immediately, check state law for other contacts, and consider filing a SAR with FinCEN."
+  },
+  {
+    "id": "ch6-concept-04",
+    "chapter": 6,
+    "type": "concept",
+    "front": "Rules for opening accounts for non-U.S. citizens",
+    "back": "Firms are permitted but not required to open them. They follow all standard account opening and verification requirements and often add house rules like minimum balances. CIP info for non-U.S. citizens: a Taxpayer Identification number and a numbered ID document with a photograph, such as a passport, alien ID card, or government-issued card with nationality and residence. Documentary verification uses green cards or alien ID cards."
+  },
+  {
+    "id": "ch6-concept-05",
+    "chapter": 6,
+    "type": "concept",
+    "front": "The three types of FINRA suitability",
+    "back": "Reasonable-basis: the product or strategy is suitable for at least some investors, based on its risks and rewards, and the firm understands it. Customer-specific: the recommendation fits this customer's profile. Quantitative: the trades as a group aren't excessive in timing, frequency, or quantity (turnover, cost-equity ratio, in-and-out trading)."
+  },
+  {
+    "id": "ch6-concept-06",
+    "chapter": 6,
+    "type": "concept",
+    "front": "What's in Form CRS and when it must be provided",
+    "back": "Services offered; fees, costs, conflicts of interest and standard of conduct; reportable legal or disciplinary history; how to get more info; conversation starters. Given to retail customers at or before a recommendation of an account type, transaction, or strategy. Free on request, paper or electronic, 2 pages max (4 for dual registrants). Filed with FINRA's CRD, updated within 30 days of a change, customers told within 60 days."
+  },
+  {
+    "id": "ch6-concept-07",
+    "chapter": 6,
+    "type": "concept",
+    "front": "Conflicts of interest and how to cure them",
+    "back": "A conflict is information that could cause unfair bias toward a security. It's cured by disclosure: market making in the security, a more-than-nominal financial interest in the issuer, or managing or co-managing the issuer's offering in the past 12 months. Under Reg BI, conflicts may also need mitigation or elimination, and sales contests for a particular product are not allowed (contests on total sales are)."
+  },
+  {
+    "id": "ch6-concept-08",
+    "chapter": 6,
+    "type": "concept",
+    "front": "When Reg BI applies",
+    "back": "Recommendations to retail customers of securities transactions, investment strategies, or account types. That covers specific securities (buy, sell, or hold), specific account types (like opening an IRA), and rollovers or transfers (moving a workplace plan or changing IRA trustees). Four obligations: Disclosure, Care, Conflict of Interest, and Compliance. A natural person can be institutional for FINRA purposes and still a Reg BI retail customer for a personal account."
+  },
+  {
+    "id": "ch6-concept-09",
+    "chapter": 6,
+    "type": "concept",
+    "front": "Purpose of the annual privacy notice",
+    "back": "Under Reg S-P, a clear and conspicuous privacy notice is given at account opening and annually after that. It tells customers what information the firm collects, how it may be shared, and its policy on sharing with non-affiliated third parties, and gives them a simple way to opt out. It can be included with or within other customer notifications."
+  },
+  {
+    "id": "ch6-concept-10",
+    "chapter": 6,
+    "type": "concept",
+    "front": "FINRA rules for using historical recommendations",
+    "back": "Allowed, but no cherry-picking. Include all recommendations of the same type, kind, grade, or classification from at least the last 12 months, each with name, purchase or sale date, buy, sell, or hold, price at the time, price to act on it, and general market conditions. A compliance officer should approve the list and keep it updated. For a managed program, list each specific security, not just top-level performance."
+  },
+  {
+    "id": "ch7-term-01",
+    "chapter": 7,
+    "type": "term",
+    "front": "OSJ (office of supervisory jurisdiction)",
+    "back": "An office the firm has identified as responsible for supervising the branch offices and representatives within its region. A copy of the firm's written supervisory procedures must be kept at each OSJ, and a principal must be designated at each one."
+  },
+  {
+    "id": "ch7-term-02",
+    "chapter": 7,
+    "type": "term",
+    "front": "SRO (self-regulatory organization)",
+    "back": "An organization authorized by the SEC to make and enforce rules for its members. FINRA is an SRO with authority to make and enforce rules for its member firms to safeguard customers."
+  },
+  {
+    "id": "ch7-term-03",
+    "chapter": 7,
+    "type": "term",
+    "front": "Short swing profit",
+    "back": "A profit made when an insider acquires stock and then sells it at a profit within a period of up to six months. Corporate insiders are prohibited from benefiting from short swing profits in their own company's stock and must return, or disgorge, them to the corporation."
+  },
+  {
+    "id": "ch7-term-04",
+    "chapter": 7,
+    "type": "term",
+    "front": "Commingling",
+    "back": "The prohibited practice of mixing customer assets that are required to be kept separate. Firms must segregate customer securities and cash from the firm's proprietary business activities and deliver them promptly to their owners on request."
+  },
+  {
+    "id": "ch7-term-05",
+    "chapter": 7,
+    "type": "term",
+    "front": "Negotiable instruments (acceptable checks)",
+    "back": "Payment by check is generally considered negotiable. Acceptable forms: the account owner's domestic, personal, pre-printed check payable to the clearing firm, or a cashier's check payable to the clearing firm with a remitter name that exactly matches the account holder. Checks must be signed, and the numerical and written amounts must match exactly."
+  },
+  {
+    "id": "ch7-term-06",
+    "chapter": 7,
+    "type": "term",
+    "front": "Blotter",
+    "back": "The record (generally electronic) that logs all purchases and sales of securities and all receipts and disbursements of cash and securities processed through an office. It lists the payer, payee, check number, check amount, date received, and date shipped. A principal must review the blotter's transactions each day."
+  },
+  {
+    "id": "ch7-term-07",
+    "chapter": 7,
+    "type": "term",
+    "front": "Specified adult",
+    "back": "A person age 65 or older, or a person age 18 or older reasonably believed to have a mental or physical impairment that makes them unable to protect their own interests. Firms may place temporary holds on disbursements and transactions in their accounts when financial exploitation is suspected."
+  },
+  {
+    "id": "ch7-term-08",
+    "chapter": 7,
+    "type": "term",
+    "front": "Signature guarantee",
+    "back": "A guarantee from a qualified person that authenticates the legitimacy of a signature and the service requested. It is normally required before a transfer agent will accept a transfer of securities held in certificate form, and it may be required on a minor's letter of intent when a custodial account terminates."
+  },
+  {
+    "id": "ch7-term-09",
+    "chapter": 7,
+    "type": "term",
+    "front": "QDRO (qualified domestic relations order)",
+    "back": "A legal document that specifies how retirement account funds are divided in a divorce. The spouse or dependent receives the funds into a retirement account in their own name without penalty or tax liability, despite it being an early distribution. QDROs generally apply only to workplace plans, such as 401(k)s, 403(b)s, and traditional pensions."
+  },
+  {
+    "id": "ch7-term-10",
+    "chapter": 7,
+    "type": "term",
+    "front": "TOD (transfer on death)",
+    "back": "A registration, permitted in almost all states, that lets an account holder name a beneficiary who inherits the securities without probate. The beneficiary claims them with proof of the owner's death and proof of identity, and the securities are re-registered in the beneficiary's name. On a joint account, the TOD beneficiary inherits only after both original owners have died."
+  },
+  {
+    "id": "ch7-concept-01",
+    "chapter": 7,
+    "type": "concept",
+    "front": "Key supervisory concepts: OSJs, WSPs, and supervisory controls",
+    "back": "WSPs (written supervisory procedures) are kept at each OSJ and supervisory location, kept current, and include prompt principal review of each transaction. Registered principals oversee each business line (the Series 24 is the broadest principal exam). The main office, OSJs, and branches are registered, each OSJ has a principal, and each rep has a supervisor. Rule 3120 requires a supervisory control system with annual testing and a report to senior management; Rule 3130 requires the CEO's annual certification. An annual compliance meeting is required, in person or virtual."
+  },
+  {
+    "id": "ch7-concept-02",
+    "chapter": 7,
+    "type": "concept",
+    "front": "Processes that apply when firms hire new representatives",
+    "back": "The firm files Form U-4 to begin registration and verifies its accuracy and completeness within 30 days of filing, at minimum checking public records (criminal records, bankruptcies, judgments or liens) or using a third-party background check. It must certify contact with the applicant's employers of the previous three years, documenting names and dates. For someone previously in the business, it reviews the most recent U-5 within 60 days of filing the new U-4."
+  },
+  {
+    "id": "ch7-concept-03",
+    "chapter": 7,
+    "type": "concept",
+    "front": "When prior approval is and isn't required for reps to open accounts at other firms",
+    "back": "Under Rule 3210, an associated person needs prior written consent from the employer and must notify the opening firm of the association. It covers accounts of a spouse, a child in the household or financially dependent, a related person whose account they control, and anyone they control and materially support, unless no financial benefit or control can be shown. A rep joining a new firm gets consent for existing accounts within 30 calendar days. It doesn't apply to mutual funds, UITs, or variable annuity accounts."
+  },
+  {
+    "id": "ch7-concept-04",
+    "chapter": 7,
+    "type": "concept",
+    "front": "Custody and commingling",
+    "back": "Firms must maintain custody of customer securities and safeguard customer cash by segregating them from proprietary activities, delivering them promptly on request. Custody can be met by physical possession or a good control location the firm can direct, and smaller firms often use clearing firms, transfer agents, or the DTCC. Commingling, mixing customer assets that must be kept separate, is prohibited."
+  },
+  {
+    "id": "ch7-concept-05",
+    "chapter": 7,
+    "type": "concept",
+    "front": "Unacceptable forms of payment for securities transactions",
+    "back": "Cash, money orders, traveler's checks, starter checks, and counter checks; checks drawn against credit lines (Visa, MasterCard, Discover); foreign checks or drafts; second- or third-party checks; altered checks (unless initialed by the owner with clear intent); and defaced checks. Unacceptable payments go back to the account owner. A check returned for insufficient funds can't be re-deposited."
+  },
+  {
+    "id": "ch7-concept-06",
+    "chapter": 7,
+    "type": "concept",
+    "front": "Features of the types of accredited investors",
+    "back": "A natural person with earned income over $200,000 (or $300,000 with a spouse or spousal equivalent) in each of the prior two years with a reasonable expectation of continuing; or net worth over $1 million excluding the primary residence; or a Series 7, 65, or 82 license in good standing. Also: a trust over $5 million not formed to buy the securities and directed by a sophisticated person, an entity with investments over $5 million not formed to buy them, or an entity whose equity owners are all accredited."
+  },
+  {
+    "id": "ch7-concept-07",
+    "chapter": 7,
+    "type": "concept",
+    "front": "What's logged on the blotter and the supervisory rules for it",
+    "back": "All purchases and sales of securities, and all receipts and disbursements of cash and securities processed through the office, listing payer, payee, check number, amount, date received, and date shipped. Checks must be processed as promptly as possible, subject to holds for suitability or compliance. A principal must review the blotter transactions each day."
+  },
+  {
+    "id": "ch7-concept-08",
+    "chapter": 7,
+    "type": "concept",
+    "front": "Account restrictions when exploitation of a specified adult is suspected",
+    "back": "The firm may place a temporary hold on disbursements of funds or securities and on transactions, then investigate by contacting the customer, the trusted contact if named, and possibly law enforcement. The hold expires within 15 business days, can be extended 10 more if suspicions persist, and another 30 if reported to a state regulator, agency, or court, for up to 55 business days in total."
+  },
+  {
+    "id": "ch7-concept-09",
+    "chapter": 7,
+    "type": "concept",
+    "front": "The sequence of required paperwork and its return in option accounts",
+    "back": "Not covered in the Chapter 7 text; this follows FINRA Rule 2360, taught in the options chapters. The customer gets the Options Disclosure Document at or before account approval, a registered options principal approves the account before the first trade, and the signed options agreement must be returned within 15 days after approval, or the customer can only close existing positions."
+  },
+  {
+    "id": "ch7-concept-10",
+    "chapter": 7,
+    "type": "concept",
+    "front": "Types of internal account transfers and the processes for each",
+    "back": "All need written instructions on the firm's transfer form, listing securities by name and number for partial transfers; certificates need the owner's signature and usually a signature guarantee. Divorce: both spouses sign and a court order or decree is included, with retirement funds split by QDRO. Death: open orders are canceled, the account is frozen, and assets pass by beneficiary or will, with TOD avoiding probate and an affidavit of domicile required. Custodial: the minor requests a transfer by letter of intent at the age of majority. Transfers between different Tax IDs are treated as gifts."
+  },
+  {
+    "id": "ch8-term-01",
+    "chapter": 8,
+    "type": "term",
+    "front": "Vesting",
+    "back": "The ERISA requirement that specifies when participants have ownership rights to contributions made by their employers. Once benefits are vested, they cannot be taken away by an event such as the company's bankruptcy or the participant's dismissal. An employee's own contributions must be immediately vested; employer matching contributions are usually subject to a vesting schedule."
+  },
+  {
+    "id": "ch8-term-02",
+    "chapter": 8,
+    "type": "term",
+    "front": "Self-directed plan",
+    "back": "A plan, usually a defined contribution plan, that lets participants choose and manage their own investment options. In a self-directed plan the participant, not the employer, bears the investment risk."
+  },
+  {
+    "id": "ch8-term-03",
+    "chapter": 8,
+    "type": "term",
+    "front": "ESOP (Employee Stock Ownership Plan)",
+    "back": "A defined contribution plan in which the employer contributes funds to employee accounts within a trust that invests in company stock. Employees don't pay to participate and aren't taxed during the holding period; shares are generally held until retirement or separation. At retirement, shares or proceeds can be sold or rolled into a traditional IRA. Main drawback: lack of diversification."
+  },
+  {
+    "id": "ch8-term-04",
+    "chapter": 8,
+    "type": "term",
+    "front": "ESPP (Employee Stock Purchase Plan)",
+    "back": "A plan that lets employees voluntarily buy their employer's stock at a discount (up to 15%) through payroll deduction, with after-tax dollars, up to $25,000 per calendar year. Options can be exercised once vested, normally after one or two years of service, and capital gains tax is owed when the stock is sold."
+  },
+  {
+    "id": "ch8-term-05",
+    "chapter": 8,
+    "type": "term",
+    "front": "501(c)(3)",
+    "back": "A tax-exempt organization, such as a church, charity, library, hospital, or other nonprofit. Certain 501(c)(3) organizations, along with public educational institutions, can sponsor 403(b) plans for their employees."
+  },
+  {
+    "id": "ch8-term-06",
+    "chapter": 8,
+    "type": "term",
+    "front": "457(b)",
+    "back": "A plan sponsored by state or local government entities for public employees such as police officers and firefighters, generally exempt from ERISA Title I. It works like a 401(k), but withdrawals before 59½ after leaving the job carry no 10% penalty, and participants within three years of normal retirement age may contribute up to twice the annual limit ($49,000 in 2026)."
+  },
+  {
+    "id": "ch8-term-07",
+    "chapter": 8,
+    "type": "term",
+    "front": "RMD (required minimum distribution)",
+    "back": "The minimum amount that must be withdrawn each year from a traditional IRA or employer plan, starting by April 1 of the year after reaching RMD age (73), then by December 31 each year after. It's based on the account balance and IRS life expectancy tables. Missing an RMD triggers a 25% excise tax on the shortfall, cut to 10% if corrected by the end of the following year. Roth IRAs have no lifetime RMDs."
+  },
+  {
+    "id": "ch8-term-08",
+    "chapter": 8,
+    "type": "term",
+    "front": "Treat as your own",
+    "back": "An option available only to a spousal beneficiary of an inherited IRA: the spouse transfers the assets into their own personal IRA. Withdrawals can then be taken at any time, but a 10% penalty applies to withdrawals before age 59½."
+  },
+  {
+    "id": "ch8-term-09",
+    "chapter": 8,
+    "type": "term",
+    "front": "Roth conversion",
+    "back": "Converting all or part of a traditional IRA to a Roth IRA. The converted amount, less any non-deductible contributions, is added to gross income in the year of conversion, but no 10% penalty applies. Each conversion starts its own five-year clock before it can be taken as a qualified tax-free distribution."
+  },
+  {
+    "id": "ch8-term-10",
+    "chapter": 8,
+    "type": "term",
+    "front": "Municipal fund security",
+    "back": "The classification of 529 plans: investment pools, like mutual funds, issued by a state or local government entity. Investors hold shares that fluctuate in value with the underlying pool, and MSRB rules govern the required disclosures."
+  },
+  {
+    "id": "ch8-concept-01",
+    "chapter": 8,
+    "type": "concept",
+    "front": "Eligibility and disclosure requirements mandated by ERISA",
+    "back": "Eligibility: generally any full-time employee at least 21 with one year of service; long-term part-timers (500 to 999 hours in three consecutive years, or two years for 401(k) deferrals from 2025) must be allowed in. Employers can be more liberal but not stricter. Disclosure: a written plan document; a Summary Plan Description within 90 days of coverage, updated every 5 years (every 10 if unchanged); benefit statements quarterly if participants direct investments, annually if not; a summary annual report within 9 months of year-end; a Summary of Material Modifications within 210 days after the plan year of the change."
+  },
+  {
+    "id": "ch8-concept-02",
+    "chapter": 8,
+    "type": "concept",
+    "front": "Pre-tax vs. post-tax contributions and how withdrawals are taxed",
+    "back": "Pre-tax (traditional 401(k), deductible IRA) contributions reduce current taxable income, grow tax-deferred, and every distribution is taxed as ordinary income. Post-tax contributions give no current tax break. In a non-deductible traditional IRA, earnings are taxed at withdrawal but contributions aren't. In Roth accounts, qualified distributions (account held 5 years and age 59½, disability, or death) are completely tax-free."
+  },
+  {
+    "id": "ch8-concept-03",
+    "chapter": 8,
+    "type": "concept",
+    "front": "Unique features of 401(k) plans",
+    "back": "Salary-reduction elective deferrals ($24,500 in 2026, plus $8,000 catch-up at 50+, $11,250 at ages 60 to 63), optional employer match (total cap $72,000), participant-directed investments, automatic enrollment (new plans from 2025 start at 3% to 10%, rising 1% a year to 15%), loans up to the lesser of 50% of the vested balance or $50,000 (up to $10,000 if the vested balance is under $10,000), repaid typically within 5 years, hardship withdrawals for immediate and heavy financial need, and an optional Roth feature."
+  },
+  {
+    "id": "ch8-concept-04",
+    "chapter": 8,
+    "type": "concept",
+    "front": "IRA transfer vs. IRA rollover, and their tax aspects",
+    "back": "Direct rollover: the plan pays the new plan or IRA directly, no withholding. Trustee-to-trustee transfer: institution to institution, no withholding, unlimited per year. 60-day rollover: paid to the participant, who must redeposit within 60 days to avoid tax and penalty; employer plan payouts have mandatory 20% withholding (IRAs generally 10%), and to roll the full amount the participant must make up the withheld part from other funds. Any amount not redeposited is taxable and may carry the 10% penalty."
+  },
+  {
+    "id": "ch8-concept-05",
+    "chapter": 8,
+    "type": "concept",
+    "front": "RMDs and the plans they apply to",
+    "back": "RMDs apply to traditional IRAs and to employer plans such as 401(k)s, including designated Roth 401(k)s (unless still working and not a 5% owner); they start by April 1 after the year you reach 73 and continue every year. Roth IRAs have no RMDs during the owner's lifetime, and from 2024 designated Roth accounts in employer plans aren't subject to lifetime RMDs either. Penalty for missing one: 25% of the shortfall, 10% if fixed by the end of the next year."
+  },
+  {
+    "id": "ch8-concept-06",
+    "chapter": 8,
+    "type": "concept",
+    "front": "When traditional IRA contributions are tax deductible and when they aren't",
+    "back": "Fully deductible at any income if the person (and spouse) isn't covered by a workplace plan. If covered, deductibility depends on modified AGI: for example, married filing jointly with a covered spouse gets a full deduction at $242,000 or less, a partial one up to $252,000, and none at $252,000 or more (2026). Anyone with earned income can still contribute; above the limits the contribution is non-deductible but still grows tax-deferred."
+  },
+  {
+    "id": "ch8-concept-07",
+    "chapter": 8,
+    "type": "concept",
+    "front": "Why SEPs and SIMPLEs are advantageous to employers and employees",
+    "back": "They're inexpensive and less complex to set up and maintain than qualified plans. SEP: any size employer, contributions optional each year but the same percentage for all eligible employees, up to $72,000 per employee (2026), employer-only money. SIMPLE: up to 100 employees, employee deferrals up to $17,000 plus catch-up, with a required employer 3% match or 2% non-elective contribution. Employees are always 100% vested in both; neither allows loans."
+  },
+  {
+    "id": "ch8-concept-08",
+    "chapter": 8,
+    "type": "concept",
+    "front": "Circumstances that lead to penalties for Roth IRA participants",
+    "back": "Contributions can always come out tax- and penalty-free. A 10% penalty (plus ordinary income tax) can apply when earnings are withdrawn before 59½ without an exception, or when converted amounts come out before their own five-year clock is met. Earnings taken after 59½ but before the account has been held five years are taxed as ordinary income. Exceptions: disability, higher education costs, first-time home purchase up to $10,000, medical expenses over 7.5% of AGI, death, and up to $5,000 for birth or adoption. Excess contributions draw a 6% penalty."
+  },
+  {
+    "id": "ch8-concept-09",
+    "chapter": 8,
+    "type": "concept",
+    "front": "Options for spousal and non-spousal IRA beneficiaries",
+    "back": "Spouse: treat as your own (move into a personal IRA; 10% penalty on withdrawals before 59½), use life-expectancy distributions as an eligible designated beneficiary, or use the 10-year method. Other eligible designated beneficiaries (disabled or chronically ill, certain minor children, individuals not more than 10 years younger) may use life-expectancy distributions. Other designated beneficiaries follow the 10-year rule, with annual RMDs in years 1 to 9 if the owner died on or after the required beginning date. Anyone can take a lump sum, fully taxed that year. Death distributions carry no 10% penalty."
+  },
+  {
+    "id": "ch8-concept-10",
+    "chapter": 8,
+    "type": "concept",
+    "front": "Features of 529 plans compared to Coverdell plans",
+    "back": "Both are funded with after-tax dollars and give tax-free growth and tax-free withdrawals for qualified education expenses. 529: municipal fund securities offered by every state, no income limit, no IRS annual cap (gifts over $19,000 trigger gift tax, with a five-year election up to $95,000), owner keeps control and can change the beneficiary to a family member, up to $20,000 a year for K-12, and up to $35,000 lifetime can move to a Roth IRA after 15 years. Coverdell: income limits, $2,000 per beneficiary per year, no K-12 cap, and funds must be used or transferred by age 30. Non-qualified withdrawals of earnings from either: income tax plus a 10% penalty."
+  },
+  {
+    "id": "ch9-term-01",
+    "chapter": 9,
+    "type": "term",
+    "front": "Outstanding stock",
+    "back": "The number of shares held by investors. Issued stock minus treasury stock equals outstanding shares. A company can increase outstanding shares through follow-on offerings or decrease them through a buyback. Treasury stock (repurchased shares) is non-voting, pays no dividends, and is not counted as outstanding."
+  },
+  {
+    "id": "ch9-term-02",
+    "chapter": 9,
+    "type": "term",
+    "front": "Pre-emptive right",
+    "back": "The right that gives common shareholders the opportunity to retain their percentage of ownership when new shares are offered, usually by buying their proportionate share at a discounted price. Also called subscription rights or rights. Exercising them prevents dilution; unused rights can be sold in the secondary market."
+  },
+  {
+    "id": "ch9-term-03",
+    "chapter": 9,
+    "type": "term",
+    "front": "Reverse merger",
+    "back": "Also called a reverse takeover: a private company goes public by acquiring a public company. Private foreign companies often use reverse mergers with public U.S. companies to access U.S. capital markets. Business spinoffs and consolidations must be approved by shareholder votes."
+  },
+  {
+    "id": "ch9-term-04",
+    "chapter": 9,
+    "type": "term",
+    "front": "Class B stock",
+    "back": "Generally the class held in investor portfolios and traded on exchanges. Usually structured with one-vote-per-share and typically priced at a significant discount compared to Class A shares. Class A often carries superior privileges (including multiple votes) and is usually not exchange-traded; Class C shares are often non-voting and reserved for employee ownership."
+  },
+  {
+    "id": "ch9-term-05",
+    "chapter": 9,
+    "type": "term",
+    "front": "Dividends in arrears",
+    "back": "Unpaid (missed or skipped) dividends on cumulative preferred that must be paid to preferred shareholders before any dividend can be paid to common stockholders. Example: if 4% cumulative preferred skipped two years, the company must pay $8 for the missed years plus $4 for the current year ($12 total) before common is paid."
+  },
+  {
+    "id": "ch9-term-06",
+    "chapter": 9,
+    "type": "term",
+    "front": "Qualified dividends",
+    "back": "Cash dividends taxed at a preferential (lower) rate rather than as ordinary income. Requirements: paid by a U.S. company or a foreign company that trades in the U.S. or has a U.S. tax treaty, and held more than 60 days during the 121-day period that starts 60 days before the ex-dividend date (common). For preferred, hold 91 days out of the 181-day period beginning 90 days before the ex-dividend date. Reported on Form 1099-DIV."
+  },
+  {
+    "id": "ch9-term-07",
+    "chapter": 9,
+    "type": "term",
+    "front": "Reverse split",
+    "back": "A stock split in which the number of shares decreases and the per-share cost basis increases. Example: 100 shares at $20 ($2,000 total) after a 4:5 reverse split become 80 shares at $25. Typically used to prevent delisting on an exchange or to improve the image of a low-priced stock. Stock splits affect common stock only, not preferred."
+  },
+  {
+    "id": "ch9-term-08",
+    "chapter": 9,
+    "type": "term",
+    "front": "Cost basis",
+    "back": "The invested amount plus other expenses of investing (such as commissions). Gain or loss = sales proceeds minus cost basis. Example: buy 100 shares for $2,500 plus a $5 commission → cost basis $2,505; sell at $35 → gain of $995. Holding period starts the day after acquisition and ends on the sale date; more than one year = long-term (preferential rate)."
+  },
+  {
+    "id": "ch9-term-09",
+    "chapter": 9,
+    "type": "term",
+    "front": "Net loss",
+    "back": "After netting short-term gains against short-term losses and long-term gains against long-term losses, then netting those results together. Up to $3,000 of net loss may reduce taxable income in that tax year; any unused net loss is carried forward to future years until fully used."
+  },
+  {
+    "id": "ch9-term-10",
+    "chapter": 9,
+    "type": "term",
+    "front": "Wash sale",
+    "back": "IRS rule that blocks claiming a tax loss if you buy substantially identical securities within 30 days before or after selling at a loss — a 61-day window. Substantially identical includes the same stock, convertibles, call options, or warrants on that stock. Non-convertible bonds or preferred of the same issuer are ordinarily not substantially identical to its common. If violated, the loss cannot be used."
+  },
+  {
+    "id": "ch9-concept-01",
+    "chapter": 9,
+    "type": "concept",
+    "front": "List different classes of stock and their specific features",
+    "back": "Class A: often superior privileges, frequently held by insiders/founders with multiple votes (super-voting); usually not exchange-traded; may revert to one vote per share when sold. Class F: sometimes the label for founder super-voting shares (common or preferred) that help reject hostile takeovers. Class B: typically one-vote-per-share, held by public investors, exchange-traded, priced at a discount to Class A. Class C: often non-voting, reduced value, reserved for employee ownership. Preferred: equity with no (or limited) voting rights, higher liquidation priority than common, and a fixed/stated dividend (usually based on $100 par)."
+  },
+  {
+    "id": "ch9-concept-02",
+    "chapter": 9,
+    "type": "concept",
+    "front": "Explain the advantages and risks of rights, warrants, and ADRs",
+    "back": "Rights: short-term (typically 30–45 days), exercise price below market, let shareholders maintain proportionate ownership and avoid dilution; unused rights can be sold. Warrants: long-term (generally 5+ years), exercise price above market at issue, used as a sweetener on bonds/preferred so the issuer can pay a lower rate; valuable only if the stock rises above the exercise price; may trade separately. ADRs: U.S.-traded receipts for foreign shares, dividends paid in U.S. dollars via depositary banks — easier foreign ownership, but add political risk and currency exchange risk."
+  },
+  {
+    "id": "ch9-concept-03",
+    "chapter": 9,
+    "type": "concept",
+    "front": "Compare the different types of preferred stock and the risks and benefits each offers",
+    "back": "Cumulative: missed dividends (arrears) must be paid before common. Convertible: exchangeable for a fixed number of common shares based on par ÷ conversion price; early investors often get this. Participating: fixed dividend plus a share of excess profits/liquidation upside. Adjustable-rate: dividend tied to a benchmark (e.g., T-bill), so price is relatively stable but income can fall. Variable-rate: fixed until a trigger date, then floating. Callable: issuer can redeem at a set price — call risk if rates fall, so it pays a higher dividend. Straight preferred has no extra features. Convertible, participating, and cumulative usually have lower stated rates than straight; callable pays more because it is riskier."
+  },
+  {
+    "id": "ch9-concept-04",
+    "chapter": 9,
+    "type": "concept",
+    "front": "Why preferred stock is a fixed income security in investor portfolios",
+    "back": "Preferred pays a fixed or stated dividend based on par (usually $100), typically quarterly — e.g., 4% preferred pays $4 a year ($1 quarterly). That fixed income stream behaves like bond interest, so preferred prices move inversely with interest rates. Investors buy it mainly for income; because it is riskier than bonds, its yield is usually higher than bond interest from the same issuer. Dividends are paid before common but are not guaranteed."
+  },
+  {
+    "id": "ch9-concept-05",
+    "chapter": 9,
+    "type": "concept",
+    "front": "Dilution and how investors can protect against it",
+    "back": "Dilution is the reduction of an investor’s ownership percentage when new shares are issued. Protection is the pre-emptive (anti-dilution) right: existing shareholders get first chance to buy their proportionate share of a new issue, usually at a discount, typically within 30–45 days. Exercising rights keeps ownership percentage constant; rights not exercised can be sold in the secondary market."
+  },
+  {
+    "id": "ch9-concept-06",
+    "chapter": 9,
+    "type": "concept",
+    "front": "Stock splits and stock dividends and how they are used",
+    "back": "Stock dividends: extra shares instead of cash; a return of capital with no tax until sold. Total cost basis stays the same; per-share basis falls (e.g., 100 shares at $50 → after 10% stock dividend, 110 shares at $45.45). Forward split: more shares, lower per-share basis (e.g., 3:2 → 100 shares at $20 become 150 at $13.33) — viewed positively because a lower price can increase demand. Reverse split: fewer shares, higher per-share basis (e.g., 4:5 → 80 shares at $25) — used to avoid delisting or improve the image of a low-priced stock. Splits affect common only, not preferred."
+  },
+  {
+    "id": "ch9-concept-07",
+    "chapter": 9,
+    "type": "concept",
+    "front": "Why penny stock subjects investors to increased risk",
+    "back": "Penny stocks are unlisted (not on NYSE/NASDAQ), trade under $5 on OTC platforms, and often appear in the Pink market of the OTC Markets Group with reduced SEC reporting, limited public information, and minimal or no listing standards. Low price plus poor liquidity makes them extremely risky; issuers are often young or small. Wide bid–ask spreads signal disagreement on value or thin volume. Microcap stocks ($50M–$300M market cap) that trade OTC are also considered riskier and more susceptible to fraud and manipulation."
+  },
+  {
+    "id": "ch9-concept-08",
+    "chapter": 9,
+    "type": "concept",
+    "front": "The sequence of regulatory events that apply when recommending penny stock to customers",
+    "back": "(1) Deliver the penny stock risk disclosure document and obtain a manually signed, dated written acknowledgement (email OK if the customer accepts). (2) Observe a two-day waiting period. (3) Unless an exception applies, make a written suitability determination (customer finances, experience, objectives; current quote and market size; firm and rep compensation) and have the customer sign and return it. (4) Observe another two-day cooling-off period before the trade. Exceptions to the suitability determination: established customers (account and transactions with that BD for more than one year) or customers with at least three penny stock trades on different days involving different issuers. Owners of penny stock must receive monthly account statements showing market value."
+  },
+  {
+    "id": "ch9-concept-09",
+    "chapter": 9,
+    "type": "concept",
+    "front": "The tax impact of stock dividends versus cash dividends",
+    "back": "Cash dividends are taxable income in the year received (even if reinvested), reported on Form 1099-DIV, and are either ordinary (taxed as ordinary income) or qualified (preferential rate if holding-period rules are met). Cash dividends do not reduce cost basis. Stock dividends are a return of capital with no tax until the shares are sold; total cost basis is unchanged and is spread over more shares, lowering the per-share basis. Gain or loss is recognized only when those shares are later sold."
+  },
+  {
+    "id": "ch9-concept-10",
+    "chapter": 9,
+    "type": "concept",
+    "front": "How taxes are calculated when inherited or gifted stock is sold by a beneficiary",
+    "back": "Gifted appreciated stock: recipient’s basis = donor’s original cost basis (including commissions). Gifted depreciated stock: if sold at a loss, basis is FMV on the gift date; if later sold above the donor’s original cost, use the donor’s basis for the gain. Inherited stock: stepped-up (or stepped-down) basis equal to FMV on the date of death — usually lowers taxable gain when sold. Example: grandma’s shares bought at $25, worth $75 at death → grandson’s basis is $75; sale at $90 means only $15/share of taxable gain. Same rules apply to mutual fund shares."
+  }
+]
