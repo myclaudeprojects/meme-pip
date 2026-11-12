@@ -1398,5 +1398,145 @@
     "type": "concept",
     "front": "How do you compute accrued interest for corporate and U.S. government securities?",
     "back": "Buyer owes seller interest from and including the last coupon date up to but not including settlement (regular-way T+1 for both corporates and Treasuries). Corporates/munis use 30/360: Accrued = coupon rate × par × days ÷ 360. Treasuries use actual days ÷ 365: Accrued = coupon rate × par × actual days ÷ 365. The trade is “and interest” when that amount is added to the price on the confirmations."
+  },
+  {
+    "id": "ch11-term-01",
+    "chapter": 11,
+    "type": "term",
+    "front": "Referendum",
+    "back": "A public vote on a proposed bond issue or new tax. Adding a new tax to back a GO bond usually needs voter approval through a bond referendum. For example, a school district may need a two-thirds vote before it can build a new gym. Revenue bonds don't need voter approval."
+  },
+  {
+    "id": "ch11-term-02",
+    "chapter": 11,
+    "type": "term",
+    "front": "Conduit bond",
+    "back": "A revenue bond that a government agency issues on behalf of a private entity or a 501(c)(3) nonprofit that can't issue bonds itself, such as a college or hospital. The borrower's revenues pay principal and interest. Industrial development revenue bonds (IDRs) are conduit bonds. Credit quality depends on the private borrower, not the municipality."
+  },
+  {
+    "id": "ch11-term-03",
+    "chapter": 11,
+    "type": "term",
+    "front": "Bank qualified",
+    "back": "A municipal bond that lets a bank deduct 80% of the interest it pays to finance the purchase (its carrying costs). The bond must come from a qualified small issuer (no more than $30 million of tax-exempt bonds in a calendar year), be issued for public purposes, and be designated a qualified tax-exempt obligation."
+  },
+  {
+    "id": "ch11-term-04",
+    "chapter": 11,
+    "type": "term",
+    "front": "Municipal fund security",
+    "back": "An ownership share in a pooled investment fund set up by a state or local government. It is an equity security, not a debt security. There are three types: local government investment pools (LGIPs), 529 college savings plans, and ABLE accounts."
+  },
+  {
+    "id": "ch11-term-05",
+    "chapter": 11,
+    "type": "term",
+    "front": "Coverage ratio",
+    "back": "The debt service coverage ratio is used for revenue bonds. It equals net revenue divided by annual debt service. For example, $10M gross revenue minus $2M in operating and maintenance costs leaves $8M. Divided by $4M of debt service, that's 2 to 1. About 2 times is usually considered acceptable, and higher is safer."
+  },
+  {
+    "id": "ch11-term-06",
+    "chapter": 11,
+    "type": "term",
+    "front": "Dated date",
+    "back": "The date interest starts accruing on a new municipal bond issue. It stops mattering after the first interest payment. Muni accrued interest uses corporate rules: T+1 regular-way settlement and a 30/360 day count."
+  },
+  {
+    "id": "ch11-term-07",
+    "chapter": 11,
+    "type": "term",
+    "front": "Basis quote",
+    "back": "A municipal bond quote given as a yield to maturity instead of a dollar price. In muni quotes, basis means YTM. A 7% bond trading on a 5% basis is at a premium because its coupon is above its YTM. Changes are measured in basis points, and one basis point is 1/100 of a percent."
+  },
+  {
+    "id": "ch11-term-08",
+    "chapter": 11,
+    "type": "term",
+    "front": "Credit enhancement",
+    "back": "Extra repayment protection that raises a bond's credit rating. Bond insurance is a guarantee that the insurer will pay debt service if the issuer can't, and the bond then carries the insurer's rating. Other examples are a bank letter of credit and a surety bond. Insured bonds are more marketable and cost the issuer less interest."
+  },
+  {
+    "id": "ch11-term-09",
+    "chapter": 11,
+    "type": "term",
+    "front": "Refunding",
+    "back": "Issuing new bonds to pay off outstanding, usually higher-cost bonds. A current refunding redeems the old bonds within 90 days of the new issue. An advance refunding (pre-refunding) redeems them more than 90 days later, often because of call protection. A crossover refunding keeps paying the old bonds from the project's revenues until they're called, and then those revenues switch to the new bonds."
+  },
+  {
+    "id": "ch11-term-10",
+    "chapter": 11,
+    "type": "term",
+    "front": "Tax swap",
+    "back": "Selling one bond at a loss and buying another at the same time to lower taxes. The loss offsets current or upcoming capital gains. To avoid the wash sale rule, the new bond must have a different issuer, a substantially different maturity, or a substantially different coupon. The rule covers 61 days: 30 days before the sale, the sale date, and 30 days after."
+  },
+  {
+    "id": "ch11-concept-01",
+    "chapter": 11,
+    "type": "concept",
+    "front": "How do GO bonds and revenue bonds differ in backing and safety?",
+    "back": "GO bonds are backed by the issuer's full faith and credit and its taxing power, such as property (ad valorem), income, and sales taxes. They pay for public projects that don't charge users. They're subject to debt and tax limits, and new taxes often need a referendum. Revenue bonds are backed only by revenue from the project they fund, such as tolls or user fees. They pay for projects that charge a fee, and they aren't subject to statutory debt limits or voter approval."
+  },
+  {
+    "id": "ch11-concept-02",
+    "chapter": 11,
+    "type": "concept",
+    "front": "What are the key features of private activity bonds and how are they taxed?",
+    "back": "Private activity bonds, such as industrial development revenue bonds (IDRs), pay for facilities like factories, stadiums, or parking garages. Those facilities are then leased or sold on installments to a private business. The company's payments cover debt service, so credit quality depends on the company. The interest is exempt from regular federal tax but counts for the alternative minimum tax (AMT). That makes these bonds less suitable for high-income investors who are subject to AMT."
+  },
+  {
+    "id": "ch11-concept-03",
+    "chapter": 11,
+    "type": "concept",
+    "front": "What call features do municipal issuers use?",
+    "back": "Calls can be in whole (the entire issue) or in part (chosen by lottery). Call protection often bars calls for up to 10 years. Optional calls can happen whenever the issuer likes, usually after rates fall. Mandatory calls are triggered by a defined event, and a catastrophe call is one triggered by a calamity. Extraordinary calls happen when revenue sources are affected. Sinking fund calls retire bonds on a set schedule. An issuer can also buy its bonds back in the open market when that's cheaper than the call price."
+  },
+  {
+    "id": "ch11-concept-04",
+    "chapter": 11,
+    "type": "concept",
+    "front": "What is the purpose of a revenue bond's indenture?",
+    "back": "The bond (trust) indenture is part of the formal bond contract. It is a set of promises between the issuer and a trustee, usually a large bank, which acts as a fiduciary to protect bondholders. Munis are exempt from the Trust Indenture Act of 1939, but revenue bond indentures give investors the same kind of protection. The indenture contains the covenants and the flow of funds."
+  },
+  {
+    "id": "ch11-concept-05",
+    "chapter": 11,
+    "type": "concept",
+    "front": "What are the main revenue bond covenants?",
+    "back": "Rate covenant: charge enough to cover debt service, operating and maintenance costs, and reserves. Insurance covenant: keep adequate casualty insurance. Operations and maintenance covenant: keep the facilities in good repair. Reports and audits: file timely financial reports and get outside audits. Additional bonds covenant: an open-end indenture lets new bonds share an equal claim if they pass the test, while a closed-end indenture makes new bonds subordinate. Project completion covenant: issue new bonds if needed to finish construction."
+  },
+  {
+    "id": "ch11-concept-06",
+    "chapter": 11,
+    "type": "concept",
+    "front": "How do VRDOs and ARSs compare?",
+    "back": "Both are long-term bonds with variable rates. VRDOs (variable rate demand obligations) reset their rate to a benchmark. They have a put that lets investors sell back at par on reset dates, so they're very liquid and count as short-term. Many are backed by a letter of credit. ARSs (auction rate securities) reset their rate through a Dutch auction at the clearing rate. They usually have no put and no letter of credit, and a failed auction can leave investors unable to sell."
+  },
+  {
+    "id": "ch11-concept-07",
+    "chapter": 11,
+    "type": "concept",
+    "front": "How are capital gains taxed on OID and secondary market discount munis?",
+    "back": "For an OID bond, the discount is accreted straight-line each year, and that accretion is tax-exempt interest. For example, a bond bought at $900 with 5 years left accretes $20 a year. Sold at $980 after 2 years, the adjusted basis is $940, so the gain is $40. Held to maturity, there's no gain. A bond bought at a discount in the secondary market isn't accreted, so buying at $950 and getting $1,000 at maturity is a $50 reportable gain. Premiums are amortized down, which lowers the basis."
+  },
+  {
+    "id": "ch11-concept-08",
+    "chapter": 11,
+    "type": "concept",
+    "front": "What factors affect a municipal bond's marketability?",
+    "back": "Higher credit quality, shorter maturity, and lower duration all help. So do larger blocks, since $100,000 is standard. Other pluses are no call feature, a large, well-known, financially strong issuer, a sinking fund, and insurance. A legal opinion should be delivered at settlement. A bond delivered without one is ex-legal, and the buyer can reject it unless that was known at the time of the trade."
+  },
+  {
+    "id": "ch11-concept-09",
+    "chapter": 11,
+    "type": "concept",
+    "front": "What is bond insurance and how does it affect investors?",
+    "back": "Bond insurance is a guarantee from an insurer, such as Assured Guaranty or National Public Finance Guaranty, that it will pay principal and interest if the issuer can't. The bond takes on the insurer's credit rating, which makes it more marketable and lowers the issuer's interest cost. In return, investors accept a somewhat lower yield."
+  },
+  {
+    "id": "ch11-concept-10",
+    "chapter": 11,
+    "type": "concept",
+    "front": "How do you compute tax-equivalent and tax-free equivalent yields?",
+    "back": "Tax-equivalent yield equals the muni yield divided by (1 minus the tax rate). For example, 4% divided by (1 minus 25%) is 5.33%. Tax-free equivalent yield equals the taxable yield times (1 minus the tax rate). For example, 6% times (1 minus 35%) is 3.9%. Munis help investors in high tax brackets the most."
   }
 ]
