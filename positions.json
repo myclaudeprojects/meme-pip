@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-11-13 18:03:10 EST",
+  "generated_et": "2026-11-13 18:05:12 EST",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -3041,13 +3041,13 @@
       "opened_et": "2026-11-13 18:01 ET",
       "holding_account": null,
       "onchain_amount": 837584.591213,
-      "onchain_checked_et": "2026-11-13 18:03:10 EST",
+      "onchain_checked_et": "2026-11-13 18:05:12 EST",
       "unrealized": {
-        "value_usd": 398.67,
-        "price_usd": 0.0004759769183690901,
-        "pnl_usd": -1.72,
-        "value_sol": 5.164568,
-        "pnl_sol": 0.002279
+        "value_usd": 388.71,
+        "price_usd": 0.0004640888768316833,
+        "pnl_usd": -11.68,
+        "value_sol": 5.036057,
+        "pnl_sol": -0.126231
       }
     }
   ],
@@ -3073,15 +3073,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-11-13 18:03:10 EST",
+    "as_of_et": "2026-11-13 18:05:12 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 1.052633498,
-    "sol_price_usd": 77.19347815850166,
-    "sol_usd_approx": 81.26,
+    "sol_price_usd": 77.18611599431787,
+    "sol_usd_approx": 81.25,
     "arc_usdc": 0.008864,
-    "total_cash_usd_approx": 81.27,
+    "total_cash_usd_approx": 81.26,
     "note": "Live cash: 1.0526 SOL + Arc USDC $0.01 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1794610990529
+    "as_of_ts": 1794611112865
   },
   "recent_notes": [
     {
@@ -3148,8 +3148,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-11-13 18:03:10 EST",
-    "generated_ts": 1794610990031,
+    "generated_et": "2026-11-13 18:05:12 EST",
+    "generated_ts": 1794611112314,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 1.052633498,
@@ -3168,16 +3168,22 @@
         "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "amount": 0.0017,
         "program": "spl"
+      },
+      {
+        "mint": "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo",
+        "amount": 0.00261085,
+        "program": "token-2022"
       }
     ],
     "prices": {
-      "6EHTywfoXpDNhL4JGkeYUhiL6mumpmD7j8ByjQaXpump": 0.0004759769183690901,
+      "6EHTywfoXpDNhL4JGkeYUhiL6mumpmD7j8ByjQaXpump": 0.0004640888768316833,
       "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.5161842852301666e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986369928464223
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986453621166265,
+      "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 340.4442239650037
     }
   },
   "realized": {
-    "generated_et": "2026-11-13 18:03:10 EST",
+    "generated_et": "2026-11-13 18:05:12 EST",
     "n_trades": 110,
     "n_known": 110,
     "n_unknown": 0,
@@ -3195,24 +3201,24 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-11-13 18:03:10 EST",
+    "as_of_et": "2026-11-13 18:05:12 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 1.052633498,
-    "sol_price_usd": 77.19347815850166,
-    "sol_usd_approx": 81.26,
+    "sol_price_usd": 77.18611599431787,
+    "sol_usd_approx": 81.25,
     "arc_usdc": 0.008864,
-    "total_cash_usd_approx": 81.27,
+    "total_cash_usd_approx": 81.26,
     "note": "Live cash: 1.0526 SOL + Arc USDC $0.01 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1794610990529
+    "as_of_ts": 1794611112865
   },
   "unrealized": {
     "n": 1,
-    "value_usd": 398.67,
+    "value_usd": 388.71,
     "cost_usd": 400.39,
-    "pnl_usd": -1.72,
-    "pnl_sol": 0.00228,
-    "sol_price_usd": 77.19347815850166,
-    "as_of_et": "2026-11-13 18:03:10 EST"
+    "pnl_usd": -11.68,
+    "pnl_sol": -0.126231,
+    "sol_price_usd": 77.18611599431787,
+    "as_of_et": "2026-11-13 18:05:12 EST"
   },
   "holder_history": {
     "6EHTywfoXpDNhL4JGkeYUhiL6mumpmD7j8ByjQaXpump": {
@@ -3227,6 +3233,14 @@
         [
           1794610981,
           3085
+        ],
+        [
+          1794611041,
+          3121
+        ],
+        [
+          1794611101,
+          3144
         ]
       ],
       "d": [
@@ -3243,12 +3257,28 @@
           1681
         ],
         [
+          1794607441,
+          1651
+        ],
+        [
+          1794607501,
+          1657
+        ],
+        [
           1794610621,
           2845
         ],
         [
           1794610681,
           2889
+        ],
+        [
+          1794610741,
+          2917
+        ],
+        [
+          1794610801,
+          2938
         ]
       ]
     }
