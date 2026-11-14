@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-14 06:34:23 EST",
- "generated_ts": 1794656063192,
+ "generated_et": "2026-11-14 06:36:24 EST",
+ "generated_ts": 1794656184863,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -25,15 +25,15 @@
   "usdc": 0.00886426917026
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 75.595,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 342.51,
+  "So11111111111111111111111111111111111111112": 75.68,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 342.5,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 338.61,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.409e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 2.839e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991,
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01257,
+  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01258,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.04275,
-  "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002553,
+  "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002554,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.44,
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": 7.5,
   "9V4iZc2VcbbbLAwK8Do9YQXRK5ZJ3DEz4EEgaN4nDuns": 0.2126,
@@ -54,9 +54,15 @@
  "info": {
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 7106974,
+   "mc": 7106891,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
+  },
+  "F3y1gDXKTupSjhzKQ6JrPjZFDAug7bAKSxkQAmfNpump": {
+   "symbol": "tinfoil",
+   "mc": null,
+   "pair": "HFbYzvnZXX1NXPkcminALqsYkuoUnFvvJBiajDw4Ucse",
+   "dex": "pumpfun"
   },
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": {
    "symbol": "AVGO",
@@ -122,12 +128,6 @@
    "symbol": "Bitches",
    "mc": null,
    "pair": "4r34QwsUgwNPDnrz5LtceZQiCyWnujz5JZyyYqnUC7TD",
-   "dex": "pumpfun"
-  },
-  "F3y1gDXKTupSjhzKQ6JrPjZFDAug7bAKSxkQAmfNpump": {
-   "symbol": "tinfoil",
-   "mc": null,
-   "pair": "HFbYzvnZXX1NXPkcminALqsYkuoUnFvvJBiajDw4Ucse",
    "dex": "pumpfun"
   },
   "qpg8nn5NAdeLj76UmnnRchAnVWKXDo6GaBoDrn7mH8Z": {
@@ -198,7 +198,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 23738120,
+   "mc": 23752370,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -210,7 +210,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 255362,
+   "mc": 255398,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
