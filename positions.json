@@ -1,5 +1,5 @@
 {
-  "generated_et": "2026-11-15 13:20:05 EST",
+  "generated_et": "2026-11-15 13:43:43 EST",
   "state_updated_et": "10/18/2026, 19:01:31 ET",
   "read_only_note": "Snapshot from state.json + position files + public chain reads. No keys, no signing.",
   "params": {
@@ -3103,15 +3103,15 @@
     }
   },
   "cash_snapshot": {
-    "as_of_et": "2026-11-15 13:20:06 EST",
+    "as_of_et": "2026-11-15 13:43:44 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.20114976,
-    "sol_price_usd": 71.06250641040778,
-    "sol_usd_approx": 14.29,
+    "sol_price_usd": 70.96904111956673,
+    "sol_usd_approx": 14.28,
     "arc_usdc": 0.008864,
-    "total_cash_usd_approx": 14.3,
+    "total_cash_usd_approx": 14.29,
     "note": "Live cash: 0.2011 SOL + Arc USDC $0.01 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1794766806116
+    "as_of_ts": 1794768224392
   },
   "recent_notes": [
     {
@@ -3178,8 +3178,8 @@
   ],
   "wallet_onchain": {
     "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
-    "generated_et": "2026-11-15 13:20:05 EST",
-    "generated_ts": 1794766805597,
+    "generated_et": "2026-11-15 13:43:43 EST",
+    "generated_ts": 1794768223622,
     "source": "box dashboard_snapshot.py getTokenAccountsByOwner (SPL + Token-2022) + Bordrless holdings",
     "ok": true,
     "sol": 0.20114976,
@@ -3202,12 +3202,12 @@
     ],
     "prices": {
       "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 2.5161842852301666e-06,
-      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9993996799841312,
-      "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 337.01908278992124
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9993728392559394,
+      "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 337.29215490775226
     }
   },
   "realized": {
-    "generated_et": "2026-11-15 13:20:06 EST",
+    "generated_et": "2026-11-15 13:43:44 EST",
     "n_trades": 112,
     "n_known": 112,
     "n_unknown": 0,
@@ -3225,15 +3225,15 @@
     "method": "proceeds = wallet SOL change of each sell tx (chain) when every listed sell sig resolves and is not below the file figure; else the position file's recorded proceeds. USD = proceeds_sol x SOL price at sell recorded in the file (else SOL price at entry). Excludes Liar's Dice Arc wallets."
   },
   "cash": {
-    "as_of_et": "2026-11-15 13:20:06 EST",
+    "as_of_et": "2026-11-15 13:43:44 EST",
     "source": "live: Solana getBalance + Arc USDC balanceOf (box)",
     "sol_native": 0.20114976,
-    "sol_price_usd": 71.06250641040778,
-    "sol_usd_approx": 14.29,
+    "sol_price_usd": 70.96904111956673,
+    "sol_usd_approx": 14.28,
     "arc_usdc": 0.008864,
-    "total_cash_usd_approx": 14.3,
+    "total_cash_usd_approx": 14.29,
     "note": "Live cash: 0.2011 SOL + Arc USDC $0.01 (Liar's Dice Arc wallets excluded)",
-    "as_of_ts": 1794766806116
+    "as_of_ts": 1794768224392
   },
   "unrealized": {
     "n": 0,
@@ -3241,82 +3241,82 @@
     "cost_usd": 0.0,
     "pnl_usd": 0.0,
     "pnl_sol": null,
-    "sol_price_usd": 71.06250641040778,
-    "as_of_et": "2026-11-15 13:20:06 EST"
+    "sol_price_usd": 70.96904111956673,
+    "as_of_et": "2026-11-15 13:43:44 EST"
   },
   "holder_history": {},
   "scanner_first_seen": {
     "tracking_since": "2026-10-10 09:12:55 EDT",
-    "last_scan_ts": 1794533575.6962152,
+    "last_scan_ts": 1794767205.2075567,
     "tokens": {
       "ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "godspeed"
       },
       "3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "SUPERCORE"
       },
       "D3S6J9s1byrNBt3ZKwEDiPsNRqHtoEP8zQKdhyBdpump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "PIERRE"
       },
       "55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "Gato"
       },
       "Ez7eEs53hQiXgCGmcbhdX5i1jgg2gC3F6MoeosuVpump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "LUKE"
       },
       "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "1"
       },
       "5ubruMYpgKqw9ip5J1qrXbVGmMdn2VCsMg421B4bpump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "onboard"
       },
       "HqmFi85adLD8BQA7en1HfajdAfzVFps5REgQaYuw6Ax8": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "WEFT"
       },
       "HgcxVs6kJhPAaGqnPNGaa7zYgNT49hJrLufiqcNMuYZT": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "FEELSGOOD"
       },
       "DvdmEnztCmXwBnAbedD48XVGZJSxq31zNvnyftXdpump": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "pill"
       },
       "NTRNDMqQSiwEC2jJs3wJiZS6bpGYQJtMNQJgiX3WyV6": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "NTRNDM"
       },
       "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "AMD"
       },
       "72QvBVwpxqmheEPfaCwWSWqEFsUy3rhWt6JhQBMNTwD1": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767204,
+        "last_seen": 1794767204,
         "symbol": "ENA"
       },
       "ysPp2Bt2j2UQu2tZwtSJz7JxyrmQ8GJcNJE5NyDoS5a": {
-        "first_seen": 1794533575,
-        "last_seen": 1794533575,
+        "first_seen": 1794767205,
+        "last_seen": 1794767205,
         "symbol": "MUSK4"
       }
     }
