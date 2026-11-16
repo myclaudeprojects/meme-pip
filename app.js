@@ -242,7 +242,9 @@
     $("updated").textContent = C.nowEt();
     $("f-sol").innerHTML = `<a href="https://solscan.io/account/${CFG.SOL_WALLET}" target="_blank" rel="noopener">${short(CFG.SOL_WALLET)}</a>`;
     $("f-arc").textContent = short(CFG.ARC_WALLET);
-    renderCards(P); const pos = renderPositions(P); renderPnl(pos); renderPerps(); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
+    const gmxAddr = (S.live && S.live.gmx && S.live.gmx.address) || "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A";
+    if ($("f-gmx")) $("f-gmx").innerHTML = `<a href="https://arbiscan.io/address/${gmxAddr}" target="_blank" rel="noopener">${short(gmxAddr)}</a>`;
+    renderCards(P); const pos = renderPositions(P); renderPnl(pos); renderPerps(); renderGmx(); renderDecision(P); renderScan(P, pos); renderRanges(); renderSources();
     renderHolderPanel();
   }
 
@@ -381,6 +383,66 @@
     el.innerHTML = h;
     $("perp-note").innerHTML = anyLive ? '<span class="pos">● live</span>' : '<span class="warn">snapshot prices</span>';
     const t = $("perp-total"); if (t && nPriced) t.innerHTML = `combined PnL <span class="${cls(te - tm)}">${sgnUsd(te - tm)} (${sgnPct((te / tm - 1) * 100)})</span> on ${C.fmtUsd(tm)} margin`;
+  }
+
+  // ---------- GMX Perps (Arbitrum) ----------
+  function fmtLev(v) {
+    if (v == null || !Number.isFinite(Number(v))) return "-";
+    const n = Number(v);
+    return (Math.abs(n) >= 10 ? n.toFixed(1) : n.toFixed(2)).replace(/\.0+$/, "").replace(/(\.\d)0$/, "$1") + "×";
+  }
+  function renderGmx() {
+    const el = $("gmx"); if (!el) return;
+    const g = S.live && S.live.gmx;
+    const note = $("gmx-note"), total = $("gmx-total");
+    if (!g) {
+      el.innerHTML = '<span class="muted">Waiting for live GMX data from the box snapshot.</span>';
+      if (note) note.innerHTML = '<span class="warn">no live.json gmx yet</span>';
+      if (total) total.innerHTML = "";
+      return;
+    }
+    const addr = g.address || "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A";
+    const eth = g.eth, usdc = g.usdc, ethUsd = g.eth_usd;
+    const list = Array.isArray(g.positions) ? g.positions : [];
+    let bal = `<div style="margin-bottom:10px">Wallet <a href="https://arbiscan.io/address/${esc(addr)}" target="_blank" rel="noopener">${esc(short(addr))}</a> on Arbitrum`;
+    bal += ` · <a href="https://app.gmx.io/#/trade" target="_blank" rel="noopener">GMX</a>`;
+    if (eth != null) bal += ` · ${Number(eth).toFixed(6)} ETH` + (ethUsd != null ? ` <span class="muted">(${C.fmtUsd(ethUsd)})</span>` : "");
+    if (usdc != null) bal += ` · ${C.fmtUsd(usdc)} USDC`;
+    if (eth == null && usdc == null) bal += ' · <span class="warn">balances unavailable</span>';
+    bal += "</div>";
+    if (g.error) bal += `<div class="msg" style="margin-bottom:8px">GMX data warning: ${esc(g.error)}</div>`;
+    if (!list.length) {
+      el.innerHTML = bal + '<div class="muted">No open positions</div>';
+      if (note) note.innerHTML = '<span class="pos">● live</span>';
+      if (total) total.innerHTML = usdc != null ? `${C.fmtUsd(usdc)} USDC idle` : "";
+      return;
+    }
+    let h = bal + '<div class="wrap"><table><thead><tr><th class="l">Market</th><th class="l">Side</th><th>Size USD</th><th>Collateral</th><th>Leverage</th><th>Entry</th><th>Mark</th><th>Liq price</th><th>PnL</th></tr></thead><tbody>';
+    let tpnl = 0, tcoll = 0, tsize = 0, nPnl = 0;
+    for (const p of list) {
+      const side = String(p.side || "").toLowerCase() === "short" ? "short" : "long";
+      const pnl = p.pnl_usd != null ? Number(p.pnl_usd) : null;
+      const coll = p.collateral_usd != null ? Number(p.collateral_usd) : null;
+      const size = p.size_usd != null ? Number(p.size_usd) : null;
+      if (pnl != null) { tpnl += pnl; nPnl++; }
+      if (coll != null) tcoll += coll;
+      if (size != null) tsize += size;
+      const pct = p.pnl_pct != null ? Number(p.pnl_pct) : (pnl != null && coll ? (pnl / coll) * 100 : null);
+      const badge = side === "short" ? "SKIP" : "PASS";
+      h += `<tr><td class="l">${esc(p.market || "—")}</td>` +
+        `<td class="l"><span class="badge ${badge}">${esc(side)}</span></td>` +
+        `<td>${size != null ? C.fmtUsd(size) : "-"}</td>` +
+        `<td>${coll != null ? C.fmtUsd(coll) : "-"}</td>` +
+        `<td>${fmtLev(p.leverage)}</td>` +
+        `<td>${fmtPx(p.entry)}</td><td>${fmtPx(p.mark)}</td><td>${fmtPx(p.liq)}</td>` +
+        `<td class="${pnl == null ? "muted" : cls(pnl)}">${pnl == null ? "-" : sgnUsd(pnl) + (pct != null ? ` <span class="muted">${sgnPct(pct)}</span>` : "")}</td></tr>`;
+    }
+    if (list.length > 1) h += `<tr class="bk-sum"><td class="l" colspan="2">Combined (${list.length})</td><td>${C.fmtUsd(tsize)}</td><td>${C.fmtUsd(tcoll)}</td><td colspan="4"></td><td class="${cls(tpnl)}">${nPnl ? sgnUsd(tpnl) : "-"}</td></tr>`;
+    h += "</tbody></table></div>";
+    h += '<div class="muted" style="font-size:11px;margin-top:6px">Balances and positions are read-only from a public Arbitrum RPC and the GMX API. No positions are opened from this dashboard.</div>';
+    el.innerHTML = h;
+    if (note) note.innerHTML = '<span class="pos">● live</span>';
+    if (total) total.innerHTML = nPnl ? `combined PnL <span class="${cls(tpnl)}">${sgnUsd(tpnl)}</span> on ${C.fmtUsd(tcoll)} collateral` : `${list.length} open`;
   }
 
   // ---------- holder detail panel (click the trend line) ----------
@@ -560,7 +622,7 @@
       const missing = mints.filter((m) => got[m] == null);
       S.pxErr = missing.length ? "no live price for " + missing.map(short).join(", ") + (errs.length ? " (" + errs.join("; ") + ")" : "") : null;
       if (mints.some((m) => got[m] != null)) S.pxAt = Date.now();
-      const pos = renderPositions(params()); renderPnl(pos); renderPerps();
+      const pos = renderPositions(params()); renderPnl(pos); renderPerps(); renderGmx();
     } finally { S.pxBusy = false; }
   }
   function renderLiveAge() {

@@ -186,6 +186,11 @@
     </section>
   </div>
 
+  <section id="gmx-sec">
+    <h2>GMX Perps <small id="gmx-note"></small> <small id="gmx-total"></small></h2>
+    <div id="gmx"><span class="muted">Loading…</span></div>
+  </section>
+
   <section>
     <h2>Live scan: $200k–$1M band <small id="scan-note"></small></h2>
     <div id="scan-sort" style="margin:4px 0 8px;font-size:12px"></div>
@@ -317,7 +322,7 @@
   </div>
 </main>
 <footer>Read-only dashboard: public GET / JSON-RPC reads only. No keys, no signing, no orders.
-  Sol <span id="f-sol"></span> · Arc <span id="f-arc"></span></footer>
+  Sol <span id="f-sol"></span> · Arc <span id="f-arc"></span> · GMX <span id="f-gmx"></span></footer>
 
 <!-- Optional snapshot written by dashboard_snapshot.py (lets file:// opening show cost basis). Missing = fine. -->
 <script src="positions.js" onerror="void 0"></script>
