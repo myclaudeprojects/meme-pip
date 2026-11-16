@@ -116,6 +116,12 @@
     #view-gmx .gmx-table td::before { content: attr(data-label); color: var(--muted); font-weight: 500; text-align: left; flex: 0 0 auto; }
     #view-gmx .gmx-table td:empty, #view-gmx .gmx-table td:not([data-label]) { display: none; }
   }
+  #view-gmx .gmx-top { max-width: 360px; }
+  #view-gmx .gmx-btc-card .v { font-size: 28px; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  @media (max-width: 700px) {
+    #view-gmx .gmx-top { max-width: none; }
+    #view-gmx .gmx-btc-card .v { font-size: 24px; }
+  }
   /* Series 7 tab */
   #view-series7 { max-width:880px; }
   #view-series7 h2 { font-size:20px; margin:0; }
@@ -332,6 +338,9 @@
   </div>
 </main>
 <main id="view-gmx" hidden>
+  <div class="grid gmx-top" id="gmx-top">
+    <div class="card gmx-btc-card"><div class="k">BTC price</div><div class="v" id="gmx-btc-px">–</div><div class="s" id="gmx-btc-px-s">Current BTC</div></div>
+  </div>
   <section id="gmx-sec">
     <h2>GMX Perps <small id="gmx-note"></small> <small id="gmx-total"></small></h2>
     <div id="gmx"><span class="muted">Loading…</span></div>
@@ -343,7 +352,7 @@
 <!-- Optional snapshot written by dashboard_snapshot.py (lets file:// opening show cost basis). Missing = fine. -->
 <script src="positions.js" onerror="void 0"></script>
 <script src="core.js?v=arcfix1"></script>
-<script src="app.js?v=gmxpx3"></script>
+<script src="app.js?v=gmxpx4"></script>
 <script src="bskt.js"></script>
 <script src="cardboard.js"></script>
 <script src="btc15.js?v=8"></script>

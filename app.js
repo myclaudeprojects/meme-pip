@@ -399,10 +399,27 @@
     const n = Number(v);
     return (Math.abs(n) >= 10 ? n.toFixed(1) : n.toFixed(2)).replace(/\.0+$/, "").replace(/(\.\d)0$/, "$1") + "×";
   }
+  function fmtGmxBtc(v) {
+    if (v == null || v === "") return "–";
+    const n = Number(v);
+    if (!Number.isFinite(n)) return "–";
+    return "$" + Math.round(n).toLocaleString("en-US");
+  }
+  function renderGmxBtc(g) {
+    const el = $("gmx-btc-px"), sub = $("gmx-btc-px-s");
+    if (!el) return;
+    const px = g && g.btc_price != null ? Number(g.btc_price) : null;
+    el.textContent = (px != null && Number.isFinite(px)) ? fmtGmxBtc(px) : "–";
+    if (sub) {
+      const src = g && g.btc_price_src;
+      sub.textContent = src === "coinbase" ? "Coinbase spot" : src === "gmx_tickers" ? "GMX index" : (px != null ? "Current BTC" : "Waiting for price");
+    }
+  }
   function renderGmx() {
     const el = $("gmx"); if (!el) return;
     const g = S.live && S.live.gmx;
     const note = $("gmx-note"), total = $("gmx-total");
+    renderGmxBtc(g);
     if (!g) {
       el.innerHTML = '<span class="muted">Waiting for live GMX data from the box snapshot.</span>';
       if (note) note.innerHTML = '<span class="warn">no live.json gmx yet</span>';
