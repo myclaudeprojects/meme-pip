@@ -405,13 +405,17 @@
     if (!Number.isFinite(n)) return "–";
     return "$" + Math.round(n).toLocaleString("en-US");
   }
+  function liveBtc() { const L = S.btcLive; return (L && Date.now() - L.ts < 30000) ? L.px : null; }
+  if (!S._btcPoll) { S._btcPoll = true; const pollBtc = async () => { try { const r = await fetch("https://api.coinbase.com/v2/prices/BTC-USD/spot", { cache: "no-store" }); const j = await r.json(); const px = Number(j && j.data && j.data.amount); if (Number.isFinite(px) && px > 0) { S.btcLive = { px, ts: Date.now() }; try { renderGmx(); } catch (e) {} } } catch (e) {} }; pollBtc(); setInterval(pollBtc, 5000); }
   function renderGmxBtc(g) {
     const el = $("gmx-btc-px"), sub = $("gmx-btc-px-s");
     if (!el) return;
-    const px = g && g.btc_price != null ? Number(g.btc_price) : null;
+    const lp = liveBtc();
+    const px = lp != null ? lp : (g && g.btc_price != null ? Number(g.btc_price) : null);
     el.textContent = (px != null && Number.isFinite(px)) ? fmtGmxBtc(px) : "–";
     if (sub) {
-      const src = g && g.btc_price_src;
+      const src = lp != null ? "live" : (g && g.btc_price_src);
+      if (src === "live") { sub.textContent = "Coinbase live, updates every 5s"; return; }
       sub.textContent = src === "coinbase" ? "Coinbase spot" : src === "gmx_tickers" ? "GMX index" : (px != null ? "Current BTC" : "Waiting for price");
     }
   }
@@ -446,13 +450,15 @@
     let tpnl = 0, tcoll = 0, tsize = 0, nPnl = 0;
     for (const p of list) {
       const side = String(p.side || "").toLowerCase() === "short" ? "short" : "long";
-      const pnl = p.pnl_usd != null ? Number(p.pnl_usd) : null;
+      const lpx = liveBtc(), isBtc = /BTC/i.test(String(p.market || ""));
+      let pnl = p.pnl_usd != null ? Number(p.pnl_usd) : null; let markShown = p.mark;
+      if (lpx != null && isBtc && p.mark != null && p.entry && p.size_usd) { const toks = Number(p.size_usd) / Number(p.entry); const dir = String(p.side || "").toLowerCase() === "short" ? -1 : 1; if (pnl != null) pnl += dir * toks * (lpx - Number(p.mark)); markShown = lpx; }
       const coll = p.collateral_usd != null ? Number(p.collateral_usd) : null;
       const size = p.size_usd != null ? Number(p.size_usd) : null;
       if (pnl != null) { tpnl += pnl; nPnl++; }
       if (coll != null) tcoll += coll;
       if (size != null) tsize += size;
-      const pct = p.pnl_pct != null ? Number(p.pnl_pct) : (pnl != null && coll ? (pnl / coll) * 100 : null);
+      const pct = (pnl != null && coll) ? (pnl / coll) * 100 : (p.pnl_pct != null ? Number(p.pnl_pct) : null);
       const badge = side === "short" ? "SKIP" : "PASS";
       const sizeTxt = size != null ? C.fmtUsd(size) : "-";
       const collTxt = coll != null ? C.fmtUsd(coll) : "-";
@@ -463,7 +469,7 @@
         `<td data-label="Size USD">${sizeTxt}</td>` +
         `<td data-label="Collateral">${collTxt}</td>` +
         `<td data-label="Leverage">${fmtLev(p.leverage)}</td>` +
-        `<td data-label="Entry">${fmtGmxPx(p.entry)}</td><td data-label="Mark">${fmtGmxPx(p.mark)}</td><td data-label="Liq price">${fmtGmxPx(p.liq)}</td>` +
+        `<td data-label="Entry">${fmtGmxPx(p.entry)}</td><td data-label="Mark">${fmtGmxPx(markShown)}</td><td data-label="Liq price">${fmtGmxPx(p.liq)}</td>` +
         `<td class="${pnlCls}" data-label="PnL">${pnlTxt}</td></tr>`;
     }
     if (list.length > 1) h += `<tr class="bk-sum"><td class="l" colspan="2" data-label="Combined">Combined (${list.length})</td><td data-label="Size USD">${C.fmtUsd(tsize)}</td><td data-label="Collateral">${C.fmtUsd(tcoll)}</td><td colspan="4"></td><td class="${cls(tpnl)}" data-label="PnL">${nPnl ? sgnUsd(tpnl) : "-"}</td></tr>`;
