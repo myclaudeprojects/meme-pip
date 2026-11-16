@@ -403,7 +403,7 @@
 
     function activate() {
       view.hidden = false;
-      ["view-main", "view-bskt", "view-btc15"].forEach(function (id) {
+      ["view-main", "view-bskt", "view-btc15", "view-gmx"].forEach(function (id) {
         var el = $(id);
         if (el) el.hidden = true;
       });

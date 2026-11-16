@@ -219,7 +219,7 @@
   function show(on) { $("view-btc15").hidden = !on; if (on) { if (location.hash !== "#btc15") history.replaceState(null, "", "#btc15"); render(); } else if (location.hash === "#btc15") history.replaceState(null, "", location.pathname + location.search); }
   document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => {
     const v = b.dataset.view; show(v === "btc15");
-    if (v === "btc15") { $("view-main").hidden = true; $("view-bskt").hidden = true; document.querySelectorAll("[data-view]").forEach((x) => x.classList.toggle("on", x.dataset.view === "btc15")); }
+    if (v === "btc15") { $("view-main").hidden = true; $("view-bskt").hidden = true; const gmx = $("view-gmx"); if (gmx) gmx.hidden = true; document.querySelectorAll("[data-view]").forEach((x) => x.classList.toggle("on", x.dataset.view === "btc15")); }
   }));
   window.addEventListener("hashchange", () => { if (location.hash === "#btc15") $("b15tab").click(); });
   $("b15-man").addEventListener("input", (e) => { const v = Number(String(e.target.value).replace(/[$,\s]/g, "")); S.manual = v > 0 ? v : null; render(); });

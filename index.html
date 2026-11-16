@@ -149,7 +149,7 @@
   <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
     <h1>Solana Organic-Growth Loop</h1>
     <span class="viewonly">View only. The bot manages all trades</span>
-    <nav class="tabs"><button data-view="main" class="on">Positions &amp; scanner</button><button data-view="bskt">BSKT</button><button data-view="btc15" id="b15tab">BTC 15m</button><button data-view="series7" id="s7tab">Series 7</button></nav>
+    <nav class="tabs"><button data-view="main" class="on">Positions &amp; scanner</button><button data-view="bskt">BSKT</button><button data-view="btc15" id="b15tab">BTC 15m</button><button data-view="series7" id="s7tab">Series 7</button><button data-view="gmx" id="gmxtab">GMX</button></nav>
   </div>
   <div class="meta">
     <span>Last updated: <b id="updated">-</b></span>
@@ -185,11 +185,6 @@
       <div id="decision"><span class="muted">Loading…</span></div>
     </section>
   </div>
-
-  <section id="gmx-sec">
-    <h2>GMX Perps <small id="gmx-note"></small> <small id="gmx-total"></small></h2>
-    <div id="gmx"><span class="muted">Loading…</span></div>
-  </section>
 
   <section>
     <h2>Live scan: $200k–$1M band <small id="scan-note"></small></h2>
@@ -321,6 +316,12 @@
     </div>
   </div>
 </main>
+<main id="view-gmx" hidden>
+  <section id="gmx-sec">
+    <h2>GMX Perps <small id="gmx-note"></small> <small id="gmx-total"></small></h2>
+    <div id="gmx"><span class="muted">Loading…</span></div>
+  </section>
+</main>
 <footer>Read-only dashboard: public GET / JSON-RPC reads only. No keys, no signing, no orders.
   Sol <span id="f-sol"></span> · Arc <span id="f-arc"></span> · GMX <span id="f-gmx"></span></footer>
 
@@ -332,6 +333,7 @@
 <script src="cardboard.js"></script>
 <script src="btc15.js?v=8"></script>
 <script src="series7/series7.js?v=1"></script>
+<script src="gmx.js?v=1"></script>
 <div id="holder-panel"><div id="holder-panel-body"></div></div>
 </body>
 </html>

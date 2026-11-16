@@ -22,11 +22,16 @@
   function show(view) {
     document.querySelectorAll("[data-view]").forEach((b) => b.classList.toggle("on", b.dataset.view === view));
     $("view-main").hidden = view !== "main"; $("view-bskt").hidden = view !== "bskt";
+    const gmx = $("view-gmx"); if (gmx) gmx.hidden = view !== "gmx";
     if (view === "bskt") { if (location.hash !== "#bskt") history.replaceState(null, "", "#bskt"); load(false); }
     else if (location.hash === "#bskt") history.replaceState(null, "", location.pathname + location.search);
   }
   document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => show(b.dataset.view)));
-  window.addEventListener("hashchange", () => show(location.hash === "#bskt" ? "bskt" : "main"));
+  window.addEventListener("hashchange", () => {
+    if (location.hash === "#bskt") show("bskt");
+    else if (location.hash === "#gmx" || location.hash === "#series7" || location.hash === "#btc15") return;
+    else show("main");
+  });
 
   async function load(force) {
     if (B.loading || (!force && B.data && Date.now() - B.last < 60000)) return;
