@@ -392,7 +392,7 @@
     if (v == null || v === "") return "-";
     const n = Number(v);
     if (!Number.isFinite(n)) return "-";
-    return "$" + Math.round(n).toLocaleString("en-US");
+    return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
   function fmtLev(v) {
     if (v == null || !Number.isFinite(Number(v))) return "-";
@@ -425,7 +425,11 @@
       if (total) total.innerHTML = usdc != null ? `${C.fmtUsd(usdc)} USDC idle` : "";
       return;
     }
-    let h = bal + '<div class="wrap"><table><thead><tr><th class="l">Market</th><th class="l">Side</th><th>Size USD</th><th>Collateral</th><th>Leverage</th><th>Entry</th><th>Mark</th><th>Liq price</th><th>PnL</th></tr></thead><tbody>';
+    function gmxKv(label, value, extra) {
+      return `<div><span class="k">${label}</span><span${extra ? ` class="${extra}"` : ""}>${value}</span></div>`;
+    }
+    let h = bal + '<div class="wrap gmx-table"><table><thead><tr><th class="l">Market</th><th class="l">Side</th><th>Size USD</th><th>Collateral</th><th>Leverage</th><th>Entry</th><th>Mark</th><th>Liq price</th><th>PnL</th></tr></thead><tbody>';
+    let cards = '<div class="gmx-cards">';
     let tpnl = 0, tcoll = 0, tsize = 0, nPnl = 0;
     for (const p of list) {
       const side = String(p.side || "").toLowerCase() === "short" ? "short" : "long";
@@ -437,16 +441,26 @@
       if (size != null) tsize += size;
       const pct = p.pnl_pct != null ? Number(p.pnl_pct) : (pnl != null && coll ? (pnl / coll) * 100 : null);
       const badge = side === "short" ? "SKIP" : "PASS";
+      const sizeTxt = size != null ? C.fmtUsd(size) : "-";
+      const collTxt = coll != null ? C.fmtUsd(coll) : "-";
+      const pnlTxt = pnl == null ? "-" : sgnUsd(pnl) + (pct != null ? ` <span class="muted">${sgnPct(pct)}</span>` : "");
+      const pnlCls = pnl == null ? "muted" : cls(pnl);
       h += `<tr><td class="l">${esc(p.market || "—")}</td>` +
         `<td class="l"><span class="badge ${badge}">${esc(side)}</span></td>` +
-        `<td>${size != null ? C.fmtUsd(size) : "-"}</td>` +
-        `<td>${coll != null ? C.fmtUsd(coll) : "-"}</td>` +
+        `<td>${sizeTxt}</td>` +
+        `<td>${collTxt}</td>` +
         `<td>${fmtLev(p.leverage)}</td>` +
         `<td>${fmtGmxPx(p.entry)}</td><td>${fmtGmxPx(p.mark)}</td><td>${fmtGmxPx(p.liq)}</td>` +
-        `<td class="${pnl == null ? "muted" : cls(pnl)}">${pnl == null ? "-" : sgnUsd(pnl) + (pct != null ? ` <span class="muted">${sgnPct(pct)}</span>` : "")}</td></tr>`;
+        `<td class="${pnlCls}">${pnlTxt}</td></tr>`;
+      cards += `<div class="gmx-card"><div class="gmx-card-top"><span>${esc(p.market || "—")}</span><span class="badge ${badge}">${esc(side)}</span><span class="gmx-pnl ${pnlCls}">${pnlTxt}</span></div>` +
+        `<div class="gmx-kv">${gmxKv("Size", sizeTxt)}${gmxKv("Collateral", collTxt)}${gmxKv("Leverage", fmtLev(p.leverage))}${gmxKv("Entry", fmtGmxPx(p.entry))}${gmxKv("Mark", fmtGmxPx(p.mark))}${gmxKv("Liq price", fmtGmxPx(p.liq))}</div></div>`;
     }
-    if (list.length > 1) h += `<tr class="bk-sum"><td class="l" colspan="2">Combined (${list.length})</td><td>${C.fmtUsd(tsize)}</td><td>${C.fmtUsd(tcoll)}</td><td colspan="4"></td><td class="${cls(tpnl)}">${nPnl ? sgnUsd(tpnl) : "-"}</td></tr>`;
-    h += "</tbody></table></div>";
+    if (list.length > 1) {
+      h += `<tr class="bk-sum"><td class="l" colspan="2">Combined (${list.length})</td><td>${C.fmtUsd(tsize)}</td><td>${C.fmtUsd(tcoll)}</td><td colspan="4"></td><td class="${cls(tpnl)}">${nPnl ? sgnUsd(tpnl) : "-"}</td></tr>`;
+      cards += `<div class="gmx-card gmx-card-sum"><div class="gmx-card-top"><span>Combined (${list.length})</span><span class="gmx-pnl ${cls(tpnl)}">${nPnl ? sgnUsd(tpnl) : "-"}</span></div>` +
+        `<div class="gmx-kv">${gmxKv("Size", C.fmtUsd(tsize))}${gmxKv("Collateral", C.fmtUsd(tcoll))}</div></div>`;
+    }
+    h += "</tbody></table></div>" + cards + "</div>";
     h += '<div class="muted" style="font-size:11px;margin-top:6px">Balances and positions are read-only from a public Arbitrum RPC and the GMX API. No positions are opened from this dashboard.</div>';
     el.innerHTML = h;
     if (note) note.innerHTML = '<span class="pos">● live</span>';

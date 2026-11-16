@@ -283,7 +283,7 @@ test("published deck is a separate JSON asset and the page keeps the existing ta
   assert.doesNotMatch(script, /kalshi/i);
   assert.match(script, /series7\.leitner\.v1/);
 
-  ["data-view=\"main\"", "data-view=\"bskt\"", "data-view=\"btc15\"", "id=\"b15tab\"", "id=\"view-main\"", "id=\"view-bskt\"", "id=\"view-btc15\"", "id=\"positions\"", "id=\"scan\"", "src=\"app.js?v=gmxpx1\"", "src=\"bskt.js\"", "src=\"core.js?v=arcfix1\"", "src=\"positions.js\"", "btc15.js?v=8", "data-view=\"series7\"", "id=\"s7tab\"", "id=\"view-series7\"", "series7/series7.js?v=1"].forEach((needle) => {
+  ["data-view=\"main\"", "data-view=\"bskt\"", "data-view=\"btc15\"", "id=\"b15tab\"", "id=\"view-main\"", "id=\"view-bskt\"", "id=\"view-btc15\"", "id=\"positions\"", "id=\"scan\"", "src=\"app.js?v=gmxpx2\"", "src=\"bskt.js\"", "src=\"core.js?v=arcfix1\"", "src=\"positions.js\"", "btc15.js?v=8", "data-view=\"series7\"", "id=\"s7tab\"", "id=\"view-series7\"", "series7/series7.js?v=1"].forEach((needle) => {
     assert.match(html, new RegExp(needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   });
   const sources = [...html.matchAll(/<script src="([^"]+)"/g)].map((match) => match[1]);
