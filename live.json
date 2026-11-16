@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-16 15:19:03 EST",
- "generated_ts": 1794860343359,
+ "generated_et": "2026-11-16 15:21:08 EST",
+ "generated_ts": 1794860468514,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,28 +29,28 @@
   "chain": "arbitrum",
   "eth": 0.000864807319118161,
   "usdc": 5.0,
-  "eth_usd": 1.5739752650146266,
-  "btc_price": 65017.877310748416,
+  "eth_usd": 1.5735558334648543,
+  "btc_price": 64966.277179936755,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 5027.800125,
-    "collateral_usd": 98.50900701119747,
-    "leverage": 51.03898899750855,
+    "collateral_usd": 98.50886523721206,
+    "leverage": 51.03906245283527,
     "entry": 64993.31264874695,
-    "mark": 65017.877310748416,
-    "liq": 64083.870025901444,
-    "pnl_usd": 1.9002910553127288,
-    "pnl_pct": 1.9290531018110086,
+    "mark": 64966.277179936755,
+    "liq": 64083.93500433746,
+    "pnl_usd": -2.0963144074135025,
+    "pnl_pct": -2.1280464477643912,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 71.375,
+  "So11111111111111111111111111111111111111112": 71.37,
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 334.55,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 331.39,
   "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 1.991e-06,
@@ -145,13 +145,13 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19574687,
+   "mc": 19574683,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 28901486,
+   "mc": 28899328,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -163,13 +163,13 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 251860,
+   "mc": 251858,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
    "symbol": "RAY",
-   "mc": 380119175,
+   "mc": 380093718,
    "pair": "DVa7Qmb5ct9RCpaU7UTpSaf3GVMYz17vNVU67XpdCRut",
    "dex": "raydium"
   },
