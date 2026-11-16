@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-16 16:28:18 EST",
- "generated_ts": 1794864498562,
+ "generated_et": "2026-11-16 16:30:24 EST",
+ "generated_ts": 1794864624012,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,29 +29,29 @@
   "chain": "arbitrum",
   "eth": 0.000679881636418161,
   "usdc": 5.0,
-  "eth_usd": 1.2396825782121466,
-  "btc_price": 65195.87658153194,
+  "eth_usd": 1.2404304480122064,
+  "btc_price": 65227.56144674916,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 5027.800125,
-    "collateral_usd": 98.5102423048393,
-    "leverage": 51.038348981433884,
+    "collateral_usd": 98.5100099090629,
+    "leverage": 51.03846938642368,
     "entry": 64993.31264874695,
-    "mark": 65195.87658153194,
-    "liq": 64085.09481267274,
-    "pnl_usd": 15.574105341262005,
-    "pnl_pct": 15.809630528638879,
+    "mark": 65227.56144674916,
+    "liq": 64085.0978138769,
+    "pnl_usd": 18.025206501121595,
+    "pnl_pct": 18.29784254185044,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 71.72,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 334.95,
+  "So11111111111111111111111111111111111111112": 71.715,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 335.028,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 331.39,
   "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 1.991e-06,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.404e-05,
@@ -79,9 +79,15 @@
  "info": {
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 6950199,
+   "mc": 6951705,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
+  },
+  "5mwB4afu36cyvJ1if3w7rTQHsNsWyn1KkA65jWmpump": {
+   "symbol": "OPTIMJACK",
+   "mc": null,
+   "pair": "DzPP74UmJuvR3WEupm3ucWeWgqZoNavUpNCFsQkbG64n",
+   "dex": "pumpfun"
   },
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": {
    "symbol": "AVGO",
@@ -151,7 +157,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 28921266,
+   "mc": 28918748,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -181,7 +187,7 @@
   },
   "Em8DYuvdQ28PNZqSiAvUxjG32XbpFPm9kwu2y5pdTray": {
    "symbol": "BCIN",
-   "mc": 184464,
+   "mc": 184491,
    "pair": "9UV4xi4qNXahp1zZRjiDEzAfNJcmUFmszweCKcMeM35C",
    "dex": "raydium"
   },
@@ -193,7 +199,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1145252805,
+   "mc": 1145461850,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
