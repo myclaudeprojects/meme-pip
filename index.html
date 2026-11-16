@@ -101,20 +101,20 @@
   .badge.bk-claim { background:#d2992222; color:var(--amber); border:1px solid #d2992266; }
   .badge.bk-wd { background:#1f6feb22; color:var(--blue); border:1px solid #1f6feb66; }
   @media (max-width: 600px) { #view-bskt { padding:12px 10px 30px; } .bk-cards { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; } .bk-cards .v { font-size:18px; } .bk-lb { grid-template-columns:1fr; } }
-  /* GMX tab: stack position fields on a phone so columns are not clipped */
-  #view-gmx .gmx-cards { display: none; }
-  #view-gmx .gmx-card { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
-  #view-gmx .gmx-card-top { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; font-weight: 650; }
-  #view-gmx .gmx-card-top .gmx-pnl { margin-left: auto; }
-  #view-gmx .gmx-kv { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 6px 12px; font-size: 13px; }
-  #view-gmx .gmx-kv div { display: flex; justify-content: space-between; gap: 8px; min-width: 0; }
-  #view-gmx .gmx-kv .k { color: var(--muted); }
+  /* GMX tab: same table, stacked labeled rows on a phone so columns are not clipped */
   #view-gmx .gmx-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   #view-gmx .gmx-table table { min-width: 760px; }
   @media (max-width: 700px) {
     #view-gmx { padding: 12px 10px 32px; }
-    #view-gmx .gmx-table { display: none; }
-    #view-gmx .gmx-cards { display: block; }
+    #view-gmx .gmx-table { overflow: visible; }
+    #view-gmx .gmx-table table, #view-gmx .gmx-table thead, #view-gmx .gmx-table tbody, #view-gmx .gmx-table th, #view-gmx .gmx-table td, #view-gmx .gmx-table tr { display: block; }
+    #view-gmx .gmx-table table { min-width: 0; width: 100%; }
+    #view-gmx .gmx-table thead { display: none; }
+    #view-gmx .gmx-table tr { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+    #view-gmx .gmx-table td { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; width: 100%; text-align: right; white-space: normal; border-bottom: 1px solid var(--line); padding: 6px 0; box-sizing: border-box; }
+    #view-gmx .gmx-table td:last-child { border-bottom: 0; }
+    #view-gmx .gmx-table td::before { content: attr(data-label); color: var(--muted); font-weight: 500; text-align: left; flex: 0 0 auto; }
+    #view-gmx .gmx-table td:empty, #view-gmx .gmx-table td:not([data-label]) { display: none; }
   }
   /* Series 7 tab */
   #view-series7 { max-width:880px; }
@@ -343,7 +343,7 @@
 <!-- Optional snapshot written by dashboard_snapshot.py (lets file:// opening show cost basis). Missing = fine. -->
 <script src="positions.js" onerror="void 0"></script>
 <script src="core.js?v=arcfix1"></script>
-<script src="app.js?v=gmxpx2"></script>
+<script src="app.js?v=gmxpx3"></script>
 <script src="bskt.js"></script>
 <script src="cardboard.js"></script>
 <script src="btc15.js?v=8"></script>

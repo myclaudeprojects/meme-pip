@@ -425,11 +425,7 @@
       if (total) total.innerHTML = usdc != null ? `${C.fmtUsd(usdc)} USDC idle` : "";
       return;
     }
-    function gmxKv(label, value, extra) {
-      return `<div><span class="k">${label}</span><span${extra ? ` class="${extra}"` : ""}>${value}</span></div>`;
-    }
     let h = bal + '<div class="wrap gmx-table"><table><thead><tr><th class="l">Market</th><th class="l">Side</th><th>Size USD</th><th>Collateral</th><th>Leverage</th><th>Entry</th><th>Mark</th><th>Liq price</th><th>PnL</th></tr></thead><tbody>';
-    let cards = '<div class="gmx-cards">';
     let tpnl = 0, tcoll = 0, tsize = 0, nPnl = 0;
     for (const p of list) {
       const side = String(p.side || "").toLowerCase() === "short" ? "short" : "long";
@@ -445,22 +441,16 @@
       const collTxt = coll != null ? C.fmtUsd(coll) : "-";
       const pnlTxt = pnl == null ? "-" : sgnUsd(pnl) + (pct != null ? ` <span class="muted">${sgnPct(pct)}</span>` : "");
       const pnlCls = pnl == null ? "muted" : cls(pnl);
-      h += `<tr><td class="l">${esc(p.market || "—")}</td>` +
-        `<td class="l"><span class="badge ${badge}">${esc(side)}</span></td>` +
-        `<td>${sizeTxt}</td>` +
-        `<td>${collTxt}</td>` +
-        `<td>${fmtLev(p.leverage)}</td>` +
-        `<td>${fmtGmxPx(p.entry)}</td><td>${fmtGmxPx(p.mark)}</td><td>${fmtGmxPx(p.liq)}</td>` +
-        `<td class="${pnlCls}">${pnlTxt}</td></tr>`;
-      cards += `<div class="gmx-card"><div class="gmx-card-top"><span>${esc(p.market || "—")}</span><span class="badge ${badge}">${esc(side)}</span><span class="gmx-pnl ${pnlCls}">${pnlTxt}</span></div>` +
-        `<div class="gmx-kv">${gmxKv("Size", sizeTxt)}${gmxKv("Collateral", collTxt)}${gmxKv("Leverage", fmtLev(p.leverage))}${gmxKv("Entry", fmtGmxPx(p.entry))}${gmxKv("Mark", fmtGmxPx(p.mark))}${gmxKv("Liq price", fmtGmxPx(p.liq))}</div></div>`;
+      h += `<tr><td class="l" data-label="Market">${esc(p.market || "—")}</td>` +
+        `<td class="l" data-label="Side"><span class="badge ${badge}">${esc(side)}</span></td>` +
+        `<td data-label="Size USD">${sizeTxt}</td>` +
+        `<td data-label="Collateral">${collTxt}</td>` +
+        `<td data-label="Leverage">${fmtLev(p.leverage)}</td>` +
+        `<td data-label="Entry">${fmtGmxPx(p.entry)}</td><td data-label="Mark">${fmtGmxPx(p.mark)}</td><td data-label="Liq price">${fmtGmxPx(p.liq)}</td>` +
+        `<td class="${pnlCls}" data-label="PnL">${pnlTxt}</td></tr>`;
     }
-    if (list.length > 1) {
-      h += `<tr class="bk-sum"><td class="l" colspan="2">Combined (${list.length})</td><td>${C.fmtUsd(tsize)}</td><td>${C.fmtUsd(tcoll)}</td><td colspan="4"></td><td class="${cls(tpnl)}">${nPnl ? sgnUsd(tpnl) : "-"}</td></tr>`;
-      cards += `<div class="gmx-card gmx-card-sum"><div class="gmx-card-top"><span>Combined (${list.length})</span><span class="gmx-pnl ${cls(tpnl)}">${nPnl ? sgnUsd(tpnl) : "-"}</span></div>` +
-        `<div class="gmx-kv">${gmxKv("Size", C.fmtUsd(tsize))}${gmxKv("Collateral", C.fmtUsd(tcoll))}</div></div>`;
-    }
-    h += "</tbody></table></div>" + cards + "</div>";
+    if (list.length > 1) h += `<tr class="bk-sum"><td class="l" colspan="2" data-label="Combined">Combined (${list.length})</td><td data-label="Size USD">${C.fmtUsd(tsize)}</td><td data-label="Collateral">${C.fmtUsd(tcoll)}</td><td colspan="4"></td><td class="${cls(tpnl)}" data-label="PnL">${nPnl ? sgnUsd(tpnl) : "-"}</td></tr>`;
+    h += "</tbody></table></div>";
     h += '<div class="muted" style="font-size:11px;margin-top:6px">Balances and positions are read-only from a public Arbitrum RPC and the GMX API. No positions are opened from this dashboard.</div>';
     el.innerHTML = h;
     if (note) note.innerHTML = '<span class="pos">● live</span>';
