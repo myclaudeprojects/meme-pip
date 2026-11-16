@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-16 15:30:08 EST",
- "generated_ts": 1794861008574,
+ "generated_et": "2026-11-16 15:32:13 EST",
+ "generated_ts": 1794861133641,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,29 +29,29 @@
   "chain": "arbitrum",
   "eth": 0.000864807319118161,
   "usdc": 5.0,
-  "eth_usd": 1.5739406727218619,
-  "btc_price": 65104.19644318387,
+  "eth_usd": 1.5737806833678252,
+  "btc_price": 65061.74360752053,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 5027.800125,
-    "collateral_usd": 98.50875023417517,
-    "leverage": 51.039122037868765,
+    "collateral_usd": 98.5085925629452,
+    "leverage": 51.03920373024645,
     "entry": 64993.31264874695,
-    "mark": 65104.19644318387,
-    "liq": 64084.091744476114,
-    "pnl_usd": 8.560934424889531,
-    "pnl_pct": 8.690531962428173,
+    "mark": 65061.74360752053,
+    "liq": 64084.14256957087,
+    "pnl_usd": 5.273062879522863,
+    "pnl_pct": 5.352896374144693,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 71.44,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 334.65,
+  "So11111111111111111111111111111111111111112": 71.42,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 334.64,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 331.39,
   "7X9N8rJ3AsMHHT8jtLs38thybK4Wr2bEx39k4moLpump": 1.991e-06,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.404e-05,
@@ -79,7 +79,7 @@
  "info": {
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 6943869,
+   "mc": 6943821,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -145,7 +145,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19574685,
+   "mc": 19562932,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
