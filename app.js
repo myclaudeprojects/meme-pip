@@ -386,6 +386,14 @@
   }
 
   // ---------- GMX Perps (Arbitrum) ----------
+  // GMX tab only: normal dollar amounts with comma separators, never scientific notation.
+  // Shared fmtPx (toPrecision) stays as-is for the virtualtrade perps table.
+  function fmtGmxPx(v) {
+    if (v == null || v === "") return "-";
+    const n = Number(v);
+    if (!Number.isFinite(n)) return "-";
+    return "$" + Math.round(n).toLocaleString("en-US");
+  }
   function fmtLev(v) {
     if (v == null || !Number.isFinite(Number(v))) return "-";
     const n = Number(v);
@@ -434,7 +442,7 @@
         `<td>${size != null ? C.fmtUsd(size) : "-"}</td>` +
         `<td>${coll != null ? C.fmtUsd(coll) : "-"}</td>` +
         `<td>${fmtLev(p.leverage)}</td>` +
-        `<td>${fmtPx(p.entry)}</td><td>${fmtPx(p.mark)}</td><td>${fmtPx(p.liq)}</td>` +
+        `<td>${fmtGmxPx(p.entry)}</td><td>${fmtGmxPx(p.mark)}</td><td>${fmtGmxPx(p.liq)}</td>` +
         `<td class="${pnl == null ? "muted" : cls(pnl)}">${pnl == null ? "-" : sgnUsd(pnl) + (pct != null ? ` <span class="muted">${sgnPct(pct)}</span>` : "")}</td></tr>`;
     }
     if (list.length > 1) h += `<tr class="bk-sum"><td class="l" colspan="2">Combined (${list.length})</td><td>${C.fmtUsd(tsize)}</td><td>${C.fmtUsd(tcoll)}</td><td colspan="4"></td><td class="${cls(tpnl)}">${nPnl ? sgnUsd(tpnl) : "-"}</td></tr>`;
