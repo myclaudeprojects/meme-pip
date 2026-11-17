@@ -1818,5 +1818,145 @@
     "type": "concept",
     "front": "How do equity indexed annuities work, and how do they compare with fixed and variable annuities?",
     "back": "An equity indexed annuity (EIA) is usually a fixed annuity product that credits interest based on an index like the S&P 500, with a guaranteed minimum that protects principal. Gains are limited by a participation rate or cap, and the insurer keeps any excess. Most can be sold with only an insurance license. A fixed annuity guarantees principal and interest. A variable annuity has full market upside and downside in the separate account. A registered index-linked annuity (RILA, or buffer annuity) is similar to an EIA but can lose money beyond its buffer."
+  },
+  {
+    "id": "ch14-term-01",
+    "chapter": 14,
+    "type": "term",
+    "front": "Derivative",
+    "back": "A security whose value is derived from the value of another asset, called the underlying asset. An option is a derivative: an equity option takes its value from the underlying stock. Each option contract has a buyer and a seller, and each side has specific rights or obligations."
+  },
+  {
+    "id": "ch14-term-02",
+    "chapter": 14,
+    "type": "term",
+    "front": "Standardized contract",
+    "back": "A listed option with uniform terms that trades on a national exchange such as the CBOE and is issued and guaranteed by the OCC. Standard features are 100 shares of the underlying per contract, set strike prices, and expiration on the third Friday of the expiration month. Non-standardized options have non-uniform terms, trade over the counter, and are nearly illiquid."
+  },
+  {
+    "id": "ch14-term-03",
+    "chapter": 14,
+    "type": "term",
+    "front": "Intrinsic value",
+    "back": "The in-the-money amount of an option. For a call it is market price minus strike price when the stock is above the strike. For a put it is strike price minus market price when the stock is below the strike. Out-of-the-money and at-the-money options have zero intrinsic value, and intrinsic value can never be negative."
+  },
+  {
+    "id": "ch14-term-04",
+    "chapter": 14,
+    "type": "term",
+    "front": "Closing purchase",
+    "back": "How a writer exits a short option: buying back a contract with the same terms as the one originally sold. Example: write a call at 4 (+$400), then buy it back for intrinsic value of 1 (-$100), for a $300 profit. Buying back the same contract does not cover a short call; it closes it."
+  },
+  {
+    "id": "ch14-term-05",
+    "chapter": 14,
+    "type": "term",
+    "front": "Time value",
+    "back": "The part of the premium above intrinsic value: premium minus intrinsic value. It reflects the chance the option moves further in the money before expiration, and it shrinks as expiration approaches. An at-the-money or out-of-the-money option's entire premium is time value. LEAPs, with up to three years to expiration, carry more time value."
+  },
+  {
+    "id": "ch14-term-06",
+    "chapter": 14,
+    "type": "term",
+    "front": "Parity",
+    "back": "An option trades at parity when it has no time value, so its premium equals its intrinsic value. Example: an ABC Jan 30 call at 3 is at parity when ABC trades at 33, and an ABC Jan 30 put at 3 is at parity when ABC trades at 27."
+  },
+  {
+    "id": "ch14-term-07",
+    "chapter": 14,
+    "type": "term",
+    "front": "Assignment",
+    "back": "The process of choosing which writer must perform when a holder exercises. The OCC sends assignment notices to clearing members with short positions through a random computerized process, and firms then allocate them to customer accounts by random assignment or first in, first out (FIFO). Firms must tell customers their method. Assignment usually happens the business day after exercise."
+  },
+  {
+    "id": "ch14-term-08",
+    "chapter": 14,
+    "type": "term",
+    "front": "Protective put",
+    "back": "Buying a put on stock you already own to hedge against a decline while keeping upside, dividends, and voting rights. A married put is the same thing bought at the same time as the stock. Max gain: unlimited. Max loss: stock price minus strike plus premium. Breakeven: stock price plus premium. Example: long stock at 80 plus a 75 put at 3 has max loss of $8 and breakeven of 83."
+  },
+  {
+    "id": "ch14-term-09",
+    "chapter": 14,
+    "type": "term",
+    "front": "Covered call",
+    "back": "Writing a call against stock you own (or have the right to buy) to generate premium income. View: neutral short-term, bullish long-term. Max gain: strike minus stock cost plus premium. Max loss: stock cost minus premium (stock goes to zero). Breakeven: stock cost minus premium. Example: long at 40, write a 50 call at 3: max gain $13, max loss $37, breakeven 37."
+  },
+  {
+    "id": "ch14-term-10",
+    "chapter": 14,
+    "type": "term",
+    "front": "Covered put",
+    "back": "A short put backed by collateral to buy the stock if assigned: cash equal to the strike, a short position in the stock, or a long put with a higher strike and same or later expiration (or same strike, later expiration). Short stock plus short put: max gain is short price minus strike plus premium, max loss is unlimited, breakeven is short price plus premium. Not suitable for retail investors."
+  },
+  {
+    "id": "ch14-concept-01",
+    "chapter": 14,
+    "type": "concept",
+    "front": "What are the rights or obligations of each basic options position?",
+    "back": "Long call: the right to buy 100 shares at the strike. Short call: the obligation to sell at the strike if assigned. Long put: the right to sell at the strike. Short put: the obligation to buy at the strike if assigned. Buyers (holders) have rights and pay the premium. Sellers (writers) have obligations and receive the premium."
+  },
+  {
+    "id": "ch14-concept-02",
+    "chapter": 14,
+    "type": "concept",
+    "front": "How do you calculate max gain, max loss, and breakeven for the four basic positions?",
+    "back": "Long call: max gain unlimited, max loss the premium, breakeven strike plus premium. Short call: max gain the premium, max loss unlimited, breakeven strike plus premium. Long put: max gain strike minus premium (stock to zero), max loss the premium, breakeven strike minus premium. Short put: max gain the premium, max loss strike minus premium, breakeven strike minus premium. Calls up, puts down: add premium for calls, subtract for puts."
+  },
+  {
+    "id": "ch14-concept-03",
+    "chapter": 14,
+    "type": "concept",
+    "front": "What is the market attitude of each basic options position?",
+    "back": "Bullish: long call and short put, because both profit when the stock rises or holds. Bearish: long put and short call, because both profit when the stock falls or holds. Buyers want a big move in their direction; writers want the stock to stay flat or move their way so the option expires worthless and they keep the premium."
+  },
+  {
+    "id": "ch14-concept-04",
+    "chapter": 14,
+    "type": "concept",
+    "front": "What are the components of an option premium, and what factors affect it?",
+    "back": "Premium equals intrinsic value plus time value. Intrinsic value is the in-the-money amount; time value is everything else and decays toward expiration. Other factors: higher volatility raises premiums; a cash dividend lowers call premiums and raises put premiums; rising interest rates raise call premiums and lower put premiums; more time to expiration (like LEAPs) means more time value."
+  },
+  {
+    "id": "ch14-concept-05",
+    "chapter": 14,
+    "type": "concept",
+    "front": "How are options contracts assigned?",
+    "back": "When a holder exercises, the OCC assigns the exercise to clearing members that are short that option using a random computerized process. Each firm then allocates the notice to a customer's short position by an exchange-approved method, usually random or FIFO, and must disclose its method to customers. The OCC automatically exercises expiring equity options that are $0.01 or more in-the-money unless the customer instructs otherwise."
+  },
+  {
+    "id": "ch14-concept-06",
+    "chapter": 14,
+    "type": "concept",
+    "front": "How do investors use calls and puts to hedge positions?",
+    "back": "Hedge a long stock position with a bearish option: a long put gives the best protection (a guaranteed sale price) at the cost of the premium, while a short call only protects by the premium received. Hedge a short stock position with a bullish option: a long call (protective call) caps the loss, while a short put protects only by the premium. Example: short at 50 plus a 60 call at 5 has max loss of $15 and breakeven of 45."
+  },
+  {
+    "id": "ch14-concept-07",
+    "chapter": 14,
+    "type": "concept",
+    "front": "How are short calls and short puts covered?",
+    "back": "A short call is covered by owning the shares in the same account, an escrow receipt for shares held at a bank, securities convertible into the shares, or a long call with a lower strike and same or later expiration (or same strike, later expiration). A short put is covered by cash equal to the strike, a short position in the stock, or a long put with a higher strike and same or later expiration (or same strike, later expiration)."
+  },
+  {
+    "id": "ch14-concept-08",
+    "chapter": 14,
+    "type": "concept",
+    "front": "What investing strategies use each options position?",
+    "back": "Long calls: speculate on a rise with limited risk, or hedge a short stock position. Long puts: speculate on a decline with less risk and upfront cost than a short sale, or protect a long stock position (protective or married put). Short calls: earn income, most conservatively as a covered call. Short puts: earn income or buy stock at a lower effective price. A ratio write (more calls than shares covered) has unlimited risk."
+  },
+  {
+    "id": "ch14-concept-09",
+    "chapter": 14,
+    "type": "concept",
+    "front": "How do you calculate the gain or loss of a covered call at a given market value?",
+    "back": "If the stock is above the strike at expiration, the call is exercised: gain equals strike minus stock cost plus premium, no matter how high the stock goes. If the stock is at or below the strike, the call expires: result equals market value minus stock cost plus premium. Example: buy at 40, write a 50 call at 3. At 55 the gain is $13 a share. At 22 the loss is 18 minus 3, or $15 a share ($1,500)."
+  },
+  {
+    "id": "ch14-concept-10",
+    "chapter": 14,
+    "type": "concept",
+    "front": "What are the settlement rules for options contracts?",
+    "back": "Options bought or sold settle the next business day (T+1): buyers pay the premium and writers receive it on settlement date, and closing transactions settle the same way. When an equity option is exercised, the stock settles regular way, T+1, with physical delivery of 100 shares from the call writer or put buyer to the call buyer or put writer. The OCC is the counterparty to every listed contract and guarantees performance. Standard options expire the third Friday of the expiration month."
   }
 ]
