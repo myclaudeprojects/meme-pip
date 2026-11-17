@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-17 17:58:14 EST",
- "generated_ts": 1794956294914,
+ "generated_et": "2026-11-17 18:00:20 EST",
+ "generated_ts": 1794956420611,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,28 +29,28 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 5.0,
-  "eth_usd": 3.259368899392631,
-  "btc_price": 64688.05761298166,
+  "eth_usd": 3.2561359063283213,
+  "btc_price": 64664.55683684099,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 2704.72665,
-    "collateral_usd": 85.70891683954646,
-    "leverage": 31.557120889340506,
+    "collateral_usd": 85.70897427749338,
+    "leverage": 31.557099741307294,
     "entry": 64904.82023987215,
-    "mark": 64688.05761298166,
-    "liq": 63221.74937247651,
-    "pnl_usd": -9.45815733956773,
-    "pnl_pct": -11.035208107079585,
+    "mark": 64664.55683684099,
+    "liq": 63221.958536839724,
+    "pnl_usd": -10.44626016018079,
+    "pnl_pct": -12.188058774755293,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 74.065,
+  "So11111111111111111111111111111111111111112": 73.965,
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 348.8,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 346.49,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.364e-05,
@@ -191,10 +191,10 @@
    "pair": "HxKznUirLwxk4iqDSDW1xiMVfav2ASVVZ21NCX1SdcNR",
    "dex": "pumpfun"
   },
-  "8FqYtuxMUDgvoMfrm3GWDkFDVbSNSp9nEEBSWU5hpump": {
-   "symbol": "CI",
+  "8vGevfoctm3GGVQUSbUsRZRyXqZcqDjuZwFhEfWPpump": {
+   "symbol": "NVIDIA ",
    "mc": null,
-   "pair": "G9agh8WJdfQw3ULQMQAoqR5zx15Y1sshs4RgG2aGMHvc",
+   "pair": "2YJ8diP6DMXzkCzS2NqycmP9mL8vnA9LpiEUHesSWVfG",
    "dex": "pumpfun"
   },
   "3DwXTJy7tyiN2Y3G9WVLCuU9vThmoiTdraeAYXVMpump": {
@@ -203,16 +203,16 @@
    "pair": "3B8MDLEj7cU1x2WDxX82QrQagGgSXvxpZH8VuG9YAYZA",
    "dex": "pumpfun"
   },
-  "8vGevfoctm3GGVQUSbUsRZRyXqZcqDjuZwFhEfWPpump": {
-   "symbol": "NVIDIA ",
-   "mc": null,
-   "pair": "2YJ8diP6DMXzkCzS2NqycmP9mL8vnA9LpiEUHesSWVfG",
-   "dex": "pumpfun"
-  },
   "b13eQMTR8gF2HC2BnrP7EutCbBdFHFFEegS2j1rpump": {
    "symbol": "CSI",
    "mc": null,
    "pair": "HcQ36MZq3QvH4cp2tzbTBvXKDHokjGcRcMmJitx77LtB",
+   "dex": "pumpfun"
+  },
+  "8FqYtuxMUDgvoMfrm3GWDkFDVbSNSp9nEEBSWU5hpump": {
+   "symbol": "CI",
+   "mc": null,
+   "pair": "G9agh8WJdfQw3ULQMQAoqR5zx15Y1sshs4RgG2aGMHvc",
    "dex": "pumpfun"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
@@ -229,7 +229,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 22029326,
+   "mc": 22033068,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -241,13 +241,13 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 252880,
+   "mc": 252864,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
    "symbol": "RAY",
-   "mc": 390643256,
+   "mc": 390071448,
    "pair": "DVa7Qmb5ct9RCpaU7UTpSaf3GVMYz17vNVU67XpdCRut",
    "dex": "raydium"
   },
