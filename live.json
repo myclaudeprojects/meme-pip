@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-18 13:58:13 EST",
- "generated_ts": 1795028293297,
+ "generated_et": "2026-11-18 14:00:18 EST",
+ "generated_ts": 1795028418413,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.1781668902607203,
-  "btc_price": 63132.203138275276,
+  "eth_usd": 3.177511311111569,
+  "btc_price": 63041.26948820408,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 73.81,
+  "So11111111111111111111111111111111111111112": 73.855,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01141,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.0337,
@@ -56,10 +56,10 @@
   "2o69gwy6ZhL66KQxNk5Z2YeihCNpPjNneqr2Sn771can": 0.04999,
   "Cxpq8jppQdBs5YLUV1tF7WVQ6Wk7btp3GukDehHYD6ae": 0.0715,
   "DfEtX3JkP7LGsYPVuoFuWknchf8L7peuCvqseZmqx8R5": 1.29,
-  "5HudMVeZpwdcsajr75hTCipr9Yd8KJ9GfCowqU5T8GS": 0.0001,
   "3H9z2W6sB7EZD7YHTZeueLXG2abG4KWAGe9dzJ18fmc9": 1.0081,
+  "5HudMVeZpwdcsajr75hTCipr9Yd8KJ9GfCowqU5T8GS": 0.0001,
   "8f2A2KmEpydjSCz1mPHCDAKEMGYRPwrTuV8PnAjFtFtc": 0.9998,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 355.46,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 355.52,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 345.46,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.248e-05
  },
@@ -84,7 +84,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 252407,
+   "mc": 252425,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -96,7 +96,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 28011614,
+   "mc": 28011515,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -178,17 +178,17 @@
    "pair": "8LRUH1W9bJQuqK9mvUib85PHeWPufm3gwEFTpyqsPH1A",
    "dex": "orca"
   },
-  "5HudMVeZpwdcsajr75hTCipr9Yd8KJ9GfCowqU5T8GS": {
-   "symbol": "SAFE",
-   "mc": 100000201127,
-   "pair": "DMxM5tU9ytv3ijMvemTkcLZuyeNSedG62rip8phCRhib",
-   "dex": "meteora"
-  },
   "3H9z2W6sB7EZD7YHTZeueLXG2abG4KWAGe9dzJ18fmc9": {
    "symbol": "USDD ",
    "mc": 48931117,
    "pair": "DghujB62vmrddK7no6AomRCTDG9ozenwVfZVAsNbsJmY",
    "dex": "raydium"
+  },
+  "5HudMVeZpwdcsajr75hTCipr9Yd8KJ9GfCowqU5T8GS": {
+   "symbol": "SAFE",
+   "mc": 100000201127,
+   "pair": "DMxM5tU9ytv3ijMvemTkcLZuyeNSedG62rip8phCRhib",
+   "dex": "meteora"
   },
   "8f2A2KmEpydjSCz1mPHCDAKEMGYRPwrTuV8PnAjFtFtc": {
    "symbol": "U\udb40\udcc8SDD",
@@ -198,7 +198,7 @@
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 7193708,
+   "mc": 7194782,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -268,22 +268,16 @@
    "pair": "DZGVmeLm1rsLh8XVoG11rnrzKT6gGvY6Tnn8ZdRmZ4Sx",
    "dex": "pumpfun"
   },
-  "F9otz9oetVNjPQCTydymzj3iPVZBbk5n3dc8j176pump": {
-   "symbol": "Cyber",
-   "mc": null,
-   "pair": "669JubtwTyTCuMVgXhNYtPsjnntRtpxGPVuf1Ti4K6g8",
-   "dex": "pumpfun"
-  },
   "4qXyK58HtBYq4z7w7BrZjWky5Ge7KUWukF585nMWbnUC": {
    "symbol": "NVRTD",
    "mc": null,
    "pair": "6CgauHz1PMDFeRqN47dNATb5i1hTD3VuTLSyq5XCWDw9",
    "dex": "meteora"
   },
-  "5F7xeY6UHXxpvZWUiaYZrgc6mUbgYzfVGdCiNSQMBRpU": {
-   "symbol": "CYBERINU",
+  "F9otz9oetVNjPQCTydymzj3iPVZBbk5n3dc8j176pump": {
+   "symbol": "Cyber",
    "mc": null,
-   "pair": "HxKznUirLwxk4iqDSDW1xiMVfav2ASVVZ21NCX1SdcNR",
+   "pair": "669JubtwTyTCuMVgXhNYtPsjnntRtpxGPVuf1Ti4K6g8",
    "dex": "pumpfun"
   },
   "DCQwjqf8dwuNJL98niziKRELi5x9LpTGtBzYoJHjpump": {
@@ -292,16 +286,16 @@
    "pair": "GDFsk89SedRP7QFjA51ztYtHvGVpYyRsm9JSWEMFLcfT",
    "dex": "pumpfun"
   },
-  "BftPqPL9oCsZxyZ99xeKHCkgiNRMsAHQLpDeNFcapump": {
-   "symbol": "TP4",
-   "mc": null,
-   "pair": "3L7TbWvcCSrJTdVsgD3oSxsCubEuoyzi1rhhBo3jtjE9",
-   "dex": "pumpfun"
-  },
   "6Pp9ZLtaCSzNheNbuPnDUB7ALV7jUTdEzvYWnXtMpump": {
    "symbol": "CSI",
    "mc": null,
    "pair": "6auw9Qff9H6ahJh2T6C893cSstanrmhg7YbMsSrMrgTT",
+   "dex": "pumpfun"
+  },
+  "BftPqPL9oCsZxyZ99xeKHCkgiNRMsAHQLpDeNFcapump": {
+   "symbol": "TP4",
+   "mc": null,
+   "pair": "3L7TbWvcCSrJTdVsgD3oSxsCubEuoyzi1rhhBo3jtjE9",
    "dex": "pumpfun"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
