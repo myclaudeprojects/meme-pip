@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-18 14:52:35 EST",
- "generated_ts": 1795031555122,
+ "generated_et": "2026-11-18 14:54:53 EST",
+ "generated_ts": 1795031693413,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,18 +29,18 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.149025050000485,
-  "btc_price": 62601.772367473284,
+  "eth_usd": 3.152859738996208,
+  "btc_price": 62695.619606789136,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 73.055,
+  "So11111111111111111111111111111111111111112": 73.1,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.0114,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.0337,
-  "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002519,
+  "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.000252,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.38,
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": 8.75,
   "dfxQsZjikuu5DGXPgX7yEpRog74HT5cJgytT3i5iLtw": 0.02338,
@@ -66,13 +66,13 @@
  "info": {
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183991786968,
+   "mc": 183987250168,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 21532373,
+   "mc": 21532431,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -84,7 +84,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 251962,
+   "mc": 252009,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -96,7 +96,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 28014289,
+   "mc": 28011987,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -132,7 +132,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1151769496,
+   "mc": 1150691673,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
@@ -268,16 +268,16 @@
    "pair": "6CgauHz1PMDFeRqN47dNATb5i1hTD3VuTLSyq5XCWDw9",
    "dex": "meteora"
   },
-  "BftPqPL9oCsZxyZ99xeKHCkgiNRMsAHQLpDeNFcapump": {
-   "symbol": "TP4",
-   "mc": null,
-   "pair": "3L7TbWvcCSrJTdVsgD3oSxsCubEuoyzi1rhhBo3jtjE9",
-   "dex": "pumpfun"
-  },
   "DCQwjqf8dwuNJL98niziKRELi5x9LpTGtBzYoJHjpump": {
    "symbol": "TP5",
    "mc": null,
    "pair": "GDFsk89SedRP7QFjA51ztYtHvGVpYyRsm9JSWEMFLcfT",
+   "dex": "pumpfun"
+  },
+  "BftPqPL9oCsZxyZ99xeKHCkgiNRMsAHQLpDeNFcapump": {
+   "symbol": "TP4",
+   "mc": null,
+   "pair": "3L7TbWvcCSrJTdVsgD3oSxsCubEuoyzi1rhhBo3jtjE9",
    "dex": "pumpfun"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
