@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-18 23:29:19 EST",
- "generated_ts": 1795062559661,
+ "generated_et": "2026-11-18 23:31:23 EST",
+ "generated_ts": 1795062683910,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,16 +29,15 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.2220008878909856,
-  "btc_price": 63279.612071826756,
+  "eth_usd": 3.2240753917739178,
+  "btc_price": 63324.724862908355,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 74.375,
+  "So11111111111111111111111111111111111111112": 74.465,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.999,
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01115,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.03367,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002527,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.42,
@@ -49,7 +48,7 @@
   "CYR4bEZJBR6TxZ9dcTuYjzcFXBR1owm1wSpcgTGYrV6H": 0.1858,
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": 1.15,
   "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": 0.9991,
-  "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": 3.99e-05,
+  "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": 3.988e-05,
   "3o2GCwpoUTr6CezPdvMYHmxY9wcfVr5TU1oTb1uLJGVm": 0.01011,
   "3STApFSfFDiCWnfV5eimnCeoHZqmLzqu9hqcGnsZ4XoN": 0.9965,
   "2o69gwy6ZhL66KQxNk5Z2YeihCNpPjNneqr2Sn771can": 0.04999,
@@ -57,6 +56,7 @@
   "Cxpq8jppQdBs5YLUV1tF7WVQ6Wk7btp3GukDehHYD6ae": 0.0715,
   "6CZ6gxhuhf1NqFZJsAhi6Yq2mr71qxtYFpaXdHTLKNC": 1.0000002,
   "DfEtX3JkP7LGsYPVuoFuWknchf8L7peuCvqseZmqx8R5": 1.29,
+  "5HudMVeZpwdcsajr75hTCipr9Yd8KJ9GfCowqU5T8GS": 0.0001,
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 358.078,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 356.14,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.137e-05
@@ -68,12 +68,6 @@
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
-   "symbol": "ANTFUN",
-   "mc": 21055815,
-   "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
-   "dex": "meteora"
-  },
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": {
    "symbol": "FO",
    "mc": 3929743,
@@ -82,13 +76,13 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 252740,
+   "mc": 252747,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
    "symbol": "RAY",
-   "mc": 385300524,
+   "mc": 385901684,
    "pair": "DVa7Qmb5ct9RCpaU7UTpSaf3GVMYz17vNVU67XpdCRut",
    "dex": "raydium"
   },
@@ -136,7 +130,7 @@
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 1681057003,
+   "mc": 1680491788,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -181,6 +175,12 @@
    "mc": 129987498,
    "pair": "8LRUH1W9bJQuqK9mvUib85PHeWPufm3gwEFTpyqsPH1A",
    "dex": "orca"
+  },
+  "5HudMVeZpwdcsajr75hTCipr9Yd8KJ9GfCowqU5T8GS": {
+   "symbol": "SAFE",
+   "mc": 100000201127,
+   "pair": "DMxM5tU9ytv3ijMvemTkcLZuyeNSedG62rip8phCRhib",
+   "dex": "meteora"
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
@@ -236,16 +236,16 @@
    "pair": "9xjVdMUmhHVkWFtuNnNHJUioD6G6dp9xRJj4aMBDY3Ej",
    "dex": "pumpfun"
   },
-  "DCQwjqf8dwuNJL98niziKRELi5x9LpTGtBzYoJHjpump": {
-   "symbol": "TP5",
-   "mc": null,
-   "pair": "GDFsk89SedRP7QFjA51ztYtHvGVpYyRsm9JSWEMFLcfT",
-   "dex": "pumpfun"
-  },
   "BftPqPL9oCsZxyZ99xeKHCkgiNRMsAHQLpDeNFcapump": {
    "symbol": "TP4",
    "mc": null,
    "pair": "3L7TbWvcCSrJTdVsgD3oSxsCubEuoyzi1rhhBo3jtjE9",
+   "dex": "pumpfun"
+  },
+  "DCQwjqf8dwuNJL98niziKRELi5x9LpTGtBzYoJHjpump": {
+   "symbol": "TP5",
+   "mc": null,
+   "pair": "GDFsk89SedRP7QFjA51ztYtHvGVpYyRsm9JSWEMFLcfT",
    "dex": "pumpfun"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
