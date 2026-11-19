@@ -1958,5 +1958,145 @@
     "type": "concept",
     "front": "What are the settlement rules for options contracts?",
     "back": "Options bought or sold settle the next business day (T+1): buyers pay the premium and writers receive it on settlement date, and closing transactions settle the same way. When an equity option is exercised, the stock settles regular way, T+1, with physical delivery of 100 shares from the call writer or put buyer to the call buyer or put writer. The OCC is the counterparty to every listed contract and guarantees performance. Standard options expire the third Friday of the expiration month."
+  },
+  {
+    "id": "ch15-term-01",
+    "chapter": 15,
+    "type": "term",
+    "front": "Vertical spread",
+    "back": "A spread with different strike prices but the same expiration month; also called a price spread. A horizontal or calendar spread has the same strikes and different expirations; a diagonal spread differs in both strike and expiration. All spreads are moderately bullish or bearish and have a predetermined max gain and a limited max loss."
+  },
+  {
+    "id": "ch15-term-02",
+    "chapter": 15,
+    "type": "term",
+    "front": "Net premium",
+    "back": "The difference between the premium paid to buy one option and the premium received for selling the other in a spread. If more premium is paid than received, it is a debit spread; if more is received, it is a credit spread. In a debit spread, the net premium paid is the max loss; in a credit spread, the net premium received is the max gain. In a price spread, max gain plus max loss equals the difference in the strikes."
+  },
+  {
+    "id": "ch15-term-03",
+    "chapter": 15,
+    "type": "term",
+    "front": "Collar",
+    "back": "A three-position strategy: long stock, plus a protective put and a covered call on those shares. Typically both options are out-of-the-money - the put strike is below the market and the call strike is above. Investors use collars mainly to protect unrealized profits: the put locks in an exit price, the short call caps upside at its strike, and the call premium offsets the cost of the put. A collar can be opened at a net debit, a net credit, or for zero cost."
+  },
+  {
+    "id": "ch15-term-04",
+    "chapter": 15,
+    "type": "term",
+    "front": "Combination",
+    "back": "A straddle-like position - long or short a call and a put - in which the options have different strike prices; also called a strangle. Example: a higher call strike and a lower put strike, or vice versa. Strategy, breakevens, and profit-loss are calculated the same as for straddles. These positions may be cheaper if the strikes differ."
+  },
+  {
+    "id": "ch15-term-05",
+    "chapter": 15,
+    "type": "term",
+    "front": "Side of the market",
+    "back": "For position-limit and exercise-limit rules, contracts are aggregated by attitude, not by calls versus puts. The bullish side is long calls and short puts; the bearish side is long puts and short calls. Limits apply to each side separately, and trades of spouses (or investors acting in concert) are aggregated. The exam will give the limit; for the most actively traded large-cap stocks it is 250,000 contracts on the same side. Exercise limits use that same number over any five consecutive business days."
+  },
+  {
+    "id": "ch15-term-06",
+    "chapter": 15,
+    "type": "term",
+    "front": "Open interest",
+    "back": "The number of outstanding option contracts that have been traded but not yet closed by an offsetting trade, exercise, or assignment. Higher open interest means greater liquidity. As expiration approaches, investors close positions, so open interest and liquidity usually fall."
+  },
+  {
+    "id": "ch15-term-07",
+    "chapter": 15,
+    "type": "term",
+    "front": "VIX",
+    "back": "The CBOE Volatility Index, which measures expected volatility of the S&P 500 over the next 30 days from S&P 500 option prices. It typically ranges from about 10 (low expected volatility) to 50 (high). It is called the \"fear index\" because it rises when investors are bearish. The VIX usually moves inverse to the market: when the market is down, the VIX is up, and when the market is up, the VIX is down."
+  },
+  {
+    "id": "ch15-term-08",
+    "chapter": 15,
+    "type": "term",
+    "front": "Forward split",
+    "back": "A split that increases the number of shares and requires an options adjustment so total contract value stays the same. In an even split (the second number is 1, such as 2:1), the number of contracts increases and the strike falls: 1 Jan 50 call becomes 2 Jan 25 calls. In an odd split (the second number is not 1, such as 3:2), the number of contracts stays the same; shares per contract rise and the strike falls: 1 Jan 50 call for 100 shares becomes 1 Jan 33.33 call for 150 shares. Premiums and expiration dates do not change."
+  },
+  {
+    "id": "ch15-term-09",
+    "chapter": 15,
+    "type": "term",
+    "front": "Portfolio insurance",
+    "back": "Using long index options, typically index puts, to protect a portfolio against a market decline. Choose the index that mirrors the portfolio, such as the S&P 500 for a diversified blue-chip book or a narrow-based energy index for energy stocks. Number of puts equals portfolio value divided by (strike times the $100 multiplier), then multiplied by beta if the portfolio is more volatile than the market. Buying options is a stronger hedge than writing them."
+  },
+  {
+    "id": "ch15-term-10",
+    "chapter": 15,
+    "type": "term",
+    "front": "Paper gain",
+    "back": "A mark-to-market gain or loss on certain listed broad-based index options (SPX, VIX) and foreign currency (FX) options still held at year-end. These contracts are treated as if sold at fair market value on the last business day of the tax year, even if they are not liquidated. That paper result, plus any actually realized gains or losses, is taxed 60% long-term and 40% short-term, regardless of the actual holding period. Later-year results are adjusted for amounts already recognized."
+  },
+  {
+    "id": "ch15-concept-01",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How do you identify the different types of spreads?",
+    "back": "A spread is buying one option and selling another of the same type (two calls or two puts) on the same security. By terms: a vertical or price spread has different strikes and the same expiration; a horizontal or calendar spread has the same strikes and different expirations; a diagonal spread differs in both. By cash flow: a debit spread pays a net premium (debit call is moderately bullish; debit put is moderately bearish) and profits when the spread widens, so the investor wants exercise. A credit spread receives a net premium (credit call is moderately bearish; credit put is moderately bullish) and profits when the spread narrows, so the investor wants expiration."
+  },
+  {
+    "id": "ch15-concept-02",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How do you determine the dominant side of a spread when there are no premiums?",
+    "back": "In a call spread, the lower strike is more valuable because it is the right to buy cheaper. In a put spread, the higher strike is more valuable because it is the right to sell higher. In a calendar spread, the later expiration is more valuable. The dominant side is the higher-premium option. Buying the dominant option makes a debit spread; selling it makes a credit spread. Example: long a Dec 60 call and short a Dec 50 call is a credit call spread (the short 50 is dominant) and is bearish."
+  },
+  {
+    "id": "ch15-concept-03",
+    "chapter": 15,
+    "type": "concept",
+    "front": "What is the investor's market attitude for long and short straddles?",
+    "back": "A straddle is a call and a put with the same strike and expiration. A long straddle (buy both) expects high volatility but is unsure of direction. Max gain is unlimited if the stock rises, or strike minus total premiums if it falls to zero. Max loss is the total premiums, if the stock finishes at the strike. Two breakevens: strike plus total premiums, and strike minus total premiums. A short straddle (sell both) is a low-volatility, neutral view: max gain is the total premiums; max loss is unlimited on the upside, or strike minus total premiums if the stock falls to zero. Same two breakeven points. Short straddles have limited reward and high risk."
+  },
+  {
+    "id": "ch15-concept-04",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How do you identify collars, combinations, and butterflies?",
+    "back": "A combination, or strangle, is a long or short call and put with different strikes; profit-loss and breakevens are calculated like a straddle and may be cheaper. A collar is long stock plus an out-of-the-money protective put and an out-of-the-money covered call, used to protect unrealized profits at a reduced cost; upside is capped at the short call's strike. A butterfly uses four options with the same expiration and three strikes in a 1-2-1 pattern - for example, buy 1 Oct 50 call, sell 2 Oct 60 calls, and buy 1 Oct 70 call. A two-option position cannot be a butterfly, and it is not a 2-1-2."
+  },
+  {
+    "id": "ch15-concept-05",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How are options contracts adjusted for splits, stock dividends, and cash dividends?",
+    "back": "Adjust so total contract value stays the same; premiums and expirations do not change. Even forward split (2:1 or 4:1): more contracts, lower strike. Odd forward split (3:2 or 5:4): same number of contracts, more shares per contract, lower strike. Reverse split (1:4): fewer shares, higher strike - for example, 1 Jan 5 call for 100 shares becomes 1 Jan 20 call for 25 shares. Stock dividends work like odd splits: a 5% stock dividend turns a Jan 50 call into a Jan 47.62 call for 105 shares. Ordinary cash dividends do not adjust the contract; only an extraordinary cash dividend that differs substantially from the issuer's history does."
+  },
+  {
+    "id": "ch15-concept-06",
+    "chapter": 15,
+    "type": "concept",
+    "front": "What are the unique features of index options, and how do they hedge portfolios?",
+    "back": "Unlike equity options, which are American style and settle by delivery of 100 shares, index options are typically European style (exercisable only on a specified date, usually the day before expiration), cash-settled the next business day, and use a $100 multiplier for both settlement and the premium. Cash paid equals intrinsic value times $100; no shares are delivered. To hedge, buy puts on the index that mirrors the portfolio (portfolio insurance). Contracts needed equal portfolio value divided by (strike times $100), then times beta if beta is not 1. Example: a $6,000,000 portfolio with beta 1.3 needs 39 SPX 2000 puts. If the count is not exact, use more contracts for better protection."
+  },
+  {
+    "id": "ch15-concept-07",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How do investors hedge with interest rate and foreign currency options?",
+    "back": "Interest rate options on Treasury yields (IRX, FVX, TNX, TYX) have a strike equal to the yield times 10, a $100 premium multiplier, and cash settlement the next business day. If rates will rise (bond prices fall), buy rate calls or sell rate puts; if rates will fall (bond prices rise), buy rate puts or sell rate calls. Buying is the stronger hedge; selling produces income with more risk. Foreign currency options: no U.S.-dollar contracts trade in the U.S., so restate the view in the foreign currency. They are European style, paid and settled in U.S. dollars, with a 100 multiplier; contract size is typically 10,000 units (1,000,000 for yen). A U.S. exporter paid in euros who fears a stronger dollar (weaker euro) buys euro puts. Never choose a U.S.-dollar option as the answer."
+  },
+  {
+    "id": "ch15-concept-08",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How do you calculate the cost basis and sales proceeds of stock when an option is exercised?",
+    "back": "Exercise itself is not a gain or loss; it sets cost basis if stock is purchased, or sales proceeds if stock is sold. Long call: basis = strike + premium; proceeds = market price. Short call: basis = market price, or the original stock cost if the shares were already owned; proceeds = strike + premium (covered or uncovered). Long put: basis = market price, or the original stock cost if already owned; proceeds = strike - premium. Short put: basis = strike - premium; proceeds = market price. If stock is purchased at exercise, the premium raises basis on a long call and reduces basis on a short put."
+  },
+  {
+    "id": "ch15-concept-09",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How do you profit using VIX options?",
+    "back": "The VIX moves inverse to the S&P 500, so a bearish market view is a bullish VIX view. To profit from a decline while limiting risk, buy VIX calls rather than sell VIX puts, which have significant risk if volatility falls. Bullish on the market (lower volatility): buy VIX puts or sell VIX calls. Bearish on the market (higher volatility): buy VIX calls or sell VIX puts. Buying costs a premium but has little risk; selling has no up-front cost but significant or unlimited risk."
+  },
+  {
+    "id": "ch15-concept-10",
+    "chapter": 15,
+    "type": "concept",
+    "front": "How do puts impact capital gains on stock?",
+    "back": "A married put - stock and put bought on the same day - does not affect the stock's holding period; the put premium increases the stock's cost basis, and a hold of more than one year still receives long-term treatment. A protective put bought later can reset the holding period: if the stock has been held one year or less, the holding period goes back to zero when the put is purchased. If the stock has already been held more than one year, the stock gain or loss stays long-term whether the put is exercised, sold, or expires. Example: stock bought in January at 40, a protective put bought in March, and the stock sold the next February at 55 produces a short-term $15 gain, plus a short-term loss equal to the put premium if it expired."
   }
 ]
