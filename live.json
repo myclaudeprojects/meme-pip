@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-20 15:24:14 EST",
- "generated_ts": 1795206254776,
+ "generated_et": "2026-11-20 15:26:27 EST",
+ "generated_ts": 1795206387729,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 2.888517653307446,
-  "btc_price": 58482.10468117685,
+  "eth_usd": 2.8898467726783292,
+  "btc_price": 58600.44114785164,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 68.205,
+  "So11111111111111111111111111111111111111112": 68.29,
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 307.51,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 307.35,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.464e-05,
@@ -99,16 +99,16 @@
    "pair": "6CgauHz1PMDFeRqN47dNATb5i1hTD3VuTLSyq5XCWDw9",
    "dex": "meteora"
   },
-  "BBjEdAmpoAHqPThhmZncd2p7PpAkGMHNfzFfB7J2pump": {
-   "symbol": "CSI",
-   "mc": null,
-   "pair": "HEfenN7jSzTjyv35wteEreamc92jcr6GNs7LK6HZptM2",
-   "dex": "pumpfun"
-  },
   "9ZerWpkRanr1GZF4tmD6HdVJzEa1Nkis1NjhvBE6pump": {
    "symbol": "CSI",
    "mc": null,
    "pair": "FMaXKJNoYUrEuaNihrq73RAJTV5wPEosUmvkdYToaGAq",
+   "dex": "pumpfun"
+  },
+  "BBjEdAmpoAHqPThhmZncd2p7PpAkGMHNfzFfB7J2pump": {
+   "symbol": "CSI",
+   "mc": null,
+   "pair": "HEfenN7jSzTjyv35wteEreamc92jcr6GNs7LK6HZptM2",
    "dex": "pumpfun"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
@@ -125,7 +125,7 @@
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183886421184,
+   "mc": 183886073811,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
@@ -137,7 +137,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 248557,
+   "mc": 248561,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
