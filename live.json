@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-20 01:14:11 EST",
- "generated_ts": 1795155251264,
+ "generated_et": "2026-11-20 01:16:15 EST",
+ "generated_ts": 1795155375723,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.1285494272598573,
-  "btc_price": 61843.46516465521,
+  "eth_usd": 3.123960373215796,
+  "btc_price": 61814.660176819765,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 72.625,
+  "So11111111111111111111111111111111111111112": 72.58,
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 345.039,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 343.56,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.161e-05,
@@ -104,16 +104,16 @@
    "pair": "2Ho7BiAp6vSyiaEajfNXUM2VaDidQ9HA3PTiaca298sn",
    "dex": "pumpfun"
   },
-  "9ZerWpkRanr1GZF4tmD6HdVJzEa1Nkis1NjhvBE6pump": {
-   "symbol": "CSI",
-   "mc": null,
-   "pair": "FMaXKJNoYUrEuaNihrq73RAJTV5wPEosUmvkdYToaGAq",
-   "dex": "pumpfun"
-  },
   "BBjEdAmpoAHqPThhmZncd2p7PpAkGMHNfzFfB7J2pump": {
    "symbol": "CSI",
    "mc": null,
    "pair": "HEfenN7jSzTjyv35wteEreamc92jcr6GNs7LK6HZptM2",
+   "dex": "pumpfun"
+  },
+  "9ZerWpkRanr1GZF4tmD6HdVJzEa1Nkis1NjhvBE6pump": {
+   "symbol": "CSI",
+   "mc": null,
+   "pair": "FMaXKJNoYUrEuaNihrq73RAJTV5wPEosUmvkdYToaGAq",
    "dex": "pumpfun"
   },
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
@@ -130,7 +130,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 20867353,
+   "mc": 20867355,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -142,7 +142,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 251276,
+   "mc": 251223,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -154,7 +154,7 @@
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 27974001,
+   "mc": 27972815,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -178,7 +178,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1174934801,
+   "mc": 1176577758,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
