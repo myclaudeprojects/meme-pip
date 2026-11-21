@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-21 11:36:48 EST",
- "generated_ts": 1795279008821,
+ "generated_et": "2026-11-21 11:39:03 EST",
+ "generated_ts": 1795279143034,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,18 +29,18 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0153138451824124,
-  "btc_price": 59857.731101667676,
+  "eth_usd": 3.016193937738808,
+  "btc_price": 59865.19857507966,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 70.295,
+  "So11111111111111111111111111111111111111112": 70.4,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.221e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 2.855e-05,
-  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.998,
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01114,
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9981,
+  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01113,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.0349,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002484,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.31,
@@ -55,8 +55,8 @@
   "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": 1.0014,
   "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": 0.9991,
   "2jgEpNq4ifMoJVF6oCmSRKKuoPiiNtSxZEeZoXKvkbS6": 1.29,
-  "2NyvfcjP3Hg2qzVdkP1aB3y1EocYPeZvB8FKjAkwvyow": 1.0013,
   "LanY52xPRrirYgjn1TfUtYBftXJ7gz7SwFfbNykDZVU": 0.004318,
+  "2NyvfcjP3Hg2qzVdkP1aB3y1EocYPeZvB8FKjAkwvyow": 1.0013,
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 315.58,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 313.22
  },
@@ -75,13 +75,13 @@
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183807611895,
+   "mc": 183812013089,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 21035474,
+   "mc": 21022208,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -93,7 +93,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 248449,
+   "mc": 248486,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -129,7 +129,7 @@
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 1644319556,
+   "mc": 1644319711,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -169,17 +169,17 @@
    "pair": "HAxsr2Uxns96Kcwrrr9a4hMCrbCLDqtpCxBbS3ZP2Dgw",
    "dex": "orca"
   },
-  "2NyvfcjP3Hg2qzVdkP1aB3y1EocYPeZvB8FKjAkwvyow": {
-   "symbol": "USDT ",
-   "mc": 185939691098,
-   "pair": "6cGW1VLMkffiKBFeCurmCzsFxJCuFsDPicQU6tihV7m5",
-   "dex": "raydium"
-  },
   "LanY52xPRrirYgjn1TfUtYBftXJ7gz7SwFfbNykDZVU": {
    "symbol": "LAN",
    "mc": 2159486538922,
    "pair": "A4R7gd6ijQnz9jhffBePbpESUjzCcckv4kXHezWA7N5e",
    "dex": "orca"
+  },
+  "2NyvfcjP3Hg2qzVdkP1aB3y1EocYPeZvB8FKjAkwvyow": {
+   "symbol": "USDT ",
+   "mc": 185939691098,
+   "pair": "6cGW1VLMkffiKBFeCurmCzsFxJCuFsDPicQU6tihV7m5",
+   "dex": "raydium"
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
@@ -289,16 +289,16 @@
    "pair": "C6GKYCsHVuJbtrsKULJARciCXRxyszZZMLAgiYVjKnET",
    "dex": "pumpfun"
   },
-  "FkjhiYv6BXzriSpsTmMXuNEKYepkgdZXrsVAMNLypump": {
-   "symbol": "Cyber",
-   "mc": null,
-   "pair": "3cNTRDGtPi4vbZRvfRMj6PbqU7287gDtyB21T1TgUUvg",
-   "dex": "pumpfun"
-  },
   "BLq88tQeTGjx6hQcxwcEz4syLWiYhAsBjHcgUYaCpump": {
    "symbol": "FBI",
    "mc": null,
    "pair": "GTTYYv5PtguiTJPitmHwhugK3ZNc82AqougUJHATR1R9",
+   "dex": "pumpfun"
+  },
+  "FkjhiYv6BXzriSpsTmMXuNEKYepkgdZXrsVAMNLypump": {
+   "symbol": "Cyber",
+   "mc": null,
+   "pair": "3cNTRDGtPi4vbZRvfRMj6PbqU7287gDtyB21T1TgUUvg",
    "dex": "pumpfun"
   },
   "EVdJZdbZU7NvSQxWoErbUXVSPYLQyE23NADtkEGoX2UN": {
