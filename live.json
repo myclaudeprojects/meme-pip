@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-21 16:09:09 EST",
- "generated_ts": 1795295349389,
+ "generated_et": "2026-11-21 16:11:13 EST",
+ "generated_ts": 1795295473912,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,8 +29,8 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0251475324196875,
-  "btc_price": 60370.4718991849,
+  "eth_usd": 3.023872296266543,
+  "btc_price": 60319.43865450047,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
@@ -57,7 +57,7 @@
   "DUSDt4AeLZHWYmcXnVGYdgAzjtzU5mXUVnTMdnSzAttM": 0.9991,
   "LanY52xPRrirYgjn1TfUtYBftXJ7gz7SwFfbNykDZVU": 0.004318,
   "2iWLUYCmAvw3yaQmLzjfM2485ZfVREFDPr7PCaNynjjG": 70993.39,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 317.62,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 317.46,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 315.16
  },
  "info": {
@@ -81,7 +81,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 20934183,
+   "mc": 20934182,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -93,7 +93,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 248352,
+   "mc": 248373,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -183,7 +183,7 @@
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 5831104,
+   "mc": 5828262,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -191,6 +191,12 @@
    "symbol": "QILIN",
    "mc": null,
    "pair": "7xr4Hhqz7p9MUraM7iU9Tx5rRj1oHN7N5sqm2k17U37s",
+   "dex": "pumpfun"
+  },
+  "cG22UGP191oqrWrzUQck5Mf95mDnbZPkviweDmWpump": {
+   "symbol": "QILIN",
+   "mc": null,
+   "pair": "J5ie7EATerLPXH8qdpsc86YaFHhLzih2ihKMirkovmCZ",
    "dex": "pumpfun"
   },
   "57kxUMVEwRqubR28oGtDDcKQsBZPbwqXQxRRYAeqpump": {
@@ -305,12 +311,6 @@
    "symbol": "Vulnpocalypse",
    "mc": null,
    "pair": "DnxGu8FFnwpjBYvwbWtyV7JBdXXg3muiK2sf7oeL5yE5",
-   "dex": "pumpfun"
-  },
-  "7gjFBBXxXKAAnhRoHGvEMjXZRo4Q6hkFt812BbLipump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "35P7fAYGaCA7t1SyUWPg3gNMZ4uzGFcwDvXgqk58KUPx",
    "dex": "pumpfun"
   }
  }
