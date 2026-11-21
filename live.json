@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-21 05:59:56 EST",
- "generated_ts": 1795258796299,
+ "generated_et": "2026-11-21 06:02:00 EST",
+ "generated_ts": 1795258920432,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,8 +29,8 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 2.9442508615216285,
-  "btc_price": 57868.86637424288,
+  "eth_usd": 2.9421583965661173,
+  "btc_price": 57801.14253838915,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
@@ -75,13 +75,13 @@
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183858497539,
+   "mc": 183858517184,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 20166256,
+   "mc": 20178401,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -93,13 +93,13 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 247549,
+   "mc": 247513,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
    "symbol": "RAY",
-   "mc": 339626914,
+   "mc": 337751880,
    "pair": "DVa7Qmb5ct9RCpaU7UTpSaf3GVMYz17vNVU67XpdCRut",
    "dex": "raydium"
   },
@@ -289,16 +289,16 @@
    "pair": "C6GKYCsHVuJbtrsKULJARciCXRxyszZZMLAgiYVjKnET",
    "dex": "pumpfun"
   },
-  "BLq88tQeTGjx6hQcxwcEz4syLWiYhAsBjHcgUYaCpump": {
-   "symbol": "FBI",
-   "mc": null,
-   "pair": "GTTYYv5PtguiTJPitmHwhugK3ZNc82AqougUJHATR1R9",
-   "dex": "pumpfun"
-  },
   "FkjhiYv6BXzriSpsTmMXuNEKYepkgdZXrsVAMNLypump": {
    "symbol": "Cyber",
    "mc": null,
    "pair": "3cNTRDGtPi4vbZRvfRMj6PbqU7287gDtyB21T1TgUUvg",
+   "dex": "pumpfun"
+  },
+  "BLq88tQeTGjx6hQcxwcEz4syLWiYhAsBjHcgUYaCpump": {
+   "symbol": "FBI",
+   "mc": null,
+   "pair": "GTTYYv5PtguiTJPitmHwhugK3ZNc82AqougUJHATR1R9",
    "dex": "pumpfun"
   },
   "EVdJZdbZU7NvSQxWoErbUXVSPYLQyE23NADtkEGoX2UN": {
