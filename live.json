@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-21 05:41:15 EST",
- "generated_ts": 1795257675529,
+ "generated_et": "2026-11-21 05:43:19 EST",
+ "generated_ts": 1795257799668,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,15 +29,15 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 2.9419877663766116,
-  "btc_price": 57783.00352787446,
+  "eth_usd": 2.9418979610137144,
+  "btc_price": 57786.150972922325,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 68.015,
-  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.511e-05,
+  "So11111111111111111111111111111111111111112": 68.01,
+  "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.51e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.308e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9983,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01075,
@@ -63,7 +63,7 @@
  "info": {
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": {
    "symbol": "BORDR",
-   "mc": 15114,
+   "mc": 15103,
    "pair": "4xp7kN4nVt19caq4kM629vL8vJEqpSFVdZAh27wvYPh8",
    "dex": "meteora"
   },
@@ -75,13 +75,13 @@
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183846276177,
+   "mc": 183852954887,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 20295642,
+   "mc": 20307855,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -289,16 +289,16 @@
    "pair": "C6GKYCsHVuJbtrsKULJARciCXRxyszZZMLAgiYVjKnET",
    "dex": "pumpfun"
   },
-  "FkjhiYv6BXzriSpsTmMXuNEKYepkgdZXrsVAMNLypump": {
-   "symbol": "Cyber",
-   "mc": null,
-   "pair": "3cNTRDGtPi4vbZRvfRMj6PbqU7287gDtyB21T1TgUUvg",
-   "dex": "pumpfun"
-  },
   "BLq88tQeTGjx6hQcxwcEz4syLWiYhAsBjHcgUYaCpump": {
    "symbol": "FBI",
    "mc": null,
    "pair": "GTTYYv5PtguiTJPitmHwhugK3ZNc82AqougUJHATR1R9",
+   "dex": "pumpfun"
+  },
+  "FkjhiYv6BXzriSpsTmMXuNEKYepkgdZXrsVAMNLypump": {
+   "symbol": "Cyber",
+   "mc": null,
+   "pair": "3cNTRDGtPi4vbZRvfRMj6PbqU7287gDtyB21T1TgUUvg",
    "dex": "pumpfun"
   },
   "EVdJZdbZU7NvSQxWoErbUXVSPYLQyE23NADtkEGoX2UN": {
