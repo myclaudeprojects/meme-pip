@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-22 13:45:40 EST",
- "generated_ts": 1795373140516,
+ "generated_et": "2026-11-22 13:47:44 EST",
+ "generated_ts": 1795373264585,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,18 +29,18 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.075124216872141,
-  "btc_price": 60617.119771487,
+  "eth_usd": 3.075681010122105,
+  "btc_price": 60654.71088942356,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 70.225,
+  "So11111111111111111111111111111111111111112": 70.26,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.22e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986,
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01058,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.03489,
+  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.01058,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.3,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002478,
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": 8.73,
@@ -74,16 +74,16 @@
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
-   "symbol": "ANTFUN",
-   "mc": 19985768,
-   "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
-   "dex": "meteora"
-  },
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": {
    "symbol": "FO",
    "mc": 4072619,
    "pair": "AXXo7N2gcLeVyo8nDsN99UW8Fv6NCsa2DP21WD3SKtM3",
+   "dex": "meteora"
+  },
+  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
+   "symbol": "ANTFUN",
+   "mc": 19973773,
+   "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
@@ -94,13 +94,13 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 247876,
+   "mc": 247891,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 27965729,
+   "mc": 27963897,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -112,7 +112,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1109837592,
+   "mc": 1107968227,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
@@ -278,12 +278,6 @@
    "pair": "42mfwJQLgcZKvXyLzVAafPJaUv3wdnFT1MZuJCEnDc4X",
    "dex": "pumpfun"
   },
-  "Ek82hzU5uLbkc6GxnzCU9NCaoLJTFjrZgA9ErtVnpump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "2cTqT8dccLkFUkpLNiZEjjqaN3n3XiJhFxUhZ34g5a1z",
-   "dex": "pumpfun"
-  },
   "3pMoKsdRjurYYT63F9GCYAbB5GNncBZeMiUDLX8qpump": {
    "symbol": "CAT",
    "mc": null,
@@ -336,6 +330,12 @@
    "symbol": "CAT",
    "mc": null,
    "pair": "ATxZQp2CJ3Ex2N2PPyhkzpZkDfkMBeXvsFb1LeH7VVPd",
+   "dex": "pumpfun"
+  },
+  "6sahVXe8JSb4oUrdpHmvvGnnCfd1aj6CShvcrE97pump": {
+   "symbol": "123456",
+   "mc": null,
+   "pair": "4KCXZju3HWe2EBmqAmUMZLnbQq6n6LpaW8WCewmGBrsW",
    "dex": "pumpfun"
   }
  }
