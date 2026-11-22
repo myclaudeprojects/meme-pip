@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-22 13:39:27 EST",
- "generated_ts": 1795372767372,
+ "generated_et": "2026-11-22 13:41:31 EST",
+ "generated_ts": 1795372891880,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0764802778518927,
-  "btc_price": 60668.360708989494,
+  "eth_usd": 3.0767496939405854,
+  "btc_price": 60661.145724305934,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 70.275,
+  "So11111111111111111111111111111111111111112": 70.25,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.22e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.03489,
@@ -82,7 +82,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19973777,
+   "mc": 19985768,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -296,18 +296,6 @@
    "pair": "Bn2CAkPkWzxzjrBaqL18PtL2371aA2qFbLUG2KWRvjxC",
    "dex": "pumpfun"
   },
-  "7gjFBBXxXKAAnhRoHGvEMjXZRo4Q6hkFt812BbLipump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "35P7fAYGaCA7t1SyUWPg3gNMZ4uzGFcwDvXgqk58KUPx",
-   "dex": "pumpfun"
-  },
-  "E9neXiNuHf5cfwMaLhXvHF4QQQBhLbYxdpQLnbg2pump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "DnxGu8FFnwpjBYvwbWtyV7JBdXXg3muiK2sf7oeL5yE5",
-   "dex": "pumpfun"
-  },
   "H7ibTj4qy9E74ddqwZLXpmkoqoV2oNPwfjJV9vJupump": {
    "symbol": "CAT",
    "mc": null,
@@ -336,6 +324,18 @@
    "symbol": "FBI",
    "mc": null,
    "pair": "328CR4Bve68dvX89rLZ7rJzwzgFnUoVUtiDxXrh9nVYw",
+   "dex": "pumpfun"
+  },
+  "BwauAs6xvNdxWdSR1GVNPJjP12nDjYkKMxBjgmwqpump": {
+   "symbol": "QILIN",
+   "mc": null,
+   "pair": "Cz7ZncFeNrfbPyAsGgTrypRZD9XKTR8Qvi7rXDXQ4LPs",
+   "dex": "pumpfun"
+  },
+  "BXtcfioT5CCoez8RQAqJwHFpsiSjMmARCH4mZBZjpump": {
+   "symbol": "CAT",
+   "mc": null,
+   "pair": "ATxZQp2CJ3Ex2N2PPyhkzpZkDfkMBeXvsFb1LeH7VVPd",
    "dex": "pumpfun"
   }
  }
