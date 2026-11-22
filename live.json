@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-22 15:29:52 EST",
- "generated_ts": 1795379392344,
+ "generated_et": "2026-11-22 15:31:56 EST",
+ "generated_ts": 1795379516603,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.072079815069916,
-  "btc_price": 60524.008500524,
+  "eth_usd": 3.072474958666665,
+  "btc_price": 60522.682123361585,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 69.84,
+  "So11111111111111111111111111111111111111112": 69.885,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.22e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.0349,
@@ -82,13 +82,13 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19973775,
+   "mc": 19985771,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 247537,
+   "mc": 247553,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -236,17 +236,17 @@
    "pair": "FisuTknsdmybKby8HFcaTdMcJ2RFU718EhLwB9oeZSnK",
    "dex": "pumpfun"
   },
-  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
-   "dex": "pumpswap"
-  },
   "AReTWNr4Fp1sec94yguCcTckvnEBkB83UEp1RD6Lpump": {
    "symbol": "Cybergeddon",
    "mc": null,
    "pair": "5cbMQLaGQNV6dbpmBikRcjroEAhv6BRA13Z63TomNKk4",
    "dex": "pumpfun"
+  },
+  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
+   "symbol": "Vulnpocalypse",
+   "mc": null,
+   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
+   "dex": "pumpswap"
   },
   "cG22UGP191oqrWrzUQck5Mf95mDnbZPkviweDmWpump": {
    "symbol": "QILIN",
