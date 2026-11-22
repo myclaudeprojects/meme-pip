@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-22 14:17:12 EST",
- "generated_ts": 1795375032651,
+ "generated_et": "2026-11-22 14:19:16 EST",
+ "generated_ts": 1795375156824,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,8 +29,8 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0777106113235884,
-  "btc_price": 60652.337705742575,
+  "eth_usd": 3.0776657086421397,
+  "btc_price": 60661.672505623545,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
@@ -82,7 +82,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19985769,
+   "mc": 19973776,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -94,7 +94,7 @@
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
    "symbol": "RAY",
-   "mc": 354568652,
+   "mc": 354679941,
    "pair": "DVa7Qmb5ct9RCpaU7UTpSaf3GVMYz17vNVU67XpdCRut",
    "dex": "raydium"
   },
@@ -112,7 +112,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1107104211,
+   "mc": 1106310458,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
@@ -148,7 +148,7 @@
   },
   "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": {
    "symbol": "USDe",
-   "mc": 253679843,
+   "mc": 253485906,
    "pair": "Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3",
    "dex": "pumpswap"
   },
@@ -190,7 +190,7 @@
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 5817484,
+   "mc": 5817481,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -248,12 +248,6 @@
    "pair": "BW1LB1KfoSnHpTUninXwfJg1BXm6SojfcPnwazz1pjD2",
    "dex": "pumpfun"
   },
-  "UoNuCcZkKq9mKeLEe61NXoXFmWwfki3EVmg5YhHpump": {
-   "symbol": "VI",
-   "mc": null,
-   "pair": "4AH2cxL7ZShanQuExzKYbXaUQn7CyCDyXTjURa3FDzQf",
-   "dex": "pumpfun"
-  },
   "4HjVpjVDEgWRB7zFKMAyPEgvb3tX6gXH5Pyr3G61LJvB": {
    "symbol": "CSI",
    "mc": null,
@@ -264,6 +258,12 @@
    "symbol": "Vulnpocalyse",
    "mc": null,
    "pair": "FisuTknsdmybKby8HFcaTdMcJ2RFU718EhLwB9oeZSnK",
+   "dex": "pumpfun"
+  },
+  "UoNuCcZkKq9mKeLEe61NXoXFmWwfki3EVmg5YhHpump": {
+   "symbol": "VI",
+   "mc": null,
+   "pair": "4AH2cxL7ZShanQuExzKYbXaUQn7CyCDyXTjURa3FDzQf",
    "dex": "pumpfun"
   },
   "3pMoKsdRjurYYT63F9GCYAbB5GNncBZeMiUDLX8qpump": {
