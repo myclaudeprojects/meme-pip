@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-22 14:44:12 EST",
- "generated_ts": 1795376652388,
+ "generated_et": "2026-11-22 14:46:16 EST",
+ "generated_ts": 1795376776792,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0762018812269103,
-  "btc_price": 60651.96413555036,
+  "eth_usd": 3.076767655013165,
+  "btc_price": 60658.62101696611,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 70.225,
+  "So11111111111111111111111111111111111111112": 70.175,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.22e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9986,
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.0349,
@@ -58,7 +58,7 @@
   "8r5mco9UCh6Ub8dZQSvbPSmRiD6KRTcCR3ofYQeMKfxF": 1.0001,
   "2NyvfcjP3Hg2qzVdkP1aB3y1EocYPeZvB8FKjAkwvyow": 1.0013,
   "TaMChY1b7Be9McHbp9uCePp8QDDGhrsCK1tAMLEnx98": 1.0001,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 317.33,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 317.28,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 314.77
  },
  "info": {
@@ -82,7 +82,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19973777,
+   "mc": 19985771,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -94,13 +94,13 @@
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
    "symbol": "RAY",
-   "mc": 355047558,
+   "mc": 355437159,
    "pair": "DVa7Qmb5ct9RCpaU7UTpSaf3GVMYz17vNVU67XpdCRut",
    "dex": "raydium"
   },
   "6eAecVV5kkahx9RLrMWW2RPuRdWqBJkHePAaX8iQHCya": {
    "symbol": "VJRA",
-   "mc": 27952907,
+   "mc": 27951075,
    "pair": "7tRxsHPnNEfuErqoSC6eVBmCB6subfiqVuJ9NGWNBanD",
    "dex": "raydium"
   },
@@ -118,7 +118,7 @@
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 1601260935,
+   "mc": 1601261167,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -190,7 +190,7 @@
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 5818312,
+   "mc": 5817468,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -230,17 +230,17 @@
    "pair": "6GeFmDVxcYPtRs2dMV2Be9nHvArNN6b36Nej5TJVaf37",
    "dex": "pumpfun"
   },
-  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
-   "dex": "pumpswap"
-  },
   "C5Xvn3v755vJbYe8sEj5SFxTE5otHVTwxk3MVKNKpump": {
    "symbol": "Vulnpocalyse",
    "mc": null,
    "pair": "FisuTknsdmybKby8HFcaTdMcJ2RFU718EhLwB9oeZSnK",
    "dex": "pumpfun"
+  },
+  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
+   "symbol": "Vulnpocalypse",
+   "mc": null,
+   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
+   "dex": "pumpswap"
   },
   "2Y4ZtAeSkipjweM6S3nGCkCgLdmoiHyHHryv7uB8pump": {
    "symbol": "Cybergeddon",
