@@ -2098,5 +2098,145 @@
     "type": "concept",
     "front": "How do puts impact capital gains on stock?",
     "back": "A married put - stock and put bought on the same day - does not affect the stock's holding period; the put premium increases the stock's cost basis, and a hold of more than one year still receives long-term treatment. A protective put bought later can reset the holding period: if the stock has been held one year or less, the holding period goes back to zero when the put is purchased. If the stock has already been held more than one year, the stock gain or loss stays long-term whether the put is exercised, sold, or expires. Example: stock bought in January at 40, a protective put bought in March, and the stock sold the next February at 55 produces a short-term $15 gain, plus a short-term loss equal to the put premium if it expired."
+  },
+  {
+    "id": "ch16-term-01",
+    "chapter": 16,
+    "type": "term",
+    "front": "Pass-through",
+    "back": "A structure in which the business itself is not taxed; all gains and losses flow through to the owners or investors and are reported on their personal returns. This eliminates the double taxation of C-corp distributions. Sole proprietorships, general partnerships, limited partnerships, LLCs, and S-corps have pass-through taxation. REITs also pass through income - they must distribute at least 90% of taxable income - but, unlike DPPs, they do not pass through losses. Mortgage-backed securities are also called pass-throughs because investors receive the monthly principal and interest payments made by homeowners."
+  },
+  {
+    "id": "ch16-term-02",
+    "chapter": 16,
+    "type": "term",
+    "front": "Subchapter M",
+    "back": "The Internal Revenue Code rules that set minimum requirements on how REIT assets are invested and how income is passed through. At least 75% of a REIT's total assets must be invested in real estate; at least 75% of gross income must come from rents or mortgage interest; 95% of income must come from dividends, interest, and property income; and the REIT must distribute at least 90% of taxable income to shareholders as dividends each year. The same Subchapter M requirements apply to investment companies, although REITs are exempt from the Investment Company Act of 1940."
+  },
+  {
+    "id": "ch16-term-03",
+    "chapter": 16,
+    "type": "term",
+    "front": "Passive loss",
+    "back": "A loss that flows through from a direct participation program or rental property to the investor. The IRS defines three categories of income: ordinary (wages and earnings from work), investment, and passive (income from DPPs and rental properties). Only passive income can be reduced by passive losses; passive losses cannot offset ordinary income, capital gains, or investment income from other sources. Because of that limit, a DPP should be recommended only to investors who can use the tax benefits, and suitability should first consider the program's economic potential, not just its tax features. DPPs are usually not appropriate for investors in low tax brackets."
+  },
+  {
+    "id": "ch16-term-04",
+    "chapter": 16,
+    "type": "term",
+    "front": "S-corp",
+    "back": "A tax election that allows certain for-profit corporations to be taxed like a partnership. An S-corp is usually limited to 100 shareholders; each owner receives a pass-through of gains and losses, and taxation at the corporate level of most types of income is avoided. LLCs are closely related in structure and also feature limited liability and the potential for pass-through; the choice of tax treatment can be determined in an LLC. Along with sole proprietorships, general partnerships, and limited partnerships, S-corps have pass-through taxation rather than the double taxation of C-corps."
+  },
+  {
+    "id": "ch16-term-05",
+    "chapter": 16,
+    "type": "term",
+    "front": "Recourse loan",
+    "back": "A loan to a partnership for which a limited partner can be held responsible for a proportionate share of repayment. The partner's share of a recourse loan increases tax basis. In a non-recourse loan, the limited partner has no responsibility for repayment and basis is not affected. An exception applies in certain real estate partnerships: a qualified non-recourse loan breaks that rule and increases cost basis. Along with cash investments, qualified nonrecourse loans, and allocated income, recourse loans increase a partner's tax basis."
+  },
+  {
+    "id": "ch16-term-06",
+    "chapter": 16,
+    "type": "term",
+    "front": "Depletion",
+    "back": "A tax benefit, or depletion allowance, shared with partners in oil and gas programs to cover the cost of using up a resource. Depletion allowances are high in income programs (stripper wells), where intangible drilling costs are almost nonexistent; those programs have low-to-moderate risk. Depletion, along with expenses, losses, and depreciation, decreases a partner's tax basis."
+  },
+  {
+    "id": "ch16-term-07",
+    "chapter": 16,
+    "type": "term",
+    "front": "BDC",
+    "back": "A business development company. Many BDCs are organized as closed-end companies under the Investment Company Act of 1940; a limited partnership structure is another option because it gives limited personal liability to the limited partners. When structured as a partnership for tax purposes, a BDC offers pass-through tax treatment, with potential losses and expenses that can offset income and gains. Unless a special exemption exists, BDCs organized as limited partnerships cannot be publicly traded."
+  },
+  {
+    "id": "ch16-term-08",
+    "chapter": 16,
+    "type": "term",
+    "front": "Extension risk",
+    "back": "The risk that mortgage prepayments slow, so the average life of a mortgage-backed security is longer than expected. Extension risk is most common when interest rates rise: homeowners have little reason to refinance, the MBS takes on long-term bond characteristics, its price falls significantly, and the investor is stuck in the investment for an extended period. PAC tranches protect against both prepayment and extension risk; TAC tranches protect against prepayment but not extension risk, so they pay slightly higher yields."
+  },
+  {
+    "id": "ch16-term-09",
+    "chapter": 16,
+    "type": "term",
+    "front": "Tranche",
+    "back": "A class, or slice, of a CMO or similar asset-backed security, each with its own rules for distributing principal and interest and its own maturity, risk level, and yield. Instead of one pool of like-featured assets, a CMO is made of numerous pools or tranches. Cash flow is usually allocated first to interest on all tranches; principal is then paid by a predetermined priority schedule in the prospectus or offering circular. The tranche currently receiving principal is called active or currently paying. Common types include PAC, TAC, Z, principal-only, interest-only, and floating-rate tranches."
+  },
+  {
+    "id": "ch16-term-10",
+    "chapter": 16,
+    "type": "term",
+    "front": "Securitization",
+    "back": "The process by which financial institutions that make loans structure those loans into asset-backed securities. Financial assets like loans or mortgages, not hard assets like equipment or buildings, are securitized to create ABS. CDOs are a form of ABS created this way; their credit quality is directly related to the quality of the underlying loans and borrowers."
+  },
+  {
+    "id": "ch16-concept-01",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What are the different types of REITs, and what distributions do they pay to investors?",
+    "back": "Most REITs are equity REITs, which buy and operate income-producing real estate and earn rent plus gains from property sales; they suit investors seeking current income, or income and capital appreciation, and can hedge inflation. Mortgage REITs invest in mortgages or mortgage-backed securities; investors receive a share of interest and principal payoffs and potentially high dividends, but interest-rate changes can significantly affect value. Hybrid REITs combine both strategies. Publicly traded REITs trade on exchanges with stock-like liquidity; private-placement, or non-traded, REITs are sold only to accredited and institutional investors, have limited liquidity, and are inappropriate for most risk-averse investors. Dividend distributions are taxed as ordinary income and are rarely qualified dividends. Gains from the sale of REIT properties are short-term or long-term based on how long the trust held the property. Return of capital distributions reduce cost basis but are not currently taxed. REITs must distribute at least 90% of taxable income as dividends. They pass through gains, but not losses, and are not tax shelters."
+  },
+  {
+    "id": "ch16-concept-02",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What is the difference between a DPP and a C-corp?",
+    "back": "DPPs - including general partnerships, S-corps, LLCs, and limited partnerships - are not taxed at the entity level. Gains and losses flow through to owners or investors, which eliminates the double taxation that applies to corporate distributions. A C-corp is taxed before it makes distributions to shareholders, so taxes are paid by both the company and the investors who receive the distribution; that double tax reduces the value of the distribution. LLCs can elect C-corp tax treatment. DPPs also share losses as well as income; those passive losses can offset only passive gains. Suitability should be based first on economic potential, not just tax benefits."
+  },
+  {
+    "id": "ch16-concept-03",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What is tax basis, and how is it increased and reduced?",
+    "back": "Tax basis, or cost basis, is adjusted during the life of the partnership and is used to determine taxation of distributions and of gains or losses when the partnership is terminated. Basis is generally increased by contributions (cash investments), allocated partnership income, recourse loans, and qualified nonrecourse loans, and is decreased by distributions and allocated losses and deductions, including certain expenses, depreciation, and depletion. A regular non-recourse loan does not affect a limited partner's basis, except that a qualified non-recourse loan in certain real estate partnerships does increase basis. A cash distribution generally reduces outside basis and is not itself taxable unless it exceeds adjusted basis. At liquidation, partners pay capital gains tax on the amount of the termination distribution that exceeds tax basis. Example: a $10,000 investment, $1,000 share of fees, and $2,000 share of a recourse loan produce a $13,000 basis; a $15,000 termination distribution would make $2,000 taxable."
+  },
+  {
+    "id": "ch16-concept-04",
+    "chapter": 16,
+    "type": "concept",
+    "front": "How do you rank different types of LPs by their risk?",
+    "back": "Real estate LPs: raw land is high risk (capital appreciation only; property value may not increase; land is not depreciated). Rental properties are moderate risk (income from rents and mortgages plus depreciation; risks include falling values, vacancies, and delinquent payments). Government-assisted housing and historic rehab are low risk (tax credits and income; limited appreciation; the rental stream on historic rehab is backed by the U.S. government). Oil and gas: exploratory programs, or wildcatting, are high risk (drilling in unproven areas; high intangible drilling costs and high gain potential). Developmental programs, or step-out wells, are moderate to high risk (drill near proven reserves; some IDCs). Income programs, or stripper wells, are low to moderate risk (producing wells, depletion allowance, and regular income; oil supply may decline). Equipment leasing programs are lower risk and suit investors seeking income, lower risk, and low correlation to stocks and bonds. Tax credits, such as those in subsidized housing, are the most valuable tax benefit because they reduce taxes due dollar for dollar."
+  },
+  {
+    "id": "ch16-concept-05",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What unique investment practices of hedge funds are not used by investment company products?",
+    "back": "Unlike mutual funds and other investment company products, hedge funds may use short strategies, margin, and leverage; invest in securities, derivatives, and non-securities such as commodities, real estate, or jewelry; and often have lock-up periods of up to two years that restrict withdrawals. Mutual funds must redeem within seven days, generally hold securities, allow covered calls but not short positions or margin purchases, and typically have expense ratios of 1% or less. Hedge funds commonly charge a 2 and 20 fee (up to 2% of assets plus 20% of profits), may operate as blind pools or use blank-check acquisitions, often use a prime broker, and may invest in offshore assets. They are generally prohibited from public offerings under the Investment Company Act of 1940 and are offered privately under Regulation D, Rule 506; some managers may not have to register with the SEC unless they manage more than $150 million in the U.S."
+  },
+  {
+    "id": "ch16-concept-06",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What are the advantages and disadvantages of investing in a BDC?",
+    "back": "Many BDCs are organized as closed-end companies under the Investment Company Act of 1940, which can provide a registered, often publicly traded structure. A limited partnership structure is another option and gives limited personal liability to the limited partners. When a BDC is structured as a partnership for tax purposes, it offers pass-through tax treatment, and potential losses and expenses can offset income and gains. The main drawback of the partnership form is liquidity: unless a special exemption exists, BDCs organized as limited partnerships cannot be publicly traded."
+  },
+  {
+    "id": "ch16-concept-07",
+    "chapter": 16,
+    "type": "concept",
+    "front": "How do private CMOs differ from Ginnie Maes?",
+    "back": "MBS, including CMOs, may be issued through Ginnie Mae, through GSEs such as Fannie Mae or Freddie Mac, or as private-label securities of financial institutions, investment banks, and homebuilders. Ginnie Mae securities are the safest because they are backed by the full faith and credit of the U.S. government; they pay monthly interest taxed at all levels, have a $25,000 minimum investment, are issued in book-entry form, and settle T+1. GSE issues are quite safe because of an implied U.S. government guarantee. Private-label, or private, CMOs and MBS are not guaranteed by the U.S. government and vary greatly in credit quality. All MBS pass through monthly principal and interest, which can vary from month to month, so they are not suitable for investors who need steady income."
+  },
+  {
+    "id": "ch16-concept-08",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What two types of risk are unique to mortgage-backed securities?",
+    "back": "Prepayment risk and extension risk. Prepayment risk is most common when interest rates fall: homeowners refinance, principal comes back sooner than the stated maturity, the MBS acts like a short-term bond so its price rises only slightly, and investors must reinvest at lower rates - it acts like call risk. Extension risk is most common when interest rates rise: prepayments slow, the MBS acts like a long-term bond, its price falls significantly, and the investor is stuck in the investment longer than expected. Prepayments can also occur for personal reasons such as divorce, death, or default. Because monthly payments vary and creditworthiness can be hard to assess, MBS are not suitable for many individual investors seeking steady income."
+  },
+  {
+    "id": "ch16-concept-09",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What are tranches, and which are the least and most risky options?",
+    "back": "A CMO is divided into tranches, each with its own rules for principal and interest and its own maturity, risk, and yield. Interest is usually paid on all tranches first; principal then follows a priority schedule, and the tranche currently receiving principal is active or currently paying. PAC, or planned amortization class, tranches try to keep a fixed principal schedule and protect against both prepayment and extension risk, so yield and average life are more stable; they are usually the lowest-yielding and least risky (safest) tranche. TAC, or targeted amortization class, tranches protect against prepayment but not extension risk and are second in safety to PACs, with slightly higher yields. Z-tranches pay no interest until principal payments begin, and owners often receive no cash flow until the other tranches are retired; the lengthened maturity produces a higher yield and makes them the most risky of the standard options. Principal-only tranches rise in value if rates fall and prepayments increase; interest-only tranches rise if rates rise and prepayments decrease. Floating-rate tranches are tied to an index such as SOFR."
+  },
+  {
+    "id": "ch16-concept-10",
+    "chapter": 16,
+    "type": "concept",
+    "front": "What are several types of CDOs?",
+    "back": "Collateralized debt obligations are a form of asset-backed security that resemble CMOs: they are pools of financial instruments that issue bonds or notes paying income to investors. While CMOs are backed by mortgages, a CDO pool can include other receivables such as credit cards, auto loans, student loans, and home equity loans. These loans are structured into ABS through securitization. CDOs offer a variety of maturities, risks, and coupons; they are secured by the underlying pooled assets, so credit quality depends on the quality of those loans and borrowers. Only financial assets like loans or mortgages - not hard assets like equipment or buildings - are securitized to create ABS. Direct purchases are usually best for sophisticated and wealthy investors, and CDOs also carry some prepayment risk when borrowers refinance in a low-yield environment."
   }
 ]
