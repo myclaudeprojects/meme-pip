@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-24 17:23:35 EST",
- "generated_ts": 1795559015538,
+ "generated_et": "2026-11-24 17:25:55 EST",
+ "generated_ts": 1795559155807,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0203429455046718,
-  "btc_price": 59927.848677937574,
+  "eth_usd": 3.0208278944643183,
+  "btc_price": 59910.07613636029,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 69.51,
+  "So11111111111111111111111111111111111111112": 69.52,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.109e-05,
   "9xzmB67zWX8PJiGpQFbWuNBXTqyPpu2qV3mxQfhqUREV": 3.351e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9988,
@@ -59,7 +59,7 @@
   "HVcJABJSiMGjo9noXbQtFpiEJeg1pJD5siiNxNWwfaGo": 1.00011,
   "HWvb22ZYq75QT74c6nWNx4mo8uCAUaTAXkHW8CCLsp3G": 1.091,
   "LanY52xPRrirYgjn1TfUtYBftXJ7gz7SwFfbNykDZVU": 0.003834,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 304.56,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 304.55,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 301.85
  },
  "info": {
@@ -83,7 +83,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19543415,
+   "mc": 19543413,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -131,7 +131,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1107724742,
+   "mc": 1108666829,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
@@ -197,7 +197,7 @@
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 5563846,
+   "mc": 5563822,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -321,16 +321,16 @@
    "pair": "FFUNdbeEAnXFUAfTT3sdExAd9aZUbrVZcc9CmswWqTJY",
    "dex": "pumpfun"
   },
-  "3pu6iX1YrdKd7yJQ6Uvxeu6hcqi9A8U7z6jVJZXApump": {
-   "symbol": "RI",
-   "mc": null,
-   "pair": "91xdyCnFZTog6BHqiWEkiPoYk3cdvFzhztPUUNRHmLLd",
-   "dex": "pumpfun"
-  },
   "CKQ6qSXhRuxGYdvKjbWuguaNd4JvV2DjfcxL3M39pump": {
    "symbol": "RED",
    "mc": null,
    "pair": "GHaHtGMn3tDshAJkvvKKSFHJwgiNo9AFjUM9VGQmyDTa",
+   "dex": "pumpfun"
+  },
+  "3pu6iX1YrdKd7yJQ6Uvxeu6hcqi9A8U7z6jVJZXApump": {
+   "symbol": "RI",
+   "mc": null,
+   "pair": "91xdyCnFZTog6BHqiWEkiPoYk3cdvFzhztPUUNRHmLLd",
    "dex": "pumpfun"
   }
  }
