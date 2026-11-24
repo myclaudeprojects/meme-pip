@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-23 19:47:26 EST",
- "generated_ts": 1795481246640,
+ "generated_et": "2026-11-23 19:49:31 EST",
+ "generated_ts": 1795481371656,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.065766498058222,
-  "btc_price": 61174.87917096575,
+  "eth_usd": 3.0666016879331686,
+  "btc_price": 61180.11056600287,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 72.005,
+  "So11111111111111111111111111111111111111112": 72.0,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.15e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9988,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002488,
@@ -69,13 +69,13 @@
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183953380505,
+   "mc": 183952534362,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 248848,
+   "mc": 248847,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -183,7 +183,7 @@
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 5762133,
+   "mc": 5762124,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -229,17 +229,17 @@
    "pair": "GdWuhiyEWBVtnXshocoLvp3Tpbva5r18jbiTY8kGTRnJ",
    "dex": "pumpfun"
   },
-  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
-   "dex": "pumpswap"
-  },
   "DR2xcguUikbdtL1bxAvqr2KPi3ZWmv6zcUPaHxZH7Dih": {
    "symbol": "AUTR",
    "mc": null,
    "pair": "pW38BF4NcjM7fBnwivmqpVdDayC2dwWgrbLWipuweXf",
    "dex": "meteora"
+  },
+  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
+   "symbol": "Vulnpocalypse",
+   "mc": null,
+   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
+   "dex": "pumpswap"
   },
   "CEWxKoKDckHR4DBtfkwMs9LuNjHeRdmZ9EasmQ5Npump": {
    "symbol": "AI",
