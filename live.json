@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-25 16:47:45 EST",
- "generated_ts": 1795643265547,
+ "generated_et": "2026-11-25 16:50:54 EST",
+ "generated_ts": 1795643454433,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,8 +29,8 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0295120730565057,
-  "btc_price": 60229.85269256858,
+  "eth_usd": 3.029063046242018,
+  "btc_price": 60227.02148438628,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
@@ -75,19 +75,19 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 19221880,
+   "mc": 19233455,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 245234,
+   "mc": 245230,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": {
    "symbol": "FO",
-   "mc": 3953065,
+   "mc": 3953122,
    "pair": "AXXo7N2gcLeVyo8nDsN99UW8Fv6NCsa2DP21WD3SKtM3",
    "dex": "meteora"
   },
@@ -123,7 +123,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1118270095,
+   "mc": 1116637866,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
@@ -223,16 +223,16 @@
    "pair": "5WYZCJDG4yu1gQuPHkHDtMvY36apkTtm57uZnGwn2BNW",
    "dex": "pumpfun"
   },
-  "86Ei2xTekYQjj6NXqRTWXZ9GhHa6duZf7rwkHavapump": {
-   "symbol": "CSN",
-   "mc": null,
-   "pair": "G1pQE6N22EUksnwEXiBqQGDSQrkzbSYHK4xT8KoydVAc",
-   "dex": "pumpfun"
-  },
   "8A3BgHPAHNp5AygTXKFL92iwmjeZubPSPGUP8w6xpump": {
    "symbol": "RED",
    "mc": null,
    "pair": "6oDavF9SgKLCohnF5TvwtzXpQsmz9krijATqrUJiRd4M",
+   "dex": "pumpfun"
+  },
+  "86Ei2xTekYQjj6NXqRTWXZ9GhHa6duZf7rwkHavapump": {
+   "symbol": "CSN",
+   "mc": null,
+   "pair": "G1pQE6N22EUksnwEXiBqQGDSQrkzbSYHK4xT8KoydVAc",
    "dex": "pumpfun"
   },
   "DR2xcguUikbdtL1bxAvqr2KPi3ZWmv6zcUPaHxZH7Dih": {
