@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-26 14:37:42 EST",
- "generated_ts": 1795721862184,
+ "generated_et": "2026-11-26 14:39:46 EST",
+ "generated_ts": 1795721986397,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,14 +29,14 @@
   "chain": "arbitrum",
   "eth": 0.001796107257949799,
   "usdc": 11.868709,
-  "eth_usd": 3.0603871568206626,
-  "btc_price": 60598.970070707604,
+  "eth_usd": 3.0602524487763163,
+  "btc_price": 60596.51934617374,
   "btc_price_src": "gmx_tickers",
   "positions": [],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 71.405,
+  "So11111111111111111111111111111111111111112": 71.37,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.278e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9988,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009789,
@@ -83,7 +83,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 245384,
+   "mc": 245350,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -243,17 +243,17 @@
    "pair": "6CgauHz1PMDFeRqN47dNATb5i1hTD3VuTLSyq5XCWDw9",
    "dex": "meteora"
   },
-  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
-   "symbol": "Vulnpocalypse",
-   "mc": null,
-   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
-   "dex": "pumpswap"
-  },
   "DR2xcguUikbdtL1bxAvqr2KPi3ZWmv6zcUPaHxZH7Dih": {
    "symbol": "AUTR",
    "mc": null,
    "pair": "pW38BF4NcjM7fBnwivmqpVdDayC2dwWgrbLWipuweXf",
    "dex": "meteora"
+  },
+  "72mQThogLxX1hGCrQAhf4ckxt6YeHFA7E9Kcitrpump": {
+   "symbol": "Vulnpocalypse",
+   "mc": null,
+   "pair": "F5QNr4W1nqer12ksDnMrJL5zMdDYUQeVANFmmUMV6nhF",
+   "dex": "pumpswap"
   },
   "DNpbqKUNhRNNKbfx3LGHcmBb1zk5pRTHWX4vPMnfpump": {
    "symbol": "CAT",
