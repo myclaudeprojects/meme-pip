@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-27 01:39:33 EST",
- "generated_ts": 1795761573046,
+ "generated_et": "2026-11-27 01:41:38 EST",
+ "generated_ts": 1795761698153,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,28 +29,28 @@
   "chain": "arbitrum",
   "eth": 0.001611460177629799,
   "usdc": 11.751623,
-  "eth_usd": 2.7897759741144843,
-  "btc_price": 61606.31919699099,
+  "eth_usd": 2.790356099778431,
+  "btc_price": 61608.58968666465,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 19000.0,
-    "collateral_usd": 942.2239451593471,
-    "leverage": 20.165057466021793,
+    "collateral_usd": 942.2452289424012,
+    "leverage": 20.16460197025997,
     "entry": 61404.481434791334,
-    "mark": 61606.31919699099,
-    "liq": 58703.253228302325,
-    "pnl_usd": 62.45338112440456,
-    "pnl_pct": 6.628294838531466,
+    "mark": 61608.58968666465,
+    "liq": 58703.18444305698,
+    "pnl_usd": 63.155924371925956,
+    "pnl_pct": 6.702705668545936,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 72.83,
+  "So11111111111111111111111111111111111111112": 72.89,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.289e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009542,
@@ -91,13 +91,13 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 18013177,
+   "mc": 18013394,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 246030,
+   "mc": 246048,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -139,7 +139,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1107233410,
+   "mc": 1108191800,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
