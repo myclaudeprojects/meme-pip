@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-27 00:31:53 EST",
- "generated_ts": 1795757513686,
+ "generated_et": "2026-11-27 00:34:12 EST",
+ "generated_ts": 1795757652084,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,28 +29,28 @@
   "chain": "arbitrum",
   "eth": 0.001611460177629799,
   "usdc": 11.751623,
-  "eth_usd": 2.8150839562041603,
-  "btc_price": 61738.4272549572,
+  "eth_usd": 2.8096936219099886,
+  "btc_price": 61758.02138633496,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 19000.0,
-    "collateral_usd": 942.2881326225706,
-    "leverage": 20.163683848080858,
+    "collateral_usd": 942.2594136107232,
+    "leverage": 20.164298414586593,
     "entry": 61404.481434791334,
-    "mark": 61738.4272549572,
-    "liq": 58703.045786307914,
-    "pnl_usd": 103.33074125688151,
-    "pnl_pct": 10.965938939429494,
+    "mark": 61758.02138633496,
+    "liq": 58703.138600835795,
+    "pnl_usd": 109.39362929825194,
+    "pnl_pct": 11.609714662234817,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 73.295,
+  "So11111111111111111111111111111111111111112": 73.23,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.289e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9988,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009527,
@@ -85,7 +85,7 @@
   },
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
    "symbol": "USDT",
-   "mc": 183943525953,
+   "mc": 183942424525,
    "pair": "4sC7TFsmHodm4sfFFBcKXKbL1K2V5pav52zAiokufnQy",
    "dex": "pancakeswap"
   },
@@ -97,7 +97,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 246375,
+   "mc": 246369,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
@@ -133,7 +133,7 @@
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 1356821400,
+   "mc": 1356821558,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
