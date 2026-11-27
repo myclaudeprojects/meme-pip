@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-27 11:02:49 EST",
- "generated_ts": 1795795369040,
+ "generated_et": "2026-11-27 11:04:54 EST",
+ "generated_ts": 1795795494489,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,21 +29,21 @@
   "chain": "arbitrum",
   "eth": 0.001611460177629799,
   "usdc": 11.751623,
-  "eth_usd": 2.691162668544429,
-  "btc_price": 59882.057185838334,
+  "eth_usd": 2.6904213968627193,
+  "btc_price": 59969.96670857712,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 19000.0,
-    "collateral_usd": 942.3103435011824,
-    "leverage": 20.163208576704072,
+    "collateral_usd": 942.314071321752,
+    "leverage": 20.163128810492392,
     "entry": 61404.481434791334,
-    "mark": 59882.057185838334,
-    "liq": 58704.72594207517,
-    "pnl_usd": -471.6161892503197,
-    "pnl_pct": -50.04892416844493,
+    "mark": 59969.96670857712,
+    "liq": 58704.713894449436,
+    "pnl_usd": -444.41490209653546,
+    "pnl_pct": -47.16207850670953,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
@@ -90,7 +90,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 17224613,
+   "mc": 17224614,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -102,13 +102,13 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 245383,
+   "mc": 245377,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": {
    "symbol": "RAY",
-   "mc": 358615703,
+   "mc": 356686932,
    "pair": "DVa7Qmb5ct9RCpaU7UTpSaf3GVMYz17vNVU67XpdCRut",
    "dex": "raydium"
   },
