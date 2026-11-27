@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-27 01:32:30 EST",
- "generated_ts": 1795761150881,
+ "generated_et": "2026-11-27 01:34:35 EST",
+ "generated_ts": 1795761275633,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,28 +29,28 @@
   "chain": "arbitrum",
   "eth": 0.001611460177629799,
   "usdc": 11.751623,
-  "eth_usd": 2.7939577132754336,
-  "btc_price": 61668.16991897918,
+  "eth_usd": 2.794344463718065,
+  "btc_price": 61727.07106884835,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 19000.0,
-    "collateral_usd": 942.2206068804479,
-    "leverage": 20.165128910633964,
+    "collateral_usd": 942.2522040820664,
+    "leverage": 20.16445269927453,
     "entry": 61404.481434791334,
-    "mark": 61668.16991897918,
-    "liq": 58703.264017001515,
-    "pnl_usd": 81.59145851414124,
-    "pnl_pct": 8.659485678654217,
+    "mark": 61727.07106884835,
+    "liq": 58703.1619006973,
+    "pnl_usd": 99.81686847387948,
+    "pnl_pct": 10.593434331217104,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 72.95,
+  "So11111111111111111111111111111111111111112": 72.96,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.289e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9987,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009542,
@@ -91,7 +91,7 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 18013177,
+   "mc": 18013187,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
@@ -139,7 +139,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1108816329,
+   "mc": 1109888869,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
