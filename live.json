@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-27 13:51:25 EST",
- "generated_ts": 1795805485560,
+ "generated_et": "2026-11-27 13:53:43 EST",
+ "generated_ts": 1795805623963,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,28 +29,28 @@
   "chain": "arbitrum",
   "eth": 0.001611460177629799,
   "usdc": 11.751623,
-  "eth_usd": 2.689333661242819,
-  "btc_price": 59861.846267380904,
+  "eth_usd": 2.6903972249600545,
+  "btc_price": 59857.62165685982,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 19000.0,
-    "collateral_usd": 942.2780612521402,
-    "leverage": 20.163899364007236,
+    "collateral_usd": 942.2651296086443,
+    "leverage": 20.164176093294852,
     "entry": 61404.481434791334,
-    "mark": 59861.846267380904,
-    "liq": 58705.90246067941,
-    "pnl_usd": -478.20168626879325,
-    "pnl_pct": -50.74952988222372,
+    "mark": 59857.62165685982,
+    "liq": 58705.94425265279,
+    "pnl_usd": -479.5088805428346,
+    "pnl_pct": -50.88895529244423,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 71.865,
+  "So11111111111111111111111111111111111111112": 71.895,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.286e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009124,
@@ -101,7 +101,7 @@
   },
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": {
    "symbol": "URKO",
-   "mc": 245263,
+   "mc": 245283,
    "pair": "BmBq2MPZVWJAicnXmZn7s9AyLDMtJMkGK8YrwuGR2hVB",
    "dex": "raydium"
   },
