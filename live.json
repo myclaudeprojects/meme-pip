@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-27 19:42:59 EST",
- "generated_ts": 1795826579030,
+ "generated_et": "2026-11-27 19:48:26 EST",
+ "generated_ts": 1795826906306,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,38 +29,38 @@
   "chain": "arbitrum",
   "eth": 0.001611460177629799,
   "usdc": 11.751623,
-  "eth_usd": 2.680736521195164,
-  "btc_price": 59932.68155944027,
+  "eth_usd": 2.678947800397995,
+  "btc_price": 59906.12060408881,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 19000.0,
-    "collateral_usd": 942.2654574944999,
-    "leverage": 20.16416907664357,
+    "collateral_usd": 942.2814133761478,
+    "leverage": 20.163827631836583,
     "entry": 61404.481434791334,
-    "mark": 59932.68155944027,
-    "liq": 58710.07121445687,
-    "pnl_usd": -457.5608775697697,
-    "pnl_pct": -48.55965735881181,
+    "mark": 59906.12060408881,
+    "liq": 58710.01968424388,
+    "pnl_usd": -465.77947706735665,
+    "pnl_pct": -49.431037315964,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 71.71,
+  "So11111111111111111111111111111111111111112": 71.695,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.271e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9991,
-  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009008,
-  "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.03367,
+  "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.009023,
+  "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": 0.03386,
   "AXGmqhcKcPC4bC7vNpxGtu5oEwoEEnyeQUdw9YwYWF1q": 0.0002451,
   "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": 1.3,
   "DRoPH9pb1eXQ3VvhwWuP1k5P5R9hkxVmniZCouihxH6w": 3.897e-05,
   "Em8DYuvdQ28PNZqSiAvUxjG32XbpFPm9kwu2y5pdTray": 0.0001849,
   "dfxQsZjikuu5DGXPgX7yEpRog74HT5cJgytT3i5iLtw": 0.02303,
-  "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": 1.13,
+  "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": 1.12,
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": 3.137e-05,
   "3o2GCwpoUTr6CezPdvMYHmxY9wcfVr5TU1oTb1uLJGVm": 0.009325,
   "3STApFSfFDiCWnfV5eimnCeoHZqmLzqu9hqcGnsZ4XoN": 0.9965,
@@ -70,7 +70,7 @@
   "Bess9scjhF94Y5z4k57SmYwysJ4jcUxAbGsQ9Gu6vmuW": 1.00000022,
   "HWvb22ZYq75QT74c6nWNx4mo8uCAUaTAXkHW8CCLsp3G": 1.091,
   "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT": 1.0016,
-  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 311.88,
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": 311.89,
   "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD": 310.2
  },
  "info": {
@@ -88,13 +88,13 @@
   },
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": {
    "symbol": "ANTFUN",
-   "mc": 17005717,
+   "mc": 17032929,
    "pair": "54Vp27uLaw4wNLo5n7r4fcC6zLamoQc28xBARjss4EUJ",
    "dex": "meteora"
   },
   "JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o": {
    "symbol": "FO",
-   "mc": 3930166,
+   "mc": 3952627,
    "pair": "AXXo7N2gcLeVyo8nDsN99UW8Fv6NCsa2DP21WD3SKtM3",
    "dex": "meteora"
   },
@@ -130,13 +130,13 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1130140511,
+   "mc": 1127531029,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
   "ShitJuMfPKCQU7LedLERFYapDta7CCdKExPWX2gETRH": {
    "symbol": "SHIT",
-   "mc": 1321751159,
+   "mc": 1321751534,
    "pair": "HtNfUbDaBamCBPWCFiESkXpewvwVLkwrSWRjjV8FNT7i",
    "dex": "raydium"
   },
@@ -190,7 +190,7 @@
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "symbol": "AVGOx",
-   "mc": 5720159,
+   "mc": 5720290,
    "pair": "EkpbWmPzrzFsv2xkJRdvWs61aRuDBVdrJK7WQmctBFnB",
    "dex": "raydium"
   },
@@ -242,16 +242,16 @@
    "pair": "9Y7ADWy7sv7QUmpTLRx16nK5JoZ2bHNwUkZPA8whJuRg",
    "dex": "pumpfun"
   },
-  "DR2xcguUikbdtL1bxAvqr2KPi3ZWmv6zcUPaHxZH7Dih": {
-   "symbol": "AUTR",
-   "mc": null,
-   "pair": "pW38BF4NcjM7fBnwivmqpVdDayC2dwWgrbLWipuweXf",
-   "dex": "meteora"
-  },
   "4qXyK58HtBYq4z7w7BrZjWky5Ge7KUWukF585nMWbnUC": {
    "symbol": "NVRTD",
    "mc": null,
    "pair": "6CgauHz1PMDFeRqN47dNATb5i1hTD3VuTLSyq5XCWDw9",
+   "dex": "meteora"
+  },
+  "DR2xcguUikbdtL1bxAvqr2KPi3ZWmv6zcUPaHxZH7Dih": {
+   "symbol": "AUTR",
+   "mc": null,
+   "pair": "pW38BF4NcjM7fBnwivmqpVdDayC2dwWgrbLWipuweXf",
    "dex": "meteora"
   },
   "6yckydVCHu7VmajSkgYiY8YgvPb31iFcJLDKig3Apump": {
