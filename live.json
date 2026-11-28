@@ -1,6 +1,6 @@
 {
- "generated_et": "2026-11-28 06:08:58 EST",
- "generated_ts": 1795864138537,
+ "generated_et": "2026-11-28 06:11:06 EST",
+ "generated_ts": 1795864266376,
  "source": "box live_snapshot.py (public RPC + DexScreener + Coinbase + GMX API)",
  "sol_wallet": {
   "address": "9UpbfLG7qJAjEQK44FzY1ZtAS22jpb97fW9mYwZAgRgk",
@@ -29,28 +29,28 @@
   "chain": "arbitrum",
   "eth": 0.001611460177629799,
   "usdc": 11.751623,
-  "eth_usd": 2.6493775061384883,
-  "btc_price": 59150.911454267625,
+  "eth_usd": 2.650424955253947,
+  "btc_price": 59151.475914743394,
   "btc_price_src": "gmx_tickers",
   "positions": [
    {
     "market": "BTC/USD",
     "side": "long",
     "size_usd": 19000.0,
-    "collateral_usd": 942.2779174390815,
-    "leverage": 20.163902441477255,
+    "collateral_usd": 942.2599603569754,
+    "leverage": 20.16428671425436,
     "entry": 61404.481434791334,
-    "mark": 59150.911454267625,
-    "liq": 58724.55024565517,
-    "pnl_usd": -703.9516675245793,
-    "pnl_pct": -74.7074355130571,
+    "mark": 59151.475914743394,
+    "liq": 58724.61826230704,
+    "pnl_usd": -703.7800989725342,
+    "pnl_pct": -74.69065104983417,
     "key": "0x753F9f099f5d012218932f75bdBE5A567B2Cab9A:0x47c031236e19d024b42f8AE6780E44A573170703:0xaf88d065e77c8cC2239327C5EDb3A432268e5831:true"
    }
   ],
   "error": null
  },
  "prices": {
-  "So11111111111111111111111111111111111111112": 70.585,
+  "So11111111111111111111111111111111111111112": 70.595,
   "6Mix12LiHrQFojaQEnfPUC65Qkwd6X4Y5Qg93oFbordr": 1.221e-05,
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": 0.9992,
   "CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt": 0.008546,
@@ -124,7 +124,7 @@
   },
   "AQDy2eb6uqJLfj4kyX3uFvWLdv6X9WuZX2t9PS51SaXo": {
    "symbol": "HEYAMIKO",
-   "mc": 1107818487,
+   "mc": 1106709299,
    "pair": "AimhV5vMU6kG3zdied585L4Yt4ckn29ETre1v2ijZ1XK",
    "dex": "raydium"
   },
